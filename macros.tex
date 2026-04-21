@@ -1,0 +1,139 @@
+\DeclareFontFamily{U}{dmjhira}{}
+\DeclareFontShape{U}{dmjhira}{m}{n}{ <-> dmjhira }{}
+
+\DeclareRobustCommand{\yo}{\text{\usefont{U}{dmjhira}{m}{n}\symbol{"48}}}
+
+
+
+%Varibale names
+\newcommand{\Man}{M}
+\newcommand{\flowM}{\mathcal{M}}
+\newcommand{\nonflowM}{M}
+
+% === Mathematical Symbols and Notation ===
+
+% Blackboard Bold Letters (Common Number Systems and Spaces)
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbRP}{\mathbb{RP}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbS}{\mathbb{S}}
+
+% Calligraphic Letters (Categories and Collections)
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\CC}{\mathrm{Path}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\cC}{\mathcal{C}} %infy categoriesv
+\newcommand{\cD}{\mathcal{D}} %infy categories
+\newcommand{\sC}{\mathcal{C}} %infy categories
+\newcommand{\cX}{\EuScript{X}}
+\newcommand{\cY}{\EuScript{Y}}
+
+% Flow categories 
+\newcommand{\fC}{\mathscr{C}}
+\newcommand{\fD}{\mathscr{D}}
+\newcommand{\sD}{\mathscr{D}}
+
+% Greek Letters
+\renewcommand{\S}{\Sigma}
+\newcommand{\WedgeSp}{\bigoplus}
+\newcommand{\WedgeSpaces}{\bigvee}
+
+\newcommand{\smashSp}{\otimes}
+\newcommand{\smashSpaces}{\wedge}
+
+% Decorated Symbols
+\newcommand{\zeroBar}{\Bar{0}}
+\newcommand{\oneBar}{\Bar{1}}
+\newcommand{\p}{^\prime}
+\newcommand{\+}{_+}
+
+% Additional Mathematical Symbols
+\newcommand{\zeroMor}{\mathbf{0}} % Zero morphism
+\newcommand{\zr}{0}      % Zero object
+
+% Common Sets
+\newcommand{\setn}{\{1, \dots, n\}}
+\newcommand{\n}{\{1, \dots, n\}}
+\newcommand{\setm}{\{1, \dots, m\}} 
+\newcommand{\m}{\{1, \dots, m\}}
+
+% Special Sets and Spaces
+\newcommand{\Hlf}{\bbR_{0 \leq}}        % Non-negative reals
+\newcommand{\Hk}{\Hlf^k}
+\newcommand{\RkN}{\bbR^N \times \Hk}
+\newcommand{\RAN}{\bbR^N \times \Hlf^A}
+
+% Specific Mathematical Symbols
+\newcommand{\op}{\{1 \to 0\}}
+\newcommand{\Chn}{\Ch_{[n,0]}}
+\newcommand{\Sinf}{\S^{\infty}_+}
+
+% Formatting and Delimiters
+\newcommand{\<}[1]{\langle #1 \rangle}  % Angle brackets
+\newcommand{\const}[1]{\underline{#1}}
+\renewcommand{\k}{\langle k \rangle}
+\newcommand{\A}{\langle A \rangle}
+\newcommand{\ul}[1]{\underline{#1}}     % Underline
+\newcommand{\norm}[1]{\left\lvert#1\right\rvert}  % Norm notation
+
+% === Mathematical Operators ===
+
+% Standard Categorical Operators
+\DeclareMathOperator{\Op}{op}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator*{\colim}{colim}
+
+% Topological Operators
+\DeclareMathOperator{\Emb}{Emb}
+\DeclareMathOperator{\Th}{Th}
+\DeclareMathOperator{\sk}{sk}
+\DeclareMathOperator{\Spine}{Spine}
+
+% Chain and Filtration Operators
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\Fil}{Fil}
+\DeclareMathOperator{\Filb}{Fil_b}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Mod}{Mod}
+
+% Flow and Morse Theory Operators
+\DeclareMathOperator{\Morse}{Morse}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\fr}{fr}
+
+% Other Operators
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\Ob}{ob}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\cofib}{cof}
+\DeclareMathOperator{\fib}{fib}
+\DeclareMathOperator{\Nr}{N}
+\DeclareMathOperator{\Cu}{Cu}
+\DeclareMathOperator{\Diag}{Diag}
+\DeclareMathOperator{\Conv}{Conv}
+
+% === Categories and Classes ===
+\newcommand{\Ab}{\mathbf{Ab}}           % Abelian groups
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\newcommand{\Sp}{\mathbf{Sp}}           % Spectra
+\newcommand{\SPO}{\mathbf{Sp}^O}           % Spectra
+\newcommand{\Top}{\mathbf{Top}}         % Topological spaces
+\newcommand{\Spaces}{\mathbf{Spaces}}
+\newcommand{\Chb}{\Ch_b}                % Bounded chain complexes
+
+
+\newcommand{\FlowX}{\mathbf{Flow}^{\cX}}
+\newcommand{\FlowY}{\mathbf{Flow}^{\cY}}
+
+% === Parameterized Functions ===
+\newcommand{\pg}[4]{#1_{#2}^{#3,#4}}    % General parameterized function
+\newcommand{\rnp}[1]{#1_r^{n,p}}        % Specific parameterized function

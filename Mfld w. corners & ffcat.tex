@@ -1,0 +1,395 @@
+\subsection{Diagrammatic framework}
+Let A be a set and $\cC$ a category. An $\A$ diagram in $\cC$ is a functor:
+\begin{equation*}
+    F \colon \op^A \to \sC.
+\end{equation*}
+
+In the case where $C \in \cC$ have a name (e.g. space, manifold, group), we call such functor an $\A$ space, etc.
+
+\begin{defn}\label{def:BoundaryOfADiag}
+    Let $A$ be a finite set and $a \in A$ then we define its \textbf{$A$-boundary} to be the restriction along the inclusion 
+    \begin{equation*}
+        i: \Fun(A\setminus\{a\},\op) \to \Fun(A,\op)
+    \end{equation*}
+    where $i$ is given by taking the full subcategory spanned by functors with $F(a)=1$. We get a a map:
+    \begin{equation*}
+        \partial_a \colon \Fun(\op^A,\cC) \to \Fun(\op^{A\setminus \{a\}},\cC)
+    \end{equation*}    
+\end{defn}
+
+
+An \textbf{$\A$-map} is a natural transformation between $\A$-diagrams.
+\begin{rem}
+    Notice that
+    \begin{equation*}
+        \Fun(1,\Fun(\op^A,\cC)) \simeq \Fun(\op^A,\Fun(1,\cC))
+    \end{equation*}
+    hence any $\A$-map is an $\A$ diagram in the arrow category $\Fun(1,\cC)$, and we can use $\A$ diagrams notations, like
+    \begin{equation*}
+        \partial_a \mu
+    \end{equation*}
+\end{rem}
+\begin{defn}\label{def:tensor}
+Let $\cC$ be a monoidal category. For $i \in \{1,2\}$, let $A_i$ be finite sets and $F_i$ an $\<{A_i}$ diagram. Then there is a tensor product
+\begin{equation*}
+    F_1 \otimes F_2 (B_1 \sqcup B_2) \coloneqq F_1(B_1) \otimes F_2(B_2).
+\end{equation*}
+which is an $\<{A_1 \sqcup A_2}$ diagram in $\cC$. Given two morphisms $\mu_i \colon F_i \to G_i$ we define
+\begin{equation*}
+    (\mu_1 \otimes \mu_2)(B_1 \sqcup B_2) \coloneqq \mu_1(B_1) \otimes  \mu_2(B_2)
+\end{equation*}    
+which is a map of $\<{A_1 \sqcup A_2}$ diagrams.
+\end{defn}
+
+
+Taking $\cC =\Top$ and let $A$ be a finite set, here are few useful constructions that we will use later.
+We remind the reader that the one point compactification is a monoidal functor from locally compact Hausdorff spaces with proper maps with disjoint union (resp. Cartesian product) to pointed spaces with wedge sum (resp. smash product). Moreover it is a contravariant functor from the category of topological spaces with open inclusions, also known as the Pontrjagin-Thom collapse map.
+Explicitly, given $f:X \to Y$ and map continuous map between topological spaces the collapse map is the map $Y_+ \to X_+$
+\begin{equation*}
+    y \mapsto \begin{cases}
+        x & y=f(x) \\
+        \infty_X & \text{otherwise}
+    \end{cases}
+\end{equation*}    
+
+
+Let $X$ be $\A$ diagram in $\Top$ such that all the maps are proper. We have an $\A$ diagram, $X_+$, given by
+\begin{equation*}
+    X_+(B) \coloneqq (X(B))_+
+\end{equation*}
+which arising from the functoriality.
+
+\begin{defn}\label{def:CollapaseMap}
+Let $f:X \to Y$ be a map of $\A$ diagrams in $\Top$ such that $f(B)$ is open inclusion, then the functoriality of $(-)_+$ yields the \textbf{collapse map}
+\begin{equation*}
+    f_+: Y_+ \to X_+
+\end{equation*}
+\end{defn}
+
+
+
+\begin{defn}
+Let $A$ be a finite set and $M,N$ two $\A$ manifolds, we say that a map $e:M \to N$ is \textbf{neat embedding} if
+\begin{enumerate}
+    \item For each $B \subseteq A$, the map $e(B)\colon M(B) \to N(B)$ is an embedding.
+    \item The intersections $M(B) \cap N(C)$ are transverse for all $B \subseteq C$.
+    \item The preimage of the faces satisfies $e^{-1}(\partial_a N) = \partial_a M$ for all $a \in A$.
+\end{enumerate}
+\end{defn}
+
+For $i \in \{1,2\}$ let $A_i$ be finite sets and let $e_i:M_i \to N_i$ be an two neat embeddings of $\A_i$ diagrams of manifolds. Taking the monoidal structure $(\Top,\times)$ we can use \cref{def:tensor} and get a map
+\begin{equation*}
+    e_1 \times e_2 \colon M_1 \times M_2 \to N_1 \times N_2
+\end{equation*}
+which is a map of $\<{A_1 \sqcup A_2}$ diagrams.
+
+Moreover, we can define the \textbf{normal bundle}, $\nu_{e_i}$, by
+\begin{equation*}
+    (\nu_{e_i} )(B) \coloneqq \nu_{e_i}(B)
+\end{equation*}
+which are $\A$ diagrams in $\Top$ of the total spaces of the bundles. We can do the same for the map $e_1 \times e_2$ and the fact that the total space of normal bundle commute with Cartesian product of the base, yields:
+\begin{equation*}
+    \nu_{e_1} \times \nu_{e_2} = \nu_{e_1 \times e_2}
+\end{equation*}
+as $\<{A_1 \sqcup A_2}$ diagrams.
+
+Lastly, we have open inclusions of diagrams:
+\begin{equation*}
+    \nu_{e_i} \to N_i, \quad  \nu_{e_1} \times \nu_{e_2} \to N_1 \times N_2
+\end{equation*}
+hence we can compactify and get maps
+\begin{equation*}
+    (N_i)_+ \to (\nu e_i)_+, \quad (N_1 \times N_2)_+ \to (\nu_{e_1} \times \nu_{e_2})_+
+\end{equation*}
+and the monoidality of $(-)_+$ give rise to a map of $\<{A_1 \sqcup A_2}$ diagrams:
+\begin{equation*}
+    (N_1)_+ \wedge (N_1)_+ \to (\nu_{e_1})_+ \wedge (\nu_{e_2})_+.
+\end{equation*}
+
+\begin{defn}\label{def:TrivOfNormalBundle}
+    Given an $\A$ vector bundle over an $\A$ manifold, i.e. an $\A$ map $\pi:E \to M$, such that $\pi(B)$ is vector bundle for $A \subseteq A$, a \textbf{trivialization} of $E$ is a map of $\A$-spaces
+    \begin{equation*}
+        \varphi: E \simeq M \times \bbR^N
+    \end{equation*}
+    for some $N \in \bbN$, where $\bbR^N$ is the $\<{\varnothing}$ diagram on $\bbR^N$. This map amounts to family of bundle maps
+    \begin{equation*}
+        \varphi(B): E(B) \simeq M(B) \times \bbR^N.
+    \end{equation*}    
+\end{defn}
+
+We can project to the second coordinate of the RHS and get a map 
+\begin{equation*}
+    E \to \const{\bbR^N},
+\end{equation*}
+where the RHS is the constant functor on $\bbR^N$.  Applying $(-)_+$ resulting an $\A$-map
+\begin{equation}
+    E_+ \to \const{(\bbR^N)_+} \simeq \const{S^N}.
+\end{equation}
+
+Our main application is the case where we have a neat embedding of $\A$ manifolds 
+\begin{equation*}
+    e:M \hookrightarrow  \bbR^N \times \Hlf^A
+\end{equation*}
+and a framing of the normal bundle
+\begin{equation*}
+    \varphi: \nu_e \simeq M \times \bbR^{N+\norm{A}-n}.
+\end{equation*}
+We construct the \textbf{Thom map}:
+\begin{equation*}
+    f_{e,\varphi}: (\bbR^N \times \Hlf^A)_+ \to (\nu_e)_+ \to (\bbR^{N+\norm{A}-n})_+
+\end{equation*}
+where the first map is the collapse map of $e$ and the second map is the projection of $\varphi$ to the second coordinate, and applying $(-)_+$.
+
+If $\norm{A}=n$ we ca write 
+\begin{equation}\label{eq:ThomMap}
+    f: S^N \smashSpaces (\Hlf^A)_+ \to (\nu_e)_+ \to S^N.
+\end{equation}
+
+\subsection{Manifolds with corners}
+Let $\Hlf$ denote the half-line:
+\begin{equation*}
+    \Hlf := [0,\infty).
+\end{equation*}
+
+\begin{defn}
+An $n$-dimensional \textbf{manifold with corners} is a topological space $M$ toghter with an atlas, modeled on open subsets of $\Hlf^n$ with smooth transition functions.
+We define $c(m)$ as the number of coordinates equal to zero in a chart around $m$. A \textbf{connected face} of $M$ is a closures of connected components of:
+\begin{equation*}
+    \{ m \in M \mid c(m) = 1 \}.
+\end{equation*}
+
+A \textbf{face} is a union of connected faces.
+
+An $n$-dimensional \textbf{manifolds with faces} is an $n$-dimensional manifold with corners such that every $m \in M$ belong to $c(m)$ connected faces of $M$.
+\end{defn}
+
+Note that a face of an $n$-dimensional manifolds with faces is an $(n-1)$-dimensional manifolds with faces. 
+
+\begin{defn}
+    Let $A$ be a finite set. An \textbf{$\A$-manifold} is a manifold with faces $M$, together with a collection of faces $\{ \partial_a M \}_{a \in A}$ satisfying the following conditions:
+        \begin{enumerate}
+            \item The union of all faces covers the boundary of $M$:
+            \begin{equation*}
+                \bigcup_{a \in A} \partial_a M = \partial M.
+            \end{equation*}
+            \item For $a \neq b$, the intersection $\partial_a M \cap \partial_b M$ is a face of both $\partial_a M$ and $\partial_b M$.
+        \end{enumerate}
+    If $A = \{ 1,\dotsc,k \}$, we refer to $M$ as a \textbf{$\k$-manifold}.
+\end{defn}
+
+\begin{note*}
+    Using the definitions of $\A$-manifold, we get that $\partial_a M$ inherit a structure of an $\<{A\setminus{a}}$-manifold.
+\end{note*}
+
+\begin{exmp}\label{exmp:R_cor_str}
+The space $\Hlf^A$ admits an $\A$-manifold structure by defining the faces:
+\begin{equation*}
+    \partial_a \Hlf^A = \Hlf^{A \setminus \{ a \}} = \{ x \in \Hlf^A \mid x_a = 0 \}.
+\end{equation*}
+More generally, $\bbR^N \times \Hlf^A$ can be given an $(N+\norm{A})$-dimensional $\A$-manifold structure by setting:
+\begin{equation*}
+    \partial_a (\bbR^N \times \Hlf^A) = \bbR^N \times \partial_a \Hlf^A.
+\end{equation*}
+\end{exmp}
+
+\begin{exmp}
+Consider a triangle in the plane. It is a $2$-dimensional manifold with corners, which admits a $\<{3}$-manifold structure by taking the three edges as the faces $\partial_a M$. This example illustrates that not all $k$-manifolds are necessarily $k$-dimensional. However, in this paper, we focus on manifolds where the dimension equals the number of faces, i.e., $n = k$.
+\end{exmp}
+
+
+\begin{constr}\label{ex:mfld_diagram}
+    Let $M$ be an $n$-dimensional $\A$-manifold. It induces an $\A$-diagram in the category of manifolds with embeddings by defining:
+    \begin{equation*}
+        M(B) = \bigcap_{b \in B} \partial_b M,
+    \end{equation*}
+    for each subset $B \subseteq A$. In particular, $M(\varnothing) = M$, and $M(B)$ is an $(n - \norm{B})$-dimensional $\<{B}$-manifold.    
+\end{constr}
+\begin{rem*}
+For simplicity, we sometimes refer to an $\A$-manifold by its associated $\A$-diagram.
+\end{rem*}
+
+\begin{exmp}
+The manifold $\Hlf^3$ induces the following $\<{3}$-diagram:
+\[
+\begin{tikzcd}[row sep=small, column sep=small]
+    & \text{pt} \\
+    {\Hlf^{\{ z \}}} & {\Hlf^{\{ y \}}} & {\Hlf^{\{ z \}}} \\
+    {\Hlf^{\{ y,z \}}} & {\Hlf^{\{ x,z \}}} & {\Hlf^{\{ x,y \}}} \\
+    & {\Hlf^{\{ x,y,z \}}}
+    \arrow[from=1-2, to=2-1]
+    \arrow[from=1-2, to=2-2]
+    \arrow[from=1-2, to=2-3]
+    \arrow[from=2-1, to=3-1]
+    \arrow[from=2-1, to=3-2]
+    \arrow[from=2-2, to=3-1]
+    \arrow[from=2-2, to=3-3]
+    \arrow[from=2-3, to=3-2]
+    \arrow[from=2-3, to=3-3]
+    \arrow[from=3-1, to=4-2]
+    \arrow[from=3-2, to=4-2]
+    \arrow[from=3-3, to=4-2]
+\end{tikzcd}
+\]
+The top vertex represents the origin. The second row consists of the coordinate axes $\Hlf^{\{ x \}}$, $\Hlf^{\{ y \}}$, and $\Hlf^{\{ z \}}$. The third row contains the coordinate planes, which correspond to the faces $\partial_a \Hlf^3$. The bottom vertex is the entire manifold $\Hlf^3$.
+\end{exmp}
+
+\begin{constr}\label{const:prod}
+    For $i\in\{1,2\}$, let $M_i$ be an $n$-dimensional $\A_i$-manifold, then the Cartesian product $M_1\times M_2$ admits an $\<{A_1 \sqcup A_2}$-manifold structure by
+    \begin{equation*}
+        \partial_a (M_1 \times M_2) \coloneqq \begin{cases}
+            (\partial_a M_1) \times M_2 & a \in A_1\\
+            M_1 \times (\partial_a M_2) & a \in A_2
+        \end{cases}
+    \end{equation*}
+\end{constr}
+
+Note that this construction coincides with \cref{def:tensor}.
+
+\begin{defn}
+    A neat embedding of $\A$-manifolds with corners is a map of topological spaces $e:M \to N$ such that the induces map of $\A$-diagrams is neat embedding.
+\end{defn}
+
+\begin{defn}\label{def:NormalFramingOfMfld}
+    Let $M$ be an $n$ dimensional $\A$ manifold, $e:M \hookrightarrow  \bbR^N \times \Hlf^A$, a neat embedding. Note that the normal bundle is an $\A$ vector bundle over $M$, of rank $N+\norm{A}-n$. A \textbf{normal framing} is a trivialization (see \cref{def:TrivOfNormalBundle}) of $\nu_e$
+    \begin{equation*}
+        \varphi: \nu_e \simeq M \times \bbR^{N+\norm{A}-n}.
+    \end{equation*}
+    We denote by 
+    \begin{equation*}
+        Th(M,e) \coloneqq (\nu_e)_+
+    \end{equation*}
+    the \textbf{Thom space} of $M$ and $e$, which is an $\A$ space.
+\end{defn}
+If the choice of neat embedding is clear, we will omit $e$ and write $Th(M)$.
+\begin{rem*}
+    Let $n$ be the dimension of $M$, each normal bundle $\nu_e M(B)$ is of rank $N +\norm{A} - n$.
+\end{rem*}
+
+Similar to \cref{const:prod}, for $i\in\{1,2\}$, let $M_i$ be an embedded manifold with normal framing $\varphi_i$. Since the normal bundle of a Cartesian product is the direct sum of the individual normal bundles, the Cartesian product $M_1\times M_2$ admits a normal framing. We denote the resulting framing by $\varphi_1 \oplus \varphi_2$.
+
+\subsection{Framed Flow Categories}\label{sec:FFCat}
+We now introduce framed flow categories, first developed by Cohen, Jones, and Segal \cite{CJS95} to axiomatize the geometric data arising from Morse-Smale functions and certain Floer-theoretic setups. A flow category is a graded category whose morphism spaces are manifolds with corners, with dimensions determined by the grading. Composition is realized geometrically by identifying the boundary strata of one morphism manifold with the products of others. 
+
+A \textit{framed} flow category further equips these morphism manifolds with a stable framing that must be compatible with the composition law. This coherent structure is what allows for the construction of a stable homotopy type. Our treatment, which relies on neat embeddings of these manifolds into Euclidean space, follows the perspective used in modern applications like \cite{LS17}.
+
+\begin{defn}
+Let $\fC$ be a category with a \textbf{grading function}:
+\begin{equation*}
+    \lvert - \rvert \colon \Ob(\fC) \to \bbZ.
+\end{equation*}
+For each pair of objects $x, y \in \fC$, define the linearly ordered set:
+\begin{equation}\label{eq:J_ind_cat}
+    J_{y,x} \coloneqq \{ i \in \bbZ \mid \lvert y \rvert > i > \lvert x \rvert \}.
+\end{equation}
+\end{defn}
+
+\begin{defn}\label{def:FlowCat}
+A \textbf{flow category} is a topologically enriched category $\fC$ with a discrete set of objects and a grading function
+\begin{equation*}
+    \norm{-} \colon \Ob(\fC) \to \bbZ
+\end{equation*}
+Moreover, for each pair $x,y \in \cC$ the morphism space $\Hom_{\fC}(y, x)$ is endowed with a structure of an $\norm{J_{y,x}}$-dimensional $\<{J_{y,x}}$-manifold, also denoted by $M_{y,x}$, such that the corner structure satisfies:
+\begin{equation}\label{eq:corner_comp}
+    \partial_i M_{z,x} = \bigsqcup_{y \in \Ob(\fC),\ \norm{y} = i} M_{z,y} \times M_{y,x},
+\end{equation}
+for all $i \in J_{z,x}$. The composition is given by the inclusion of the boundary:
+\begin{equation*}
+    M_{z,y} \times M_{y,x} \hookrightarrow \partial_i M_{z,x} \hookrightarrow M_{z,x}.
+\end{equation*}
+\end{defn}
+
+\begin{notation}
+    Let $\fC$ be a flow category and $z,y,x \in \fC$, we will write $\partial_y M_{z,x}$ to denote $M_{z,y} \times  M_{y,x}$ as connected component of the the face $\partial_i M_{z,x}$.
+\end{notation}
+\begin{notation}\label{not:unionFlowMfld}
+    Let $\fC$ be a flow category and $j,i \in \bbZ$ we denote
+    \begin{equation*}
+        M_{i,j} \coloneqq \bigsqcup_{\substack{ y \in \fC, \norm{y}=j \\ x \in \fC, \norm{x}=i}} M_{y,x}
+    \end{equation*}
+\end{notation}
+
+\begin{exmp}
+Consider a framed flow category $\fC$ with object set $\{ z, y, x, w \}$ and grading $\norm{z} = 4, \dots \norm{w} = 1$. The morphism spaces are:
+\begin{itemize}
+    \item Zero-dimensional manifolds $M_{z,y}$, $M_{y,x}$, $M_{x,w}$, which are discrete points (possibly with signs).
+    \item One-dimensional framed manifolds $M_{z,x}$ and $M_{y,w}$, serving as null-bordisms:
+    \begin{equation*}
+        \partial_3 M_{z,x} = M_{z,y} \times M_{y,x}, \quad \partial_2 M_{y,w} = M_{y,x} \times M_{x,w}.
+    \end{equation*}
+    \item A two-dimensional manifold $M_{z,w}$ with faces:
+    \begin{equation*}
+        \partial_3 M_{z,w} = M_{z,y} \times M_{y,w}, \quad \partial_2 M_{z,w} = M_{z,x} \times M_{x,w},
+    \end{equation*}
+    and corners given by $M_{z,y} \times M_{y,x} \times M_{x,w}$.
+\end{itemize}
+\end{exmp}
+
+\begin{defn}
+    A neat embedding of a flow category $\fC$ consists of a choice of integer $N$ and a family of neat embeddings of manifolds with corners,
+    \begin{equation*}
+        e_{y,x}\colon M_{y,x} \hookrightarrow \bbR^{N(\norm{y}-\norm{x})} \times \Hlf^{J_{y,x}},
+    \end{equation*}
+    for each pair of objects $y,x$, such that the following diagram of $\<{J_{z,x}\setminus\{\norm{y}\}}$-spaces, commutes
+    \begin{equation*}
+        \xymatrix
+        {
+            M_{z,y}\times M_{y,x} \ar[rr]^{\hspace{-50pt}e_{z,y}\times e_{y,z}}\ar[d] && \bbR^{N(\norm{z}-\norm{y})} \times \Hlf^{J_{z,y}} \times \bbR^{N(\norm{y}-\norm{x})} \times \Hlf^{J_{y,x}} \ar[d] \\
+            \partial_y M_{z,x} \ar[rr]^{\partial_i e_{z,x}} && \bbR^{N(\norm{z}-\norm{x})} \times \partial_i \Hlf^{J_{z,x}}   
+        }
+    \end{equation*}
+    where $i = \norm{y}$, the bottom map is the restriction of $\partial_i e_{z,x}$ to the $y$ component the top map is \cref{def:tensor} and the vertical maps are diffeomorphisms.
+\end{defn}
+
+Note that is a uniform version, in the sense that all the manifolds embeds into a products of $\bbR^N$. This version arises by stabilizing \cite{LS14}.
+
+\begin{rem}\label{rem:Cat_emb}\todo{do we need this?}
+The fact that any manifold with corners admits a neat embedding implies that any flow category can be embedded, see \cite{LS14} Lemma 3.16. Moreover, the space of such embeddings becomes arbitrarily connected as $N$ increases.
+\end{rem}
+
+We recall that for two bundles $E_i \to M_i$, we have the following. 
+\begin{equation*}
+    Th(E_1 \boxtimes  E_2) \simeq Th(E_1) \wedge Th(E_2)
+\end{equation*}
+where the LHS is the Thom space of the bundle over $M_1 \times M_2$.
+Using the functoriality of the collapse map (\cref{def:CollapaseMap},\Cref{def:CollapaseMap}), and the fact above, we get a commutative diagram of $\A$-spaces
+\begin{equation}\label{eq:collaps_comp}
+    \xymatrix{
+    S^{N(\norm{z}-\norm{x})}\wedge (\Hlf^{J_{z,y}} \times \Hlf^{J_{y,x}})_+ \ar[d] \ar[rr] && Th(M_{z,y}) \wedge Th(M_{y,x}) \ar[r]^{\simeq}&   Th(M_{z,y} \times M_{y,x})  \ar[d] \\
+    S^{N(\norm{z}-\norm{x})}\wedge (\partial_i \Hlf^{J_{z,x}})_+ \ar[rrr] &&& \partial_y Th(M_{z,x})
+    }
+\end{equation}
+
+% \begin{rem}
+% In the context of flow categories, all manifolds $M_{y,x}$ have the same corner structure and dimension determined by $\lvert J_{y,x} \rvert$. The framing maps in \Cref{eq:Frame} thus take the form:
+% \begin{equation*}
+%     f_{y,x}\colon M_{y,x}^{\nu} \to \bbS.
+% \end{equation*}
+% \end{rem}
+
+\begin{defn}\label{def:NormalFramingOfFlowCat}
+Let $\fC$ be an embedded flow category. A normal \textbf{framing} of $\fC$ is a choice of normal framing
+\begin{equation*}
+    \varphi_{y,x}\colon \nu M_{y,x} \simeq M_{y,x} \times \bbR^{N(\norm{y}-\norm{x})}
+\end{equation*}
+for each two objects $x,y \in \cC$, with the following coherency
+\begin{equation*}
+    \partial_y \varphi_{z,x} = \varphi_{z,y} \oplus \varphi_{y,x}. 
+\end{equation*}
+\end{defn}
+
+The compatibility of the neat embedding and the framing implies the commutativity of the diagram:
+\begin{equation}\label{eq:ThomFunctoriality}
+    \xymatrix{
+    S^{N(\norm{z}-\norm{x})}\wedge (\Hlf^{J_{z,y}} \times \Hlf^{J_{y,x}})_+ \ar[r]\ar[d] &  Th(M_{z,y} \times M_{y,x}) \ar[rr]^{\hspace{-20pt}\varphi_{z,y}\oplus \varphi_{y,x}}\ar[d]_{\simeq} && \const{S^{N(\norm{z}-\norm{y})}} \wedge \const{S^{N(\norm{y}-\norm{x})}} \ar[d]^{\id} \\
+    S^{N(\norm{z}-\norm{x})}\wedge (\partial_i \Hlf^{J_{z,x}})_+ \ar[r] & Th(\partial_y M_{z,x}) \ar[rr]^{\partial_y \varphi_{z,x}} && \const{S^{N(\norm{z}-\norm{x})}}.
+    }
+\end{equation}
+where the vertical maps are the "Thom" maps; see \cref{eq:ThomMap}.
+
+\begin{exmp}\label{ex:closed_flow_cat}
+Let $\fC$ be a framed flow category with objects $\{ y_i \}$ and $\{ x_j \}$ concentrated in only two degrees,  $\lvert y_i \rvert = q$ and $\lvert x_j \rvert = p$. The morphism space:
+\begin{equation*}
+    M = \bigsqcup_{i,j} M_{y_i, x_j}
+\end{equation*}
+is a closed framed manifold of dimension $q - p - 1$, since there are no intermediate objects with degrees between $p$ and $q$. In this case, $\fC$ defines an element in the framed bordism group $\Omega^{\operatorname{fr}}_{q - p - 1}$.
+\end{exmp}

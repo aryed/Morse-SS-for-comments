@@ -1,0 +1,403 @@
+In this section we point out how to generalized \cref{cor:SSofFFCat} to a case where we replace the framing structure on the flow category $\fC$ by other tangential structure.
+As a result we get a spectral sequence that calculates the bordism homology $\Omega_*^{\cX}(\norm{\fC})$
+
+First, the definition of framing in \Cref{def:MfldCornersFraming}\todo{ref} is generalize to:
+\begin{defn}
+    Let $M$ be a $n$ dimensional manifold and let $\xi:\cX \to BO$ be a fibration. We remind that $M$ is equipped with a map:
+    \begin{equation*}
+        M \xrightarrow[]{TM} BO(n)
+    \end{equation*}
+    A \emph{stable $\cX$ structure} on $M$ is a lift:
+    \begin{equation}
+                % https://q.uiver.app/#q=WzAsNCxbMCwxLCJNIl0sWzEsMSwiQk8obikiXSxbMiwxLCJCTyJdLFsyLDAsIlxcY1giXSxbMywyXSxbMCwxLCJUTSIsMl0sWzEsMiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwzLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \begin{tikzcd}
+        	&& \cX \\
+        	M & {BO(n)} & BO
+        	\arrow[from=1-3, to=2-3]
+        	\arrow[dashed, from=2-1, to=1-3]
+        	\arrow["TM"', from=2-1, to=2-2]
+        	\arrow[hook, from=2-2, to=2-3]
+        \end{tikzcd}
+    \end{equation}
+\end{defn}
+\begin{exmp}
+    A $pt$ structure on a manifold $M$, is equivalent to a stable framing of $M$. This is coming from the fact that the effect of the composition of $TM$ with the map $BO(n) \to BO$, after pulling back, is given by adding copies of the trivial bundle to $TM$.
+\end{exmp}
+In this paper we will refer to stable $\cX$ structure just as \emph{$\cX$ structure}.
+\begin{defn}
+    Given a flow category $\fC$ (see \Cref{def:FlowCat}), a $\cX$ structure on $\fC$ is a $\cX$ structure for any morphism space $M_{y,x}$ such that the $\cX$ structure is compatible with the composition in $\fC$, i.e
+    \begin{equation*}
+        % https://q.uiver.app/#q=WzAsNixbMCwxLCJNX3t6LHl9XFx0aW1lcyBNX3t5LHh9Il0sWzEsMiwiQk8iXSxbMSwwLCJcXGNYIl0sWzMsMCwiXFxjWCJdLFszLDIsIkJPIl0sWzIsMSwiTV97eix4fSJdLFsyLDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw0LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMSwiVE1fe3oseX1cXG9wbHVzIFRNX3t5LHh9IiwyLHsibGFiZWxfcG9zaXRpb24iOjB9XSxbMiwxXSxbMCwyLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJUTV97eix4fSIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFszLDRdLFs1LDMsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV1d
+        \begin{tikzcd}
+        	& \cX && \cX \\
+        	{M_{z,y}\times M_{y,x}} && {M_{z,x}} \\
+        	& BO && BO
+        	\arrow[no head, from=1-2, to=1-4]
+        	\arrow[from=1-4, to=3-4]
+        	\arrow[dashed, from=2-1, to=1-2]
+        	\arrow[hook, from=2-1, to=2-3]
+        	\arrow["{TM_{z,y}\oplus TM_{y,x}}"', from=2-1, to=3-2]
+        	\arrow[dashed, from=2-3, to=1-4]
+        	\arrow["{TM_{z,x}}"', from=2-3, to=3-4]
+        	\arrow[no head, from=3-2, to=3-4]
+                \arrow[from=1-2, to=3-2, crossing over]
+        \end{tikzcd}
+    \end{equation*}
+\end{defn}
+
+Similarly to \cref{constr:FF_to_Ch}\todo{ref}, using Pontryagin Thom we get a coherent chain complex in $\Mod_{M\cX}$ where $M\cX$ is the Thom spectrum of $\cX$.
+\begin{con}
+    Let $\fC$ be a $\cX$ flow category. We define $K=K_{\cX} \in \Ch(\Mod_{M\cX})$ as
+    \begin{enumerate}
+        \item The objects in the chain are
+        \begin{equation*}
+            K_p = \WedgeSp_{\norm{y}=p} M\cX_y
+        \end{equation*}
+        \item The structure maps
+        \begin{equation*}
+            c_{z,y}:\Sinf \Hlf^{J_{z,y}} \to \Hom_{\Mod_{M\cX}}(M\cX_z,M\cX_y)
+        \end{equation*}
+        are equivalent to maps
+        \begin{equation*}
+            c_{z,y}:\Sinf \Hlf^{J_{z,y}} \to M\cX
+        \end{equation*}
+        which are given by collapsing $M_{z,y}$ and using the $\cX$ structure:
+        \begin{equation*}
+            c_{z,y}:\S^{\inf} (\Hlf^{J_{z,y}})_+ \to M\cX
+        \end{equation*}
+        For more details on structured Pontryagin Thom, see Freed notes \cite{Freed_oldNew}, lecture 10.
+    \end{enumerate}
+\end{con}
+
+
+The definition of extension (\cref{def:Xrnp-extension}) is modified by replacing framed flow categories by $\cX$ structured flow categories and $\Omega^{\fr}$ by $\Omega^{\cX}$.
+
+
+Similarly, we define Toda bracket of two $\cX$ flow categories.
+
+To modify \cref{{lem:Toda_FFCat_is_Colim_Manifold}} we replace $\bbS$ with $M\cX$, we get a boundary diagram
+\begin{equation*}
+    D:[1]^k \setminus \varnothing \to \Top
+\end{equation*}
+such that $D(A)$s are $\cX$ manifolds with corners. the $\cX$ structure of $D(A)$s induces a $\cX$ structure on $\colim D$, hence we get that
+\begin{cor}
+    Let $\fC, \sD, y$ as in \cref{{lem:Toda_FFCat_is_Colim_Manifold}}, with $\cX$ structure, then:
+    \begin{equation*}
+        \<{\fC,\sD}_y \simeq \colim D_y
+    \end{equation*}
+    as elements in $\Omega^{\cX}_n$.
+\end{cor}
+
+We get the following result
+
+\ThA*
+
+\subsection{Change of rings}
+Give a framed flow category $\fC$, we can benefit from the fact that the changing the tangential structure of manifolds correspond to maps between spectra, to get a spectral sequence that calculates the bordism homology (represented by Thom spectra) of a manifold.
+
+Let $\cX,\cY$ be two tangential structures.
+Denote by $\FlowX$ (resp. $\FlowY)$ the collections of $\cX$ (resp. $\cY$ ) structured flow categories.
+
+A map $\cX \to \cY$ induce a "forgetting" map $F$, from $\cX$ manifolds to $\cY$ manifolds. The fact that Cartesian product commutes with $F$, induces a map:
+\begin{equation*}
+    (-)^{\cY}: \FlowX \to \FlowY
+\end{equation*}
+On the other hand, the map $\cX \to \cY$ induces a map of spectra $M\cX \to M\cY$ and hence a map of coherent chain complexes:
+\begin{equation*}
+    \otimes_{M\cX} M\cY \colon \Ch(\Mod_{M\cX}) \to \Ch(\Mod_{M\cY})
+\end{equation*}
+induces by post composition
+\begin{equation*}
+    \Ch \xrightarrow[]{K} \Mod_{M\cX} \xrightarrow[]{\otimes_{M\cX} M\cY} \Mod_{M\cY}
+\end{equation*}
+\begin{lem}\todo{Do we need to work first at $\Top$???}
+        The following diagram commutes:
+        \begin{equation*}
+            % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXEZsb3dYIl0sWzAsMSwiXFxGbG93WSJdLFsxLDEsIlxcQ2goTW9kX3tNXFxjWX0pIl0sWzEsMCwiXFxDaChNb2Rfe01cXGNYfSkiXSxbMCwxXSxbMSwyXSxbMCwzXSxbMywyXV0=
+            \begin{tikzcd}
+            	\FlowX & {\Ch(Mod_{M\cX})} \\
+            	\FlowY & {\Ch(Mod_{M\cY})}
+            	\arrow["{K_{(-)}}"', from=1-1, to=1-2]
+            	\arrow["(-)^{\cY}"', from=1-1, to=2-1]
+            	\arrow["{\otimes_{M\cX} M\cY}", from=1-2, to=2-2]
+            	\arrow["{K_{(-)}}"', from=2-1, to=2-2]
+            \end{tikzcd}
+        \end{equation*}
+\end{lem}
+\begin{proof}
+        Let $\fC$ be a $\cX$ flow category. On the one hand we have $K_{\fC^{\cY}}$, on the other $K_{\fC}\otimes_{M\cX} M\cY$.
+        The object of the coherent chains are:
+        \begin{equation*}
+            (K_{\fC^{\cY}})_p =
+            \WedgeSp_{\norm{z}=p} M\cY = 
+            \WedgeSp_{\norm{z}=p} M\cX \otimes_{M\cX} M\cY \simeq 
+            (K_{\fC} \otimes_{M\cX} M\cY)_p.
+        \end{equation*}
+        We have that the maps of $K_{\fC^{\cY}}$ are the collapse maps:
+        \begin{equation}\label{eq:Y_chainMap}
+            c_{M_{z,w}^{\cY}}: \Sinf \Hlf^{J_{z,w}} \to M\cY
+        \end{equation}
+        where  $M^{\cY}$ is the manifold $M$ with $\cY$ structure.
+        The maps of $K_{\fC}\otimes_{M\cX} M\cY$ are given by collapsing and tensoring
+        \begin{equation}\label{eq:Xchanged_chainMap}
+            c_{M_{z,w}}\otimes_{M\cX} M\cY: \Sinf \Hlf^{J_{z,w}} \to M\cX \xrightarrow{(-)\otimes_{M\cX} M\cY} M\cY.
+        \end{equation}
+        The fact that the $\cY$ structure of $M_{z,w}$ is coming from $\cX$ yields that the collapse map of $M_{z,w}^{\cY}$ factors through $\cX$, the functoriality of the collapse map give the equivalence between \cref{eq:Y_chainMap} and \cref{eq:Xchanged_chainMap}.
+\end{proof}%\todo{can be rewrited more clearly. For example just claim that $c_N \otimes_{M\cX} M\cY \simeq c_{N^{\cY}}$ for any manifold $N$}
+
+First, we get that we can start with framed flow category and forget to other tangential structure, to get that:
+\begin{cor}
+    Let $\fC$ be a framed flow category and let $\cX$ be a tangential structure. Then the spectral sequence of \cref{SSofStrFFCat} implies to $\fC^{\cX}$ having:
+    \begin{equation*}
+        E_r \implies 
+        \pi_*(\mid \fC^{\cX} \mid) \simeq
+        \pi_*(\norm{\fC} \otimes M\cX)
+        \eqqcolon M\cX_*(\norm{\fC})
+    \end{equation*}
+\end{cor}
+The first equivalence holds because the realization from $\Ch$ to $\Fil$ is given by colimit, hence commutes with tensoring (as left adjoint).
+
+Second, we can apply it to Morse function, to calculate the bordism homology of a manifold:
+\begin{cor}\label{cor:SSofMorseStr}
+    Let $f:M\to \bbR$ be a Smale Morse function and let $\cX$ be a tangential structure, then the spectral sequence of the framed flow category $(\fC_{f})^{\cX}$ converge to $M\cX_*(M)$.
+\end{cor}
+
+\subsection{Bordism homology of projective spaces}
+Let $A= MO$, the unoriented bordism spectrum. We remind that 
+\begin{equation*}
+    MO_* = \mathbb{Z}/2\left [x_i;\ i \neq 2^k-1 \right ]
+\end{equation*}
+
+Let $a\in \bbR^{n+1}$ be a weights vector such that $a_i < a_{i+1}$ and let $\bar{f}:\bbR^{n+1} \to \bbR$ be the weighted distance function:
+\begin{equation*}
+    \bar{f}(x)=\sum a_i x_i^2
+\end{equation*}
+Let $M=\bbRP^\ell$ ,notice that $\bar{f}(x)=\bar{f}(\lambda x)$, therefore $\bar{f}$ induce a function $f:M\to \bbR$.
+
+Notice that the critical points of $f$ are given by:
+\begin{equation*}
+    e_i \coloneqq [0: \dots :0:\underbrace{1}_i:0:\dots :0]
+\end{equation*}
+with index:
+\begin{equation*}
+    \norm{e_i} = i-1.
+\end{equation*}
+
+Denote by $\rnp{E}$ the spectral sequence of \cref{cor:SSofMorseStr} with coefficients in $MO$.
+We get that $E_1$ is given by:
+\begin{equation*}
+    \pg{E}{1}{n}{p} = \Omega^O_{n-p}
+\end{equation*}
+To calculate the flow manifolds, first notice that the stable manifolds are given by:
+\begin{equation}
+    W^s_p=[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_\ell]
+\end{equation}
+and the unstable manifolds are given by:
+\begin{equation}
+    W^u_p=[x_0:\dots :x_{p-1}:\underset{\neq 0}{x_p}:0:\dots :0]
+\end{equation}
+The intersection is:
+\begin{equation}
+    W^u_q \cap W^s_p =[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_{q-1}:\underset{\neq 0}{x_q}:0:\dots :0]
+\end{equation}
+By solving the flow equation we get that the action of the flow is given by:
+\begin{equation*}
+    \phi_t([x_i])=[e^it x_i]
+\end{equation*}
+So we get that the flow acts on $W^u_q \cap W^s_p$ by:
+\begin{align*}
+    &[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_{q-1}:\underset{\neq 0}{x_q}:0:\dots :0] \mapsto \\
+    &[0:\dots :0:\underset{\neq 0}{x_p}:e^t x_{p+1}:\dots :e^{(q-p-1)t} x_{q-1}:\underset{\neq 0}{e^{(q-p)t}x_q}:0:\dots :0]
+\end{align*}
+By using the scalar multiplication in $\bbRP^\ell$ we can assume that $x_p=1$. Moreover, by taking quotient by the flow $\phi_t$ we can assume that in the quotient:
+\begin{equation*}
+    W^u_q \cap W^s_p / \phi_t
+\end{equation*}
+the $q$ coordinate is $\pm 1$.
+We conclude that the (non compactified) flow manifolds are:
+\begin{equation*}
+    M_{q,p}' = \left \{
+    [0:\dots :0:1:x_{p+1}:\dots :x_{q-1}:\pm 1:0:\dots :0]
+    \right \}
+\end{equation*}
+And we get that after Compactification
+\begin{prop}
+    The flow manifold of $\bbRP^\ell$ with the Morse function $\bar{f}(x)=\sum a_i x_i^2$ are given by two cubes:
+    \begin{equation*}
+        M_{q,p} = S^0 \times I^{q-p-1} 
+    \end{equation*}
+\end{prop}
+
+We get that the first differentials are multiplication by 
+\begin{equation*}
+    M_{p,p-1}= I^{q-p-1} \sqcup I^{q-p-1} = S^0 \sim \varnothing \in \Omega^{O}_0.
+\end{equation*}
+So the first differential is zero, hence every element $X \in \Omega^O_{n-p}$ survives.
+We can also see this by \cref{cor:SSofMorseStr}, as we can always extend in the following way:
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxkb3RzIl0sWzMsMCwiXFxidWxsZXQiXSxbMCwxLCJYIl0sWzEsMywiU14wIl0sWzAsMywiXFx2YXJub3RoaW5nIiwyLHsiY3VydmUiOjN9XV0=
+    \begin{tikzcd}
+    	\bullet & \bullet & \bullet
+    	\arrow["X", from=1-1, to=1-2]
+    	\arrow["X\times I"', curve={height=18pt}, from=1-1, to=1-3]
+    	\arrow["{S^0}", from=1-2, to=1-3]
+    \end{tikzcd}
+\end{equation*}
+To calculate the second  differential we need to calculate the Toda brackets of the two flow categories:
+
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbNCwwLCJcXGJ1bGxldCJdLFs1LDAsIlxcYnVsbGV0Il0sWzYsMCwiXFxidWxsZXQiXSxbMCwxLCJYIl0sWzEsMiwiU14wIl0sWzAsMiwiWCBcXHRpbWVzIEkiLDIseyJjdXJ2ZSI6M31dLFszLDQsIlNeMCJdLFs0LDUsIlNeMCJdLFszLDUsIlNeMFxcdGltZXMgSSIsMix7ImN1cnZlIjozfV1d
+    \begin{tikzcd}
+        \bullet & \bullet & \bullet && \bullet & \bullet & \bullet
+        \arrow["X", from=1-1, to=1-2]
+        \arrow["{X \times I}"', curve={height=18pt}, from=1-1, to=1-3]
+        \arrow["{S^0}", from=1-2, to=1-3]
+        \arrow["{S^0}", from=1-5, to=1-6]
+        \arrow["{S^0\times I}"', curve={height=18pt}, from=1-5, to=1-7]
+        \arrow["{S^0}", from=1-6, to=1-7]
+        \end{tikzcd}
+\end{equation*}
+Which is given by the colimit of the diagram:
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJYXFx0aW1lcyBTXjBcXHRpbWVzIFNeMCJdLFswLDEsIlhcXHRpbWVzIEkgXFx0aW1lcyBTXjAiXSxbMiwxLCJYXFx0aW1lcyBTXjAgXFx0aW1lcyBJIl0sWzAsMV0sWzAsMl1d
+    \begin{tikzcd}
+    	& {X\times S^0\times S^0} \\
+    	{X\times I \times S^0} && {X\times S^0 \times I}
+    	\arrow[from=1-2, to=2-1]
+    	\arrow[from=1-2, to=2-3]
+    \end{tikzcd}
+\end{equation*}
+we get the topological space $X \times \partial I^2$, which after straightening the corners (\cref{lem:TodaManifold}) is the manifold $X \times S^1$.
+
+\begin{prop}
+    Let $E$ be the spectral sequence of
+    Let $\bbRP^\ell$ with the morse function $\bar{f}(x)=\sum a_i x_i^2$ and let $MO$ be the trivial tangential structure and let  $\rnp{E}$ be the spectral sequence arising from \cref{thm:SSofMorseFunction}. Then $\rnp{E}$ collapse at the first page and we have that 
+    \begin{equation*}
+        MO_i(\Sinf \bbRP^\ell) = \WedgeSp_{\ell-i \le j\le i} MO_j.
+    \end{equation*}
+\end{prop}
+\begin{proof}
+    We need to show that for any $r \in \bbN$ and for any $X \in E_1$, we have that $X$ survives to $E_r$.
+
+    Denote by $\fC$ the flow category of $f$, by \cref{cor:SSofMorseStr} we need to find $\fC'$ which is an $X$ extension of $\fC_{p,p-r+1}$. We define the morphism manifolds of $\fC'$ to be:
+    \begin{equation*}
+        M_{x,q}= X\times I^{p-q}.
+    \end{equation*}
+    The equations
+    \begin{equation*}
+        \partial M_{x,q} = X\times \partial I^{p-q} 
+        = \bigcup X\times I^{p-q-1} \times S^0
+        = \bigcup X\times I^{p-q'} \times S^0 \times I_{q'-q-1}
+        = \bigcup M_{x,q'} \times M_{q',q}
+    \end{equation*}
+    justifying that $\fC'$ is indeed a flow category.
+
+    Moreover, the differential is give by:
+    \begin{equation}\label{eq:unDiff}
+        d_r(X) = \bigcup_q M_{x,q}\times M_{q,p-r} = \bigcup_q X\times I^{p-q} \times S^0 \times I^{q-(p-r)-1} = 
+        \bigcup_q X\times I^{r-1} \times S^0 = X \times \partial I^r \simeq X\times S^{r-1}
+    \end{equation}
+\end{proof}
+
+Now we want to calculate $MSO(\Sinf\bbRP^\ell)$. Under the same settings we have
+\begin{prop}
+    Let $E$ be the spectral sequence of $\bbRP^\ell$ with the morse function $\bar{f}(x)=\sum a_i x_i^2$ and coefficient ring $MSO$. We get that
+    \begin{equation*}
+        \pg{E}{1}{n}{p} = \Omega^{SO}_{n-p}
+    \end{equation*}
+    The first differential is given by multiplication with
+    \begin{equation*}
+        d_2^{n,p}=\begin{cases}
+            +,+ & p\text{ is even} \\
+            +,- & p \text{ is odd}
+        \end{cases}.
+    \end{equation*}
+    Moreover every element $X \in E_2$ survives to $E_\infty$ and the reduce homology is:
+    \begin{equation*}
+        \Omega^{SO}_i(\bbRP^\ell) = \begin{cases}
+            \Omega^{SO}_{i-\ell}[2]\oplus  \Omega^{SO}_{i-\ell+1}/2 \oplus \Omega^{SO}_{i-\ell+2}[2] \dots
+            \oplus \Omega^{SO}_{i-1}/2 & \ell = 2k \\
+            \Omega^{SO}_{i-\ell} \oplus  \Omega^{SO}_{i-\ell+1}[2] \oplus \Omega^{SO}_{i-\ell+2}/2 \oplus \Omega^{SO}_{i-\ell+3}[2] \dots \oplus \Omega^{SO}_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{equation*}
+    where  $\Omega^{SO}_j[2]$ are the elements $X \in \Omega^{SO}_j$ such that $2X$ is null bordant.
+\end{prop}
+\begin{proof}
+    The existence of the spectral sequence following from \cref{cor:SSofMorseStr}.
+    The framing, hence orientation, of the zero dimensional manifolds $M_{p,p-1}$ is induces from the exact sequence:
+    \begin{equation*}
+        T(W_p^u \cap W_{p-1}^s) \to TW_p^u \to \nu(W^s_{p-1})
+    \end{equation*}
+    We denote the two components of the zero dimensional flow manifold
+    \begin{equation*}
+        M_{p,p-1}^+,M_{p,p-1}^- \in M_{p,p-1}=[0:\dots:0:1:\pm 1:0\dots:0]
+    \end{equation*}
+    and we compare the framing of $M_{p,p-1}^+$ to the framing of $M_{p,p-1}^-$ by composing:
+    \begin{equation*}
+        \varphi:T(W_p^u \cap W_{p-1}^s)_- \oplus \nu W^s_{p-1} \simeq TW_p^u \simeq T(W_p^u \cap W_{p-1}^s)_+ \oplus \nu W^s_{p-1}
+    \end{equation*}
+    Let $v_0,\dots, v_{p-2}$ be a basis for $\nu W^s_{p-1}$ (which is of size $p-1$), the maps
+    \begin{equation*}
+        \nu(W^s_{p-1}) \to  TW_p^u
+    \end{equation*}
+    are induces from the parallel transport
+    \begin{equation*}
+        \nu_{p-1} (W^s_{p-1}) \to  T_p W_p^u
+    \end{equation*}
+    (through the points $M_{p,p-1}^{\pm}$) hence $\varphi_{\mid_{\nu W^s_{p-1}}}$ is the holonomy along the curve 
+    \begin{equation*}
+        \gamma(t) = [0:\dots:0:\cos(t),\sin(t):0:\dots:0],\ t \in [0,\pi]
+    \end{equation*}
+    By lifting $\gamma$ to the sphere we get that:
+    \begin{equation*}
+        \varphi(v_0,\dots, v_{p-1}) = -v_0,\dots, -v_{p-2}.
+    \end{equation*}
+    Combine that, with the definition:
+    \begin{equation*}
+        M_{p,p-1} \coloneqq W^u_p \cap W^s_{p-1} / \nabla f
+    \end{equation*}
+    where the flow $\nabla f$ acts on $M_{p,p-1}^{\pm}$ in opposite directions, to conclude that for an element $X \in \pg{E}{1}{n}{p}$ we have that $d_1(X)$ is two copies of $X$ where the framing on one copy is given by inverting $p$ vectors comparing to the other copy. Hence
+    \begin{equation*}
+        d_1^{n,p}(X) = \begin{cases}
+            \bar{X} \sqcup X & \text{$p$ is odd} \\
+            X \sqcup X & \text{$p$ is even} 
+        \end{cases}
+    \end{equation*}
+
+    Let $X \in \pg{E}{1}{n}{p}$. For $p$ odd we have that $\fC_{[p,p-1]}$ is $X$ extendable by setting: 
+    \begin{equation*}
+        M_{x,p-1} = X \times I.
+    \end{equation*}
+    As we defined the "forgetting" map $\mathbf{Flow}^{SO} \to \mathbf{Flow}^{O}$ induce that diagram:
+    \begin{equation*}
+        \xymatrix{
+            (\pg{\cE}{r}{n}{p})^{SO} \ar[r]^{d_r^{SO}} \ar[d]_{F}   & (\pg{\cE}{r}{n-1}{p-r})^{SO} \ar[d]^F\\
+            (\pg{\cE}{r}{n}{p})^O \ar[r]_{d_r^O}      & (\pg{\cE}{r}{n-1}{p-r})^O\\
+        }
+    \end{equation*}
+    where $F$ is the forgetting map $\Omega^{SO} \to \Omega^{O}$ and $\cE$ are the elements that survives to the $r$-th page in the (un)oriented spectral sequence.
+    The extension above shows that $X \in \pg{E}{1}{n}{p}$ survives to $E_2$, inductively, we assume that $X$ survives to $E_r$. Using that diagram and \cref{eq:unDiff}, we get that
+    \begin{equation*}
+        F \circ d_r^{SO}(X) \simeq d_r^{O} \circ F(X) \simeq F(X) \times S^{r-1}.
+    \end{equation*}
+    Both of the orientation of the circle are null bordant, hence the underlying manifold of $d_r^{SO}(X)$ is null bordant and $X$ survives to $E_{r+1}$.
+    
+    For $p$ even, we get that $d_1(X) = X \sqcup X$, hence $X$ survives to $E_2 \iff$ $X$ is 2 torsion. Under this assumption, we can use the fact that $d^{SO}$ lifts $d^O$ to get that $X$ survive to $E_r$.
+
+    We conclude that the spectral sequence collapse at the second page and
+    \begin{equation*}
+        \Omega^{SO}_i(\bbRP^\ell) = \begin{cases}
+            \Omega^{SO}_{i-\ell}[2]\oplus  \Omega^{SO}_{i-\ell+1}/2 \oplus \Omega^{SO}_{i-\ell+2}[2] \dots
+            \oplus \Omega^{SO}_{i-1}/2 & \ell = 2k \\
+            \Omega^{SO}_{i-\ell} \oplus  \Omega^{SO}_{i-\ell+1}[2] \oplus \Omega^{SO}_{i-\ell+2}/2 \oplus \Omega^{SO}_{i-\ell+3}[2] \dots \oplus \Omega^{SO}_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{equation*}
+\begin{comment}
+        \begin{multline*}
+        MSO_i(\bbRP^\ell) = \\ \begin{cases}
+            MSO_{i-\ell}[2]\oplus  MSO_{i-\ell+1}/2 \oplus MSO_{i-\ell+2}[2] \dots MSO_{i-1}/2 & \ell = 2k \\
+            MSO_{i-\ell} \oplus  MSO_{i-\ell+1}[2] \oplus MSO_{i-\ell+2}/2 \oplus MSO_{i-\ell+3}[2] \dots MSO_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{multline*}
+\end{comment}
+\end{proof}

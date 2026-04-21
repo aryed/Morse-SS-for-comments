@@ -1,0 +1,530 @@
+\subsection{Cubical and Simplicial Models}
+This subsection will discuss the topologically enriched model of the cube category, with a particular focus on composition within this model. This model proves especially useful when working with chain complexes Arising from framed flow categories.
+
+\begin{defn}
+For a finite set $A$, we define an \textbf{$A$-cube} to be the category:\todo{take $\op$ instead of $[1]$?}
+\begin{equation*}
+    [1]^A = \{ 0 \to 1 \}^A,
+\end{equation*}
+which is the Cartesian product of copies of the category $[1] = \{ 0 \to 1 \}$ indexed by $A$.
+\end{defn}
+
+When $A = \n$, we write $[1]^n = [1]^{\n}$.\todo{maybe we want $\backslash n$ to be from $1$ and not from $0$ in this context}
+
+In this section, we will use simplicially enriched models for $\infty$-categories. Useful references include \cite[\href{https://kerodon.net/tag/00JN}{Tag~00JN}]{kerodon} and \cite[Section~1.1.5]{Lur09}.
+We remind the nerve functor
+\begin{equation*}
+    N: \Cat \to \Set_{\Delta}
+\end{equation*}
+and the rectification functor
+\begin{equation*}
+    \CC: \Set_{\Delta} \to \Cat_{\Delta}
+\end{equation*}
+which is the adjoint to the coherent nerve functor and  also known as $\mathfrak{C}$.
+
+Our first goal is to describe the simplicially enriched category $\CC \Nr [1]^A$, where $\Nr [1]^A$ is the nerve of the category $[1]^A$.
+
+For any two objects $O, Q \in [1]^A$, the mapping simplex $\Hom_{\CC \Nr [1]^A}(O, Q)$ is constructed as follows: its vertices correspond to sequences of composable morphisms from $O$ to $Q$ in $[1]^A$, with edges representing compositions of morphisms, $2$-simplices representing associativity conditions, and so on. Each such sequence is determined by an ordered partition of the set $Q \setminus O$, indicating the order and steps in which elements are added to $O$ to obtain $Q$.
+
+We now introduce a family of simplicial sets known as \textbf{Permutohedron}, which play significant roles in various areas of mathematics, including combinatorics and homotopy theory. For more on their flow-categorical perspective, see \cite{LLS20}, and for their spectral sequence perspective, see \cite{blanc2022spectral}.
+
+\begin{defn}
+For any finite set $A$, we define the \textbf{Permutohedron} $P_A$ as the mapping simplex:
+\begin{equation*}
+    P_A := \Hom_{\CC \Nr [1]^A}(\varnothing, A),
+\end{equation*}
+where $\varnothing$ denotes the initial object in $[1]^A$.
+\end{defn}
+
+The simplicial set $P_A$ has dimension $\norm{A} - 1$ and can be realized geometrically as a convex polytope known as the Permutohedron.
+
+\begin{exmp}
+An explicit illustration of $P_3$ is provided in \cref{fig:P_3}. The vertices correspond to the ordered partitions of the set $\{1,2,3\}$, and the higher-dimensional simplices represent ways of composing morphisms in $[1]^3$.
+\end{exmp}
+
+% \begin{figure}
+%     \centering
+%     \scalebox{0.6}{
+%         \begin{tikzpicture}
+%             \newdimen\r
+%             \r=6cm
+%             \draw (0:\r)
+%             \foreach \x in {60,120,...,360} {  -- (\x:\r) };
+%             \foreach \x in {30,90,...,330} { \draw[red] (\x:0.6cm) -- ++(\x:\r*0.86602540378-0.6cm);};
+%             \foreach \x in {60,120,...,360} { \draw[blue] (\x:0.6cm) -- ++(\x:\r-0.6cm);};
+%             \node at (0:0) {\{0,1,2\}};
+%             \foreach \x/\l/\p in
+%              { 60/{\{1\},\{2\},\{0\}}/above,
+%               120/{\{1\},\{0\},\{2\}}/above,
+%                 180/{\{0\},\{1\},\{2\}}/left,
+%                 240/{\{0\},\{2\},\{1\}}/below,
+%                 300/{\{2\},\{0\},\{1\}}/below,
+%                 360/{\{2\},\{1\},\{0\}}/right
+%              }
+%              \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r) {};
+%             \foreach \x/\l/\p in
+%             { 30/{\{1,2\},\{0\}}/right,
+%               90/{\{1\},\{0,2\}}/above,
+%                 150/{\{0,1\},\{2\}}/left,
+%                 210/{\{0\},\{1,2\}}/left,
+%                 270/{\{0,2\},\{1\}}/below,
+%                 330/{\{2\},\{0,1\}}/right
+%              }
+%              \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r*0.86602540378) {};
+%         \end{tikzpicture}}
+%     \caption{The mapping simplicial set $\Hom_{\CC \Nr [1]^3}(\varnothing, 3)$, which is the Permutohedron $P_3$. The red lines divide the hexagon into six regions representing the maximal chains from $\varnothing$ to $3$ in $[1]^3$. Each region has a kite shape, corresponding to the compositions of three morphisms. The blue lines subdivide the hexagon into a simplicial structure.}
+%     \label{fig:P_3}
+% \end{figure}
+
+% ---------------- Figure for Permuting the elements 1,2,3 instead of 0,1,2. -------------------------
+\begin{figure}
+    \centering
+    \scalebox{0.6}{
+        \begin{tikzpicture}
+            \newdimen\r
+            \r=6cm
+            \draw (0:\r)
+            \foreach \x in {60,120,...,360} {  -- (\x:\r) };
+            \foreach \x in {30,90,...,330} { \draw[red] (\x:0.6cm) -- ++(\x:\r*0.86602540378-0.6cm);};
+            \foreach \x in {60,120,...,360} { \draw[blue] (\x:0.6cm) -- ++(\x:\r-0.6cm);};
+            \node at (0:0) {\{1,2,3\}};
+            \foreach \x/\l/\p in
+             { 60/{\{2\},\{3\},\{1\}}/above,
+              120/{\{2\},\{1\},\{3\}}/above,
+                180/{\{1\},\{2\},\{3\}}/left,
+                240/{\{1\},\{3\},\{2\}}/below,
+                300/{\{3\},\{1\},\{2\}}/below,
+                360/{\{3\},\{2\},\{1\}}/right
+             }
+             \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r) {};
+            \foreach \x/\l/\p in
+            { 30/{\{2,3\},\{1\}}/right,
+              90/{\{2\},\{1,3\}}/above,
+                150/{\{1,2\},\{3\}}/left,
+                210/{\{1\},\{2,3\}}/left,
+                270/{\{1,3\},\{2\}}/below,
+                330/{\{3\},\{1,2\}}/right
+             }
+             \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r*0.86602540378) {};
+        \end{tikzpicture}}
+    \caption{The mapping simplicial set $\Hom_{\CC \Nr [1]^3}(\varnothing, [3])$, which is the Permutohedron $P_3$. The red lines divide the hexagon into six regions representing the maximal chains from $\varnothing$ to $3$ in $[1]^3$. Each region has a kite shape, corresponding to the compositions of three morphisms. The blue lines subdivide the hexagon into a simplicial structure.}
+    \label{fig:P_3}
+\end{figure}\todo{what is $3$???}
+
+\begin{lem}
+The geometric realization of the Permutohedron $P_n$ is given by the convex hull:
+\begin{equation*}
+    \lVert P_n \rVert = \operatorname{Conv}\bigl( \{ \sigma(1, 2, \dots, n) \}_{\sigma \in \Sigma_n} \bigr) \subset \mathbb{R}^n,
+\end{equation*}
+where $\Sigma_n$ is the symmetric group on $n$ elements. The simplicial structure on $P_n$ is the barycentric subdivision of this polytope.
+\end{lem}
+
+\begin{proof}
+See \cite{Leitch74} for details, and \cite[Remark~4.9]{LLS20} for a flow-categorical perspective.
+\end{proof}
+
+By considering the barycentric subdivision, each face of the polytope corresponds to a simplex in the simplicial set $P_A$. Vertices in the simplicial structure correspond to ordered partitions of the set $A$.
+
+\begin{rem}
+An important observation is that the ordered partition $(\{ \sigma(1) \}, \dots, \{ \sigma(n) \})$ corresponds to the point $\sigma^{-1}(1, 2, \dots, n)$ in $P_n \subset \mathbb{R}^n$. When we write $(a_1, \dots, a_n)$, we refer both to the ordered partition of size $n$ and to the point in $\mathbb{R}^n$ corresponding to the inverse of the permutation $(a_1, \dots, a_n)$.
+\end{rem}
+
+The polytope structure of the Permutohedron can be described in terms of ordered partitions. The faces of dimension $n - k$ correspond to ordered partitions of $A$ into $k$ non-empty subsets, via the inclusion of symmetric groups:
+\begin{equation*}
+    \Sigma_{A_1} \times \dotsb \times \Sigma_{A_k} \hookrightarrow \Sigma_{A_1 \sqcup \dotsb \sqcup A_k}.
+\end{equation*}
+
+In particular, the boundary of $P_n$ can be decomposed as:
+\begin{equation*}
+    \partial P_n = \bigcup_{A_1 \sqcup A_2 = \n} P_{A_1} \times P_{A_2},
+\end{equation*}
+where the union is over all ordered bipartitions of $\n$.
+
+\todo{encapsulate as lemma / prop}
+This decomposition reflects the composition in the category $\CC \Nr [1]^A$. For objects $O, Q, S \in [1]^A$, the composition:
+\begin{equation*}
+    \Hom_{\CC \Nr [1]^A}(Q, S) \times \Hom_{\CC \Nr [1]^A}(O, Q) \to \Hom_{\CC \Nr [1]^A}(O, S)
+\end{equation*}
+corresponds to the embedding:
+\begin{equation*}
+    P_{S \setminus Q} \times P_{Q \setminus O} \hookrightarrow \partial P_{S \setminus O}.
+\end{equation*}
+This means that we can think of composing ordered partitions of $S \setminus Q$ and $Q \setminus O$ to obtain an ordered partition of $S \setminus O$.
+
+\subsection{Spine Cubes and Chain Complexes}
+To treat a morphism between chain complexes as chain complex itself we will introduce $\Cu_n$ which is a "thickening" of $\Ch_{[n,0]}$.
+
+\begin{defn}
+Let $A$ be a linearly ordered set. For each $a \in A$ we denote the subset
+\begin{equation*}
+    s_a = \{b \in A\mid b\leq a\} \in P(A)
+\end{equation*}
+And we call the collection $S = \{s_a\}$ the \textbf{spine} of $[1]^A=P(A)$.
+\end{defn}
+
+\begin{defn}
+Let $A$ be a linearly ordered set, we define the \textbf{Spine cube category} $\Cu_A$ as follows
+\begin{enumerate}
+    \item Start with the category $P(\bbZ)^{\Op}$, and adjoin initial and final objects $-\infty$ and $\infty$.
+    \item Invert the morphism $-\infty \to \infty$ to obtain a pointed category $P(A)_*^{\Op}$.
+    \item Invert all morphisms $* \to A$ for $A \notin \text{Spine}$.
+\end{enumerate}
+The resulting category $\Cu_A$ is a quotient of $P(A)_*^{\Op}$.
+\end{defn}
+
+By taking $A = \bbZ$, since all the point objects in $P(\bbZ)_*^{\Op}$ become isomorphic in $\Cu$, we can collapse them to a single point, obtaining an equivalent category. Therefore, we have:
+
+\begin{cor}\label{cor:cub_thin_model}
+    For any $n \geq 0$, there is an equivalence of categories:
+    \begin{equation*}
+        \Cu_{\bbZ} \simeq \Ch,
+    \end{equation*}
+    and similarly, for $b,a \in \bbZ$
+    \begin{equation*}
+        \Cu_{\{b,\dots, a\}} \simeq \Ch_{[b,a]},
+    \end{equation*}
+\end{cor}
+
+Recall that $\Ch_{[b,a]}$ is the category with objects $\{ b, b-1, \dots, a \}$ and a distinguished point object, as in \cref{def:Ch_n}.
+
+We will write $\Cu$ for the category $\Cu(\bbZ)$, $\Cu_{[b,a]}$ for $\Cu_{\{b,\dots, a\}}$ and $\Cu_{n}$ for $\Cu_{\{n,\dots, 0\}}$
+
+Let $\cC$ be a pointed $\infty$-category. Combining \cref{cor:cub_thin_model} with the $n$-dimensional version of \cref{prop:J_equivalence}, we obtain three models for bounded chain complexes in $\cC$:
+\begin{equation*}
+    \Fun^*(\Cu, \cC) \simeq \Fun^*(\Ch, \cC) \simeq \Fun^*(\J, \cC),
+\end{equation*}
+and similarly for the restriction to $[b,a]$.
+
+We use the term \textbf{spine cube} when referring to a chain complex in the cubical model.
+
+\begin{defn}\label{def:pad_ch}
+Let $\cC$ be a pointed $\infty$ category. The inclusion $\{ n \} \hookrightarrow \Ch_{[n,0]}$ induces a restriction functor:
+\begin{equation*}
+    n_* \colon \Fun(\Ch_{[n,0]}, \cC) \to \cC,
+\end{equation*}
+which admits a right adjoint $n^*$. For an object $X \in \cC$, we define the \textbf{padded chain complex}:
+\begin{equation*}
+    X_n \coloneqq n^*(X),
+\end{equation*}
+which is the chain complex:
+\begin{equation*}
+    0 \to \dotsb \to 0 \to X,
+\end{equation*}
+concentrated in degree $n$.
+\end{defn}
+
+Using the cubical model, we obtain:
+
+\begin{cor}\label{cor:ch_to_morph}
+Let $\cC$ be an $\infty$ category $X,T \in \cC$ and $n \in \bbN$. There is an equivalence between morphisms of $n$-spine cubes in $\cC$ with source of the form $X_0$ to $(n + 1)$-spine cubes in $\cC$; and an equivalence between $(n + 1)$-spine cubes and morphisms with target of the form $Y_n$.
+\end{cor}
+
+\begin{proof}
+The equivalence
+\begin{equation*}
+    [1]^{n + 1} \cong [1]^n \times [1]
+\end{equation*}
+induces an equivalence:
+\begin{equation*}
+    \Fun([1]^{n + 1}, \cC) \cong \Fun([1]^n \times [1], \cC).
+\end{equation*}
+Restricting to functors that factor through $\Cu_{[n,0]}$, we find that morphisms of $n$-chains with source $X_0$ correspond to $(n + 1)$-chains in $\cC$ (see \cref{fig:ch_to_morphism}).
+
+By using the equivalence $[1]^{n + 1} \cong [1] \times [1]^n$ we obtain the second part of the result.
+\end{proof}
+
+\begin{figure}
+    \centering
+    \begin{tikzcd}
+        {K_3} && {K_2} \\
+        & {*} && {*} \\
+        {*} && {K_1} \\
+        & {*} && {K_0}
+        \arrow[dashed, from=1-1, to=1-3]
+        \arrow[from=1-1, to=2-2]
+        \arrow[from=1-1, to=3-1]
+        \arrow[from=1-3, to=2-4]
+        \arrow[from=1-3, to=3-3]
+        \arrow[dashed, from=2-2, to=2-4]
+        \arrow[from=2-2, to=4-2]
+        \arrow[from=2-4, to=4-4]
+        \arrow[dashed, from=3-1, to=3-3]
+        \arrow[from=3-1, to=4-2]
+        \arrow[from=3-3, to=4-4]
+        \arrow[dashed, from=4-2, to=4-4]
+    \end{tikzcd}
+    \caption{A spine $3$-cube $K$, viewed as a morphism between spine $2$-cubes. The dashed arrows represent morphisms between the faces (solid arrows), which are spine $2$-cubes.}
+    \label{fig:ch_to_morphism}
+\end{figure}
+
+\subsection{The topologically enriched model of $\Cu_n$}
+Given two composable morphisms of chain complexes, we want to describe their composition in the topologically enriched model. This subsection will provide a framework to understand the composition in this model. The main output is \cref{lem:comp_is_boundary}.
+
+Given a pointed category $\cC$ and a functor $F \in \Fun(\CC \Nr \Cu_{[n,0]}, \cC)$, we observe that the boundary of the Permutohedron $P_n = \Hom_{\CC \Nr [1]^n}(\varnothing, \n)$ is related to the images of the compositions:
+\begin{equation*}
+    P_{A_1} \times P_{A_2} \hookrightarrow \partial P_n.
+\end{equation*}
+Within this context, a specific subspace of interest is the \textbf{corner} of $P_n$.
+
+\begin{defn}
+We define the \textbf{corner} of $P_n$ as the union:
+\begin{equation*}
+    \bigcup_{k = 1}^{n - 1} P_{\{0, \dots, k\}} \times P_{\{k + 1, \dots, n\}} \hookrightarrow \partial P_n.
+\end{equation*}
+Notice that these are the bi-partitions such that the sets $A_1,A_2$ are increasing. See the bold lines in \cref{fig:half_permu}.
+\end{defn}
+
+The contractibility of the spaces $\Hom(*, -)$ implies that factorizations through objects not in the Spine yield trivial images. Thus, we have:
+
+\begin{cor}\label{cor:triv_part_permu}
+Let $\cC$ be a pointed category, and let $F \in \Fun(\CC \Nr \Cu_n, \cC)$ be a functor. The only non-trivial part of the restriction to the boundary:
+\begin{equation*}
+    \partial P_n \to \Hom_{\cC}(F(0), F(n))
+\end{equation*}
+is the corner of $P_n$.
+\end{cor}
+
+\begin{proof}
+Any factorization of the map $F(0) \to F(n)$ through two maps not in the Spine is trivial - due to the contractibility of the corresponding mapping spaces. Therefore, only the corner, corresponding to factorizations through the Spine, contributes non-trivially.
+\end{proof}
+
+\begin{defn}
+We define the \textbf{half cube} $\tfrac{1}{2}[1]^m$ as the full subcategory of $[1]^m$ consisting of subsets:
+\begin{equation*}
+    \left\{ Q \subseteq \{1, 2, \dots, m\} \mid 1 \in Q \implies m \in Q \right\}.
+\end{equation*}
+This category is isomorphic to the iterated join $\Delta^{m - 2} \ast [1]$.
+\end{defn}
+
+In this category, any factorization of the map $\varnothing \to \{1, \dots, m\}$ must first include $1$ and only later include $m$.
+
+We also define the \textbf{diagonal} in the cube $[1]^n$ as the full subcategory generated by:
+\begin{equation*}
+    \left\{ Q \subseteq \{1, 2, \dots, n\} \mid 1 \in Q \iff n \in Q \right\}.
+\end{equation*}
+
+\begin{defn}
+We define the \textbf{half Permutohedron} $\tfrac{1}{2}P_m$ as the full subsimplicial set of $P_m$ generated by ordered partitions in which $1$ appears before $m$ in the partition. See \cref{fig:half_permu} for the case $m = 3$.
+
+Similarly, we define the \textbf{diagonal} $\Diag(P_m)$ as the $(m - 2)$-dimensional subsimplicial set of $P_m$ consisting of ordered partitions where $1$ and $m$ are in the same subset.
+\end{defn}
+
+\begin{figure}
+    \centering
+    \scalebox{0.6}{
+        \begin{tikzpicture}
+            \newdimen\r
+            \r=6cm
+            \foreach \x in {120,180} { \draw  [line width=0.75mm] (\x:\r) -- (\x+60:\r) ;};
+            \draw [dashed] (90:\r*0.86602540378) -- (120:\r);
+            \draw [dashed] (270:\r*0.86602540378) -- (240:\r);
+            \foreach \x in {90,270} { \draw[line width=0.75mm, red] (\x:0.6cm) -- ++(\x:\r*0.86602540378-0.6cm);};
+            \node at (0:0) {\{1,2,3\}};
+            \foreach \x/\l/\p in
+             {
+              120/{\{2\},\{1\},\{3\}}/above,
+                180/{\{1\},\{2\},\{3\}}/left,
+                240/{\{1\},\{3\},\{2\}}/below
+             }
+             \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r) {};
+              \foreach \x/\l/\p in
+            {
+              90/{\{2\},\{1,3\}}/above,
+                150/{\{1,2\},\{3\}}/left,
+                210/{\{1\},\{2,3\}}/left,
+                270/{\{1,3\},\{2\}}/below
+             }
+             \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r*0.86602540378) {};
+        \end{tikzpicture}
+        }
+    \caption{The half Permutohedron $\tfrac{1}{2}P_3$. The vertices correspond to ordered partitions where $1$ appears before or together with $3$. The bold lines represent the corner. The diagonal $\Diag(P_3)$ is indicated in red. If we map from the category $\tfrac{1}{2}[1]^3$ to a category $\cC$ such that the map is zero outside the Spine, then the dotted lines correspond to the trivial part of the boundary $\partial \tfrac{1}{2}P_3$.}
+    \label{fig:half_permu}
+\end{figure}
+
+\begin{cor}
+By restricting the factorization in $[1]^m$, we have:
+\begin{equation*}
+    \Hom_{\CC \Nr \tfrac{1}{2}[1]^m}(\varnothing, m) = \tfrac{1}{2}P_m.
+\end{equation*}
+\end{cor}
+
+\begin{proof}
+Factorizations of the map $\varnothing \to m$ in $\tfrac{1}{2}[1]^m$ correspond to factorizations in $[1]^m$ where $1$ is added before $m$. Therefore, the mapping simplex is the half Permutohedron $\tfrac{1}{2}P_m$.
+\end{proof}
+
+Note that the half Permutohedron is obtained by cutting $P_m$ along the diagonal and taking one half. Thus, we have:
+\begin{equation}\label{eq:bound_decomp}
+    \partial \tfrac{1}{2}P_m = \Diag(P_m) \cup \left( \partial P_m \cap \tfrac{1}{2}P_m \right).
+\end{equation}
+
+\begin{lem}\label{lem:comp_is_boundary}
+Let $\cC$ be a pointed category, and let $F \in \Fun(\tfrac{1}{2}[1]^m, \cC)$ be a functor such that $F(Q) = *$ for $Q \notin \text{Spine}$. Then there is a homotopy between the maps:
+\begin{equation*}
+    \bigcup_{k = 1}^{m - 1} P_{\{1, \dots, k\}} \times P_{\{k + 1, \dots, m\}} \to \Hom_{\cC}(F(0), F(m))
+\end{equation*}
+and
+\begin{equation*}
+    \Diag(P_m) \to \Hom_{\cC}(F(0), F(m)),
+\end{equation*}
+as restrictions of the map:
+\begin{equation}\label{eq1}
+    \tfrac{1}{2}P_m \to \Hom_{\cC}(F(0), F(m)).
+\end{equation}
+\end{lem}
+
+See Figure~\Cref{fig:half_permu} for illustration.
+
+\begin{proof}
+By Equation~\Cref{eq:bound_decomp}, the restriction of \Cref{eq1} to the boundary of $\tfrac{1}{2}P_m$ decomposes as:
+\begin{equation*}
+    \Diag(P_m) \cup \left( \partial P_m \cap \tfrac{1}{2}P_m \right) \to \Hom_{\cC}(F(0), F(m)).
+\end{equation*}
+Using Corollary~\Cref{cor:triv_part_permu}, we find that the image of the right part is non-trivial only for the corner:
+\begin{equation*}
+    \bigcup_{k = 1}^{m - 1} P_{\{1, \dots, k\}} \times P_{\{k + 1, \dots, m\}}.
+\end{equation*}
+Thus, the interior of $\tfrac{1}{2}P_m$ provides the homotopy between these two parts.
+\end{proof}
+
+\begin{obs}\label{obs:diag_is_disk}
+Note that both $\Diag(P_m)$ and the corner of $P_m$ are homeomorphic to an $(m - 2)$-dimensional disk. The lemma also implies that the boundaries of these spaces map to zero in $\Hom_{\cC}(F(0), F(m))$. Therefore, we can regard the maps:
+\begin{equation*}
+    \bigcup_{k = 1}^{m - 1} P_{\{1, \dots, k\}} \times P_{\{k + 1, \dots, m\}} \to \Hom_{\cC}(F(0), F(m))
+\end{equation*}
+and
+\begin{equation*}
+    \Diag(P_m) \to \Hom_{\cC}(F(0), F(m))
+\end{equation*}
+as maps:
+\begin{equation*}
+    S^{m - 2} \to \Hom_{\cC}(F(0), F(m)),
+\end{equation*}
+where $S^{m - 2}$ is the boundary of the $(m - 1)$-dimensional disk.
+\end{obs}
+
+\begin{rem*}
+We remind that given bounded chain $\Ch_b(\Sp)$ we gave a description to the first page of a spectral sequence by maps $x:\bbS^{n-p} \to K_p$. Moreover such map survive to the $r-th$ page if we can extend it to map of chains:
+\begin{equation*}
+    \xymatrix
+    {   S^{n-p} \ar[r]\ar[d]_x & \dots \ar[r]\ar[d] &  0 \ar[d]\\
+        K_p \ar[r] & \dots \ar[r] &  K_{p-r+1}  \\
+    }
+\end{equation*}
+Lastly, the differential $\partial_r(x)$ is given by composing:
+\begin{equation}\label{eq:rem_diff}
+        \xymatrix
+        {   S^{n-p} \ar[r]\ar[d]_x & \dots \ar[r]\ar[d] &  0 \ar[d]\\
+            K_p \ar[r]\ar[d] & \dots \ar[r]\ar[d] &  K_{p-r+1} \ar[d] \\
+            0 \ar[r] & \dots \ar[r] & K_{p-r} 
+        }
+\end{equation}    
+\end{rem*}
+
+The last 
+
+\subsection{Composition in the topological model}\todo{combine this subsection with the prev subsec. This sebsec have only one lem and also the prev subsec. Also rewrite the foreword a little bit}
+
+Let $\cC$ be a pointed $\infty$-category, and let $f, g$ be two composable maps of $n$-chains in $\cC$.
+
+Using the cubical model for chains, $f$ and $g$ induce functors:
+\begin{align*}
+    f &\colon \Delta^1 \times [1]^n \to \cC, \\
+    g &\colon \Delta^1 \times [1]^n \to \cC,
+\end{align*}
+such that their restrictions to $\partial_0 \Delta^1 \times [1]^n$ and $\partial_1 \Delta^1 \times [1]^n$ agree, allowing us to glue them along the common face:
+\begin{equation*}
+    \Lambda^2_1 \times [1]^n \to \cC.
+\end{equation*}
+By the inner horn filling condition in $\cC$, we obtain a functor:
+\begin{equation}\label{eq:fill_half_cube}
+    \sigma \in \Fun(\Delta^2 \times [1]^n, \cC) = \Fun\left( \tfrac{1}{2}[1]^{n + 2}, \cC \right).
+\end{equation}
+For the remainder of this section, we reindex $f, g, g \circ f$, and $\sigma$ according to $[1]^{n + 2}$.
+
+Assume further that $f$ has target $X_n$ and $g$ has source $Y_0$, where $X_n, Y_0$ are padded chains (see Definition~\Cref{def:pad_ch}), which is the case when considering differentials as in Equation~\Cref{eq:rem_diff}. See Figure~\Cref{fig:comp_of_chains}.
+
+\begin{figure}
+    \centering
+    \begin{tikzcd}
+        & {K_2} \\
+        {K_3} & {*} & {K_1} \\
+        {*} & {*} & {K_0} \\
+        & {*}
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-2, to=2-3]
+        \arrow["{\overrightarrow{e_1}=(1,0,0)}", from=2-1, to=1-2]
+        \arrow[dashed, from=2-1, to=2-2]
+        \arrow["{\overrightarrow{e_3}=(0,0,1)}"', dotted, from=2-1, to=3-1]
+        \arrow[dashed, from=2-1, to=3-2]
+        \arrow[dashed, from=2-2, to=3-3]
+        \arrow[from=2-3, to=3-3]
+        \arrow[dotted, from=3-1, to=2-2]
+        \arrow[dotted, from=3-1, to=4-2]
+        \arrow[from=3-2, to=2-3]
+        \arrow[dashed, from=3-2, to=3-3]
+        \arrow[from=3-2, to=4-2]
+        \arrow[dotted, from=4-2, to=3-3]
+    \end{tikzcd}
+    \caption{Composition of two $n$-chain maps $f, g$ with $n = 1$, in the special case where the source of $f$ and the target of $g$ are padded chains $X_n$, $Y_0$. We embed $f$ and $g$ in $[1]^2 \times [1]^n$. The map $f$ corresponds to the face $x_3 = 0$, and $g$ corresponds to $x_1 = 1$. The dashed arrows represent the diagonal (the composition), and the dotted arrows represent the rest of the cube.}
+    \label{fig:comp_of_chains}
+\end{figure}
+
+\begin{obs}
+Using the cubical model for chains, the composition:
+\begin{equation*}
+    X_n \xrightarrow{f} K \xrightarrow{g} Y_0
+\end{equation*}
+is a functor:
+\begin{equation*}
+    [1]^{n + 1} \to \cC,
+\end{equation*}
+where $\overline{0} = X$, $\overline{1} = Y$, and the rest of $[1]^{n + 1}$ maps to the zero object. By taking the colimit over the diagram $[1]^{n + 1} \setminus \{ \overline{1} \}$, we find that $g \circ f$ is equivalent to a map:
+\begin{equation*}
+    \Sigma^n X \to Y
+\end{equation*}
+(see the dashed square in \cref{fig:comp_of_chains} for the case $n = 1$). This map can be viewed as an element of:
+\begin{equation*}
+    \Hom_{\cC}(X, \Sigma^{-n} Y).
+\end{equation*}
+\end{obs}
+
+\begin{lem}\label{lem:diff_is_comp}
+Let $\cC$ be a pointed category, and let $f, g$ be composable maps of $n$-chain complexes of the form:
+\begin{equation*}
+    X_n \xrightarrow{f} K \xrightarrow{g} Y_0.
+\end{equation*}
+Then the restriction of $\sigma$ to the corner of $P_{n + 2}$:
+\begin{equation*}
+    \bigcup_{k = 1}^{n + 1} P_{\{1, \dots, k\}} \times P_{\{k + 1, \dots, n + 2\}} \to \Hom_{\cC}(X, Y)
+\end{equation*}
+is homotopic to $g \circ f$, as maps $S^n \to \Hom_{\cC}(X, Y)$ (see \cref{obs:diag_is_disk}).
+\end{lem}
+
+\begin{proof}
+The composition $g \circ f$ is given by:
+\begin{equation*}
+    g \circ f \colon \partial_1 \Delta^2 \times [1]^n \to \cC.
+\end{equation*}
+Reindexing $\Delta^2 \to [1]^2$ as a half $(n + 2)$-cube, we find that the composition corresponds to a map from:
+\begin{equation*}
+    \partial_1 \Delta^2 \times [1]^n = \Diag([1]^{n + 2}).
+\end{equation*}
+The maps $f$ and $g$ are functors:
+\begin{equation*}
+    f \in \Fun([1]^{\{1, \dots, n + 1\}}, \cC), \quad g \in \Fun([1]^{\{2, \dots, n + 2\}}, \cC).
+\end{equation*}
+For each $1 \leq k \leq n + 1$, we obtain maps:
+\begin{align*}
+    f_{0, k} &\colon P_{\{1, \dots, k\}} \to \Hom_{\cC}(f(0), f(k)), \\
+    g_{k, n + 2} &\colon P_{\{k + 1, \dots, n + 2\}} \to \Hom_{\cC}(g(k), g(n + 2)).
+\end{align*}
+The corner of $P_{n + 2}$ maps to $\cC$ via:
+\begin{equation*}
+    \bigcup_{k = 1}^{n + 1} P_{\{1, \dots, k\}} \times P_{\{k + 1, \dots, n + 2\}} \xrightarrow{f_{0, k} \times g_{k, n + 2}} \Hom_{\cC}(f(0), g(k)) \times \Hom_{\cC}(g(k), g(n + 2)) \to \Hom_{\cC}(f(0), g(n + 2)).
+\end{equation*}
+Under the assumptions on $f$ and $g$, the filled horn $\sigma$ in Equation~\cref{eq:fill_half_cube}:
+\begin{equation*}
+    \sigma \colon \tfrac{1}{2}[1]^{n + 2} \to \cC
+\end{equation*}
+is trivial for $Q \notin \text{Spine}$. Applying Lemma~\Cref{lem:comp_is_boundary}, we conclude that the restriction to the corner is homotopic to $g \circ f$.
+\end{proof}

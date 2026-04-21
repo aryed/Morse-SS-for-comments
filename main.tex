@@ -1,0 +1,258 @@
+\documentclass[a4paper,11pt]{article}
+
+% === Document Encoding and Fonts ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}  % Improved typography
+
+% === Page Layout ===
+\usepackage[top = 1.5in, bottom = 1.5in, left=1in, right=1in, marginparwidth=1in]{geometry}
+\usepackage[colorinlistoftodos]{todonotes}
+
+% === Core Mathematics Packages ===
+\usepackage{mathtools}  % Extends amsmath with useful features
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{nicefrac}
+%\usepackage{eulervm}
+%\usepackage[cal=euler]{mathalpha}
+\usepackage{euscript}
+
+
+% === Diagrams and Graphics ===
+\usepackage{tikz-cd}    % For commutative diagrams
+\usepackage{quiver}
+\usepackage[all,cmtip]{xy}
+
+% === Document Structure and References ===
+\usepackage{refstyle}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{titling}
+
+\usepackage{enumitem}   % For better control over lists
+
+% === Bibliography ===
+\usepackage[style=numeric]{biblatex}
+\addbibresource{Bib.bib}
+
+% === Hyperlinks and Cross-References ===
+\usepackage[unicode=true,
+            pdfusetitle,
+            bookmarks=true,
+            bookmarksnumbered=false,
+            bookmarksopen=false,
+            breaklinks=false,
+            pdfborder={0 0 1},
+            backref=false,
+            colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=red]{hyperref}
+\usepackage[nameinlink,capitalize]{cleveref}
+
+% ========= Figures =========
+\usepackage{adjustbox}
+\usepackage{subcaption}
+
+\definecolor{customlightgray}{RGB}{240,240,240}
+\definecolor{myblue}{RGB}{0, 79, 139}
+\definecolor{myviolet}{RGB}{171, 0, 139}
+\definecolor{myyellow}{RGB}{255, 193, 20}
+\definecolor{mygreen}{RGB}{0, 140, 58}
+\definecolor{myred}{RGB}{231, 18, 37}
+
+
+% === Theorem Environments ===
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+% Plain theorem-like environments
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}[section]
+
+\newtheorem{thmA}{Theorem}
+\renewcommand{\thethmA}{\Alph{thmA}}
+
+\newtheorem*{thm*}{\protect\theoremname}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+\newtheorem{obs}[thm]{\protect\observationname}
+
+% Definition-like environments
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\newtheorem{exmp}[thm]{\protect\examplename}
+\newtheorem*{exmp*}{\protect\examplename}
+\newtheorem{con}[thm]{\protect\constructionname}
+\newtheorem{constr}[thm]{\protect\constructionname}
+\newtheorem{problem}{\protect\probname}
+\newtheorem{notation}[thm]{\protect\notationname}
+
+% Remark-like environments
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{\protect\remarkname}
+\newtheorem*{rem*}{\protect\remarkname}
+\newtheorem*{note*}{\protect\notename}
+\newtheorem{claim}[thm]{\protect\claimname}
+\newtheorem*{remind*}{\protect\remindername}
+
+% === Environment Names ===
+\providecommand{\claimname}{Claim}
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\constructionname}{Construction}
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\probname}{Problem}
+\providecommand{\notationname}{Notation}
+\providecommand{\notename}{Note}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\remarkname}{Remark}
+\providecommand{\remindername}{Reminder}
+\providecommand{\theoremname}{Theorem}
+\providecommand{\observationname}{Observation}
+\declaretheorem{theorem}
+
+% === Cross-Reference Commands ===
+\AtBeginDocument{
+    \providecommand\corref[1]{\ref{cor:#1}}
+    \providecommand\thmref[1]{\ref{thm:#1}}
+    \providecommand\lemref[1]{\ref{lem:#1}}
+    \providecommand\figref[1]{\ref{fig:#1}}
+}
+
+\makeatletter
+\newcommand{\labeltext}[2]{%
+  \@bsphack
+  \MakeLinkTarget*{#1}%
+  \def\@currentlabel{#1}{\label{#2}}%
+  \@esphack
+}
+\makeatother
+
+\input{macros.tex}
+
+\usepackage{ifthen}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum} % for sample text
+
+% Draft flag: Set to true or false
+\newboolean{isdraft}
+\setboolean{isdraft}{true} % Change to false to disable draft mode
+
+% Conditional header and watermark
+\ifthenelse{\boolean{isdraft}}{
+    % Header
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyhead[C]{\textcolor{red}{\bfseries Working Draft – Open to Comments and Suggestions}}
+
+    % Watermark
+    \usepackage{xwatermark}
+    \newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+}{}
+
+\date{\today}
+\author{Arye Deutsch\thanks{Einstein Institute of Mathematics, Hebrew University of Jerusalem, Israel. \url{ arye.deutsch@mail.huji.ac.il}}}
+
+\begin{document}
+
+
+\title{Spectral Sequences of Flow Categories}
+\maketitle
+
+\begin{abstract}
+Framed flow categories and their stable homotopy types are central tools in modern Floer, contact, Khovanov, and knot homotopy theories. In this paper, given an $cX$-structured flow category $\fC$ and a generalized homology theory $A$ equipped with a map $M\cX \to A$, we construct an Atiyah-Hirzebruch-type spectral sequence which converges to the homology of the realization $A_*(\norm{\fC})$. Moreover, if $A$ is a bordism theory - for example, if $\fC$ is framed and $A$ is stable homotopy - we provide a description of the higher pages and differentials in terms of gluing the flow manifolds in $\fC$ to a geometric analog of the Toda bracket, an idea traced back to Floer.
+
+This work provides a bordism-level perspective on spectral sequences, aligning with the approach of Abouzaid and Blumberg, who developed a bordism model for spectra. We demonstrate these spectral sequence techniques by calculating the unoriented and oriented bordism homology of real projective spaces using Morse flow data.
+
+Independent of flow categories, we provide a description of the spectral sequence of a chain complex in a stable category in terms of morphisms between chain complexes.
+\end{abstract}
+\newpage
+
+\todo[color = lightgray]{only section names?}
+\tableofcontents 
+\newpage
+
+\section{Introduction}\label{sec:intro}
+
+\todo{reuse ThB in the body of the paper}
+\todo{delete half of the into}
+\todo{cite "Massey products in M Sp , and its application"??}
+\input{softIntro}
+\subsection*{Acknowledgments}
+I am grateful to my advisor, Tomer Schlank, for introducing me to the ideas behind this paper, for guiding me toward this project, and for fostering a great research environment. I am also grateful to the Seminarak group, particularly Shai Keidar and Shaul Ragmov, for insightful discussions over time, and to Lior Yanovski for his efforts in maintaining the group in recent months. I would like to thank Trygve Poppe Oldervoll, João Lobo Fernandes, and David Blanc for their comments and suggestions. Finally, I sincerely appreciate Shulamit’s support and Edo and Orit’s hospitality during the writing of this paper.
+
+This project was partially supported by ISF grant 437/20.
+\newpage
+
+\section{Chains Complexes and their Spectral Sequences}\label{sec:Ch}
+Spectral sequences for filtered objects in Spectra are treated in Lurie's work \cite{Lur17}. A key insight, developed by Ariotta and Krause \cite{Ari21}, is that within a stable $\infty$-category, filtered objects are equivalent to coherent chain complexes. Building upon this equivalence, this section aims to provide an explicit description of the spectral sequence associated with a coherent chain complex.
+
+\subsection{Chain Complexes and Filtered Objects} \label{subsec:Ch&fil}
+In this section, let $\cC$ be a stable $\infty$-category with sequential limits and colimits.
+Following \cite{Ari21}, we will introduce the categories of chain complexes and filtered objects in $\infty$-category. We will show how to connect between them and the equivalence between the two categories.
+
+\begin{rem}
+    For being compatible with flow categories, our chain complexes will decrease and hence the filtered objects will increase, as oppose to \cite{Ari21}. 
+\end{rem}
+
+\input{Ch&Fil}
+
+\subsection{Spectral Sequences of Chain Complexes}\label{sec:SSofCh}
+We will start with the construction of spectral sequence of a filtered object, following the notations and definitions in \cite{Lur09}. Combined with the last subsection we will get a description of the pages of a spectral sequence of a chain complex. The main output is \cref{lem:ChSur}.
+
+For our discussion, we assume that $\cC$ is a stable $\infty$ category equipped with a $t$-structure $(\cC^{\leq 0}, \cC^{\geq 0})$.
+\input{SSofCh}
+
+\subsection{The differential from chain complexes viewpoint}\todo{Combine with sec 2.2???}
+In the previous subsections, we established the construction of a spectral sequence associated with a filtered object in a stable $\infty$-category $\cC$ equipped with a $t$-structure. We now focus on describing the differentials in this spectral sequence, particularly in the context of chain complexes.
+\input{DiffofCh}
+%%%----------------------------------------------------------------------------
+\section{Manifolds with Corners and Framed Flow Categories}
+This section lays the geometric and categorical groundwork for our main constructions. We begin by employing a diagrammatic, framework. The fundamental geometric objects in this setting are manifolds with corners, a standard generalization of smooth manifolds (see \cite{LS14} for a relevant treatment). These concepts are then unified\todo{do they???} within the established theory of flow categories \cite{CJS95}, a structure where the morphism spaces are themselves manifolds with corners and the composition law is governed by the geometry of their corner strata. The subsequent subsections will develop the precise definitions required for this approach.
+\input{Mfld w. corners & ffcat}
+
+\section{Chain complex of Flow Category}
+In this section, we establish a connection between chain complexes and framed flow categories by introducing a topologically enriched category $\J$, which serves as a replacement for the category of chain complexes $\Ch$. This idea originates from the work of Cohen, Jones, and Segal \cite{CJS95}, and is further developed in the revised version \cite{Cohen19}.
+
+\input{ChOfFlow.tex}
+
+\section{Models for Chain Complexes}\label{sec:compOfFlow}
+At this point, given a framed flow category $\fC$, one can combine \cref{con:topChOfCat} and \cref{sec:SSofCh} to construct a spectral sequence for its coherent chain complex $K_{\fC}$, and a sufficient condition, in terms of flow categories, for an element to survive to the $r$-th page. Our goal in the rest of the paper is to give a flow-categorical description for the differential and hence a necessary condition for an element to survive, in terms of flow categories.
+
+In this section, we establish a rigorous connection between the topologically enriched category $\J$ (introduced in \cref{sec:J} as a topologically enriched framework for chain complexes) and the $\infty$-categorical framework for chain complexes detailed in \cref{sec:SSofCh}. Our primary objective is to define explicit models for the category $\Ch$ that facilitate the precise extraction of geometric data from flow categories. This extraction is useful for providing a concrete geometric interpretation of the differentials within the spectral sequence constructed in\todo{add ref to the "main" Th that give a geo description for the differential}. This approach will allow us to translate abstract algebraic operations on chain complexes into intuitive geometric operations on flow manifolds.
+
+This geometric perspective provides a concrete way to handle compositions. Specifically, we will show that two composable morphisms of chain complexes, $f\colon X_b \to K$ and $g\colon K \to Y_a$, can be understood as functors defined on higher-dimensional index categories. The composition itself is then realized as a map originating from the boundary of a multi-dimensional half-space, $\partial (\Hlf^{J_{b+1,a-1}})$. Central to this construction is the identification of this boundary with a sphere:
+\begin{equation*}
+    S^{b-a} \simeq \partial (\Hlf^{J_{b+1,a-1}})_+ = \bigcup_{b \geq p\geq a} (\Hlf^{J_{b+1,p}})_+ \smashSpaces (\Hlf^{J_{p,a-1}})_+
+\end{equation*}
+Under this equivalence, the composition map into $\Hom(X_b, Y_a)$ is given explicitly by the smash product of the component maps:
+\begin{equation*}
+    \bigcup_{b \geq p\geq a} f_{b+1,p}\smashSpaces g_{p,a-1} \colon \bigcup_{b \geq p\geq a} (\Hlf^{J_{b+1,p}})_+ \smashSpaces (\Hlf^{J_{p,a-1}})_+ \to \Hom(X_b,Y_a)
+\end{equation*}
+
+\input{ChModels.tex}
+
+\section{Differential in a flow category}
+By passing the definition of the differential (see \cref{lem:Ch_diff}) through the topological model of chain complexes, we can start with a flow category and get a flow categorical formula for the differential. Using this description we will extract an sufficient and necessary condition for the survival of an element.
+
+\input{DiffOfFlowCat}
+
+\section{Tangential structures and change of rings} \label{sec:tangStr}
+
+\input{StrFF-via spaces diagrams}
+
+\appendix
+
+\newpage
+\printbibliography
+
+\end{document}

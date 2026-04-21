@@ -1,0 +1,272 @@
+\begin{defn}\label{def:Ch}
+    We define the category $\Ch$ to be the pointed (ordinary) category with
+    \begin{equation*}
+        \ob \ \Ch \coloneqq \mathbb{Z} \cup \{*\}
+    \end{equation*}
+    \begin{equation*}
+        \Hom_{\Ch}(i,j) \coloneqq \begin{cases}
+            \{ \mathrm{id}, \zeroMor \} & i=j \\
+            \{ d_i, \zeroMor \} & i=j+1 \\
+            \{\zeroMor\} & \text{otherwise}
+        \end{cases}
+    \end{equation*}
+    where $*$ is the zero object and $\zeroMor$ is the map $i \to * \to j$.
+
+    For $\cC$ as above, we define \textit{chain complexes in $\cC$} (or just \textit{chains}) to be the full subcategory
+    \begin{equation*}
+        \Ch(\cC) \coloneqq \Fun^*(\Ch,\cC) \subset \Fun(\Ch,\cC)
+    \end{equation*}
+    of pointed functors.
+
+    We denote by $\Chb$ the full subcategory of $\Ch(\cC)$ spanned by the objects $K$ such that there exists $N \in \mathbb{N}$ with:
+    \begin{equation*}
+        K_i = \zr \text{ for all } i < N.
+    \end{equation*}
+    We call such chain complexes \emph{bounded below}.
+\end{defn}
+
+\begin{rem*}
+    If we don't mention otherwise, we assume that $K \in \Chb$ is bounded below by $N=0$.
+\end{rem*}
+
+\begin{exmp*}
+    The category $\Ch(\Ab)$ of chain complexes in abelian groups is the usual category of chain complexes.
+\end{exmp*}
+\begin{rem}\label{rem:higher_ch}
+    In the case where $\cC$ is an $\infty$-category, the reader may want to think of $\Ch(\cC)$ as chain complexes, with null-homotopies of the composition of two maps along with higher null-homotopies: given a composition of three maps in the chain complex
+    \begin{equation*}
+        K_p \to K_{p-1} \to K_{p-2} \to K_{p-3},
+    \end{equation*}
+    we get two null-homotopies of the map $K_p \to K_{p-3}$, which give us a map $S^1 \to \Hom(K_p,K_{p-3})$. Part of the data of a chain complex is a null-homotopy of this loop and similarly higher null-homotopies for higher loops.
+\end{rem}
+
+\begin{defn}
+    We denote by $\mathbb{Z}$ the category of integers with the usual increasing order.
+\end{defn}
+
+\begin{defn}
+    Let $\cC$ be a stable $\infty$-category with sequential limits and colimits. We define the category of (increasing, complete) \emph{filtered objects in $\cC$} to be the full subcategory
+    \begin{equation*}
+        \Fil(\cC) \subset \Fun(\mathbb{Z},\cC)
+    \end{equation*}
+    spanned by functors $F$ such that $\lim_p F_p = \zr$; sometimes denoted by $\widehat{\Fil}(\cC)$. We define the \textbf{bounded below filtered objects} to be the full subcategory
+    \begin{equation*}
+        \Filb(\cC) \subset \Fil(\cC)
+    \end{equation*}
+    spanned by functors $F$ such that there exists $N \in \mathbb{N}$ with $F_p = \zr$ for $p < N$.
+\end{defn}
+
+Note that the image of the stable Yoneda embedding
+\begin{equation*}
+    \yo_{(-)}: \bbZ^{\Op} \to \Fun(\bbZ, \Sp) = \Fil(\Sp).
+\end{equation*}
+is given by
+\begin{equation*}
+    \yo_p(q) = \Map_{\Sp}(p,q) = \begin{cases}
+        \bbS & q \geq p \\
+        0 & q < p
+    \end{cases}
+\end{equation*}
+Let $p \to (p-1)$ be a morphism in $\bbZ^{\Op}$, the morphisms $\yo_p \to \yo_{p-1}$ is given by
+\begin{equation*}
+    \xymatrix{
+        \dots \ar[r] & 0 \ar[r]\ar[d] & 0    \ar[r]\ar[d]    & \bbS \ar[d]\ar[r]   & \dots \\
+        \dots \ar[r]        & 0 \ar[r]       & \bbS \ar[r]          & \bbS \ar[r]         & \dots
+    }
+\end{equation*}
+
+\begin{defn}\label{def:lacunarCh}
+    For $n,p \in \bbZ$ we define the following chain complex $\bbS_p^{n} \in \Ch(\Sp)$ by
+    \begin{equation*}
+        \bbS_p^{n}(q) \coloneqq \begin{cases}
+            \bbS^n & q = p \\
+            0 & \text{otherwise}
+        \end{cases}
+    \end{equation*}
+\end{defn}
+Note that there is the map in $\Ch(\Sp)$
+\begin{equation*}
+    Y_{n,p} \colon \bbS^{n-1}_{p} \to \bbS^n_{p-1}
+\end{equation*}
+which visually  given by
+\begin{equation*}
+    \xymatrix{
+        \dots  \ar[r] & 0 \ar[r]\ar[d] & \bbS^{n-1}    \ar[r]\ar[d]    & 0 \ar[d]\ar[r]   & 0 \ar[d]\ar[r] & \dots\\
+        \dots \ar[r]        & 0 \ar[r]       & 0 \ar[r]                & \bbS^n \ar[r]    & 0 \ar[r]        & \dots
+    }
+\end{equation*}
+which is defined using the fact that $\bbS^n \simeq \S \bbS^{n-1}$ in $\Sp$.
+
+In particular we have a map
+\begin{equation*}
+    Y_p \coloneqq Y_{-(p-1),p}\colon \bbS^{-p}_{p} \to \bbS^{-(p-1)}_{p-1}
+\end{equation*}
+
+\begin{defn}
+    We define 
+    \begin{equation*}
+        \cA \colon \Fil(\Sp) \to \Ch(\Sp)
+    \end{equation*}
+    to be the colimit preserving functor that determined by mapping
+    \begin{equation*}
+        \cA (\yo_p) \coloneqq \bbS^{-p}_p
+    \end{equation*}
+    and the morphisms are given by $Y_p$.
+    
+    We denote it's right adjoint 
+    \begin{equation*}
+        \Fil(\Sp) \leftarrow \Ch(\Sp) \colon \cI
+    \end{equation*}
+\end{defn}
+
+In \cite{Ari21}, Ariotta define these functors and proves
+\begin{thm}[\cite{Ari21}]\label{th:Ch_Fil_eq}
+    Let $\cC$ be a stable $\infty$-category with sequential limits and colimits. We have an equivalence
+    \begin{equation*}
+        \cA: \Fil(\cC) \simeq \Ch(\cC) : \cI.
+    \end{equation*}
+\end{thm}
+An immediate consequence is the representability of the evaluation:
+\begin{equation}\label{eq:F_p_is_rep}
+    \Map(\bbS^{-p}_p, \cA F) \simeq \Map(\cI \bbS^{-p}_p, F) \simeq \Map(\yo_p, F) \simeq F_p
+\end{equation}
+
+\begin{defn}
+    Let $\cC$ be a stable $\infty$-category and $p \in \bbZ$, we write $\iota_{[p-1,p]}: \{(p-1) \to p\} \to \mathbb{Z}$ for the inclusion functor and
+    \begin{equation*}
+        (\iota_{[p-1,p]})^*: \Fun(\mathbb{Z},\cC) \to \Fun(\Delta^1,\cC)
+    \end{equation*}
+    for the restriction (pre-composition) along $\iota_{[p-1,p]}$. We define the $p$-th associated graded functor by:
+    \begin{equation*}
+        \gr_p \coloneqq \cof \circ (\iota_{[p-1,p]})^* : \Fun(\mathbb{Z},\cC) \to \cC,
+    \end{equation*}
+    so that
+    \begin{equation*}
+        F \mapsto F_p/F_{p-1}.
+    \end{equation*}
+    The map
+    \begin{equation*}
+        F_p/F_{p-1} \to \Sigma F_{p-1}/F_{p-2}
+    \end{equation*}
+    given by the connecting morphism of the cofiber, and then taking quotient, induces a transformation:
+    \begin{equation*}\label{eq:Fil_str_map}
+        \gr_p \to \Sigma \gr_{p-1}.
+    \end{equation*}
+\end{defn}
+
+A direct calculation shows that
+\begin{equation*}
+    \S^{-p} \gr_q(\yo_p) = (\cA \yo_p)_q
+\end{equation*}
+and we deduce that
+\begin{cor}
+    \begin{equation*}
+        (\cA -)_p \simeq \S^{-p} \gr_p (-)
+    \end{equation*}
+    As functors 
+    \begin{equation*}
+        \Fil(\Sp) \to \Sp
+    \end{equation*}
+\end{cor}
+
+We now provide an explicit expression for $\cI$.
+
+First, we define a the following chain complex  in $\Sp$,
+\begin{equation*}
+    \S^{n}y_p \coloneqq \begin{cases}
+        \bbS^{n} & q \in \{p,p-1\} \\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+In particular we have
+\begin{equation*}
+    \cof(Y_p) \simeq \S^{-(p-1)}y_p
+\end{equation*}
+
+On the other hand (see \cite{Ari21} Lemma 3.12), one can show that the evaluation functor
+\begin{equation*}
+    (-)_p \colon \Ch(\Sp) \to \Sp, \quad K \mapsto K_p
+\end{equation*}
+is represented:
+\begin{equation*}
+    \Map(y_p, -) \simeq (-)_p.
+\end{equation*}
+The objects in the following fiber sequence
+\begin{equation}\label{req:RepFibSeq}
+    \bbS^{-p}_{p} \to \bbS^{-(p-1)}_{p-1} \to \cof(Y_p)
+\end{equation}
+represents the functors
+\begin{equation*}
+    (\cI -)_p, \quad (\cI -)_{p-1}, \quad \S^{-(p-1)} (-)_p.
+\end{equation*}
+By taking the contravariant $\Map$ functor to \cref{req:RepFibSeq} we get the following result:
+\begin{lem}\label{lem:calc_cI}
+    There is a cofiber sequence of functors
+    \begin{equation}
+        \S^{-(p-1)} (-)_p \to (\cI -)_{p-1} \to (\cI -)_p
+    \end{equation}
+\end{lem}
+A simple corollary is
+\begin{cor}
+    Let $K \in \Ch_b(\Sp)$ bounded below by $N$. Then for $p \le N$ we have
+    \begin{equation*}
+        (\cI K)_p = 0
+    \end{equation*}
+\end{cor}
+which obtained by inductively applying \cref{lem:calc_cI}.
+
+
+\begin{exmp*}
+    Let
+    \begin{equation*}
+        \dotsb \to \zr \to F_0 \to F_1 \to F_2 \to F_3 \to 0 \to\dotsb
+    \end{equation*}
+    be a filtered object in $\Sp$. Then $K \coloneqq \cA F$ is given by:
+    \begin{equation*}
+        \dotsb \to \zr \to \Sigma^{-3} F_3/F_2 \to \Sigma^{-2} F_2/F_1 \to \Sigma^{-1} F_1/F_0 \to F_0 \to \zr \dotsb
+    \end{equation*}
+    where the zeros on the left are $F_3 / F_3$. The composition 
+    \begin{equation*}
+        K_3 = \Sigma^{-3} F_3/F_2 \to \Sigma^{-2} F_2/F_1 \to \Sigma^{-1} F_1/F_0 = K_1
+    \end{equation*}
+    can be factored as:
+    \begin{equation*}
+        \Sigma^{-3} F_3/F_2 \to \Sigma^{-2} F_2 \to \Sigma^{-2} F_2/F_1 \to \Sigma^{-1} F_1 \to \Sigma^{-1} F_1/F_0,
+    \end{equation*}
+    where the middle part is a cofiber sequence; hence, the composition is null-homotopic. Following \cref{rem:higher_ch}, this null-homotopy is the "non-higher" part of the chain complex $K$.
+
+    To recover $F = \cI K$ from $K$, we can use \cref{lem:calc_cI}. The fact that $K$ is bounded below by $-1$ yields that
+    \begin{equation*}
+        (\cI K)_p = 0\quad \text{for $p \leq -1$}
+    \end{equation*}
+    From that following cofiber sequence We ca see that $F_0 = K_0$ 
+    \begin{equation*}
+        \S^{-(-1)}K_0 \to \overbrace{F_{-1}}^{=0} \to F_0.
+    \end{equation*}
+    We can recover $F_1$ as the cofiber
+    \begin{equation*}
+        K_1 \to \overbrace{F_0}^{=K_0} \to F_1.
+    \end{equation*}
+    And by taking $F_2$ is reconstructed as an iterated cofiber, from the cofiber sequence :
+    \begin{equation*}
+        \S^{-1} K_2 \to \overbrace{F_1}^{=K_1/K_0} \to F_2.
+    \end{equation*}
+\end{exmp*}
+
+\begin{rem}\label{ex:CW_skl}
+    An ''non example'' is given by taking a topological space $X$ and the filtered space $F_p \coloneq \sk_p X$.
+    If $X$ is finite, then there is an $N \in \bbN$ - an upper bound for the filtration.
+    In this case, we can define the following chain complex in $\Spaces$
+    \begin{equation*}
+        K_p \coloneqq \S^{N-p} \gr_p F= \sk_p X / \sk_{p-1} X \simeq \bigvee_{\text{p cells}} S^N
+    \end{equation*}
+    and the morphisms $\gr_p \to \Sigma \gr_{p-1}$ that induces the maps $K_p \to K_{p-1}$, are given by the maps:
+    \begin{equation*}
+        \WedgeSpaces S^p = \sk_p X / \sk_{p-1} X \xrightarrow{\partial_p} \sk_{p-1} X / \sk_{p-2} X = \Sigma \WedgeSpaces S^{p-1},
+    \end{equation*}
+    which are more commonly known as the differentials in the chain complex that computes the cellular homology of $X$.
+    By taking iterated cofibers we can recover $F$ only up to suspension, for example
+    \begin{equation*}
+        \S^N F_1 \simeq \cof(\S^{N-1} F_1 /F_0 \to S^N F_0)
+    \end{equation*}
+\end{rem}
