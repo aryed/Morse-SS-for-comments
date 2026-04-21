@@ -1,0 +1,1102 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{abouzaid2021arnold}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d4debf704d5237aa919a4f10b9f9cc68}{%
+           family={Abouzaid},
+           familyi={A\bibinitperiod},
+           given={Mohammed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e73a532bb1be860b8805a2c71d2aa224}{%
+           family={Blumberg},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{fullhash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{fullhashraw}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{bibnamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorbibnamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authornamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorfullhash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorfullhashraw}{b9f07d236832071befddccf12f9d4e4c}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2103.01507}
+      \field{title}{Arnold conjecture and Morava K-theory}
+      \field{year}{2021}
+    \endentry
+    \entry{abouzaid2024foundation}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d4debf704d5237aa919a4f10b9f9cc68}{%
+           family={Abouzaid},
+           familyi={A\bibinitperiod},
+           given={Mohammed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e73a532bb1be860b8805a2c71d2aa224}{%
+           family={Blumberg},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{fullhash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{fullhashraw}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{bibnamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorbibnamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authornamehash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorfullhash}{b9f07d236832071befddccf12f9d4e4c}
+      \strng{authorfullhashraw}{b9f07d236832071befddccf12f9d4e4c}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2404.03193}
+      \field{title}{Foundation of Floer homotopy theory I: Flow categories}
+      \field{year}{2024}
+    \endentry
+    \entry{alexander1972cobordism}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=45a5c2f0385a232896c6536d494b3f7f}{%
+           family={Alexander},
+           familyi={A\bibinitperiod},
+           given={James\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{fullhash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{fullhashraw}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{bibnamehash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{authorbibnamehash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{authornamehash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{authorfullhash}{45a5c2f0385a232896c6536d494b3f7f}
+      \strng{authorfullhashraw}{45a5c2f0385a232896c6536d494b3f7f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transactions of the American Mathematical Society}
+      \field{title}{Cobordism Massey products}
+      \field{volume}{166}
+      \field{year}{1972}
+      \field{pages}{197\bibrangedash 214}
+      \range{pages}{18}
+    \endentry
+    \entry{antieau2024spectral}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=713e8daf59a487bd3182cd6eebb14c8c}{%
+           family={Antieau},
+           familyi={A\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{fullhash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{fullhashraw}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{bibnamehash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{authorbibnamehash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{authornamehash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{authorfullhash}{713e8daf59a487bd3182cd6eebb14c8c}
+      \strng{authorfullhashraw}{713e8daf59a487bd3182cd6eebb14c8c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2411.09115}
+      \field{title}{Spectral sequences, décalage, and the Beilinson t-structure}
+      \field{year}{2024}
+    \endentry
+    \entry{Ari21}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=57081bf0adab538ac45098472d627d77}{%
+           family={Ariotta},
+           familyi={A\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{57081bf0adab538ac45098472d627d77}
+      \strng{fullhash}{57081bf0adab538ac45098472d627d77}
+      \strng{fullhashraw}{57081bf0adab538ac45098472d627d77}
+      \strng{bibnamehash}{57081bf0adab538ac45098472d627d77}
+      \strng{authorbibnamehash}{57081bf0adab538ac45098472d627d77}
+      \strng{authornamehash}{57081bf0adab538ac45098472d627d77}
+      \strng{authorfullhash}{57081bf0adab538ac45098472d627d77}
+      \strng{authorfullhashraw}{57081bf0adab538ac45098472d627d77}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2109.01017}
+      \field{title}{Coherent cochain complexes and Beilinson t-structures, with an appendix by Achim Krause}
+      \field{year}{2021}
+    \endentry
+    \entry{bai2022arnold}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=adec80bb0ed4bc516d4bba0a5c88a08c}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Shaoyun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7106f113b0e65200235d9fc0a711c3af}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Guangbo},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{fullhash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{fullhashraw}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{bibnamehash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{authorbibnamehash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{authornamehash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{authorfullhash}{ce2de133aaeb7819de964d20d7dba239}
+      \strng{authorfullhashraw}{ce2de133aaeb7819de964d20d7dba239}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2209.08599}
+      \field{title}{Arnold conjecture over integers}
+      \field{year}{2022}
+    \endentry
+    \entry{blanc2022spectral}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c28fc0f26c248a0aad360ab97c861f04}{%
+           family={Blanc},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1638092ef58e9e391a4e5d0b9816bc72}{%
+           family={Meadows},
+           familyi={M\bibinitperiod},
+           given={Nicholas\bibnamedelima J},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{fullhash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{fullhashraw}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{bibnamehash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{authorbibnamehash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{authornamehash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{authorfullhash}{d2de67a5206f5c3937f868bd3e4fe712}
+      \strng{authorfullhashraw}{d2de67a5206f5c3937f868bd3e4fe712}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Pure and Applied Algebra}
+      \field{number}{7}
+      \field{title}{Spectral sequences in ($\infty$, 1)-categories}
+      \field{volume}{226}
+      \field{year}{2022}
+      \field{pages}{106905}
+      \range{pages}{1}
+    \endentry
+    \entry{bonciocat2024revisiting}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=0731d21938136661be2408acf2226a73}{%
+           family={Bonciocat},
+           familyi={B\bibinitperiod},
+           given={Ciprian\bibnamedelima Mircea},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0731d21938136661be2408acf2226a73}
+      \strng{fullhash}{0731d21938136661be2408acf2226a73}
+      \strng{fullhashraw}{0731d21938136661be2408acf2226a73}
+      \strng{bibnamehash}{0731d21938136661be2408acf2226a73}
+      \strng{authorbibnamehash}{0731d21938136661be2408acf2226a73}
+      \strng{authornamehash}{0731d21938136661be2408acf2226a73}
+      \strng{authorfullhash}{0731d21938136661be2408acf2226a73}
+      \strng{authorfullhashraw}{0731d21938136661be2408acf2226a73}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2409.11278}
+      \field{title}{Revisiting the Cohen-Jones-Segal construction in Morse-Bott theory}
+      \field{year}{2024}
+    \endentry
+    \entry{Cohen19}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=741cb88f5a20e7b4119ccdd44b284c25}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Ralph\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{fullhash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{fullhashraw}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{bibnamehash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{authorbibnamehash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{authornamehash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{authorfullhash}{741cb88f5a20e7b4119ccdd44b284c25}
+      \strng{authorfullhashraw}{741cb88f5a20e7b4119ccdd44b284c25}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Handbook of Homotopy Theory}
+      \field{title}{Floer homotopy theory, revisited}
+      \field{year}{2020}
+      \field{pages}{369}
+      \range{pages}{1}
+    \endentry
+    \entry{CJS95}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=741cb88f5a20e7b4119ccdd44b284c25}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Ralph\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=fdbc450b184f7e09d25d26162515d42c}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={John\bibnamedelima DS},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=a9c069df07f6019add92b35afee57d24}{%
+           family={Segal},
+           familyi={S\bibinitperiod},
+           given={Graeme\bibnamedelima B},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{fullhash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{fullhashraw}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{bibnamehash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{authorbibnamehash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{authornamehash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{authorfullhash}{033576c5ee8983d8ea4bc651eaec53c6}
+      \strng{authorfullhashraw}{033576c5ee8983d8ea4bc651eaec53c6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Floer memorial volume}
+      \field{title}{Floer’s infinite dimensional Morse theory and homotopy theory}
+      \field{year}{1995}
+      \field{pages}{297\bibrangedash 325}
+      \range{pages}{29}
+    \endentry
+    \entry{cote2023equivariant}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=37674913b900dbfb40d3d67e01eab0e2}{%
+           family={Côté},
+           familyi={C\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a24a2a9e42a99eb072992af755f24be5}{%
+           family={Kartal},
+           familyi={K\bibinitperiod},
+           given={Yusuf\bibnamedelima Bar{ı}ş},
+           giveni={Y\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{fullhash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{fullhashraw}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{bibnamehash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{authorbibnamehash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{authornamehash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{authorfullhash}{1f927f37e9b1384f2b25853cd1c852cc}
+      \strng{authorfullhashraw}{1f927f37e9b1384f2b25853cd1c852cc}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2309.15089}
+      \field{title}{Equivariant Floer homotopy via Morse-Bott theory}
+      \field{year}{2023}
+    \endentry
+    \entry{floer1987morse}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1538f9dd1caaa809579076f88b658080}{%
+           family={Floer},
+           familyi={F\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1538f9dd1caaa809579076f88b658080}
+      \strng{fullhash}{1538f9dd1caaa809579076f88b658080}
+      \strng{fullhashraw}{1538f9dd1caaa809579076f88b658080}
+      \strng{bibnamehash}{1538f9dd1caaa809579076f88b658080}
+      \strng{authorbibnamehash}{1538f9dd1caaa809579076f88b658080}
+      \strng{authornamehash}{1538f9dd1caaa809579076f88b658080}
+      \strng{authorfullhash}{1538f9dd1caaa809579076f88b658080}
+      \strng{authorfullhashraw}{1538f9dd1caaa809579076f88b658080}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bull. Am. Math. Soc.}
+      \field{title}{Morse theory for fixed points of symplectic diffeomorphisms}
+      \field{volume}{16}
+      \field{year}{1987}
+      \field{pages}{279\bibrangedash 281}
+      \range{pages}{3}
+    \endentry
+    \entry{floer1989witten}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5405484a607a8bc5ee16b9f2f3e252bd}{%
+           family={Floer},
+           familyi={F\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Lehigh University}%
+      }
+      \strng{namehash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{fullhash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{fullhashraw}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{bibnamehash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{authorbibnamehash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{authornamehash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{authorfullhash}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \strng{authorfullhashraw}{5405484a607a8bc5ee16b9f2f3e252bd}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of differential geometry}
+      \field{number}{1}
+      \field{title}{Witten's complex and infinite-dimensional Morse theory}
+      \field{volume}{30}
+      \field{year}{1989}
+      \field{pages}{207\bibrangedash 221}
+      \range{pages}{15}
+    \endentry
+    \entry{LLS20}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=05987d21c1fb35dab49ba1d788ffe601}{%
+           family={Lawson},
+           familyi={L\bibinitperiod},
+           given={Tyler},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cbfded75827e4ba69a6528304d52223f}{%
+           family={Lipshitz},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={Sucharit},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Sciences Publishers}%
+      }
+      \strng{namehash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{fullhash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{fullhashraw}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{bibnamehash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{authorbibnamehash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{authornamehash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{authorfullhash}{0b8b4460c3891b2d1822b68b8ce47483}
+      \strng{authorfullhashraw}{0b8b4460c3891b2d1822b68b8ce47483}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geometry \& Topology}
+      \field{number}{2}
+      \field{title}{Khovanov homotopy type, Burnside category and products}
+      \field{volume}{24}
+      \field{year}{2020}
+      \field{pages}{623\bibrangedash 745}
+      \range{pages}{123}
+    \endentry
+    \entry{Leitch74}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=901aadd491ddbf99e6706f21df76417a}{%
+           family={Leitch},
+           familyi={L\bibinitperiod},
+           given={RD},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{fullhash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{fullhashraw}{901aadd491ddbf99e6706f21df76417a}
+      \strng{bibnamehash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{authorbibnamehash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{authornamehash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{authorfullhash}{901aadd491ddbf99e6706f21df76417a}
+      \strng{authorfullhashraw}{901aadd491ddbf99e6706f21df76417a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the London Mathematical Society}
+      \field{number}{1}
+      \field{title}{The homotopy commutative cube}
+      \field{volume}{2}
+      \field{year}{1974}
+      \field{pages}{23\bibrangedash 29}
+      \range{pages}{7}
+    \endentry
+    \entry{LS14}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cbfded75827e4ba69a6528304d52223f}{%
+           family={Lipshitz},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={Sucharit},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \strng{bibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorbibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authornamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Mathematical Society}
+      \field{number}{4}
+      \field{title}{A Khovanov stable homotopy type}
+      \field{volume}{27}
+      \field{year}{2014}
+      \field{pages}{983\bibrangedash 1042}
+      \range{pages}{60}
+    \endentry
+    \entry{lipshitz2014steenrod}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cbfded75827e4ba69a6528304d52223f}{%
+           family={Lipshitz},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={Sucharit},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \strng{bibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorbibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authornamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Topology}
+      \field{number}{3}
+      \field{title}{A Steenrod square on Khovanov homology}
+      \field{volume}{7}
+      \field{year}{2014}
+      \field{pages}{817\bibrangedash 848}
+      \range{pages}{32}
+    \endentry
+    \entry{LS17}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cbfded75827e4ba69a6528304d52223f}{%
+           family={Lipshitz},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={Sucharit},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{fullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \strng{bibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorbibnamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authornamehash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhash}{73d6181183e29916781a2bc63fc37764}
+      \strng{authorfullhashraw}{73d6181183e29916781a2bc63fc37764}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1709.03602}
+      \field{title}{Spatial refinements and Khovanov homology}
+      \field{year}{2017}
+    \endentry
+    \entry{lobb2017calculus}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5c055101c788bfa221d6bb046d2372fe}{%
+           family={Lobb},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ebb017e2077137364ea1cfe3d997e212}{%
+           family={Orson},
+           familyi={O\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=98eae0dfcbfa2d723a7b525ac864d4b3}{%
+           family={Schütz},
+           familyi={S\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{bibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorbibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authornamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1710.01798}
+      \field{title}{A calculus for flow categories}
+      \field{year}{2017}
+    \endentry
+    \entry{lobb2018framed}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5c055101c788bfa221d6bb046d2372fe}{%
+           family={Lobb},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ebb017e2077137364ea1cfe3d997e212}{%
+           family={Orson},
+           familyi={O\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=98eae0dfcbfa2d723a7b525ac864d4b3}{%
+           family={Schütz},
+           familyi={S\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Sciences Publishers}%
+      }
+      \strng{namehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{bibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorbibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authornamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algebraic \& Geometric Topology}
+      \field{number}{5}
+      \field{title}{Framed cobordism and flow category moves}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{2821\bibrangedash 2858}
+      \range{pages}{38}
+    \endentry
+    \entry{lobb2020khovanov}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5c055101c788bfa221d6bb046d2372fe}{%
+           family={Lobb},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ebb017e2077137364ea1cfe3d997e212}{%
+           family={Orson},
+           familyi={O\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=98eae0dfcbfa2d723a7b525ac864d4b3}{%
+           family={Schütz},
+           familyi={S\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{fullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{bibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorbibnamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authornamehash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhash}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \strng{authorfullhashraw}{6ae1f8b890f7051b351b31c2aa80f9ba}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Experimental Mathematics}
+      \field{number}{4}
+      \field{title}{Khovanov homotopy calculations using flow category calculus}
+      \field{volume}{29}
+      \field{year}{2020}
+      \field{pages}{475\bibrangedash 500}
+      \range{pages}{26}
+    \endentry
+    \entry{Lur17}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{https://www.math.ias.edu/~lurie/papers/HA.pdf}
+      \field{title}{Higher algebra}
+      \field{year}{2017}
+    \endentry
+    \entry{Lur09}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher topos theory}
+      \field{year}{2009}
+    \endentry
+    \entry{kerodon}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://kerodon.net}}
+      \field{title}{Kerodon}
+      \field{year}{2018}
+    \endentry
+    \entry{MMSS01}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=435d8323ad49e4154edd3cc5e73fb380}{%
+           family={Mandell},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=bc5edf523100fc6c87752e43e8bbce30}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={J\bibnamedelima Peter},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=48d1fc5c8a97cb0633a8f2ffb7fcbf7b}{%
+           family={Schwede},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cfc07b5eafea0c655411ad5d438ba685}{%
+           family={Shipley},
+           familyi={S\bibinitperiod},
+           given={Brooke},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{e6e6a2419c53b73fa763bfea12471ac6}
+      \strng{fullhash}{b9207d62907ac19c9e96fbefa4f22570}
+      \strng{fullhashraw}{b9207d62907ac19c9e96fbefa4f22570}
+      \strng{bibnamehash}{e6e6a2419c53b73fa763bfea12471ac6}
+      \strng{authorbibnamehash}{e6e6a2419c53b73fa763bfea12471ac6}
+      \strng{authornamehash}{e6e6a2419c53b73fa763bfea12471ac6}
+      \strng{authorfullhash}{b9207d62907ac19c9e96fbefa4f22570}
+      \strng{authorfullhashraw}{b9207d62907ac19c9e96fbefa4f22570}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the London Mathematical Society}
+      \field{number}{2}
+      \field{title}{Model categories of diagram spectra}
+      \field{volume}{82}
+      \field{year}{2001}
+      \field{pages}{441\bibrangedash 512}
+      \range{pages}{72}
+    \endentry
+    \entry{marengon2024spectra}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=9d557d767a9a20e49c01d7929d64e1bc}{%
+           family={Marengon},
+           familyi={M\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={Sucharit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8609ac3ccfb032ef5350b6860293cdc8}{%
+           family={Stipsicz},
+           familyi={S\bibinitperiod},
+           given={Andras},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{fullhash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{fullhashraw}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{bibnamehash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{authorbibnamehash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{authornamehash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{authorfullhash}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \strng{authorfullhashraw}{006aab5edd3d15530ad1e1f672a4c2e9}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2401.06218}
+      \field{title}{Spectra in Khovanov and knot Floer theories}
+      \field{year}{2024}
+    \endentry
+    \entry{milnor1963morse}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=07278458e44588e00bb54aa76f2a71a5}{%
+           family={Milnor},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima Willard},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton university press}%
+      }
+      \strng{namehash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{fullhash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{fullhashraw}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{bibnamehash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{authorbibnamehash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{authornamehash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{authorfullhash}{07278458e44588e00bb54aa76f2a71a5}
+      \strng{authorfullhashraw}{07278458e44588e00bb54aa76f2a71a5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{51}
+      \field{title}{Morse theory}
+      \field{year}{1963}
+    \endentry
+    \entry{morse1925relations}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2be450102aefb4176dd218fb50036fcf}{%
+           family={Morse},
+           familyi={M\bibinitperiod},
+           given={Marston},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{fullhash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{fullhashraw}{2be450102aefb4176dd218fb50036fcf}
+      \strng{bibnamehash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{authorbibnamehash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{authornamehash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{authorfullhash}{2be450102aefb4176dd218fb50036fcf}
+      \strng{authorfullhashraw}{2be450102aefb4176dd218fb50036fcf}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transactions of the American Mathematical Society}
+      \field{number}{3}
+      \field{title}{Relations between the critical points of a real function of n independent variables}
+      \field{volume}{27}
+      \field{year}{1925}
+      \field{pages}{345\bibrangedash 396}
+      \range{pages}{52}
+    \endentry
+    \entry{pontryagin1955smooth}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=35ddcfe48e742631900799f021d998a6}{%
+           family={Pontryagin},
+           familyi={P\bibinitperiod},
+           given={Lev\bibnamedelima S},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{35ddcfe48e742631900799f021d998a6}
+      \strng{fullhash}{35ddcfe48e742631900799f021d998a6}
+      \strng{fullhashraw}{35ddcfe48e742631900799f021d998a6}
+      \strng{bibnamehash}{35ddcfe48e742631900799f021d998a6}
+      \strng{authorbibnamehash}{35ddcfe48e742631900799f021d998a6}
+      \strng{authornamehash}{35ddcfe48e742631900799f021d998a6}
+      \strng{authorfullhash}{35ddcfe48e742631900799f021d998a6}
+      \strng{authorfullhashraw}{35ddcfe48e742631900799f021d998a6}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Izdat. Akad. Nauk SSSR, Moscow}
+      \field{title}{Smooth manifolds and their applications in homotopy theory (Russian). Trudy Mat. Inst. Steklova, 45}
+      \field{year}{1955}
+    \endentry
+    \entry{porcelli2024bordism}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d565743a94b2c51be673dfd08e2d94af}{%
+           family={Porcelli},
+           familyi={P\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7f0a997e564654722e5666b652c2d0c7}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{fullhash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{fullhashraw}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{bibnamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorbibnamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authornamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorfullhash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorfullhashraw}{2a26631094b53a4a8a2866734bbac32f}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2401.11766}
+      \field{title}{Bordism of flow modules and exact Lagrangians}
+      \field{year}{2024}
+    \endentry
+    \entry{porcelli2024spectral}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d565743a94b2c51be673dfd08e2d94af}{%
+           family={Porcelli},
+           familyi={P\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7f0a997e564654722e5666b652c2d0c7}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{fullhash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{fullhashraw}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{bibnamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorbibnamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authornamehash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorfullhash}{2a26631094b53a4a8a2866734bbac32f}
+      \strng{authorfullhashraw}{2a26631094b53a4a8a2866734bbac32f}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2411.03257}
+      \field{title}{Spectral Floer theory and tangential structures}
+      \field{year}{2024}
+    \endentry
+    \entry{rezchikov2024cyclotomic}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ff85f04e784117d6ac80c513fda23118}{%
+           family={Rezchikov},
+           familyi={R\bibinitperiod},
+           given={Semon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{fullhash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{fullhashraw}{ff85f04e784117d6ac80c513fda23118}
+      \strng{bibnamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorbibnamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authornamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorfullhash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorfullhashraw}{ff85f04e784117d6ac80c513fda23118}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2405.18370}
+      \field{title}{Cyclotomic Structures in Symplectic Topology}
+      \field{year}{2024}
+    \endentry
+    \entry{rezchikov2022integral}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ff85f04e784117d6ac80c513fda23118}{%
+           family={Rezchikov},
+           familyi={R\bibinitperiod},
+           given={Semon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{fullhash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{fullhashraw}{ff85f04e784117d6ac80c513fda23118}
+      \strng{bibnamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorbibnamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authornamehash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorfullhash}{ff85f04e784117d6ac80c513fda23118}
+      \strng{authorfullhashraw}{ff85f04e784117d6ac80c513fda23118}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2209.11165}
+      \field{title}{Integral Arnol'd Conjecture}
+      \field{year}{2022}
+    \endentry
+    \entry{schwarz1993morse}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=7282ce6817233be842fd837ebcd8ecff}{%
+           family={Schwarz},
+           familyi={S\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{fullhash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{fullhashraw}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{bibnamehash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{authorbibnamehash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{authornamehash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{authorfullhash}{7282ce6817233be842fd837ebcd8ecff}
+      \strng{authorfullhashraw}{7282ce6817233be842fd837ebcd8ecff}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Morse homology}
+      \field{volume}{111}
+      \field{year}{1993}
+    \endentry
+    \entry{thom1954quelques}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6f1f3ecf1d3fa414d9495cc27437887e}{%
+           family={Thom},
+           familyi={T\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{fullhash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{fullhashraw}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{bibnamehash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{authorbibnamehash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{authornamehash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{authorfullhash}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \strng{authorfullhashraw}{6f1f3ecf1d3fa414d9495cc27437887e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Commentarii Mathematici Helvetici}
+      \field{number}{1}
+      \field{title}{Quelques propriétés globales des variétés différentiables}
+      \field{volume}{28}
+      \field{year}{1954}
+      \field{pages}{17\bibrangedash 86}
+      \range{pages}{70}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

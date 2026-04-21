@@ -1,0 +1,14 @@
+\begin{tikzcd}[sep=huge]
+    * \\
+    {x_4}   & {x_3} & {x_2}\\
+            &       &  *
+    \arrow["{W_4= - \sqcup -}"{description}, from=1-1, to=2-1, dashed]
+    \arrow["{W_3=I \sqcup I}"{description,pos=0.6},curve={height=-10pt}, from=1-1, to=2-2, color=myred, dashed]
+    \arrow["{W_2=I^2}"{description,pos=0.7},curve={height=-15pt}, from=1-1, to=2-3, color=myblue, dashed]
+    \arrow["{V_2 = +}"{description}, from=2-3, to=3-3]
+    \arrow["{V_3=I}"{description},curve={height=10pt}, from=2-2, to=3-3, color=myyellow]
+    \arrow["{V_4=I^2}"{description},curve={height=15pt}, from=2-1, to=3-3, color=myviolet]
+    \arrow["{\flowM_{4,3} = - \sqcup +}"'{yshift=-5pt},curve={height=-10pt}, from=2-1, to=2-2]
+    \arrow["{\flowM_{3,2} = + \sqcup -}"'{yshift=-5pt},curve={height=-10pt}, from=2-2, to=2-3]
+    \arrow["\flowM_{4,2}={I \sqcup I}"'{description},curve={height=25pt}, from=2-1, to=2-3, color=mygreen,,crossing over]
+\end{tikzcd}
