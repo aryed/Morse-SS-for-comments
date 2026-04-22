@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.29)  20 APR 2026 14:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.29)  22 APR 2026 14:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Latex/FlowCatSS/677a74b4876cb8da8ef9069b/main.tex
-(d:/Latex/FlowCatSS/677a74b4876cb8da8ef9069b/main.tex
+**d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex
+(d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
 (d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1315,6 +1315,9 @@ LaTeX Warning: Marginpar on page 3 moved.
 
 LaTeX Warning: Marginpar on page 3 moved.
 
+
+LaTeX Warning: Marginpar on page 3 moved.
+
 (./softIntro.tex
 Overfull \hbox (18.42888pt too wide) detected at line 39
 \OML/cmm/m/it/10.95 dim\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 M\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ; x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^N \OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 dim\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 dim\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 M\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 )) = \OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 s \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 s \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 r \OT1/cmr/m/n/10.95 + 1)) \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1[] = \OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 p \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 r:
@@ -1330,7 +1333,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-<fig/Heart.png, id=156, 812.03375pt x 522.95375pt>
+<fig/Heart.png, id=157, 812.03375pt x 522.95375pt>
 File: fig/Heart.png Graphic file (type png)
 <use fig/Heart.png>
 Package pdftex.def Info: fig/Heart.png  used on input line 60.
@@ -1380,7 +1383,7 @@ Package hyperref Info: bookmark level for unknown exmp* defaults to 0 on input l
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 (./fig/k-boundary Alt.tex)
-<fig/Toda Manifold drawing - with M labels.png, id=215, 557.58313pt x 488.32437pt>
+<fig/Toda Manifold drawing - with M labels.png, id=216, 557.58313pt x 488.32437pt>
 File: fig/Toda Manifold drawing - with M labels.png Graphic file (type png)
 <use fig/Toda Manifold drawing - with M labels.png>
 Package pdftex.def Info: fig/Toda Manifold drawing - with M labels.png  used on input line 241.
@@ -1446,7 +1449,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.205     F
+l.206     F
            or being compatible with flow categories, our chain complexes wil... (./Ch&Fil.tex
 Package hyperref Info: bookmark level for unknown defn defaults to 0 on input line 1.
 
@@ -2157,18 +2160,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48782 strings out of 473207
- 926823 string characters out of 5720461
- 1918352 words of memory out of 5000000
- 70429 multiletter control sequences out of 15000+600000
+ 48791 strings out of 473207
+ 927014 string characters out of 5720461
+ 1917497 words of memory out of 5000000
+ 70437 multiletter control sequences out of 15000+600000
  607184 words of font info for 342 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,20n,121p,3259b,1668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,20n,121p,3256b,1668s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2024/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on main.pdf (60 pages, 2384642 bytes).
+Output written on main.pdf (60 pages, 2384886 bytes).
 PDF statistics:
- 1173 PDF objects out of 1200 (max. 8388607)
- 1014 compressed objects within 11 object streams
- 406 named destinations out of 1000 (max. 500000)
+ 1174 PDF objects out of 1200 (max. 8388607)
+ 1015 compressed objects within 11 object streams
+ 407 named destinations out of 1000 (max. 500000)
  69303 words of extra memory for PDF output out of 74296 (max. 10000000)
 

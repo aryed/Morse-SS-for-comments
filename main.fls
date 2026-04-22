@@ -1,8 +1,8 @@
-PWD d:/Latex/FlowCatSS/677a74b4876cb8da8ef9069b
+PWD d:/Latex/FlowCatSS/Morse-SS-for-comments
 INPUT d:/texlive/2024/texmf.cnf
 INPUT d:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT d:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/Latex/FlowCatSS/677a74b4876cb8da8ef9069b/main.tex
+INPUT d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex
 OUTPUT main.log
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
