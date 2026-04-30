@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1776681291.01165 "main.bcf" "main.bbl" "main" 1776858713.06729 0
+["biber main"] 1776681291.01165 "main.bcf" "main.bbl" "main" 1776883039.02407 0
   "Bib.bib" 1776782686 11531 754cc2239fdb52dd4c44d3d29fc6d4d7 ""
-  "main.bcf" 1776858712 112857 c4bc44a063b0e70815d1786c4ceb79dc "pdflatex"
+  "main.bcf" 1776883038 112857 c4bc44a063b0e70815d1786c4ceb79dc "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776858706.63952 "d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex" "main.pdf" "main" 1776858713.06796 0
+["pdflatex"] 1776883032.95564 "d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex" "main.pdf" "main" 1776883039.02499 0
   "Ch&Fil.tex" 1776782686 10657 b4e8fb5f745394d739d77a51698c619c ""
   "ChModels.tex" 1776782686 26158 c1255640a05f6b7dc1104304f2a3712d ""
   "ChOfFlow.tex" 1776782686 10688 1387c57d6411c740f639fe674cdcca76 ""
@@ -14,6 +14,7 @@
   "DiffofCh.tex" 1776782686 10274 e16ab216347bf563a8872ae4fdc1e2da ""
   "Mfld w. corners & ffcat.tex" 1776782686 19925 bf2ae4397c18d520440424f7e923a71d ""
   "SSofCh.tex" 1776782686 12671 6ad4cd7a9ba77e31483887d571ab381c ""
+  "Short Introduction.tex" 1776883032 3958 cbb793ee4fe60d95a6fe139c9a44afc0 ""
   "StrFF-via spaces diagrams.tex" 1776782686 24793 e10799e52f2658b3c9748e144b74abf4 ""
   "d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex" 1776782686 13260 5d3c13f0878fd88136e97f7898411c44 ""
   "d:/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1738101407 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -364,14 +365,14 @@
   "fig/k-boundary Alt.tex" 1776782686 665 4550f0124c723c0cc270f41fefe97aae ""
   "fig/rightLeftBimod Alt.tex" 1776782686 964 f232552a85c52f29381dbed765ecfc22 ""
   "macros.tex" 1776782686 4047 51b40f6bb148bb4ee62c51927ad8f8d1 ""
-  "main.aux" 1776858712 55001 b9276b1ca42b3bce8be2bc7cdc9714a1 "pdflatex"
+  "main.aux" 1776883038 55004 9a8e5f0c411ee89aa02789a4eed50313 "pdflatex"
   "main.bbl" 1776782686 46355 a1d67c99fca919301e47dfb9d76cfaed "biber main"
-  "main.out" 1776858712 4571 e43b9c0523c1abf892ff1fdc758fa89b "pdflatex"
-  "main.run.xml" 1776858712 2298 37bf888766009bcd03c0d60a76bb2673 "pdflatex"
+  "main.out" 1776883038 4571 e43b9c0523c1abf892ff1fdc758fa89b "pdflatex"
+  "main.run.xml" 1776883038 2298 37bf888766009bcd03c0d60a76bb2673 "pdflatex"
   "main.tex" 1776782686 13260 5d3c13f0878fd88136e97f7898411c44 ""
-  "main.toc" 1776858712 1908 6493652ddb59af43231e02bedf44d030 "pdflatex"
-  "main.xwm" 1776858712 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "softIntro.tex" 1776782686 30982 7eaf7b2a574679f046e724b203425261 ""
+  "main.toc" 1776883038 1908 acfd5a316059d3e521b5f18bd87c1cec "pdflatex"
+  "main.xwm" 1776883038 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "softIntro.tex" 1776883032 27566 fd358b5c2ed6f3c29729eb4b82b0dbc7 ""
   (generated)
   "main.aux"
   "main.bcf"

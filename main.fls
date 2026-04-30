@@ -570,6 +570,9 @@ INPUT ./softIntro.tex
 INPUT ./softIntro.tex
 INPUT softIntro.tex
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
+INPUT ./Short Introduction.tex
+INPUT ./Short Introduction.tex
+INPUT Short Introduction.tex
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT ./fig/Heart.png
 INPUT ./fig/Heart.png
