@@ -48,9 +48,7 @@ Moreover, the composition is given by identifying the faces in the following way
 \begin{equation*}
     \flowM_{z,y} \times \flowM_{y,x} \hookrightarrow \flowM_{z,x}.
 \end{equation*}
-See \cref{sec:FFCat} for definitions and details.
-
-Another building block in the theory are \emph{flow modules}. Given a flow category $\fC$, a right flow module $W$ over $\fC$ consists of a collection of manifolds $\{W_x\}_{x\in \fC}$, together with corner structure maps \begin{equation*}
+See \cref{sec:FFCat} for definitions and details. Another building block in the theory are \emph{flow modules}. Given a flow category $\fC$, a right flow module\todo{add emph to the "right flow module"} $W$ over $\fC$ (see \cref{def:RightFlowModule} for the formal definition) consists of a collection of manifolds $\{W_x\}_{x\in \fC}$, together with corner structure maps \begin{equation*}
     W_y \times \flowM_{y,x} \hookrightarrow W_x.
 \end{equation*}
 A right flow module is of \emph{degree} $i$ if 
@@ -62,7 +60,7 @@ By abuse of notation, we denote the collection of right modules of degree $i$ ov
 \begin{equation*}
     [*[i],\fC].
 \end{equation*}
-Similarly, we can define left flow modules of degree $i$ to be collections of manifolds $\{V_x\}_{x \in \fC}$, together with corner structure maps
+Similarly, we can define left flow modules of degree $i$ over $\fC$ (see \cref{def:LeftFlowModule} for the formal definition) to be collections of manifolds $\{V_x\}_{x \in \fC}$, together with corner structure maps
 \begin{equation*}
     \flowM_{y,x} \times V_x \hookrightarrow V_y.
 \end{equation*}
@@ -82,7 +80,7 @@ The degree of this module is given by
 \begin{equation*}
     \norm{x} - \dim (V_x) = \norm{x} - (\norm{x} - \norm{x'} - 1) = \norm{x'} + 1
 \end{equation*}
-and we denote is just by $\flowM_{-,x'}$.
+and we denote is just by $\flowM_{-,x'}$ \todo{I think that this "just by" needs some grammer fixing}.
 
 
 \textbf{Filtrations and coherent chain complexes}. Another result of CJS was to attach a stable homotopy type to a framed flow category by the following idea.
@@ -145,9 +143,10 @@ for the union of the flow manifolds, and for a right / left module over $\fC$ we
 Moreover, for a stable tangential structure $\xi: \cX \to BO$, one can define $\cX$ flow categories as those flow categories in which the morphism manifolds are equipped with an $\cX$ structure that is compatible with composition (in place of a stable framing). For an $\cX$ flow category $\fC$, we obtain a coherent chain complex $K_{\fC} \in \Ch(\Mod_{M\cX})$, and, analogously to the realization in $\Sp$ (see \ref{txt:real}), we define $\norm{\fC} \in \Mod_{\cX}$ to be its iterated cofiber.
 
 \subsection*{Our results}
-\label{def:Xrnp-extension}\todo{add begin defn?}
 Let $\cX$ be a stable tangential structure, let $\fC$ be a $\cX$-structured flow category.
-Let $n,p,r \in \bbZ$ and let $W,V$ be a right and left flow module over $\fC$ of degree $n$ and $p-r$ respectively. We define the punctured cube diagram
+An element $W_p = \{W_z\}_{\norm{z}=p} \in \pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if it extends to a right flow module $W$ of degree $n$ over $\fC_{[p,p-r]}$ (see \cref{def:ModuleSurvives} for the formal definition).
+
+To describe the differential, let $W,V$ be a right and left flow module over $\fC$ of degree $n$ and $p-r$ respectively (see \cref{def:RightFlowModule}, \cref{def:LeftFlowModule}). We define the punctured cube diagram
 \begin{equation*}
     D: \ P(\{p,\dots,p-r\}) \setminus \{\varnothing\} \to \Top,
 \end{equation*}
@@ -160,7 +159,7 @@ The \textbf{Toda manifold} is the colimit which we denote
 \begin{equation*}
     V \circ W \coloneqq \colim D 
 \end{equation*}
-and we will see later that the Toda manifolds indeed have a manifold structure, and that they are closed, $(n-p+r)$-dimensional, $\cX$-structured.
+and we will see later that the Toda manifolds indeed inherits manifold structure from $V,W$, and that they are closed, $(n-p+r)$-dimensional, $\cX$-structured.
 
 For the spectral sequence, we consider a family of such constructions indexed by objects in $\fC_{p-(r+1)}$. Specifically, for each $z \in \fC_{p-(r+1)}$, we define a punctured cube diagram $D_z$ by replacing the left module $V$ with $\flowM_{-,z}$ in the general construction. This yields a Toda manifold
 \begin{equation*}
@@ -181,7 +180,7 @@ Taking the disjoint union over all $z \in \fC_{p-(r+1)}$, we obtain an element
 \]
 \caption{
 The solid part represents the flow category $\fC$. Its objects are the $x_i$'s with $\norm{x_i}=i$, and the arrows represent the morphism manifolds.
-The 0 dimensional framed manifold $w_4$ represents an element in $E_1^{4,4} = \Omega^{\fr}_{4-4}$.
+The 0 dimensional framed manifold $W_4$ represents an element in $E_1^{4,4} = \Omega^{\fr}_{4-4}$.
 The dashed arrows represent an right module over $\fC_{[4,2]}$.
 The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\pm$ represents a framed point; the rest of framing is omitted for clarity).
 }\label{fig:ffCat}
@@ -194,15 +193,15 @@ The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\p
   \centering
   \adjustbox{width=\linewidth}{\input{fig/k-boundary Alt.tex}}
   \captionof{figure}{
-  the \cref{fig:ffCat} (from $*$ to $x_2$) and the\\object $*$ construct the punctured cube $D_{*}$
-  }
+  the \cref{fig:ffCat} (from $*$ to $z$) and the\\object $*$ construct the punctured cube $D_{z}$
+  }\todo{this description need math adn grammer corerctions}
   \label{fig:k-boundary}
 \end{minipage}\hfill
 \begin{minipage}{.37\textwidth}
   \centering
   \includegraphics[width=\linewidth]{fig/Toda Manifold drawing - with M labels.png}
   \captionof{figure}{
-  We can see that $\colim D_{*}$ is a topological space that inherits a closed smooth manifold structure.
+  We can see that $\colim D_{z}$ is a topological space that inherits a closed smooth manifold structure.
   }
   \label{fig:differential}
 \end{minipage}
@@ -218,16 +217,20 @@ The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\p
     \begin{equation*}
         \rnp{E} \implies \pi_n \norm{\fC}.
     \end{equation*}
-    An element $W_p=\{W_z\} \in \pg{E}{1}{n}{p}$ survives to $\pg{E}{r+1}{n}{p}$ if and only if we can extend the collection $W_p$ to an right flow module, over $\fC_{[p,p-r]}$. The differential is represented geometrically by the Toda manifolds:
+    An element
     \begin{equation*}
-        d_{r+1}(W_p) = \{\flowM_{-,z} \circ W\}_{z \in \fC_{p-(r+1)}} \in \bigoplus_{z \in \fC_{p-(r+1)}} \Omega^{\cX}_{n-p+r} = \pg{E}{r+1}{n-1}{p-(r+1)}
+        W_p=\{W_z\}_{\norm{z}=p} \in \pg{E}{1}{n}{p}
+    \end{equation*}
+    survives to $\pg{E}{r+1}{n}{p}$ if and only if the collection $W_p$ extends to a right flow module over $\fC_{[p,p-r]}$ (see \cref{def:ModuleSurvives}). The differential is represented geometrically by the Toda manifolds:
+    \begin{equation*}
+        d_{r+1}(W_p) = \{\flowM_{-,y} \circ W\}_{y \in \fC_{p-(r+1)}} \in \bigoplus_{y \in \fC_{p-(r+1)}} \Omega^{\cX}_{n-p+r} = \pg{E}{r+1}{n-1}{p-(r+1)}
     \end{equation*}\todo{write as $\bigcup$}
 \end{restatable}
 
 A key tool used to prove \cref{SSofStrFFCat} is a description of the spectral sequence associated with a coherent chain complex expressed in terms of chain complex maps.
 
 \begin{restatable}{thmA}{ThB}\label{SSofCh}
-    Let $K \in \Ch(\Sp)$ be a coherent chain complex in Spectra. Then there is a spectral sequence:
+    Let $K \in \Ch(\Sp)$ be a coherent chain complex in Spectra\todo{READ carefully about what condistions we need to get convergences}. Then there is a spectral sequence:
     \begin{equation*}
         E_1^{n,p} = \pi_{n - p} K_p,
     \end{equation*}
@@ -236,7 +239,7 @@ A key tool used to prove \cref{SSofStrFFCat} is a description of the spectral se
         E_r^{n,p} \implies \pi_n \colim_p (\cI K)_p,
     \end{equation*}
     
-    Moreover, let $x: \mathbb{S}^{n - p} \to K_p$ represent an element of $\pg{E}{1}{n}{p}$. Then $x$ survives to $\pg{E}{r+1}{n}{p}$ if and only if there exists a chain map:
+    Moreover, let $x: \mathbb{S}^{n - p} \to K_p$ represent an element of $\pg{E}{1}{n}{p}$. Then $x$ survives to $\pg{E}{r+1}{n}{p}$ if and only if there exists a chain complex map:
     \begin{equation}\label{eq:x_ext}
         \xymatrix{
         \mathbb{S}^{n - p} \ar[d]_{x} \ar[r] & 0 \ar[r]\ar[d] & \dots \ar[r]\ar[d]& 0\ar[d]\\
@@ -265,11 +268,11 @@ In knot theory, organizing the data of knots into a flow category results in a s
 \[
     \operatorname{Sq}^2 : H^\ast(\fC, \mathbb{Z}/2) \to H^{\ast+2}(\fC, \mathbb{Z}/2)
 \]
-from a knot diagram. This leads to the calculation of the corresponding homotopy (see \cite{lobb2020khovanov, lipshitz2014steenrod}). For a recap of flow categories in Khovanov and knot Floer theories, see \cite{marengon2024spectra}.
+from a knot diagram. This leads to the calculation of the corresponding homotopy (see \cite{lobb2020khovanov, lipshitz2014steenrod}).
 
 Our work is similar in spirit to these developments in that we use higher flow manifolds to compute the differentials, which can be interpreted as higher cohomology operations.
 
-In Hamiltonian Floer theory, one of the breakthroughs related to the Arnold conjecture employed a CJS-like construction—a generalization of flow categories adapted to Hamiltonian flow data—to prove a version of the Arnold conjecture over a field of characteristic $p$ (see \cite{abouzaid2021arnold}). Similar ideas appear in the work on the integral Arnold conjecture (see \cite{rezchikov2022integral, bai2022arnold}). Another recent development is the theory of Morse-Bott flow categories, where the function has critical sets (rather than isolated points) (see \cite{bonciocat2024revisiting}). An ongoing line of research is the introduction of an equivariant structure on such categories, which in turn induces an equivariant structure on the realization spectrum—a framework that supports cyclotomic methods in symplectic geometry (see \cite{cote2023equivariant, rezchikov2024cyclotomic}).
+In Hamiltonian\todo{Lagrangian Floer is general the the Hamiltonian, so this wording needs to be revisited} Floer theory, one of the breakthroughs related to the Arnold conjecture employed a CJS-like construction—a generalization of flow categories adapted to Hamiltonian flow data—to prove a version of the Arnold conjecture over a field of characteristic $p$ (see \cite{abouzaid2021arnold}). Similar ideas appear in the work on the integral Arnold conjecture (see \cite{rezchikov2022integral, bai2022arnold}). Another recent development is the theory of Morse-Bott flow categories, where the function has critical sets (rather than isolated points) (see \cite{bonciocat2024revisiting}). An ongoing line of research is the introduction of an equivariant structure on such categories, which in turn induces an equivariant structure on the realization spectrum—a framework that supports cyclotomic methods in symplectic geometry (see \cite{cote2023equivariant, rezchikov2024cyclotomic}).\todo{delete this part about Arnold Conj - maybe just metion that one can ask if our work can be generalized to Morse Bott flow categorizes / Equivariant flow categories}
 
 One also finds flow-category-like constructions in Lagrangian geometry that lift the Fukaya category of a symplectic manifold (see \cite{porcelli2024bordism, porcelli2024spectral}).
 

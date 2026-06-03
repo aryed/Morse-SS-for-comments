@@ -1,7 +1,7 @@
-Flow categories originally emerged as a categorical bookkeeping mechanism to organize the geometric and analytic data extracted from Hamiltonian system on a manifold \cite{CJS95}. In recent years, flow categories and their stable homotopy types have become central tools for lifting invariants in Floer, contact, and Khovanov homology into the realm of stable homotopy theory. A natural question arises: how can we systematically compute the generalized homology of these realization spectra directly from the underlying geometric flow data?   
+Flow categories originally emerged as a categorical bookkeeping mechanism to organize the geometric and analytic data extracted from Hamiltonian systems on a manifold \cite{CJS95}. In recent years, flow categories and their stable homotopy types have become central tools for lifting invariants in Floer, contact, and Khovanov homology into the realm of stable homotopy theory. A natural question arises: how can we systematically compute the generalized homology of these realization spectra directly from the underlying geometric flow data?   
 
-Here is an intuitively describing the main theorem of the paper using a toy model coming from Morse theory.
-Let $\Man$ be a closed manifold and $f: \Man \to \bbR$ a Smale Morse function.Denote by $\mathrm{Crit}(f)$ the set of critical points of $f$, and by $\ind: \mathrm{Crit}(f) \to \bbZ$ the index function. For simplicity assume that there is one critical point for each index $i \in \{0, \dots, n\}$, and denote the critical points by $x_i$ where $\ind(x_i) = i$.
+Here is an intuitive description of the main theorem of the paper using a toy model coming from Morse theory.
+Let $\Man$ be a closed manifold and $f: \Man \to \bbR$ a Smale Morse function. Denote by $\mathrm{Crit}(f)$ the set of critical points of $f$, and by $\ind: \mathrm{Crit}(f) \to \bbZ$ the index function. For simplicity, assume that there is one critical point for each index $i \in \{0, \dots, n\}$, and denote the critical points by $x_i$ where $\ind(x_i) = i$.
 The first result is:
 
 There is a spectral sequence 
@@ -10,34 +10,34 @@ There is a spectral sequence
 \end{equation*}
 where $\Omega^{\fr}_*$ is the framed bordism ring, and $\Sinf \Man$ is the stable homotopy type of  $\Man$.
 
-Let $x_j,x_i$ be two critical points of $f$ with $j > i$, we denote by $\flowM(x_j,x_i)$ the compactification of the moduli space of flow lines from $x_j$ to $x_i$, up to reparametrization. We remind that $\flowM(x_j,x_i)$ are framed manifolds with corners with dimension $\ind(x_j) - \ind(x_i) - 1$, and that the boundary structure is given by
+Let $x_j,x_i$ be two critical points of $f$ with $j > i$. We denote by $\flowM(x_j,x_i)$ the compactification of the moduli space of flow lines from $x_j$ to $x_i$, up to reparametrization. Recall that $\flowM(x_j,x_i)$ is a framed manifold with corners of dimension $\ind(x_j) - \ind(x_i) - 1$, and that the boundary structure is given by
 \begin{equation*}
-    \partial \flowM(x_j,x_i) = \bigcup_{i > r > j} \flowM(x_i,x_r) \times \flowM(x_r,x_i).
+    \partial \flowM(x_j,x_i) = \bigcup_{j > r > i} \flowM(x_j,x_r) \times \flowM(x_r,x_i).
 \end{equation*}
 
-Let $W_p$ be a representative of a bordism class in $\in \pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$.
-We have that $W_p$ survives to $\pg{E}{r+1}{n}{p}$ (also denoted by $W_p \in Z_{r+1}$) if and only if there is a family of framed manifolds $W_s$ for $s \in \{p-1, \dots, p-r\}$ with dimension $n-s$ and that the corner structure is given by
+Let $W_p$ be a representative of a bordism class in $\pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$.
+We have that $W_p$ survives to the $(r+1)$-th page (also denoted by $W_p \in Z_{r+1}$) if and only if there is a family of framed manifolds $\{W_s\}$ for $s \in \{p-1, \dots, p-r\}$ of dimension $n-s$ such that the corner structure is given by
 \begin{equation*}
     \partial W_s = \bigcup_{p \geq t > s} W_t \times \flowM(x_t,x_s).
 \end{equation*}
 
-For our next step we need to glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together.
-Let $t,u \in \bbZ$ such that $p \geq t > u \geq p-(r+1)$, by definition of the boundary structure of $W_u$ and $\flowM(x_t,x_{p-(r+1)})$ we have that 
+We can then glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together.
+Let $t,u \in \bbZ$ be such that $p \geq t > u \geq p-(r+1)$. By the definition of the boundary structure of $W_u$ and $\flowM(x_t,x_{p-(r+1)})$, we have that 
 \begin{equation*}
     W_t \times \flowM(x_t,x_{p-(r+1)}) \hookleftarrow W_t \times \flowM(x_t,x_u) \times \flowM(x_u,x_{p-(r+1)}) \hookrightarrow W_u \times \flowM(x_u,x_{p-(r+1)})
 \end{equation*}
-and this boundary components in common only to these two manifolds of the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$.
-On the other hand all the boundary components of $W_s \times \flowM(x_s,x_{p-(r+1)})$ are of this form, hence we can glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together to obtain a framed closed manifold which we denote by
+and these boundary components are shared only by these two manifolds of the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$.
+On the other hand, all the boundary components of $W_s \times \flowM(x_s,x_{p-(r+1)})$ are of this form, so we can glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together to obtain a framed closed manifold which we denote by
 \begin{equation*}
-    \flowM(-,x_{p-(r+1)}) \circ W \coloneqq \bigcup_{s \in \{p,\dots, p-r\}} \flowM(-,x_{p-(r+1)}) \times W_s,
+    \flowM(-,x_{p-(r+1)}) \circ W \coloneqq \bigcup_{s \in \{p,\dots, p-r\}} \flowM(x_s,x_{p-(r+1)}) \times W_s,
 \end{equation*}
-which is an analog the the Toda bracket construction. Notes that 
+which is an analog of the Toda bracket construction. Note that 
 \begin{equation*}
-    dim(\flowM(-,x_{p-(r+1)}) \circ W) = dim(W_s) + dim(\flowM(x_s,x_{p-(r+1)})) = n-s + \big(s - (p-(r+1)) - 1 \big) = n-p+r.
+    \dim(\flowM(x_s,x_{p-(r+1)}) \circ W) = \dim(W_s) + \dim(\flowM(x_s,x_{p-(r+1)})) = n-s + \big(s - (p-(r+1)) - 1 \big) = n-p+r.
 \end{equation*}
-The last part of the theorem states that if $W_p \in \pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$ survive to $Z_{r+1}$, then the differential is given by the bordism class of "Toda manifold": 
+The last part of the theorem states that if $W_p \in \pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$ survives to $Z_{r+1}$, then the $r+!$ differential on $Z_{r+1}$ is given by the bordism class of the Toda manifold: 
 \begin{equation*}
     d_{r+1}(W_p) = [\flowM(-,x_{p-(r+1)})\circ W] \in \Omega^{\fr}_{n-p+r} = \pg{E}{1}{n-1}{p-(r+1)}.
 \end{equation*}
 See \cref{fig:ffCat} for an example of the structure of the family $W_s$ and the flow manifolds,
-\cref{fig:k-boundary} for the gluing diagram of the Toda manifold and \cref{fig:differential} for the resulting closed manifold.
+\cref{fig:k-boundary} for the gluing diagram of the Toda manifold, and \cref{fig:differential} for the resulting closed manifold.

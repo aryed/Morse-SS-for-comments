@@ -386,6 +386,50 @@ The compatibility of the neat embedding and the framing implies the commutativit
 \end{equation}
 where the vertical maps are the "Thom" maps; see \cref{eq:ThomMap}.
 
+\subsection{Flow Modules}\label{subsec:FlowModules}
+
+\begin{defn}\label{def:RightFlowModule}
+    Let $\fC$ be a flow category. A \textbf{right flow module} $W$ of \textbf{degree} $n$ over $\fC$ consists of a collection of manifolds with corners $\{W_x\}_{x \in \fC}$ together with compatible corner structure maps (embeddings of codimension 1 boundary faces):
+    \begin{equation*}
+        W_y \times M_{y,x} \hookrightarrow W_x
+    \end{equation*}
+    for all $y, x \in \fC$, such that:
+    \begin{equation*}
+        \dim W_x = n - \norm{x}.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}\label{def:LeftFlowModule}
+    Let $\fC$ be a flow category. A \textbf{left flow module} $V$ of \textbf{degree} $p$ over $\fC$ consists of a collection of manifolds with corners $\{V_x\}_{x \in \fC}$ together with compatible corner structure maps (embeddings):
+    \begin{equation*}
+        M_{y,x} \times V_x \hookrightarrow V_y
+    \end{equation*}
+    for all $y, x \in \fC$, such that:
+    \begin{equation*}
+        \dim V_x = \norm{x} - p.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}\label{def:FramedFlowModule}
+    Let $\fC$ be a neatly embedded, normally framed flow category. A \textbf{neatly embedded, normally framed right flow module} $W$ of degree $n$ over $\fC$ consists of a right flow module structure together with a choice of integer $N$, neat embeddings of manifolds with corners:
+    \begin{equation*}
+        e_x: W_x \hookrightarrow \bbR^{N(n-\norm{x})} \times \Hlf^{J_{x,-}}
+    \end{equation*}
+    and stable normal framings $\varphi_x$ on the normal bundles $\nu e_x$ that are compatible with the actions:
+    \begin{equation*}
+        \partial_y \varphi_x = \varphi_y \oplus \varphi_{y,x}
+    \end{equation*}
+    where $\varphi_{y,x}$ is the framing on the morphism manifold $M_{y,x}$ of $\fC$.
+\end{defn}
+
+\begin{defn}\label{def:ModuleSurvives}
+    Let $\fC$ be a framed flow category, and let $n, p, r \in \bbZ$ with $r \geq 0$. Let $W_p = \{W_z\}_{\norm{z}=p}$ be a collection of closed framed manifolds representing an element in:
+    \begin{equation*}
+        \pg{E}{1}{n}{p} = \bigoplus_{\norm{z}=p} \Omega^{\fr}_{n-p}.
+    \end{equation*}
+    We say that the collection $W_p$ \textbf{extends to a right flow module of degree $n$ over $\fC_{[p,p-r]}$} if there exists a neatly embedded, normally framed right flow module $W$ of degree $n$ over $\fC_{[p,p-r]}$ whose restriction to the objects of degree $p$ satisfies $W_z = (W_p)_z$ for all $z \in \fC_p$.
+\end{defn}
+
 \begin{exmp}\label{ex:closed_flow_cat}
 Let $\fC$ be a framed flow category with objects $\{ y_i \}$ and $\{ x_j \}$ concentrated in only two degrees,  $\lvert y_i \rvert = q$ and $\lvert x_j \rvert = p$. The morphism space:
 \begin{equation*}

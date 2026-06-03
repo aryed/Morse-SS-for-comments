@@ -142,7 +142,7 @@ Similarly to \cref{con:topChOfCat}, using Pontryagin Thom we get a coherent chai
     hence we got a (topologically enriched) coherent chain complex $\Fun(\J,\Mod-\cX)$.
 \end{con}
 
-The definition of extension (\cref{def:Xrnp-extension}) is modified by replacing framed flow categories by $\cX$ structured flow categories and $\Omega^{\fr}$ by $\Omega^{\cX}$.
+The definition of a right flow module (\cref{def:RightFlowModule}) is modified by replacing framed flow modules by $\cX$ structured flow modules and $\Omega^{\fr}$ by $\Omega^{\cX}$.
 
 
 Similarly, we define when two $\cX$ flow categories are composable. To define the composition category we modify \cref{def:CompCat} we get a boundary diagram
@@ -358,23 +358,23 @@ we get the topological space $X \times \partial I^2$, which after straightening 
 \begin{proof}
     We need to show that for any $r \in \bbN$ and for any $X \in E_1$, we have that $X$ survives to $E_r$.
 
-    Denote by $\fC$ the flow category of $f$, by \cref{cor:SSofMorseStr} we need to find $\fC'$ which is an $X$ extension of $\fC_{p,p-r+1}$. We define the morphism manifolds of $\fC'$ to be:
+    Denote by $\fC$ the flow category of $f$. By \cref{cor:SSofMorseStr}, we need to extend $X$ to a right flow module $W$ of degree $n$ over $\fC_{[p,p-r]}$. We define the manifolds of $W$ to be:
     \begin{equation*}
-        M_{x,q}= X\times I^{p-q}.
+        W_q = X \times I^{p-q}.
     \end{equation*}
     The equations
     \begin{equation*}
-        \partial M_{x,q} = X\times \partial I^{p-q} 
-        = \bigcup X\times I^{p-q-1} \times S^0
-        = \bigcup X\times I^{p-q'} \times S^0 \times I_{q'-q-1}
-        = \bigcup M_{x,q'} \times M_{q',q}
+        \partial W_q = X \times \partial I^{p-q} 
+        = \bigcup X \times I^{p-q-1} \times S^0
+        = \bigcup_{q < q' \leq p} X \times I^{p-q'} \times S^0 \times I_{q'-q-1}
+        = \bigcup_{q < q' \leq p} W_{q'} \times M_{q', q}
     \end{equation*}
-    justifying that $\fC'$ is indeed a flow category.
+    justify that $W$ is indeed a right flow module over $\fC_{[p, p-r]}$.
 
-    Moreover, the differential is give by:
+    Moreover, the differential is given by the Toda manifold $W \circ \flowM_{-, p-r-1}$, which is:
     \begin{equation}\label{eq:unDiff}
-        d_r(X) = \bigcup_q M_{x,q}\times M_{q,p-r} = \bigcup_q X\times I^{p-q} \times S^0 \times I^{q-(p-r)-1} = 
-        \bigcup_q X\times I^{r-1} \times S^0 = X \times \partial I^r \simeq X\times S^{r-1}
+        d_{r+1}(X) = \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1} = \bigcup_q X \times I^{p-q} \times S^0 \times I^{q-(p-r-1)-1} = 
+        \bigcup_q X \times I^r \times S^0 = X \times \partial I^{r+1} \simeq X \times S^r
     \end{equation}
 \end{proof}
 
@@ -443,25 +443,25 @@ Now we want to calculate $MSO(\Sinf\bbRP^\ell)$. Under the same settings we have
         \end{cases}
     \end{equation*}
 
-    Let $X \in \pg{E}{1}{n}{p}$. For $p$ odd we have that $\fC_{[p,p-1]}$ is $X$ extendable by setting: 
+    Let $X \in \pg{E}{1}{n}{p}$. For $p$ odd we have that $X$ extends to a right flow module $W$ over $\fC_{[p,p-1]}$ by setting: 
     \begin{equation*}
-        M_{x,p-1} = X \times I.
+        W_{p-1} = X \times I.
     \end{equation*}
     As we defined the "forgetting" map $\mathbf{Flow}^{SO} \to \mathbf{Flow}^{O}$ induce that diagram:
     \begin{equation*}
         \xymatrix{
-            (\pg{\cE}{r}{n}{p})^{SO} \ar[r]^{d_r^{SO}} \ar[d]_{F}   & (\pg{\cE}{r}{n-1}{p-r})^{SO} \ar[d]^F\\
-            (\pg{\cE}{r}{n}{p})^O \ar[r]_{d_r^O}      & (\pg{\cE}{r}{n-1}{p-r})^O\\
+            (\pg{\cE}{r}{n}{p})^{SO} \ar[r]^{d_{r+1}^{SO}} \ar[d]_{F}   & (\pg{\cE}{r}{n-1}{p-r-1})^{SO} \ar[d]^F\\
+            (\pg{\cE}{r}{n}{p})^O \ar[r]_{d_{r+1}^O}      & (\pg{\cE}{r}{n-1}{p-r-1})^O\\
         }
     \end{equation*}
-    where $F$ is the forgetting map $\Omega^{SO} \to \Omega^{O}$ and $\cE$ are the elements that survives to the $r$-th page in the (un)oriented spectral sequence.
-    The extension above shows that $X \in \pg{E}{1}{n}{p}$ survives to $E_2$, inductively, we assume that $X$ survives to $E_r$. Using that diagram and \cref{eq:unDiff}, we get that
+    where $F$ is the forgetting map $\Omega^{SO} \to \Omega^{O}$ and $\cE$ are the elements that survive to the $(r+1)$-th page in the (un)oriented spectral sequence.
+    The flow module above shows that $X \in \pg{E}{1}{n}{p}$ survives to $E_2$, inductively, we assume that $X$ survives to $E_{r+1}$ (i.e., extends to a right module over $\fC_{[p, p-r]}$). Using that diagram and \cref{eq:unDiff}, we get that
     \begin{equation*}
-        F \circ d_r^{SO}(X) \simeq d_r^{O} \circ F(X) \simeq F(X) \times S^{r-1}.
+        F \circ d_{r+1}^{SO}(X) \simeq d_{r+1}^{O} \circ F(X) \simeq F(X) \times S^r.
     \end{equation*}
-    Both of the orientation of the circle are null bordant, hence the underlying manifold of $d_r^{SO}(X)$ is null bordant and $X$ survives to $E_{r+1}$.
+    Both orientations of the circle are null-bordant, hence the underlying manifold of $d_{r+1}^{SO}(X)$ is null-bordant and $X$ survives to $E_{r+2}$ (i.e., the module extends over $\fC_{[p, p-r-1]}$).
     
-    For $p$ even, we get that $d_1(X) = X \sqcup X$, hence $X$ survives to $E_2 \iff$ $X$ is 2 torsion. Under this assumption, we can use the fact that $d^{SO}$ lifts $d^O$ to get that $X$ survive to $E_r$.
+    For $p$ even, we get that $d_1(X) = X \sqcup X$, hence $X$ survives to $E_2 \iff$ $X$ is 2-torsion. Under this assumption, we can use the fact that $d^{SO}$ lifts $d^O$ to get that $X$ survives to $E_{r+1}$.
 
     We conclude that the spectral sequence collapse at the second page and
     \begin{equation*}

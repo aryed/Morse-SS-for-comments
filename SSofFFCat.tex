@@ -54,14 +54,14 @@ We recall that
 Let $\fC$ be a framed flow category. Then there exists a spectral sequence converging to the realization
 \begin{equation*}
     \rnp{E} \implies \pi_n \norm{\fC},
-\end{equation*}
+\end{equation5}
 with:
 \begin{equation*}
     \pg{E}{1}{n}{p} = \bigoplus_{\norm{y} = p} \Omega^{\fr}_{n - p}.
 \end{equation*}
-An element $X \in \pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if there is an $(X,r,n,p)$ extension of $\fC$ (see \cref{def:Xrnp-extension}). Let $\fC'$ be such extension, then the differential is represented in $\pg{E}{1}{n - 1}{p - (r+1)}$ by the Toda bracket:
+An element $L \in \pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if $L$ extends to a right flow module $W$ of degree $n$ over $\fC_{[p, p-r]}$ (see \cref{def:RightFlowModule}). If $L$ survives to the $(r+1)$-th page, then the differential $d_{r+1}(L)$ is represented by the Toda manifold $W \circ \flowM_{-, p-r-1}$ (the geometric tensor product of the right module $W$ and the left module $\flowM_{-, p-r-1}$), which is represented by the closed framed manifold in $\pg{E}{1}{n-1}{p-(r+1)}$:
 \begin{equation*}
-    d_{r+1}(X) = \bigsqcup_{y \in \fC_{p-(r+1)}} \<{\fC', \fC_{[p, p - (r+1)]} }_y.
+    d_{r+1}(L) = \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1}.
 \end{equation*}
 \end{thm}
 Note that the Toda manifolds are $n-p+r$ dimensional and we get an element in
@@ -75,39 +75,36 @@ Note that the Toda manifolds are $n-p+r$ dimensional and we get an element in
         \pg{E}{1}{n}{p} = \pi_{n - p} K_p = \pi_{n - p} \WedgeSp_{\norm{x} = p} \bbS = \bigoplus_{\norm{x} = p} \Omega^{\fr}_{n - p}.
     \end{equation*}
     
-    An extension of $\fC_{[p, p - r]}$ corresponds to a chain complex:
-    \begin{equation}\label{eq:long_ch}
-        \underbrace{\bbS}_{n+1} \to 0 \to \dots \to 0 \to K_p \to \dots \to K_{p-r}.
-    \end{equation}
-    where the the manifold $X$ encodes as the higher null homotopies of the map $\bbS \to \dots \to K_p$. Using the cubical model, by \cref{cor:ch_to_morph} we get a morphism of chain complexes
+    A right flow module $W$ of degree $n$ over $\fC_{[p, p - r]}$ corresponds to a map of coherent chain complexes (or a $\J$-module map) via \cref{con:topChOfCat}:
+    \begin{equation*}
+        K_W \colon K_{S_n} \to K_{\fC_{[p, p - r]}}
+    \end{equation*}
+    which extends the map representing $L$ on the degree $p$ objects. Geometrically, this translates to higher null-homotopies of the map $\bbS \to \dots \to K_p$ representing $L$. Using the cubical model, by \cref{cor:ch_to_morph} we get a morphism of chain complexes
     \begin{equation}\label{eq:long_surv}
         \xymatrix{
             \bbS \ar[r] \ar[d] & 0 \ar[r] \ar[d] & \dotsb \ar[r] \ar[d] & 0 \ar[r] \ar[d] & \dotsb \ar[r] \ar[d] & 0 \ar[d] \\
             0 \ar[r] & \dotsb \ar[r] & \dotsb \ar[r] & K_p \ar[r] & \dotsb \ar[r] & K_{p - r}
         }
     \end{equation}
-    see \cref{fig:ext_of_ffcat}. By the universal property of total cofiber this is equivalent to a map of chain complexes:
+    which describes the right flow module structure. By the universal property of the total cofiber, this is equivalent to a map of chain complexes:
     \begin{equation*}
         \xymatrix{
-            \bbS^{n - p} \ar[d]_X \ar[r] & 0 \ar[r] \ar[d] & \dotsb \ar[r] \ar[d] & 0 \ar[d] \\
+            \bbS^{n - p} \ar[d]_L \ar[r] & 0 \ar[r] \ar[d] & \dotsb \ar[r] \ar[d] & 0 \ar[d] \\
             K_p \ar[r] & K_{p - 1} \ar[r] & \dotsb \ar[r] & K_{p - r}
         }
     \end{equation*}
-    see \cref{lem:Ch_diff}, in particular iterated the argument about \cref{eq:diff_sus}. The criteria of \cref{lem:ChSur} guarantee that $X$ survive to $E_{r+1}$.
-    On the other hand, given such map of chain complexes, we get a chain of the form \cref{eq:long_ch}, and using \cref{prop:FF_are_Ch} we get a lift of this chain complex to a framed flow category which extend $\fC_{[p, p - r]}$.
+    where we iterated the argument about \cref{eq:diff_sus}. The homological criteria of \cref{lem:ChSur} guarantee that $L$ survives to $E_{r+1}$.
+    Conversely, any such map of chain complexes induces a chain complex of the form of a module, and using \cref{prop:FF_are_Ch} we get a lift of this chain complex to a right flow module over $\fC_{[p, p - r]}$.
     
-    To determine the differential, recall from \cref{lem:Ch_diff} that the differential $d_r(X)$ is given by the composition of two maps: the extension of $X$, and the map $K_{[p, p - r]}$ viewed as a chain map $K_{[p, p - r + 1]} \to K_{p - r}$. Under the identifications provided by \cref{prop:FF_are_Ch} and \cref{cor:ch_to_morph}, these maps correspond to $\fC'$ and $\fC_{[p, p - r-1]}$, respectively. Therefore, the differential is given by the Toda bracket:
+    To determine the differential, recall from \cref{lem:Ch_diff} that the differential $d_{r+1}(L)$ is given by the composition of two maps: the right flow module map $K_W$, and the left flow module map representing the differential $K_{\flowM_{-, p-r-1}} \colon K_{\fC_{[p, p - r]}} \to K_{p - r - 1}$. Under the equivalence between compositions of chain complexes and compositions of flow modules, this corresponds precisely to the Toda manifold $W \circ \flowM_{-, p-r-1}$, which is represented by the closed framed manifold:
     \begin{equation*}
-        d_{r+1}(X) = \langle \fC', \fC_{[p, p - r-1]} \rangle.
+        d_{r+1}(L) = \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1}
     \end{equation*}
-    and by decomposing
+    where $W_q$ are the manifolds of the module $W$ and $M_{q, p-r-1}$ are the morphism manifolds of $\fC$. Decomposing the stable homotopy group on the target:
     \begin{equation*}
-        \bigoplus_{\norm{y} = p-(r+1)} \Omega^{\fr}_{n-p+r} = \pg{E}{1}{n-1}{p-(r+1)}.
+        \bigoplus_{\norm{y} = p-(r+1)} \Omega^{\fr}_{n-p+r} = \pg{E}{1}{n-1}{p-(r+1)}
     \end{equation*}
-    we project the differential on each coordinate of the sum
-    \begin{equation*}
-        d_{r+1}(X) = \bigsqcup_{y \in \fC_{p-(r+1)}} \<{\fC', \fC_{[p, p - r]} }_y.
-    \end{equation*}
+    yields the differential projected onto each coordinate as required.
 \end{proof}
 
 \begin{figure}
@@ -291,10 +288,9 @@ with:
 \begin{equation*}
     \pg{E}{1}{n}{p} = \bigoplus_{\norm{y} = p} \Omega^{\fr}_{n - p}.
 \end{equation*}
-An element $X \in \pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if there is an $(X,r,n,p)$ extension of $\fC$.
-Let $\fC'$ be such an extension, then the differential is represented in $\pg{E}{1}{n-1}{p-(r+1)}$ by the \emph{Toda manifold}
+An element $L \in \pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if $L$ extends to a right flow module $W$ of degree $n$ over $\fC_{[p, p-r]}$ (see \cref{def:ModuleSurvives}). If $L$ survives, then the differential $d_{r+1}(L)$ is given by the Toda manifold $W \circ \flowM_{-, p-r-1}$, represented by the closed framed manifold in $\pg{E}{1}{n-1}{p-(r+1)}$:
 \begin{equation*}
-    d_{r+1}(X) = \bigsqcup_{y \in \fC_{p-r-1}} \colim D_y,
+    d_{r+1}(L) = \bigsqcup_{y \in \fC_{p-r-1}} \colim D_y,
 \end{equation*}
 viewed as an element in $\Omega^{\fr}_{n - p + r}$.
 \end{cor}
@@ -336,9 +332,9 @@ Let $M$ be a smooth Riemannian manifold, and let $f \colon M \to \bbR$ be a Mors
 \end{equation*}
 converging to $\Sigma^\infty_+ M$ (the stable homotopy type of $M$).
 
-Denote by $\fC_f$ the flow category of $(M, f)$. Given an element $X \in E^1_{p, n}$, we have that $X$ survives to the $(r+1)$-th page if and only if there is an $(X,r,n,p)$ extension of $\fC_f$. Let $\fC'$ be such an extension. Then the differential is represented in $\pg{E}{1}{n-1}{p - (r+1)}$ by the Toda bracket
+Denote by $\fC_f$ the flow category of $(M, f)$. Given an element $L \in E^1_{p, n}$, we have that $L$ survives to the $(r+1)$-th page if and only if $L$ extends to a right flow module $W$ of degree $n$ over $\fC_{f, [p, p-r]}$ (see \cref{def:RightFlowModule}). Under this condition, the differential $d_{r+1}(L)$ is given by the Toda manifold $W \circ \flowM_{-, p-r-1}$, represented by the closed framed manifold in $\pg{E}{1}{n-1}{p-(r+1)}$:
 \begin{equation*}
-    d_{r+1}(X) = \bigsqcup_{y \in \fC_{p-(r+1)}} \langle \fC', \fC_{[p, p - r]} \rangle_y.
+    d_{r+1}(L) = \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1}.
 \end{equation*}
 \end{thm}
 

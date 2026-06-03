@@ -262,41 +262,40 @@ This example recovers the secondary structure on bordism rings, introduced by Al
 \end{proof}
 
 \begin{thm}\label{cor:SSofFFCat}
-    Let $\fC$ be a flow category with a neat embedding and normal framing. Let $K_{\fC}$ be the chain complex obtaining by collapsing the morphism manifolds of $\fC$ and denote by $\rnp{E}$ the spectral sequence of $K_{\fC}$.
-    We have that 
+    Let $\fC$ be a flow category with a neat embedding and normal framing. Let $K_{\fC}$ be the chain complex obtained by collapsing the morphism manifolds of $\fC$, and denote by $\rnp{E}$ the spectral sequence of $K_{\fC}$. We have that:
     \begin{equation*}
         \pg{E}{1}{n}{p}=\bigoplus_{\norm{x}=p} \Omega^{\fr}_{n-p}.
     \end{equation*}
-    An element $L \in \Omega^{\fr}_{n-p}$ survive to the $r$ if and only if there is an $(n,p,r,L)$ extension of $\fC$\todo{add ref to the def in the intro}.
+    A collection of closed framed manifolds $L = \{L_z\}_{\norm{z}=p}$ representing an element in $\pg{E}{1}{n}{p}$ survives to the $(r+1)$-th page if and only if $L$ extends to a right flow module $W$ of degree $n$ over $\fC_{[p, p-r]}$ (see \cref{def:ModuleSurvives}).
     
-    Let $L \in \pg{E}{1}{n}{p}$ that survives to the $r$-th page and let $\fC'$ be an $(n,p,r,L)$ extension, then $d_r(L)$ is the morphism manifold of $\fC_{[p,p-r]} \circ \fC'$, which is given by the framed manifold
+    If $L$ survives to the $(r+1)$-th page, then the differential $d_{r+1}(L)$ is given by the bordism class of the Toda manifold $W \circ \flowM_{-, p-r-1}$ (the geometric tensor product of the right module $W$ and the left module $\flowM_{-, p-r-1}$), which is represented by the closed framed manifold:
     \begin{equation*}
-        \bigcup_{p \geq q\geq p-r+1} N_{s,q}\times M_{q,p-r}
+        \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1}
     \end{equation*}
-    where the $N$'s the are morphism manifolds of $\fC'$ and $M$'s are the morphism manifolds of $\fC$.
+    where the $W_q$ are the manifolds in the flow module $W$, and the $M_{q, p-r-1}$ are the morphism manifolds of $\fC$.
 \end{thm}
 \begin{proof}
-    On the one hand, assume that we have an $(n,p,r,L)$ extension of $\fC$, using \cref{con:topChOfCat} we construct a chain complex 
-    which, by [map between chains are longer chains] the chain complex is equivalent to a map
+    On the one hand, assume that the collection $L$ extends to a right flow module $W$ over $\fC_{[p,p-r]}$ of degree $n$. Using \cref{con:topChOfCat}, we construct a map of coherent chain complexes (or a $\J$-module map) corresponding to $W$:
     \begin{equation*}
-        \Map(\bbS_n,K_{\fC_{[p,p-r]}})
+        K_W: K_{S_n} \to K_{\fC_{[p,p-r]}}
     \end{equation*}
-    that extend $L$. Applying \cref{lem:ChSur} shows that $L$ survive to the $r$-th page.
-
-    For the differential: let $L \in \pg{E}{1}{n}{p}$ and let $\fC'$ be an $(n,p,r,L)$ extension of $\fC$. By \cref{lem:Ch_diff} we have that $d_r(L)$ is the composition $K_{\fC_{[p,p-r]}} \circ K_{\fC'}$, viewed as map between spheres. We remind that
-    \begin{equation*}
-        K_{\fC_{[p,p-r]} \circ \fC'} \simeq K_{\fC_{[p,p-r]}} \circ K_{\fC'}
-    \end{equation*}
-    and that the under Pontryagin Thom isomorphism, the only map (framed manifold) of $K_{\fC_{[p,p-r]} \circ \fC'}$ is
-     \begin{equation*}
-        \bigcup_{p \geq q\geq p-r+1} N_{s,q}\times M_{q,p-r}
-    \end{equation*}
-    where the $N$'s the are morphism manifolds of $\fC'$ and $M$'s are the morphism manifolds of $\fC$.
+    which extends the map representing $L$ on the degree $p$ objects. By the homological criterion established in \cref{lem:ChSur}, this map of chain complexes guarantees that the element $L$ survives to the $(r+1)$-th page of the spectral sequence.
     
-    The remaining part is to show that if $L \in \pg{E}{1}{n}{p}$ survive to the $(r+1)$-th page, then there is $(n,p,r+1,L)$ extension of $\fC$. We remind that $\delta_r(L)$ is given by $\fC_{[p,p-r+1]} \circ \fD$ where $\fD$ is an $(n,p,r,L)$ extension of $\fC$. By definition, if $L$ survive then $d_r(L)=0$ hence $\delta_r(L)$ is null bordant and have a framed manifold $N_{s,p-r}$ with
+    For the differential, let $W$ be the right flow module of degree $n$ over $\fC_{[p,p-r]}$ extending $L$. By \cref{lem:Ch_diff}, the differential $d_{r+1}(L)$ is given by the composition of the chain maps:
     \begin{equation*}
-        \partial N_{s,p-r} = \delta_r(L) = \bigcup_{p \geq q\geq p-r+1} N_{s,q}\times M_{q,p-r}
+        K_{\flowM_{-, p-r-1}} \circ K_W: K_{S_n} \to K_{p-r-1}
     \end{equation*}
-    where the $M$'s and $N$'s as above. By adding $N_{s,p-r}$ to $\fC_{[p,p-r+1]} \cup \fD$ we get a flow category $\fC'$ which is an $(n,p,r+1,L)$ extension of $\fC$.
-    \todo{To do it carefully, we need to find an manifold with corners structure on $N_{s,p-r}$, which can be given by taking $\delta_r(L)$, "cap" is with $N_{s,p-r}$, as manifold with boundary, and " un-straightening it}
+    where the first map is the left flow module $\flowM_{-, p-r-1}$ viewed as a chain map.
+    Under the equivalence between compositions of chain complexes and compositions of modules, this corresponds to the Toda manifold $W \circ \flowM_{-, p-r-1}$, which is represented by the closed framed manifold:
+    \begin{equation*}
+        \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1}
+    \end{equation*}
+    where the $W_q$ are the manifolds of the module $W$ and $M_{q, p-r-1}$ are the morphism manifolds of $\fC$.
+    
+    The remaining part is to show that if $L \in \pg{E}{1}{n}{p}$ survives to the $(r+2)$-th page, then the collection $L$ extends to a right flow module over $\fC_{[p, p-r-1]}$. By the definition of survival, if $L$ survives then $d_{r+1}(L) = 0$ in bordism. Thus, the Toda manifold $W \circ \flowM_{-, p-r-1}$ is null-bordant, meaning there exists a framed manifold with corners $W_{p-r-1}$ of dimension $n-p+r$ such that:
+    \begin{equation*}
+        \partial W_{p-r-1} = W \circ \flowM_{-, p-r-1} = \bigcup_{p \geq q\geq p-r} W_q\times M_{q,p-r-1}.
+    \end{equation*}
+    By adding the manifold $W_{p-r-1}$ to the collection $\{W_q\}_{q \in \fC_{[p,p-r]}}$, we obtain a right flow module over $\fC_{[p, p-r-1]}$ of degree $n$, as required.
+    \todo{To do it carefully, we need to find a manifold with corners structure on $W_{p-r-1}$, which is given by taking the null-bordism of the Toda manifold as a manifold with boundary, and since its boundary is a union of products of manifolds with corners, we can un-straighten it to obtain a manifold with corners.}
 \end{proof}
