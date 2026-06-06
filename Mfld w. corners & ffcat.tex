@@ -342,7 +342,7 @@ Consider a framed flow category $\fC$ with object set $\{ z, y, x, w \}$ and gra
 
 Note that is a uniform version, in the sense that all the manifolds embeds into a products of $\bbR^N$. This version arises by stabilizing \cite{LS14}.
 
-\begin{rem}\label{rem:Cat_emb}\todo{do we need this?}
+\begin{rem}\label{rem:Cat_emb}\todo{do we need this? (wait for index bundle change first)}
 The fact that any manifold with corners admits a neat embedding implies that any flow category can be embedded, see \cite{LS14} Lemma 3.16. Moreover, the space of such embeddings becomes arbitrarily connected as $N$ increases.
 \end{rem}
 
@@ -413,9 +413,9 @@ where the vertical maps are the "Thom" maps; see \cref{eq:ThomMap}.
 \begin{defn}\label{def:FramedFlowModule}
     Let $\fC$ be a neatly embedded, normally framed flow category. A \textbf{neatly embedded, normally framed right flow module} $W$ of degree $n$ over $\fC$ consists of a right flow module structure together with a choice of integer $N$, neat embeddings of manifolds with corners:
     \begin{equation*}
-        e_x: W_x \hookrightarrow \bbR^{N(n-\norm{x})} \times \Hlf^{J_{x,-}}
+        e_x: W_x \hookrightarrow \bbR^{N(n+1-\norm{x})} \times \Hlf^{J_{n+1,x}}
     \end{equation*}
-    and stable normal framings $\varphi_x$ on the normal bundles $\nu e_x$ that are compatible with the actions:
+    and stable normal framings $\varphi_x$ on the normal bundles $\nu e_x$ that are compatible with the framing:
     \begin{equation*}
         \partial_y \varphi_x = \varphi_y \oplus \varphi_{y,x}
     \end{equation*}

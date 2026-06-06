@@ -135,7 +135,7 @@
 }
 \makeatother
 
-\input{macros.tex}
+\input{macros}
 
 \usepackage{ifthen}
 \usepackage{xcolor}
@@ -177,17 +177,13 @@ Independent of flow categories, we provide a description of the spectral sequenc
 \end{abstract}
 \newpage
 
-\todo[color = lightgray]{only section names?}
 \tableofcontents 
 \newpage
 
 \section{Introduction}\label{sec:intro}
 
 \todo{We change the intro to use "flow bimod", now we need to shcange the rest of the paper}
-\todo{reuse ThB in the body of the paper}
-\todo{delete half of the intro}
-\todo{cite "Massey products in M Sp , and its application"??}
-\input{softIntro.tex}
+\input{softIntro}
 \subsection*{Acknowledgments}
 I am grateful to my advisor, Tomer Schlank, for introducing me to the ideas behind this paper, for guiding me toward this project, and for fostering a great research environment. I am also grateful to the Seminarak group, particularly Shai Keidar and Shaul Ragmov, for insightful discussions over time, and to Lior Yanovski for his efforts in maintaining the group in recent months. I would like to thank Trygve Poppe Oldervoll, João Lobo Fernandes, and David Blanc for their comments and suggestions. Finally, I sincerely appreciate Shulamit's support and Edo and Orit's hospitality during the writing of this paper.
 
@@ -212,24 +208,20 @@ We will start with the construction of spectral sequence of a filtered object, f
 
 For our discussion, we assume that $\cC$ is a stable $\infty$ category equipped with a $t$-structure $(\cC^{\leq 0}, \cC^{\geq 0})$.
 \input{SSofCh}
-
-\subsection{The differential from chain complexes viewpoint}\todo{Combine with sec 2.2???}
-In the previous subsections, we established the construction of a spectral sequence associated with a filtered object in a stable $\infty$-category $\cC$ equipped with a $t$-structure. We now focus on describing the differentials in this spectral sequence, particularly in the context of chain complexes.
-\input{DiffofCh}
 %%%----------------------------------------------------------------------------
 \section{Manifolds with Corners and Framed Flow Categories}
-This section lays the geometric and categorical groundwork for our main constructions. We begin by employing a diagrammatic, framework. The fundamental geometric objects in this setting are manifolds with corners, a standard generalization of smooth manifolds (see \cite{LS14} for a relevant treatment). These concepts are then unified\todo{do they???} within the established theory of flow categories \cite{CJS95}, a structure where the morphism spaces are themselves manifolds with corners and the composition law is governed by the geometry of their corner strata. The subsequent subsections will develop the precise definitions required for this approach.
+This section lays the geometric and categorical groundwork for our main constructions. We begin by introducing a diagrammatic framework. The fundamental geometric objects in this setting are manifolds with corners, which generalize smooth manifolds (see \cite{LS14} for a relevant treatment). These concepts are then used to define flow categories \cite{CJS95}, where the morphism spaces are manifolds with corners and composition is given by embedding into the corner strata. The subsequent subsections develop the precise definitions required for this approach.
 \input{Mfld w. corners & ffcat}
 
-\section{Chain complex of Flow Category}
+\section{Chain complex of Flow Category}\label{sec:J}
 In this section, we establish a connection between chain complexes and framed flow categories by introducing a topologically enriched category $\J$, which serves as a replacement for the category of chain complexes $\Ch$. This idea originates from the work of Cohen, Jones, and Segal \cite{CJS95}, and is further developed in the revised version \cite{Cohen19}.
 
-\input{ChOfFlow.tex}
+\input{ChOfFlow}
 
 \section{Models for Chain Complexes}\label{sec:compOfFlow}
 At this point, given a framed flow category $\fC$, one can combine \cref{con:topChOfCat} and \cref{sec:SSofCh} to construct a spectral sequence for its coherent chain complex $K_{\fC}$, and a sufficient condition, in terms of flow categories, for an element to survive to the $r$-th page. Our goal in the rest of the paper is to give a flow-categorical description for the differential and hence a necessary condition for an element to survive, in terms of flow categories.
 
-In this section, we establish a rigorous connection between the topologically enriched category $\J$ (introduced in \cref{sec:J} as a topologically enriched framework for chain complexes) and the $\infty$-categorical framework for chain complexes detailed in \cref{sec:SSofCh}. Our primary objective is to define explicit models for the category $\Ch$ that facilitate the precise extraction of geometric data from flow categories. This extraction is useful for providing a concrete geometric interpretation of the differentials within the spectral sequence constructed in\todo{add ref to the "main" Th that give a geo description for the differential}. This approach will allow us to translate abstract algebraic operations on chain complexes into intuitive geometric operations on flow manifolds.
+In this section, we establish a rigorous connection between the topologically enriched category $\J$ (introduced in \cref{sec:J} as a topologically enriched framework for chain complexes) and the $\infty$-categorical framework for chain complexes detailed in \cref{sec:SSofCh}. Our primary objective is to define explicit models for the category $\Ch$ that facilitate the precise extraction of geometric data from flow categories. This extraction is useful for providing a concrete geometric interpretation of the differentials within the spectral sequence constructed in \cref{SSofStrFFCat}. This approach will allow us to translate abstract algebraic operations on chain complexes into intuitive geometric operations on flow manifolds.
 
 This geometric perspective provides a concrete way to handle compositions. Specifically, we will show that two composable morphisms of chain complexes, $f\colon X_b \to K$ and $g\colon K \to Y_a$, can be understood as functors defined on higher-dimensional index categories. The composition itself is then realized as a map originating from the boundary of a multi-dimensional half-space, $\partial (\Hlf^{J_{b+1,a-1}})$. Central to this construction is the identification of this boundary with a sphere:
 \begin{equation*}
@@ -240,7 +232,7 @@ Under this equivalence, the composition map into $\Hom(X_b, Y_a)$ is given expli
     \bigcup_{b \geq p\geq a} f_{b+1,p}\smashSpaces g_{p,a-1} \colon \bigcup_{b \geq p\geq a} (\Hlf^{J_{b+1,p}})_+ \smashSpaces (\Hlf^{J_{p,a-1}})_+ \to \Hom(X_b,Y_a)
 \end{equation*}
 
-\input{ChModels.tex}
+\input{ChModels}
 
 \section{Differential in a flow category}
 By passing the definition of the differential (see \cref{lem:Ch_diff}) through the topological model of chain complexes, we can start with a flow category and get a flow categorical formula for the differential. Using this description we will extract an sufficient and necessary condition for the survival of an element.

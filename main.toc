@@ -1,21 +1,18 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {section}{\numberline {2}Chains Complexes and their Spectral Sequences}{14}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Chain Complexes and Filtered Objects}{14}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Spectral Sequences of Chain Complexes}{18}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}The differential from chain complexes viewpoint}{23}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Manifolds with Corners and Framed Flow Categories}{27}{section.3}%
+\contentsline {section}{\numberline {2}Chains Complexes and their Spectral Sequences}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Chain Complexes and Filtered Objects}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Spectral Sequences of Chain Complexes}{17}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Manifolds with Corners and Framed Flow Categories}{26}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Diagrammatic framework}{27}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Manifolds with corners}{30}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Framed Flow Categories}{32}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Flow Modules}{34}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Chain complex of Flow Category}{35}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Topological chain complexes}{36}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Models for Chain Complexes}{38}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Cubical and Simplicial Models}{39}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Spine Cubes and Chain Complexes}{41}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}The topologically enriched model of $\Cu _n$}{42}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Composition in the topological model}{45}{subsection.5.4}%
+\contentsline {subsection}{\numberline {3.2}Manifolds with corners}{29}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Framed Flow Categories}{31}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Flow Modules}{33}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Chain complex of Flow Category}{34}{section.4}%
+\contentsline {section}{\numberline {5}Models for Chain Complexes}{37}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Cubical and Simplicial Models}{38}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Spine Cubes and Chain Complexes}{40}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Composition in the Topologically Enriched Model}{42}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Differential in a flow category}{47}{section.6}%
-\contentsline {section}{\numberline {7}Tangential structures and change of rings}{53}{section.7}%
+\contentsline {section}{\numberline {7}Tangential structures and change of rings}{52}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Change of rings}{56}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Bordism homology of projective spaces}{57}{subsection.7.2}%

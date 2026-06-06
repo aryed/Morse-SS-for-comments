@@ -16,28 +16,34 @@ Let $x_j,x_i$ be two critical points of $f$ with $j > i$. We denote by $\flowM(x
 \end{equation*}
 
 Let $W_p$ be a representative of a bordism class in $\pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$.
-We have that $W_p$ survives to the $(r+1)$-th page (also denoted by $W_p \in Z_{r+1}$) if and only if there is a family of framed manifolds $\{W_s\}$ for $s \in \{p-1, \dots, p-r\}$ of dimension $n-s$ such that the corner structure is given by
+In our framework, we view $W_p$ as a right flow module of degree $n$ over the trivial subcategory containing only the critical point $x_p$.
+The main theorem states that $W_p$ survives to the $(r+1)$-th page (also denoted by $W_p \in Z_{r+1}$) if and only if it **extends to a right flow module** $W$ of degree $n$ over the truncated flow category $\fC_{[p, p-r]}$.
+Concretely, this means providing a family of framed manifolds $\{W_s\}$ for $s \in \{p, \dots, p-r\}$ of dimension $n-s$ such that the corner structure maps
 \begin{equation*}
-    \partial W_s = \bigcup_{p \geq t > s} W_t \times \flowM(x_t,x_s).
+    W_t \times \flowM(x_t,x_s) \hookrightarrow W_s
 \end{equation*}
+satisfy the axioms of a right flow module.
 
-We can then glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together.
-Let $t,u \in \bbZ$ be such that $p \geq t > u \geq p-(r+1)$. By the definition of the boundary structure of $W_u$ and $\flowM(x_t,x_{p-(r+1)})$, we have that 
+To compute the differential, we glue this right module $W$ together with the canonical left flow module $\flowM(-,x_{p-(r+1)})$.
+Let $t,u \in \bbZ$ be such that $p \geq t > u \geq p-(r+1)$. By the boundary structure axioms of the right module $W$ and the left module $\flowM(-,x_{p-(r+1)})$, we have the following two embeddings:
 \begin{equation*}
     W_t \times \flowM(x_t,x_{p-(r+1)}) \hookleftarrow W_t \times \flowM(x_t,x_u) \times \flowM(x_u,x_{p-(r+1)}) \hookrightarrow W_u \times \flowM(x_u,x_{p-(r+1)})
 \end{equation*}
 and these boundary components are shared only by these two manifolds of the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$.
-On the other hand, all the boundary components of $W_s \times \flowM(x_s,x_{p-(r+1)})$ are of this form, so we can glue the collection $W_s \times \flowM(x_s,x_{p-(r+1)})$ together to obtain a framed closed manifold which we denote by
+Because all boundary components of $W_s \times \flowM(x_s,x_{p-(r+1)})$ are of this form, we can glue the collection together along these shared faces to obtain a framed closed manifold. We denote this closed manifold by $W \circ \flowM(-,x_{p-(r+1)})$, and call it a Toda manifold:
 \begin{equation*}
-    \flowM(-,x_{p-(r+1)}) \circ W \coloneqq \bigcup_{s \in \{p,\dots, p-r\}} \flowM(x_s,x_{p-(r+1)}) \times W_s,
+    W \circ \flowM(-,x_{p-(r+1)}) \coloneqq \bigcup_{s \in \{p,\dots, p-r\}} W_s \times \flowM(x_s,x_{p-(r+1)}).
 \end{equation*}
-which is an analog of the Toda bracket construction. Note that 
+This gluing operation is a geometric realization of the composition of modules (sometimes called a geometric tensor product).
+
+To verify that this manifold represents a class in the correct group for the differential, we compute its dimension. For each $s$, the pieces being glued have dimension: 
 \begin{equation*}
-    \dim(\flowM(x_s,x_{p-(r+1)}) \circ W) = \dim(W_s) + \dim(\flowM(x_s,x_{p-(r+1)})) = n-s + \big(s - (p-(r+1)) - 1 \big) = n-p+r.
+    \dim(W_s \times \flowM(x_s,x_{p-(r+1)})) = \dim(W_s) + \dim(\flowM(x_s,x_{p-(r+1)})) = (n-s) + \big(s - (p-(r+1)) - 1 \big) = n-p+r.
 \end{equation*}
-The last part of the theorem states that if $W_p \in \pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$ survives to $Z_{r+1}$, then the $r+!$ differential on $Z_{r+1}$ is given by the bordism class of the Toda manifold: 
+Note that the $-1$ in the second term arises from the dimension formula for flow manifolds. The result $n-p+r$ matches the expected dimension for an element of the $(r+1)$-th page.
+The last part of the theorem states that if $W_p$ survives to $Z_{r+1}$, then the $r+1$ differential is given by the bordism class of this Toda manifold: 
 \begin{equation*}
-    d_{r+1}(W_p) = [\flowM(-,x_{p-(r+1)})\circ W] \in \Omega^{\fr}_{n-p+r} = \pg{E}{1}{n-1}{p-(r+1)}.
+    d_{r+1}(W_p) = [W \circ \flowM(-,x_{p-(r+1)})] \in \Omega^{\fr}_{n-p+r} = \pg{E}{r+1}{n-1}{p-(r+1)}.
 \end{equation*}
-See \cref{fig:ffCat} for an example of the structure of the family $W_s$ and the flow manifolds,
+See \cref{fig:ffCat} for an example of the structure of the right module $W$ and the flow manifolds,
 \cref{fig:k-boundary} for the gluing diagram of the Toda manifold, and \cref{fig:differential} for the resulting closed manifold.

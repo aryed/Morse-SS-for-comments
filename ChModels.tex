@@ -107,9 +107,8 @@ An explicit illustration of $P_3$ is provided in \cref{fig:P_3}. The vertices co
              }
              \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\r*0.86602540378) {};
         \end{tikzpicture}}
-    \caption{The mapping simplicial set $\Hom_{\CC \Nr [1]^3}(\varnothing, [3])$, which is the Permutohedron $P_3$. The red lines divide the hexagon into six regions representing the maximal chains from $\varnothing$ to $3$ in $[1]^3$. Each region has a kite shape, corresponding to the compositions of three morphisms. The blue lines subdivide the hexagon into a simplicial structure.}
-    \label{fig:P_3}
-\end{figure}\todo{what is $3$???}
+    \caption{The mapping simplicial set $\Hom_{\CC \Nr [1]^3}(\varnothing, \{1,2,3\})$, which is the Permutohedron $P_3$. The red lines divide the hexagon into six regions representing the maximal chains from $\varnothing$ to $\{1,2,3\}$ in $[1]^3$. Each region has a kite shape, corresponding to the compositions of three morphisms. The blue lines subdivide the hexagon into a simplicial structure.}\label{fig:P_3}
+\end{figure}
 
 \begin{lem}
 The geometric realization of the Permutohedron $P_n$ is given by the convex hull:
@@ -257,8 +256,8 @@ By using the equivalence $[1]^{n + 1} \cong [1] \times [1]^n$ we obtain the seco
     \label{fig:ch_to_morphism}
 \end{figure}
 
-\subsection{The topologically enriched model of $\Cu_n$}
-Given two composable morphisms of chain complexes, we want to describe their composition in the topologically enriched model. This subsection will provide a framework to understand the composition in this model. The main output is \cref{lem:comp_is_boundary}.
+\subsection{Composition in the Topologically Enriched Model}
+Given two composable morphisms of chain complexes, we want to describe their composition in the topologically enriched model. This subsection provides a framework to understand the composition in this model, establishing a homotopy between the corner restriction and the diagonal maps. The main outputs are \cref{lem:comp_is_boundary} and its chain-level application, \cref{lem:diff_is_comp}.
 
 Given a pointed category $\cC$ and a functor $F \in \Fun(\CC \Nr \Cu_{[n,0]}, \cC)$, we observe that the boundary of the Permutohedron $P_n = \Hom_{\CC \Nr [1]^n}(\varnothing, \n)$ is related to the images of the compositions:
 \begin{equation*}
@@ -344,12 +343,12 @@ Similarly, we define the \textbf{diagonal} $\Diag(P_m)$ as the $(m - 2)$-dimensi
 \begin{cor}
 By restricting the factorization in $[1]^m$, we have:
 \begin{equation*}
-    \Hom_{\CC \Nr \tfrac{1}{2}[1]^m}(\varnothing, m) = \tfrac{1}{2}P_m.
+    \Hom_{\CC \Nr \tfrac{1}{2}[1]^m}(\varnothing, \m) = \tfrac{1}{2}P_m.
 \end{equation*}
 \end{cor}
 
 \begin{proof}
-Factorizations of the map $\varnothing \to m$ in $\tfrac{1}{2}[1]^m$ correspond to factorizations in $[1]^m$ where $1$ is added before $m$. Therefore, the mapping simplex is the half Permutohedron $\tfrac{1}{2}P_m$.
+Factorizations of the map $\varnothing \to \m$ in $\tfrac{1}{2}[1]^m$ correspond to factorizations in $[1]^m$ where $1$ is added before $m$. Therefore, the mapping simplex is the half Permutohedron $\tfrac{1}{2}P_m$.
 \end{proof}
 
 Note that the half Permutohedron is obtained by cutting $P_m$ along the diagonal and taking one half. Thus, we have:
@@ -420,9 +419,7 @@ Lastly, the differential $\partial_r(x)$ is given by composing:
 \end{equation}    
 \end{rem*}
 
-The last 
-
-\subsection{Composition in the topological model}\todo{combine this subsection with the prev subsec. This sebsec have only one lem and also the prev subsec. Also rewrite the foreword a little bit}
+Having established this general boundary decomposition and the homotopy in \cref{lem:comp_is_boundary}, we now apply this topological model to concrete compositions of chain complex maps.
 
 Let $\cC$ be a pointed $\infty$-category, and let $f, g$ be two composable maps of $n$-chains in $\cC$.
 
