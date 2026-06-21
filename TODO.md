@@ -1,0 +1,23 @@
+# Extracted TODOs
+
+- **ChModels.tex:5**: `\todo{take $\op$ instead of $[1]$?}`
+- **ChModels.tex:12**: `\todo{maybe we want $\backslash n$ to be from $1$ and not from $0$ in this context}`
+- **ChModels.tex:142**: `\todo{encapsulate as lemma / prop}`
+- **ChModels.tex:162**: `\todo{the spine not contains the empty set, is that OK?}`
+- **ChModels.tex:196**: `\todo{Do we need this generalization for the $M\cX$ module part?, in section 7}`
+- **ChModels.tex:505**: `\todo{We need to make the claim at the begning of this section onto a formal theorem and write a proof for it, using this lemma}`
+- **DiffOfFlowCat.tex:20**: `\todo{more that into a defintion from itself?}`
+- **DiffOfFlowCat.tex:64**: `\todo{more that into a defintion from itself?}`
+- **DiffOfFlowCat.tex:112**: `\todo{replace}`
+- **DiffOfFlowCat.tex:146**: `\todo{from here}`
+- **DiffOfFlowCat.tex:229**: `\todo{another approach is to factor the structure maps $D(B) \to BO(?)$ through $\ast$, not sure if this is too homotopical}`
+- **DiffOfFlowCat.tex:261**: `\todo{verity in Alexander which one is the right}`
+- **DiffOfFlowCat.tex:406**: `\todo{To do it carefully, we need to find a manifold with corners structure on $W_{p-r-1}$, which is given by taking the null-bordism of the Toda manifold as a manifold with boundary, and since its boundary is a union of products of manifolds with corners, we can un-straighten it to obtain a manifold with corners.}`
+- **Mfld w. corners & ffcat.tex:345**: `\todo{do we need this? (wait for index bundle change first)}`
+- **StrFF-via spaces diagrams.tex:114**: `\todo{I am confuse, we can move between strict functors of topologically enriched categories to $\infty$ functors in $\Sp$, but can we do the same for $M \cX$ modules?}`
+- **StrFF-via spaces diagrams.tex:118**: `\todo{HEre is a question: Let $E \in \Sp^O$ do we have a category of $E$ modules and adjoinction?}`
+- **StrFF-via spaces diagrams.tex:191**: `\todo{Re-write the proof}`
+- **StrFF-via spaces diagrams.tex:224**: `\todo{can be rewrited more clearly. For example just claim that $c_N \otimes_{M\cX} M\cY \simeq c_{N^{\cY}}$ for any manifold $N$}`
+- **main.tex:185**: `\todo{We change the intro to use "flow bimod", now we need to shcange the rest of the paper}`
+- **main.tex:226**: `\todo{feels too much AI}`
+- **softIntro.tex:229**: `\todo{READ carefully about what condistions we need to get convergences}`
