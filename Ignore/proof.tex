@@ -1,0 +1,20 @@
+\begin{lem}
+    Let $\fC$ be a flow category equipped with a spectral system, and let $X \colon \J \to \Sp$ be the associated coherent chain complex, viewed as a right $\J$-module. Assume $\fC$ is bounded from below, i.e., there exists $N \in \bbZ$ such that $\fC$ has no objects of index $p < N$. Then:
+    \begin{enumerate}
+        \item The coherent chain complex $X$ is bounded from below, meaning $X(p) \simeq *$ for all $p < N$.
+        \item The canonical maps between $m$-realizations $|X|_{m-1} \to |X|_m$ are equivalences for all $m < N$.
+        \item The spectral sequence associated to the resulting filtration on the geometric realization $|X|$ converges to the homotopy groups $\pi_*(|X|)$.
+    \end{enumerate}
+\end{lem}
+
+\begin{proof}
+    (1) By the construction of the coherent chain complex associated with a flow category, the value $X(p)$ at index $p$ is equivalent to the coproduct of the spectra associated with the objects of $\fC$ having index $p$. Since $\fC$ contains no objects of index $p < N$, the indexing set for this coproduct is empty when $p < N$. Consequently, the spectrum $X(p)$ is equivalent to the zero object, so $X(p) \simeq *$ for all $p < N$.
+
+    (2) In the framework of filtered objects in stable $\infty$-categories, the $m$-realization $|X|_m$ is obtained from the $(m-1)$-realization $|X|_{m-1}$ by a cofiber sequence of the form
+    \[
+        |X|_{m-1} \to |X|_m \to \Sigma^{m} X(m).
+    \]
+    (The exact suspension shift depends on the chosen grading convention, but the cofiber is always a suspension of $X(m)$). By part (1), for all $m < N$, we have $X(m) \simeq *$, and therefore its suspension is also contractible. It follows that the cofiber of the map $|X|_{m-1} \to |X|_m$ is contractible, which implies that the map $|X|_{m-1} \to |X|_m$ is an equivalence for all $m < N$.
+
+    (3) The sequence of $m$-realizations defines an exhaustive filtration on the full geometric realization $|X| \simeq \colim_m |X|_m$. The associated spectral sequence has its $E_1$-page given by the homotopy groups of the cofibers, which are identified with the homotopy groups of shifts of $X(m)$. Furthermore, because $\fC$ has no objects of index $<N$, the $m$-realization for $m < N$ is constructed from an empty subcategory (or empty diagram). Consequently, the colimit defining the $m$-realization is the initial object in spectra, meaning $|X|_m \simeq *$ for all $m < N$. This establishes that the filtration is strictly bounded from below (i.e., vanishes for $m \ll 0$), not just constant. As detailed in Lurie's \cite[Section~1.2.2]{Lur17}, any exhaustive, bounded-below filtration on an object in a stable $\infty$-category yields a spectral sequence that converges strongly to the homotopy groups of its colimit. Thus, the spectral sequence converges to $\pi_*(|X|)$.
+\end{proof}

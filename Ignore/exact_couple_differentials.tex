@@ -1,0 +1,271 @@
+\documentclass[a4paper,11pt]{article}
+
+% === Document Encoding and Fonts ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+% === Page Layout ===
+\usepackage[top = 1.2in, bottom = 1.2in, left=1in, right=1in]{geometry}
+
+% === Core Mathematics Packages ===
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{nicefrac}
+\usepackage{euscript}
+
+% === Diagrams and Graphics ===
+\usepackage{tikz-cd}
+\usepackage[unicode=true,
+            colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=red]{hyperref}
+
+% === Theorem Environments ===
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{constr}[thm]{Construction}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+% === Custom Macros ===
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\flowM}{\mathcal{M}}
+\newcommand{\fC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\op}{\{1 \to 0\}}
+\newcommand{\Image}{\operatorname{Im}}
+\newcommand{\cofib}{\operatorname{cof}}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Sp}{\mathbf{Sp}}
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Ch}{\operatorname{Ch}}
+\newcommand{\Fil}{\operatorname{Fil}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\ob}{\operatorname{ob}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\fr}{\operatorname{fr}}
+\newcommand{\norm}[1]{\left\lvert#1\right\rvert}
+
+\date{\today}
+\title{Exact Couples and Differentials of Flow Categories:\\A Geometric Perspective on Amanda Hirschi's Proposition 2.20}
+\author{Arye Deutsch}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note provides a self-contained, mathematically rigorous exposition of the differentials in the spectral sequence associated with a filtered flow category. Starting with the abstract algebraic machinery of exact couples, we derive the general formula for the $r$-th page differential $d_r$ and prove its well-definedness. We then apply these algebraic definitions to the geometric setting of a filtered flow category $\flowM$, as described in Proposition 2.20 of Amanda Hirschi's Lecture Notes. We show that the first-page differential $d_1$ recovers the standard Morse differential, that the survival of a class to page $r+1$ is equivalent to extending it to an $r$-truncated right flow module, and that the higher differentials $d_{r+1}$ are given geometrically by the Toda manifolds obtained by gluing these modules along the flow manifolds of $\flowM$.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+In Floer homotopy theory, stable homotopy types of flow categories are represented by spectra whose homotopy groups can be calculated via spectral sequences. A natural way to obtain such a spectral sequence is to filter the flow category $\flowM$ by the degree of its objects:
+\[
+\dots \subset F^{i+1} \flowM \subset F^i \flowM \subset F^{i-1} \flowM \subset \dots
+\]
+where $\ob(F^i \flowM) = \{x \in \ob(\flowM) \mid |x| > i\}$. 
+
+As established in Proposition 2.20 of Amanda Hirschi's summer school lectures, the filtration on the category induces a sequence of exact triangles on the corresponding bordism groups:
+\[
+\dots \to \Omega_k(F^i \flowM) \xrightarrow{\text{ext}} \Omega_k(F^{i-1} \flowM) \xrightarrow{\text{rest}} \Omega_k(F^{i-1}\flowM \setminus F^i \flowM) \xrightarrow{\partial} \Omega_{k-1}(F^i \flowM) \to \dots
+\]
+Algebraically, these triangles fit together to form an \emph{exact couple}. The goal of this note is to:
+\begin{enumerate}
+    \item Define exact couples and derive the general algebraic formulas for their differentials.
+    \item Translate these algebraic definitions into the concrete geometric language of flow modules and flow categories.
+    \item Show how the higher differentials $d_{r+1}$ can be explicitly read off as the cobordism class of a closed manifold constructed via gluing.
+\end{enumerate}
+
+---
+
+\section{Algebraic Theory of Exact Couples}
+
+\begin{defn}
+An \textbf{exact couple} consists of a pair of abelian groups (or objects in a stable $\infty$-category) $D$ and $E$, together with three homomorphisms:
+\[
+i \colon D \to D, \quad j \colon D \to E, \quad k \colon E \to D
+\]
+such that the diagram is exact at each vertex:
+\[
+\begin{tikzcd}
+D \arrow[rr, "i"] & & D \arrow[dl, "j"] \\
+& E \arrow[ul, "k"]
+\end{tikzcd}
+\]
+Specifically:
+\begin{enumerate}
+    \item $\Image(i) = \operatorname{Ker}(j)$
+    \item $\Image(j) = \operatorname{Ker}(k)$
+    \item $\Image(k) = \operatorname{Ker}(i)$
+\end{enumerate}
+\end{defn}
+
+An exact couple naturally defines a spectral sequence $\{E_r, d_r\}_{r \geq 1}$. 
+
+\subsection{The First Page and Page 1 Differential}
+The first page of the spectral sequence is defined by:
+\[
+E_1 \coloneqq E
+\]
+The differential on the first page $d_1 \colon E_1 \to E_1$ is defined as the composition:
+\[
+d_1 \coloneqq j \circ k
+\]
+\begin{prop}
+The map $d_1$ satisfies $d_1^2 = 0$.
+\end{prop}
+\begin{proof}
+By exactness at $D$, we have $\Image(j) = \operatorname{Ker}(k)$, which implies $k \circ j = 0$. Expanding $d_1^2$:
+\[
+d_1^2 = (j \circ k) \circ (j \circ k) = j \circ (k \circ j) \circ k = j \circ 0 \circ k = 0.
+\]
+\end{proof}
+
+We can therefore define the second page $E_2$ as the homology of $E_1$ with respect to $d_1$:
+\[
+E_2 \coloneqq H(E_1, d_1) = \frac{\operatorname{Ker}(j \circ k)}{\Image(j \circ k)}
+\]
+
+\subsection{The $r$-th Page and Higher Differentials}
+To define the higher pages and differentials, one algebraically constructs the \emph{derived couple} $(D_2, E_2, i_2, j_2, k_2)$ where:
+\[
+D_2 \coloneqq i(D) \subseteq D, \quad E_2 \coloneqq H(E, d_1)
+\]
+and the maps are given by $i_2 = i|_{D_2}$, $j_2(i(x)) = [j(x)]$, and $k_2([e]) = k(e)$. Iterating this construction yields the $r$-th page $E_r$ and its differential $d_r = j_r \circ k_r$. 
+
+We can express these higher pages and differentials directly in terms of the original exact couple $(D, E, i, j, k)$ via the following theorem:
+
+\begin{thm}\label{thm:algebraic_diff}
+An element $e \in E_1$ survives to the $r$-th page $E_r$ if and only if:
+\[
+k(e) \in \Image(i^{r-1})
+\]
+Under this condition, let $y \in D$ be any element satisfying:
+\[
+k(e) = i^{r-1}(y)
+\]
+Then the differential of the class $[e] \in E_r$ is given by:
+\[
+d_r([e]) = [j(y)] \in E_r
+\]
+\end{thm}
+
+\begin{proof}
+We must prove that the formula $d_r([e]) = [j(y)]$ is well-defined:
+\begin{enumerate}
+    \item \textbf{Independence of the choice of $y$}: Suppose we have two elements $y, y' \in D$ such that $i^{r-1}(y) = k(e) = i^{r-1}(y')$. Then $i^{r-1}(y - y') = 0$, meaning $y - y' \in \operatorname{Ker}(i^{r-1})$. By induction and the exactness relations, any element in $\operatorname{Ker}(i^{r-1})$ is mapped by $j$ to the image of the boundaries from the previous pages. Thus:
+    \[
+    j(y) - j(y') = j(y - y') \in \Image(d_1) + \dots + \Image(d_{r-1})
+    \]
+    which means $[j(y)] = [j(y')]$ in $E_r$.
+    \item \textbf{Compatibility with boundaries}: If $e$ is a boundary on an earlier page, say $e = d_1(e') = j(k(e'))$, then $k(e) = k(j(k(e'))) = 0$. We can therefore choose $y = 0$, which yields $d_r([e]) = [j(0)] = 0$.
+\end{enumerate}
+\end{proof}
+
+---
+
+\section{Geometric Case: Flow Categories and Proposition 2.20}
+
+Let $\flowM$ be a flow category with a degree function $|\cdot| \colon \ob(\flowM) \to \bbZ$. Let $F^i \flowM \subset \flowM$ be the full subcategory consisting of objects of degree strictly greater than $i$:
+\[
+\ob(F^i \flowM) = \{x \in \ob(\flowM) \mid |x| > i\}
+\]
+
+\subsection{The Exact Couple of Bordism Groups}
+For each $i \in \bbZ$, the subquotient category $F^{i-1}\flowM \setminus F^i \flowM$ consists of objects of degree exactly $i$. Since there are no non-trivial morphism spaces between objects of the same degree, this subquotient is a discrete category. Thus, a right flow module of dimension $k$ on $F^{i-1}\flowM \setminus F^i \flowM$ is simply a collection of closed, smooth, oriented manifolds $(\mathcal{N}(x))_{|x|=i}$ of dimension $k+i$.
+
+From Hirschi's Proposition 2.20, we have exact triangles on the right bordism groups:
+\[
+\dots \to \Omega_k(F^i \flowM) \xrightarrow{\text{ext}} \Omega_k(F^{i-1} \flowM) \xrightarrow{\text{rest}} \Omega_k(F^{i-1}\flowM \setminus F^i \flowM) \xrightarrow{\partial} \Omega_{k-1}(F^i \flowM) \to \dots
+\]
+which we organize into the following exact couple:
+\begin{itemize}
+    \item $D = \bigoplus_{i, k} \Omega_k(F^i \flowM)$
+    \item $E = \bigoplus_{i, k} \Omega_k(F^{i-1}\flowM \setminus F^i \flowM) \cong \bigoplus_{i, k} \bigoplus_{|x|=i} \Omega_{k+i}(pt)$
+    \item $i \colon D \to D$ is the extension-by-$\emptyset$ map induced by the inclusion $F^i \flowM \hookrightarrow F^{i-1}\flowM$.
+    \item $j \colon D \to E$ is the restriction-to-degree-$i$ map.
+    \item $k \colon E \to D$ is the boundary map $\partial$ defined in Hirschi's Equation (2.3.1).
+\end{itemize}
+
+---
+
+\subsection{The $d_1$ Differential}
+
+Let $e = [\mathcal{N}] \in E_1$ be represented by a collection of closed manifolds $\mathcal{N}(x)$ of dimension $k+i$ for $|x|=i$. To find the differential $d_1([\mathcal{N}]) = j(k([\mathcal{N}]))$:
+\begin{enumerate}
+    \item \textbf{Apply $k$}: The boundary map $k([\mathcal{N}]) = \partial [\mathcal{N}]$ is the right flow module $\mathcal{N}'$ on $F^i \flowM$ (objects of degree $> i$) defined by:
+    \[
+    \mathcal{N}'(z) = \coprod_{|x|=i} \mathcal{N}(x) \times \flowM(x, z)
+    \]
+    for all $z \in \ob(\flowM)$ with $|z| > i$.
+    \item \textbf{Apply $j$}: The restriction map $j$ projects this module to the next degree $i+1$. For any object $u$ of degree $i+1$, we obtain:
+    \[
+    (d_1([\mathcal{N}]))(u) = \coprod_{|x|=i} \mathcal{N}(x) \times \flowM(x, u)
+    \]
+\end{enumerate}
+Since $\dim(\mathcal{N}(x)) = k+i$ and $\dim(\flowM(x, u)) = |u| - |x| - 1 = (i+1) - i - 1 = 0$, the spaces $\flowM(x, u)$ are $0$-dimensional manifolds (points with signs). The differential $d_1$ thus counts these isolated flow lines, recovering the standard Morse/Floer homology differential.
+
+---
+
+\subsection{Survival to Page $r+1$ and Flow Module Extensions}
+
+By Theorem \ref{thm:algebraic_diff}, a class $[\mathcal{N}] \in E_{r+1}$ survives to page $r+1$ if and only if:
+\[
+k([\mathcal{N}]) \in \Image(i^r)
+\]
+Here, $i^r \colon \Omega_{k-1}(F^{i+r}\flowM) \to \Omega_{k-1}(F^i\flowM)$ is the inclusion map. Geometrically, this means that the boundary module $\mathcal{N}'$ on $F^i \flowM$ is equivalent in bordism to a module which is empty on objects of degree less than $i+r$.
+
+This is equivalent to the statement that $\mathcal{N}'$ is null-bordant over the truncated subcategory containing objects of degree $i < |x| < i+r$. A null-bordism over this category is exactly a collection of manifolds with corners $\{\mathcal{W}(x)\}_{i < |x| < i+r}$ of dimension $k + |x|$ satisfying:
+\[
+\partial \mathcal{W}(x) = \left( \bigcup_{i < |z| < |x|} \mathcal{W}(z) \times \flowM(z, x) \right) \cup \left( \coprod_{|y|=i} \mathcal{N}(y) \times \flowM(y, x) \right)
+\]
+This boundary formula matches the exact definition of an \textbf{$r$-truncated right flow module} extending $\mathcal{N}$. We therefore obtain:
+
+\begin{prop}[Survival Criterion]
+A class $[\mathcal{N}] \in E_1$ survives to the $(r+1)$-th page of the spectral sequence if and only if $\mathcal{N}$ can be extended to an $r$-truncated right flow module $\mathcal{W}$ defined on all objects of degree up to $i+r-1$.
+\end{prop}
+
+---
+
+\subsection{Reading Off the $d_{r+1}$ Differential}
+
+Assuming $[\mathcal{N}]$ survives to the $(r+1)$-th page, we have our $r$-truncated right flow module $\mathcal{W}$ defined on objects of degree $i < |x| < i+r$. 
+
+According to Theorem \ref{thm:algebraic_diff}, the differential $d_{r+1}([\mathcal{N}])$ is represented by $j(y)$ where $y$ is the extension of $\mathcal{W}$ to a module on $F^i \flowM$ (which is defined to be empty on objects of degree $\geq i+r$). The boundary of this extended module is a right flow module on $F^i \flowM$. 
+
+Applying the restriction map $j$, we project this boundary to the next degree $i+r$. For any object $u$ of degree $i+r$, the differential is represented by the closed manifold:
+\[
+(d_{r+1}([\mathcal{N}]))(u) = \left( \bigcup_{i < |z| < i+r} \mathcal{W}(z) \times \flowM(z, u) \right) \cup \left( \coprod_{|y|=i} \mathcal{N}(y) \times \flowM(y, u) \right)
+\]
+
+\begin{thm}[Geometric Differential]
+Let $[\mathcal{N}] \in E_{r+1}$. Let $\mathcal{W}$ be the right flow module extension of $\mathcal{N}$ on the degrees $i < |z| < i+r$. Then the differential $d_{r+1}([\mathcal{N}]) \in E_{r+1}$ is represented for each object $u$ of degree $i+r$ by the cobordism class of the closed manifold:
+\begin{equation}\label{eq:geo_diff}
+d_{r+1}([\mathcal{N}])(u) = \bigcup_{i < |z| < i+r} \mathcal{W}(z) \times \flowM(z, u) \cup \coprod_{|y|=i} \mathcal{N}(y) \times \flowM(y, u)
+\end{equation}
+of dimension $k+i+r-1$.
+\end{thm}
+
+This closed manifold in Equation \eqref{eq:geo_diff} is exactly the \textbf{Toda manifold} (or the geometric tensor product $W \circ \flowM_{-, i+r}$) formed by gluing the components of the extended right module $\mathcal{W}$ and $\mathcal{N}$ along the morphic moduli spaces of $\flowM$.
+
+\end{document}

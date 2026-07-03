@@ -1,0 +1,3 @@
+Let C be a flow category. a (right) flow module of degree n over C_{q,p} are bound of manifolds W_x such that dim W_x = n - |x|, for each x with q >= |x| >= p. Note taht if |x|>
+An pre t truncateed right flow module of degree n over C is a flow module over C, wich are just manifolds W_x with some condisions, such that dim W_x = n -|x|, but this time we omit all the manifolds with dim >r, which means
+n -|x| > r
