@@ -41,7 +41,7 @@ Let $A$ be a finite linearly ordered set, the \emph{$A$-cube} is the power set c
 \[
     \op^A \cong \mathcal{P}(A)^{\Op}
 \]
-For $A = \{1, \dots, n\}$, we write $\op^n = \op^A$.
+Let $n \in \bbN$ (including $0$). For $A = \{1, \dots, n\}$ (or $\varnothing$ if $n=0$), we write $\op^n = \op^A$.
 \end{defn}
 
 \begin{note*}
@@ -62,7 +62,7 @@ The spine of $A$ is the full subcategory of $[1]^A$ spanned by
 \begin{defn}\label{def:category_of_spine_cubes}
 Let $\cC$ be a pointed $\infty$-category and let $A$ be a finite linearly ordered set. We define the category of spine cubes (or cubical chain complexes)
 \[
-    \Cu_A(\cC) :=  \Fun_*^{\Spine}([1]^A,\cC) \coloneq \{ F \in \Fun_*([1]^A,\cC) \mid F(Q) \simeq * \text{ for all } Q \notin \Spine(A) \}
+    \Cu_A(\cC) :=  \Fun^{\Spine}([1]^A,\cC) \coloneq \{ F \in \Fun([1]^A,\cC) \mid F(Q) \simeq * \text{ for all } Q \notin \Spine(A) \}
 \]
 \end{defn}
 
@@ -72,61 +72,80 @@ Let $A,B$ be finite linearly ordered sets, then
 \]
 hence
 \[
-    \Fun_*([1]^{A \amalg B},\cC) \simeq \Fun_*([1]^A \times [1]^B,\cC) \simeq \Fun_*([1]^A, \Fun_*([1]^B, \cC)).
+    \Fun([1]^{A \amalg B},\cC) \simeq \Fun([1]^A \times [1]^B,\cC) \simeq \Fun([1]^A, \Fun([1]^B, \cC)).
 \]
 
 By taking $A=\{a\}$, we obtain
 \[
-    \Fun_*([1]^{\{a\} \amalg B},\cC) \simeq \Fun_*([1]^{\{a\}} \times [1]^B,\cC) \simeq \Fun_*([1], \Fun_*([1]^B, \cC)).
+    \Fun([1]^{B \amalg \{a\}},\cC) \simeq \Fun([1]^B \times [1]^{\{a\}},\cC) \simeq \Fun([1], \Fun([1]^B, \cC)).
 \]
 
 We think of this equivalence as "flattening" the morphism of cubes (RHS) into a longer cube (the LHS).
 
 Passing to the spine cubes we need to be careful:
-Let $B=\{b_1 < \dots < b_n\}$ be a linearly ordered set, and let $a$ be an element smaller than all elements of $B$. We have that the spine of $\{a\} \amalg B$ inside $[1]^{\{a\} \amalg B} \simeq [1] \times [1]^B$ consists of the elements:
+Let $B=\{1, \dots, n\}$ be a linearly ordered set, and let $a = n+1$ be an element larger than all elements of $B$. We have that the spine of $B \amalg \{a\}$ inside $[1]^{B \amalg \{a\}} \simeq [1]^B \times [1]$ consists of the elements:
 \[
-    (0, 0, \dots, 0), \quad (1, 0, \dots, 0), \quad (1, 1, 0, \dots, 0), \quad \dots, \quad (1, 1, \dots, 1)
+    (0, \dots, 0, 0), \quad (1, 0, \dots, 0, 0), \quad \dots, \quad (1, \dots, 1, 0), \quad (1, \dots, 1, 1)
 \]
 which can be written as:
 \[
-    \{ (0, \varnothing) \} \cup \left( \{1\} \times \Spine(B) \right) \subset [1] \times [1]^B.
+    \left( \Spine(B) \times \{0\} \right) \cup \{ (B, 1) \} \subset [1]^B \times [1].
 \]
 We get that for the cubical chain complexes we have:
-\begin{align}
-    \Cu_{\{a\} \amalg B}(\cC) &\simeq \Fun_*^{\Spine}([1]^{\{a\} \amalg B},\cC) \\
-    &\simeq \big\{f \colon [1] \to \Fun_*^{\Spine}([1]^B, \cC) \mid
+\begin{equation}\label{eq:spine_equivalence}
+\begin{aligned}
+    \Cu_{B \amalg \{a\}}(\cC) &\simeq \Fun^{\Spine}([1]^{B \amalg \{a\}},\cC) \\
+    &\simeq \big\{f \colon [1] \to \Fun([1]^B, \cC) \mid
     \begin{aligned}
-        f_0(Q) &\simeq * \quad \text{for all } \varnothing \neq Q \subseteq B, \\    
-        f_1(Q) &\simeq * \quad \text{for all } Q \notin \Spine(B)
+        f_0(Q) &\simeq * \quad \text{for all } Q \notin \Spine(B), \\    
+        f_1(Q) &\simeq * \quad \text{for all } Q \neq B
     \end{aligned}
      \big\}
-\end{align}
+\end{aligned}
+\end{equation}
 
 where $f_0,f_1$ are the source and the target of the morphism $f$.
 
-We phrase it as follows:
+Before we move on, let us compare the coherent chain complexes defined via $\Ch$ to the cubical model.
+
+Let $\cC$ be a pointed $\infty$-category. For $F \in \Fun_*([1]^A,\cC)$, the condition that $F$ is a spine cube is equivalent to saying that $F(Q) \simeq \ast$ for all $Q \notin \Spine(A)$.
+We can define a localized category $\Cu_A$ by starting with $[1]^A$, adding a zero object $\ast$, and formally adjoining morphisms $\ast \to Q$ for all $Q \notin \Spine(A)$. Inverting these morphisms yields:
+\[
+    \Cu_A \coloneq \left( [1]^A \amalg \{\ast\} \right) [\{\ast \to Q \mid Q \notin \Spine(A)\}^{-1}]
+\]
+This localization is constructed precisely so that for any pointed $\infty$-category $\cC$, we have an equivalence of functor categories:
+\[
+    \Fun_*^{\Spine}([1]^A,\cC) \simeq \Fun_*(\Cu_A, \cC).
+\]
+
+Under this equivalence, the map that sends "off-spine" elements to $\ast$ in the definition of $\Ch$ translates to the fact that $\Cu_A$ is equivalent to the corresponding subcategory of $\Ch$. We formalize this as follows:
+
+\begin{claim}
+For any integers $b \leq a$, let $A = \{b, \dots, a\}$. We have an equivalence of categories:
+\[
+    \Cu_{[b,a]} \coloneqq \Cu_{\{b, \dots, a\}} \simeq \Ch_{[b,a]}
+\]
+where $\Ch_{[b,a]}$ is the full subcategory of $\Ch$ spanned by the objects $\{b,\dots , a\} \cup \{\ast\}$.
+\end{claim}
+
+Note that the restriction functor defined in \cref{sec:Ch} is compatible with this equivalence: for any subset $A \subseteq \{1, \dots, n\}$, the restriction functor on chain complexes $\Ch_n(\cC) \to \Ch_A(\cC)$ corresponds to a restriction functor
+\begin{equation*}
+    \Cu_n(\cC) \to \Cu_A(\cC).
+\end{equation*}
+
+This restriction allows us to cleanly phrase the relationship between an $(n+1)$-dimensional spine cube and a morphism of $n$-dimensional spine cubes:
+
 \begin{lem}\label{lem:morphism_to_cube}
-Let $L, M \in \Cu_n(\cC)$ be two cubical chain complexes such that $L$ is concentrated at the initial object (i.e., $L(Q) \simeq *$ for all $Q \neq \varnothing$). Given a morphism $f \colon L \to M$, there is a corresponding cubical chain complex $K_f \in \Cu_{n+1}(\cC)$ whose source is $L$ and target is $M$. 
-Conversely, given $K \in \Cu_{n+1}(\cC)$, there is a corresponding morphism $f_K \colon K|_{\{0\} \times [1]^n} \to K|_{\{1\} \times [1]^n}$ in $\Cu_n(\cC)$, where $K|_{\{0\} \times [1]^n}$ is concentrated at the initial object.
+Let $A = \{1, \dots, n\}$ and let $B = A \amalg \{n+1\} = \{1, \dots, n+1\}$.
+By \cref{eq:spine_equivalence}, an object $K \in \Cu_B(\cC)$ (which is an $(n+1)$-dimensional cubical chain complex) corresponds precisely to a morphism $f \colon L \to M$ in $\Fun([1]^A, \cC)$ characterized by the following restrictions:
+\begin{enumerate}
+    \item The restriction of $K$ to the $0$-face of the $(n+1)$-th direction gives $L = f_0$, which is an $n$-dimensional cubical chain complex in $\Cu_A(\cC)$.
+    \item The restriction of $K$ to the $1$-face of the $(n+1)$-th direction gives $M = f_1$, which must be concentrated at the final object of $[1]^A$ (i.e., at $A$).
+\end{enumerate}
 \end{lem}
 
-Let $b \leq a$ be two integers, let $\fC$ be an $[b,a]$ bounded framed flow category and let $W: *[b] \to \fC$ a right framed flow module. Let $C(W)$ denote the cone flow category of $W$.
-To say that $C(W)$ still "have $\fC$ in it" we define the following realtion. 
-\begin{notation}\label{FlowCatIso}
-    For two framed flow categories $\fC,\fD$ with flow manifolds $M_{-,-},N_{-,-}$ we denote by
-    \begin{equation*}
-        \fC = \fD
-    \end{equation*}
-    the following relation: there is a bijection 
-    \begin{align*}
-        i \colon \Ob(\fC) &\simeq \Ob(\fD)\\
-        M_{x,y} &= N_{i(x),i(y)}
-    \end{align*}
-\end{notation}
-\begin{claim}
-    We have that $C(W)_{[b,a]} = \fC$
-\end{claim}
-\begin{proof}
-\end{proof}
+\begin{rem}\label{rem:morphism_to_cube_prepend}
+Symmetrically, if we instead consider an index set of the form $\{1\} \amalg B'$ where $B' = \{2, \dots, n+1\}$ (i.e., prepending an element), the spine equivalence identifies an $(n+1)$-dimensional cubical chain complex $K \in \Cu_{\{1\} \amalg B'}(\cC)$ with a morphism $f \colon L \to M$ in $\Fun([1]^{B'}, \cC)$. Under this identification, the source $L = f_0$ is concentrated at the initial object $\varnothing$, while the target $M = f_1$ is a general $n$-dimensional cubical chain complex in $\Cu_{B'}(\cC)$.
+\end{rem}
 
-Now we can "flatten" a flow module into a flow category, realise it into cubical chain complex, then "unflatten" 
+Now we can "flatten" a flow module into a flow category, realize it into a cubical chain complex, and then "unflatten"
