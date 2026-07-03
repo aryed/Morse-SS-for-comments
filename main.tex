@@ -219,18 +219,7 @@ In this section, we establish a connection between chain complexes and framed fl
 \input{ChOfFlow}
 
 \section{Models for Chain Complexes}\label{sec:compOfFlow}
-At this point, given a framed flow category $\fC$, one can combine \cref{con:topChOfCat} and \cref{sec:SSofCh} to construct a spectral sequence for its coherent chain complex $K_{\fC}$, and a sufficient condition, in terms of flow categories, for an element to survive to the $r$-th page. Our goal in the rest of the paper is to give a flow-categorical description for the differential and hence a necessary condition for an element to survive, in terms of flow categories.
 
-In this section, we establish a rigorous connection between the topologically enriched category $\J$ (introduced in \cref{sec:J} as a topologically enriched framework for chain complexes) and the $\infty$-categorical framework for chain complexes detailed in \cref{sec:SSofCh}. Our primary objective is to define explicit models for the category $\Ch$ that facilitate the precise extraction of geometric data from flow categories. This extraction is useful for providing a concrete geometric interpretation of the differentials within the spectral sequence constructed in \cref{SSofStrFFCat}. This approach will allow us to translate abstract algebraic operations on chain complexes into intuitive geometric operations on flow manifolds.
-
-This geometric perspective provides a concrete way to handle compositions. Specifically, we will show that two composable morphisms of chain complexes, $f\colon X_b \to K$ and $g\colon K \to Y_a$, can be understood as functors defined on higher-dimensional index categories. The composition itself is then realized as a map originating from the boundary of a multi-dimensional half-space, $\partial (\Hlf^{J_{b+1,a-1}})$. Central to this construction is the identification of this boundary with a sphere:
-\begin{equation*}
-    S^{b-a} \simeq \partial (\Hlf^{J_{b+1,a-1}})_+ = \bigcup_{b \geq p\geq a} (\Hlf^{J_{b+1,p}})_+ \smashSpaces (\Hlf^{J_{p,a-1}})_+
-\end{equation*}
-Under this equivalence, the composition map into $\Hom(X_b, Y_a)$ is given explicitly by the smash product of the component maps:
-\begin{equation*}
-    \bigcup_{b \geq p\geq a} f_{b+1,p}\smashSpaces g_{p,a-1} \colon \bigcup_{b \geq p\geq a} (\Hlf^{J_{b+1,p}})_+ \smashSpaces (\Hlf^{J_{p,a-1}})_+ \to \Hom(X_b,Y_a)
-\end{equation*}
 
 \input{ChModels}
 

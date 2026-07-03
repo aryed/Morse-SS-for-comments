@@ -2,4 +2,4 @@ This project is a third draft of a mathematical paper. So the writing style need
 
 Our goal in this iteration is to:
 1. Add and verify intro to the intro. This part needs to contain a relatively short explanation which the reader needs to get the idea of the paper. No need to give the exact statement of the paper, maybe a toy model for it. The idea is sacrifice some details and generality and to give the reader a formal statement of the main result in a simple case.
-2. 
+2. Workflow rule: Before pushing new code, always extract all `\todo{...}` tags from the `.tex` files into `TODO.md` and commit it as part of the "usual git things".

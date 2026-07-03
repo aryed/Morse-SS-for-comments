@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.29)  6 JUN 2026 17:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.29)  3 JUL 2026 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1312,7 +1312,7 @@ Overfull \hbox (32.5613pt too wide) detected at line 42
  []
 
 )
-<fig/Heart.png, id=146, 812.03375pt x 522.95375pt>
+<fig/Heart.png, id=136, 812.03375pt x 522.95375pt>
 File: fig/Heart.png Graphic file (type png)
 <use fig/Heart.png>
 Package pdftex.def Info: fig/Heart.png  used on input line 17.
@@ -1371,7 +1371,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8]
 Package hyperref Info: bookmark level for unknown exmp* defaults to 0 on input line 170.
  (./fig/rightLeftBimod Alt.tex) (./fig/k-boundary Alt.tex)
-<fig/Toda Manifold drawing - with M labels.png, id=218, 557.58313pt x 488.32437pt>
+<fig/Toda Manifold drawing - with M labels.png, id=208, 557.58313pt x 488.32437pt>
 File: fig/Toda Manifold drawing - with M labels.png Graphic file (type png)
 <use fig/Toda Manifold drawing - with M labels.png>
 Package pdftex.def Info: fig/Toda Manifold drawing - with M labels.png  used on input line 198.
@@ -1387,7 +1387,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9 <./fig/Toda Manifold drawing - with M labels.png>]
 Package hyperref Info: bookmark level for unknown thmA defaults to 0 on input line 224.
- <xymatrix 4x2 402> <xymatrix 3x3 453>
+
+
+LaTeX Warning: Marginpar on page 10 moved.
+
+<xymatrix 4x2 402> <xymatrix 3x3 453>
+Package hyperref Info: bookmark level for unknown rem defaults to 0 on input line 259.
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1397,8 +1403,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-Package hyperref Info: bookmark level for unknown rem defaults to 0 on input line 268.
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1443,7 +1447,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 123.
-Package hyperref Info: bookmark level for unknown cor defaults to 0 on input line 163.
+Package hyperref Info: bookmark level for unknown cor defaults to 0 on input line 166.
 
 
 
@@ -1454,7 +1458,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15]
-Package hyperref Info: bookmark level for unknown lem defaults to 0 on input line 203.
+Package hyperref Info: bookmark level for unknown lem defaults to 0 on input line 207.
 
 
 
@@ -1513,7 +1517,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21] <xymatrix 3x2 244> <xymatrix 2x2 127>
+[21] <xymatrix 3x2 244>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1522,7 +1526,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22] <xymatrix 3x3 453>
+[22] <xymatrix 2x2 127>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1531,7 +1535,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[23] <xymatrix 6x3 992>
+[23] <xymatrix 3x3 453>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1540,7 +1544,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[24] <xymatrix 6x2 594> <xymatrix 2x2 154> <xymatrix 5x2 484> <xymatrix 5x3 817> <xymatrix 3x3 446>
+[24] <xymatrix 6x3 992> <xymatrix 6x2 594> <xymatrix 2x2 154>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1549,7 +1553,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25] <xymatrix 4x2 402> <xymatrix 3x3 453>) (./Mfld w. corners & ffcat.tex
+[25] <xymatrix 5x2 484> <xymatrix 5x3 817> <xymatrix 3x3 446> <xymatrix 4x2 402>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1558,12 +1562,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.4}) has been already used, duplicate ignored
+[26] <xymatrix 3x3 453>) (./Mfld w. corners & ffcat.tex
+pdfTeX warning (ext4): destination with the same identifier (name{rem.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 \begin{defn}\label
-                       {def:CollapaseMap}
+l.23     N
+          otice that
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1573,16 +1577,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [27]
+pdfTeX warning (ext4): destination with the same identifier (name{defn.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.62 \begin{defn}\label
+                       {def:CollapaseMap}
 pdfTeX warning (ext4): destination with the same identifier (name{defn.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.72 L
       et $A$ be a finite set and $M,N$ two $\A$ manifolds, we say that a map...
-pdfTeX warning (ext4): destination with the same identifier (name{defn.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.109 \begin{defn}\label
-                        {def:TrivOfNormalBundle}
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1592,13 +1596,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [28]
+pdfTeX warning (ext4): destination with the same identifier (name{defn.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.109 \begin{defn}\label
+                        {def:TrivOfNormalBundle}
 pdfTeX warning (ext4): destination with the same identifier (name{defn.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.155 A
        n $n$-dimensional \textbf{manifold with corners} is a topological spa...
-Package hyperref Info: bookmark level for unknown note* defaults to 0 on input line 181.
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1608,8 +1615,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [29]
+Package hyperref Info: bookmark level for unknown note* defaults to 0 on input line 181.
 Package hyperref Info: bookmark level for unknown constr defaults to 0 on input line 200.
 
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30]
 pdfTeX warning (ext4): destination with the same identifier (name{defn.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1623,12 +1640,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30]
+[31]
 pdfTeX warning (ext4): destination with the same identifier (name{defn.17}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.286 \begin{defn}\label
                         {def:FlowCat}
+Package hyperref Info: bookmark level for unknown notation defaults to 0 on input line 302.
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1637,23 +1656,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[31]
-Package hyperref Info: bookmark level for unknown notation defaults to 0 on input line 302.
-
+[32]
 pdfTeX warning (ext4): destination with the same identifier (name{defn.21}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.328     A
-            neat embedding of a flow category $\fC$ consists of a choice of ... <xymatrix 3x2 176>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[32] <xymatrix 4x2 211> <xymatrix 4x2 300>
+            \emph{neat embedding} of a flow category $\fC$ consists of a cho... <xymatrix 3x2 176> <xymatrix 4x2 211> <xymatrix 4x2 300>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1663,16 +1671,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [33]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.26}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{defn.25}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.413 \begin{defn}\label
-                        {def:FramedFlowModule}
-pdfTeX warning (ext4): destination with the same identifier (name{defn.27}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.425 \begin{defn}\label
-                        {def:ModuleSurvives}) (./ChOfFlow.tex
+l.402 \begin{defn}\label
+                        {def:LeftFlowModule}
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[34]) (./ChOfFlow.tex
 pdfTeX warning (ext4): destination with the same identifier (name{defn.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1686,26 +1698,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[34]
+[35]
 pdfTeX warning (ext4): destination with the same identifier (name{rem.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.41 I
       ntuitively, the morphisms in $\J$ correspond to the differentials and ...
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[35]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{defn.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.91 \begin{defn}\label
-                       {def:unbounded_K}
+l.45     L
+          et $C$ be a pointed topologically enriched category.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1714,7 +1717,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[36])
+[36]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1723,37 +1726,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[37] (./ChModels.tex
+[37]
+pdfTeX warning (ext4): destination with the same identifier (name{defn.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.138 \begin{defn}\label
+                        {def:unbounded_K}
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[38]) (./ChModels.tex
+
+LaTeX Warning: Reference `sec:ChofFlow' on page 1 undefined on input line 24.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 37.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{defn.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5 F
-     or a finite set $A$, we define an \textbf{$A$-cube} to be the category:...
-LaTeX Font Info:    Trying to load font information for U+euf on input line 23.
- (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) (d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
-File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-)
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[38]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.32 F
-      or any finite set $A$, we define the \textbf{Permutohedron} $P_A$ as t...
-\r=\dimen359
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
+l.39 \begin{defn}\label
+                       {def:A_cube}
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1763,16 +1767,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [39]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.6}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{defn.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.157 L
-       et $A$ be a linearly ordered set. For each $a \in A$ we denote the su...
-pdfTeX warning (ext4): destination with the same identifier (name{defn.7}) has been already used, duplicate ignored
+l.51 \begin{defn}\label
+                       {def:spine_of_A}
+pdfTeX warning (ext4): destination with the same identifier (name{defn.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 L
-       et $A$ be a linearly ordered set, we define the \textbf{Spine cube ca...
+l.62 \begin{defn}\label
+                       {def:category_of_spine_cubes}
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1782,16 +1786,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [40]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.199 \begin{defn}\label
-                        {def:pad_ch}
-pdfTeX warning (ext4): destination with the same identifier (name{cor.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.217 \begin{cor}\label
-                       {cor:ch_to_morph}
+Package hyperref Info: bookmark level for unknown claim defaults to 0 on input line 127.
+) (./DiffOfFlowCat.tex
+
+LaTeX Warning: Reference `cor:ch_to_morph' on page 1 undefined on input line 3.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1801,11 +1801,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [41]
-pdfTeX warning (ext4): destination with the same identifier (name{cor.12}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.278 \begin{cor}\label
-                       {cor:triv_part_permu}
+
+LaTeX Warning: Reference `cor:ch_to_morph' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Reference `lem:diff_is_comp' on page 1 undefined on input line 51.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1815,15 +1817,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [42]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.14}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{defn.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.306 W
-       e define the \textbf{half Permutohedron} $\tfrac{1}{2}P_m$ as the ful...
-\r=\dimen360
+l.115     L
+           et $b,a \in \bbZ$. Let $\fC$ and $\fD$ be framed flow categories ...
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+LaTeX Warning: Reference `cor:ch_to_morph' on page 1 undefined on input line 121.
+
 
 
 
@@ -1834,8 +1835,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [43]
-Package hyperref Info: bookmark level for unknown obs defaults to 0 on input line 388.
- <xymatrix 3x2 271> <xymatrix 3x3 453>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1845,6 +1844,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [44]
+pdfTeX warning (ext4): destination with the same identifier (name{defn.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.247 \begin{defn}\label
+                        {def:CompCat}
+pdfTeX warning (ext4): destination with the same identifier (name{claim.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 \begin{claim}\label
+                         {claim:compColim}
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1854,11 +1863,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [45]
-Overfull \hbox (32.48102pt too wide) detected at line 521
-[] \OML/cmm/m/it/10.95 P[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 P[] [] [][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (0)\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 )) \OMS/cmsy/m/n/10.95 ^^B [][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n \OT1/cmr/m/n/10.95 + 2)) \OMS/cmsy/m/n/10.95 ! [][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (0)\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n \OT1/cmr/m/n/10.95 + 2))\OML/cmm/m/it/10.95 :
- []
 
-) (./DiffOfFlowCat.tex
+LaTeX Warning: Reference `lem:diff_is_comp' on page 1 undefined on input line 293.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1868,18 +1876,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [46]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{thm.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14     L
-          et $b,a \in \bbZ$. Let $\fC$ and $\fD$ be framed flow categories b...
-Package hyperref Info: bookmark level for unknown claim defaults to 0 on input line 37.
-
-pdfTeX warning (ext4): destination with the same identifier (name{lem.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.44 \begin{lem}\label
-                      {lem:colimIsMfld}
+l.354 \begin{thm}\label
+                       {cor:SSofFFCat}
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1888,48 +1889,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[47]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[48]
-pdfTeX warning (ext4): destination with the same identifier (name{defn.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.149 \begin{defn}\label
-                        {def:CompCat}
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[49]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[50]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[51]) (./StrFF-via spaces diagrams.tex
+[47]) (./StrFF-via spaces diagrams.tex
 pdfTeX warning (ext4): destination with the same identifier (name{defn.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1948,7 +1908,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[52] <xymatrix 3x2 135>
+[48] <xymatrix 3x2 135>
 pdfTeX warning (ext4): destination with the same identifier (name{defn.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1967,9 +1927,58 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[53]
+[49]
 Package hyperref Info: bookmark level for unknown con defaults to 0 on input line 95.
 
+
+LaTeX Warning: Marginpar on page 50 moved.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[50]
+
+LaTeX Warning: Marginpar on page 51 moved.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[51]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[52]
+pdfTeX warning (ext4): destination with the same identifier (name{cor.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.242 \begin{cor}\label
+                       {cor:SSofMorseStr}
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[53]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1979,6 +1988,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [54]
+Overfull \hbox (47.32243pt too wide) detected at line 383
+[][][][]\OML/cmm/m/it/10.95 d[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 W[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 M[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 @I[] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1987,12 +2001,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[55]
-pdfTeX warning (ext4): destination with the same identifier (name{cor.8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.228     L
-           et $\fC$ be a framed flow category and let $\cX$ be a tangential ...
+[55] <xymatrix 2x2 182>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2001,7 +2010,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[56]
+[56] Excluding 'comment' comment.)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2020,11 +2029,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [58]
-Overfull \hbox (47.32243pt too wide) detected at line 377
-[][][][]\OML/cmm/m/it/10.95 d[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 W[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 M[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 I[] \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 @I[] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 S[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2033,66 +2037,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[59] <xymatrix 2x2 182>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[60] Excluding 'comment' comment.)
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[61]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[62]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[63] (./main.aux)
+[59] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 331F725595E9C0FA4B0EDB5E4E0EA034;3834.
+(rerunfilecheck)             Checksum: 3F8B51F2562FE5794295F33BB85B6574;3253.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48630 strings out of 473207
- 922935 string characters out of 5720461
- 1903200 words of memory out of 5000000
- 70298 multiletter control sequences out of 15000+600000
- 606143 words of font info for 336 fonts, out of 8000000 for 9000
+ 48358 strings out of 473207
+ 916922 string characters out of 5720461
+ 1915452 words of memory out of 5000000
+ 70064 multiletter control sequences out of 15000+600000
+ 604379 words of font info for 321 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,20n,121p,3256b,1658s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/texlive/2024/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on main.pdf (63 pages, 2375365 bytes).
+<d:/texlive/2024/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
+Output written on main.pdf (59 pages, 2344104 bytes).
 PDF statistics:
- 1155 PDF objects out of 1200 (max. 8388607)
- 998 compressed objects within 10 object streams
- 392 named destinations out of 1000 (max. 500000)
- 67239 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 951 compressed objects within 10 object streams
+ 383 named destinations out of 1000 (max. 500000)
+ 68759 words of extra memory for PDF output out of 74296 (max. 10000000)
 

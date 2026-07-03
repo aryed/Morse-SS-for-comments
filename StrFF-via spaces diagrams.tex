@@ -110,12 +110,12 @@ Similarly to \cref{con:topChOfCat}, using Pontryagin Thom we get a coherent chai
     \end{equation*}
     which is equivalent to a map
     \begin{equation*}
-        (\Hlf^{J_{y,x}})_+ \to \Hom_{\Sp}(\bbS, M\cX),
-    \end{equation*}
-    the last step is to use the adjunction between $\bbS-\Mod$ and $\cX-\Mod$ to obtain a map
+        (\Hlf^{J_{y,x}})_+ \to \Hom_{\Sp^O}(\bbS, M\cX),
+    \end{equation*}\todo{I am confuse, we can move between strict functors of topologically enriched categories to $\infty$ functors in $\Sp$, but can we do the same for $M \cX$ modules?}
+    the last step is to use the adjunction between $\bbS-\Mod$ and $M\cX-\Mod$ to obtain a map
     \begin{equation*}
         \bar{g}_{y,x}:(\Hlf^{J_{y,x}})_+ \to \Hom_{M \cX}(M\cX, M\cX).
-    \end{equation*}
+    \end{equation*}\todo{HEre is a question: Let $E \in \Sp^O$ do we have a category of $E$ modules and adjoinction?}
     To get that the collection of these maps define a functor
     \begin{equation*}
         \J \to \Mod-\cX
@@ -166,9 +166,12 @@ he lifts of the structure map $\nu D(B)$ assemble into a lift of the structure m
         M_{b+1,a-1} \coloneqq \bigcup_{b \leq p \leq a} M_{b+1,p} \times N_{p,a-1} \coloneqq \colim D.
     \end{equation*}
 \end{cor}
-We define composition category as same as the framed case.
+We define composition category\todo{resolve (what is the comp. cat. ?)} as same as the framed case.
 
 \ThA*
+\begin{rem}
+    The convergence of the spectral sequence in \cref{SSofStrFFCat} relies on the convergence results established for chain complexes (\cref{SSofCh}). Specifically, if the flow category $\fC$ is bounded below, it induces a bounded below chain complex in $\Ch(\Mod_{\cX})$, which by \cref{cor:strong_cond_conv} yields strong convergence. If we omit the bounded below condition on $\fC$, we still obtain an exact couple that conditionally converges to the generalized homology of the realization, as detailed in \cref{cor:strong_cond_conv}.
+\end{rem}
 
 \subsection{Change of rings}
 Give a framed flow category $\fC$, we can benefit from the fact that the changing the tangential structure of manifolds correspond to maps between spectra, to get a spectral sequence that calculates the bordism homology (represented by Thom spectra) of a manifold.
@@ -239,6 +242,9 @@ Second, we can apply it to Morse function, to calculate the bordism homology of 
 \begin{cor}\label{cor:SSofMorseStr}
     Let $f:M\to \bbR$ be a Smale Morse function and let $\cX$ be a tangential structure, then the spectral sequence of the framed flow category $(\fC_{f})^{\cX}$ converge to $M\cX_*(M)$.
 \end{cor}
+\begin{rem}
+    Since the Morse index is inherently bounded below (by $0$), the induced flow category $\fC_{f}$ is bounded below. Thus, \cref{cor:strong_cond_conv} guarantees strong convergence to the bordism homology.
+\end{rem}
 
 \subsection{Bordism homology of projective spaces}
 Let $A= MO$, the unoriented bordism spectrum. We remind that 

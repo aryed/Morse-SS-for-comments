@@ -39,13 +39,59 @@ We define the pointed topologically enriched category $\J$ as follows:
 
 \begin{rem}
 Intuitively, the morphisms in $\J$ correspond to the differentials and higher compositions in a chain complex. The space $\Hlf^{J_{j,i}}$ models the higher nullhomotopies between compositions of differentials.
-\end{rem}
+\end{rem}\
+
+\begin{defn}
+    Let $C$ be a pointed topologically enriched category. 
+    We define (topological, coherent) chain complexes in $C$ as strict functors $\Fun_+(\J,C)$.
+\end{defn}
+
+Let $Sp^O$ be the category of orthogonal spectra. This is a topologically enriched model category for the stable homotopy category, as developed in \cite{MMSS01}. It is equipped with a symmetric monoidal smash product $\otimes$ that gives a Quillen equivalent model to the $\infty$-category of spectra.
+In this model, the suspension spectrum functor 
+\begin{equation*}
+    \Sigma^{\infty}: (Top_{+}, \wedge, S^{0}) \to (Sp^{O}, \otimes, \mathbb{S})
+\end{equation*}
+is strongly symmetric monoidal and preserves coproducts.
+
+\begin{constr}
+    Let $\fC$ be a flow category with neat embedding $e$ and normal framing $\varphi$. We define $K_\fC \in \Fun_+(\J,\Sp^O)$ by
+    \[
+        K_\fC(i) = \WedgeSp_{\norm{x}=i} \bbS
+    \]
+    To define the morphisms it's suffice to we will construct maps
+    \[
+        \Hom_\J(j,i) \to \Hom_{\Top_+}(S^{N(j-i)}, S^{N(j-i)})
+    \]
+    and then by taking $\Sinf$ and desuspending we get a map
+    \[
+        \Hom_\J(j,i) \to \Hom_{\Sp^O}(\bbS, \bbS)
+    \]
+     we use the $(\smashSpaces, \Hom)$ adjunction. It suffices to provide maps:
+    \[
+        g_{y,x}:\Hom_\J(j,i)\smashSp \bbS \to \bbS
+    \]
+    for each pair $y,x \in \fC$ with indices $j,i$.
+    Let $y$ and $x$ be as above; we define the maps
+    \[
+        S^{N(\norm{y}-\norm{x})}\smashSp (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to S^{N(\norm{y}-\norm{x})},
+    \]
+    where the first map is the collapse map of $e_{y,x}$ and the second is (the compactification of) the projection of $\varphi_{y,x}$ (see \cref{eq:ThomMap}). By taking $\Sinf$ and desuspending this map, we obtain:
+    \[
+        g_{y,x}: \bbS \smashSp (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to \bbS.    
+    \]
+    Functoriality of $K_\fC$ amounts to the equation 
+    \[
+        \partial_y g_{z,x} = g_{y,x} \circ g_{z,y},
+    \]
+    which holds due to the compatibility of the neat embedding and the framing (see \cref{eq:ThomFunctoriality}).
+\end{constr}
+
 
 We call a functor $\Fun_+(\J,\Top_+)$ a \textbf{topological chain complex}. Our next goal is to start with an embedded framed flow category and produce such a topological chain complex. The idea is to use the Pontryagin-Thom collapse map (\cref{eq:ThomMap}) in a compatible way to "collapse" the flow category and then use $\J$ to encode the maps between spheres and their higher homotopies.
 
 \begin{constr}\label{con:topChOfCat}
     Let $\fC$ be a flow category with a neat embedding $e$ and normal framing $\varphi$.
-    Assume that $\fC$ has bounded index 
+    Assume\todo{why we need this? how CK of CJS do this construction?} that $\fC$ has bounded index 
 \begin{equation*}
     b \geq \norm{-} \geq a.
 \end{equation*}
@@ -88,18 +134,13 @@ induced by suspending further to $N(b+1)$; if $i=b+1$, we take $\beta_{b+1}(i)$ 
     \alpha_{a-1}:K_{[b,a-1]} \to K_{[b,a]}.
 \end{equation*}
 
+\todo{Do the following def works? do we get a functor from $\J$?, see also the last todo}
 \begin{defn}\label{def:unbounded_K}
     We extend \cref{con:topChOfCat} to unbounded flow categories by taking the limit and colimit:
     \begin{equation*}
-        K_{\fC} = \lim_a \colim_b K^{[b,a]}.
+        K_{\fC} = \lim_a \colim_b K_{[b,a]}.
     \end{equation*}
 \end{defn}
-
-Let $Sp^{O}$ be the category of orthogonal spectra. This is a topologically enriched model category for the stable homotopy category, as developed in \cite{MMSS01}. It is equipped with a symmetric monoidal smash product $\otimes$ that gives a Quillen equivalent model to the $\infty$-category of spectra. In this model, the suspension spectrum functor 
-\begin{equation*}
-    \Sigma^{\infty}: (Top_{+}, \wedge, S^{0}) \to (Sp^{O}, \otimes, \mathbb{S})
-\end{equation*}
-is strongly symmetric monoidal and preserves coproducts.
 
 \begin{constr}\label{con:SpChOfCat}
     Let $\fC$ be an embedded framed flow category bounded by $b$ and $0$. Using \cref{con:topChOfCat} and post-composition with $\Sinf$, we construct a functor $K_{\fC}' \in \Fun(J,\SPO)$ with 

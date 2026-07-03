@@ -33,7 +33,7 @@ F_{p - r} \to F_p \to \nicefrac{F_p}{F_{p - r}} \quad \text{and} \quad F_{p - 1}
 
 \begin{thm}{\cite[Prop.\ 1.2.2.14]{Lur17}}\label{th:converge}
 Let $\cC$ be a stable $\infty$-category equipped with a t-structure, that admits sequential colimits and that the t-
-structure is compatible with sequential colimits. Let $F$ be a complete filtered object in $\cC$. Then the spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ (see \cref{def:SS_Fil}) converges to the homotopy groups of the colimit of $F$:
+structure is compatible with sequential colimits. Let $F$ be a bounded below filtered object in $\cC$ (see \cref{def:Filb}). Then the spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ (see \cref{def:SS_Fil}) converges to the homotopy groups of the colimit of $F$:
 \begin{equation*}
 E_r^{n,p} \Rightarrow \pi_n \colim_p F_p.
 \end{equation*}
@@ -105,14 +105,14 @@ Restrictions from below admits the following right adjoint:
     (i_{\geq a})_* \colon \Ch_{\geq a}(\Sp) \to \Ch(\Sp)
 \end{equation*}
 which given by padding with zeros:
-\begin{equation}
+\begin{equation}\label{eq:res_from_below}
     (i_{\geq a})_* K(p) = \begin{cases}
         K(p) & p \geq a \\
         0 & \text{otherwise}
     \end{cases}
 \end{equation}
 On the other hand, restriction from above have padding as left adjoint:
-\begin{equation}
+\begin{equation}\label{eq:res_from_above}
     (i_{\leq b})_! K(p) = \begin{cases}
         0 & p > b \\
         K(p) & b \geq p
@@ -127,7 +127,7 @@ We can do the same for filtered object.
 \begin{defn}
     For two integers $a \leq b$ we define
     \begin{equation*}
-        \Fil_{[a,b]}(\Sp) \coloneqq \Fun([a,b],\Sp)
+        \nonFil_{[a,b]}(\Sp) \coloneqq \Fun([a,b],\Sp)
     \end{equation*}
 \end{defn}
 
@@ -137,11 +137,11 @@ Note that the inclusion
 \end{equation*}
 induces the restriction functor:
 \begin{equation*}
-    i_{\leq n}^* \colon \Fil(\Sp) \to \Fil_{(-\infty,n]}(\Sp) \eqqcolon \Fil_{\leq n}(\Sp)
+    i_{\leq n}^* \colon \nonFil(\Sp) \to \nonFil_{(-\infty,n]}(\Sp) \eqqcolon \nonFil_{\leq n}(\Sp)
 \end{equation*}
 and left adjoint
 \begin{equation*}
-    (i_{\leq n})_! \colon \Fil_{\leq n}(\Sp) \to \Fil(\Sp)
+    (i_{\leq n})_! \colon \nonFil_{\leq n}(\Sp) \to \nonFil(\Sp)
 \end{equation*}
 which is given by
 \begin{equation*}
@@ -153,7 +153,7 @@ which is given by
 
 Similarly we define
 \begin{equation*}
-    \Fil_{\geq n} (\Sp)
+    \nonFil_{\geq n} (\Sp)
 \end{equation*}
 The map
 \begin{equation*}
@@ -161,7 +161,7 @@ The map
 \end{equation*}
 induces the restriction
 \begin{equation*}
-    i_{\geq n}^* : \Fil(\Sp) \to \Fil_{\geq n} (\Sp)
+    i_{\geq n}^* : \nonFil(\Sp) \to \nonFil_{\geq n} (\Sp)
 \end{equation*}
 and it's right adjoint
 \begin{equation*}
@@ -177,7 +177,7 @@ On the other hand we can define the ''quotient truncation'' functor.
 \begin{defn}
     Let $n \in \bbZ$ we define 
     \begin{equation*}
-        q_n \colon \Fil(\Sp) \to \Fil_{\geq n}(\Sp)
+        q_n \colon \nonFil(\Sp) \to \nonFil_{\geq n}(\Sp)
     \end{equation*}
     by
     \begin{equation*}
@@ -268,6 +268,26 @@ Let $K$ be a chain complex, and let $F = \cI K$, then by passing Lurie's constru
     factor through $K_{[p,p-r+1]}$, which conclude the proof.
 \end{proof}
 
+\begin{defn}\label{def:cond_conv}
+    A spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ associated with a filtered object $F$ converges conditionally to the homotopy groups of $\colim_p F_p$ if $F$ is exhaustive and complete. Specifically, following Boardman \cite[Def.\ 5.10]{Boa99}, completeness requires that both the limit and the derived limit over the filtering vanish. In the $\infty$-categorical setting, this is equivalent to the single condition $\lim_p F_p \simeq \zr$.
+\end{defn}
+
+\begin{rem}
+    For any coherent chain complex $K$, the associated filtered object $F = \cI K$ is complete by construction.
+\end{rem}
+
+\begin{cor}\label{cor:strong_cond_conv}
+    Let $K \in \Ch(\Sp)$ be a coherent chain complex and $F = \cI K$ its equivalent filtered spectrum.
+    \begin{enumerate}
+        \item The associated spectral sequence converges conditionally to $\pi_* \colim_p F_p$.
+        \item If $K$ is bounded below, then the spectral sequence converges strongly to $\pi_* \colim_p F_p$.
+    \end{enumerate}
+\end{cor}
+\begin{proof}
+    For the first statement, since $F$ is complete ($\lim_p F_p \simeq \zr$), the Milnor exact sequence applied to the sequential limit of $F_p$ implies that the $\lim^1$ term also vanishes. This satisfies the precise criteria for conditional convergence \cite[Def.\ 5.10]{Boa99}.
+    For the second statement, if $K$ is bounded below, then $F$ is a bounded below filtered object. By \cref{th:converge}, this bounded below condition promotes conditional convergence to strong convergence.
+\end{proof}
+
 \begin{exmp}
 Returning to \cref{ex:CW_pages}, consider an element $x\colon \mathbb{S}^{n - p} \to K_p$ representing a class in $E_1^{n,p}$. The differential $d_1^{n,p}\colon E_1^{n,p} \to E_1^{n - 1, p - 1}$ is given by:
 \begin{equation}
@@ -343,7 +363,7 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     First, note that $\Fil(\Sp)$ is generated (under colimits) by $\yo_p$. Passing to $\Ch(\Sp)$, we get that $\Ch(\Sp)$ is generated by $\cI \yo_p = \bbS_p^{-p}$.
     Using this observation, it suffices to show that:
     \begin{equation*}
-        \Map(\bbS_{p}^{-p}, K) \simeq \Map(\S^{-1} T \bbS_{p}^{-p},K) \simeq \Map(S_{p+1}^{-(p+1)},K)
+        \Map(\bbS_{p}^{-p}, K) \simeq \Map(\S^{-1} T \bbS_{p}^{-p},K) \simeq \Map(\bbS_{p+1}^{-(p+1)},K)
     \end{equation*}
     and by taking $\cI$, our goal is to show:
     \begin{equation*}
@@ -361,6 +381,14 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     \end{equation*}
     which shows that \cref{eq:tuncatedChainLem} holds.
 \end{proof}
+
+\begin{exmp*}
+    To get the direction right, note that $T \bbS_0 = \bbS_1$ and get that:
+    \[
+        \Map(\bbS_1, \bbS_0) \simeq \Map(\S^{-1} T \bbS^1_0, \bbS_0) \simeq \Map(\bbS^1_0, \bbS_0).
+    \]
+    So shifting the sourse to the right shifts the homotopical degree of the source one up.
+\end{exmp*}
 
 \begin{prop}\label{lem:Ch_diff}
     Let $K \in \Ch(\Sp)$ be a chain complex in Spectra, let $F = \cI K$ be its associated filtered spectrum, and let $\rnp{E}$ be the spectral sequence of $F$. Let $x \in \rnp{\cE}$ be an element surviving to the $r$-th page (see \cref{def:survive}). Then the differential $\partial_r(x)$ is given by the composition of chain maps:

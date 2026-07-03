@@ -325,7 +325,7 @@ Consider a framed flow category $\fC$ with object set $\{ z, y, x, w \}$ and gra
 \end{exmp}
 
 \begin{defn}
-    A neat embedding of a flow category $\fC$ consists of a choice of integer $N$ and a family of neat embeddings of manifolds with corners,
+    A \emph{neat embedding} of a flow category $\fC$ consists of a choice of integer $N$ and a family of neat embeddings of manifolds with corners,
     \begin{equation*}
         e_{y,x}\colon M_{y,x} \hookrightarrow \bbR^{N(\norm{y}-\norm{x})} \times \Hlf^{J_{y,x}},
     \end{equation*}
@@ -421,6 +421,27 @@ where the vertical maps are the "Thom" maps; see \cref{eq:ThomMap}.
     \end{equation*}
     where $\varphi_{y,x}$ is the framing on the morphism manifold $M_{y,x}$ of $\fC$.
 \end{defn}
+
+Similarly, we can define a neatly embedded, normally framed left flow module.
+
+A usfeul constrution, which allow us to use the flow categories tools on flow modules is the following:
+
+\begin{defn}\label{def:ConeFlowCategory}
+    Let $W$ be a right flow module of degree $i$ over a flow category $\fC$, with flow manifolds $M_{y,x}$. We define the \textbf{Cone Flow Category} $\cone(W)$ as follows:
+    \begin{itemize}
+        \item The objects are $\mathrm{ob}(\cone(W)) = \mathrm{ob}(\fC) \sqcup \{z\}$, where $z$ is a new formal object with index $\norm{z} = i+1$.
+        \item For $x, y \in \fC$, the morphism spaces remain identical: $(\cone(W))_{y,x} = M_{y,x}$.
+        \item For $x \in \fC$, the morphism space from $z$ to $x$ is defined as the module manifold:\newline $(\cone(W))_{z,x} = W_x$. (Note that $\dim(W_x) = i - \norm{x} = \norm{z} - \norm{x} - 1$, which satisfies the dimension axiom for flow categories).
+        \item The morphism spaces from $x$ to $z$ are empty.
+    \end{itemize}
+
+    The corner structure maps
+    \begin{equation*}
+        \coprod_{y \in \fC} (\cone(W))_{z,y} \times (\cone(W))_{y,x} \hookrightarrow \partial (\cone(W))_{z,x}
+    \end{equation*}
+    are given exactly by the module structure maps $\coprod_y W_y \times M_{y,x} \hookrightarrow \partial W_x$. If $\fC$ and $W$ are normally framed, these framings naturally endow the flow category $\cone(W)$ with a normal framing.
+\end{defn}
+
 
 \begin{defn}\label{def:ModuleSurvives}
     Let $\fC$ be a framed flow category, and let $n, p, r \in \bbZ$ with $r \geq 0$. Let $W_p = \{W_z\}_{\norm{z}=p}$ be a collection of closed framed manifolds representing an element in:

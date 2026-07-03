@@ -1,14 +1,115 @@
-\begin{notation}
-    For two framed flow categories $\fC,\fD$ with flow manifolds $M_{-,-},N_{-,-}$ we denote by
-    \begin{equation*}
-        \fC = \fD
-    \end{equation*}
-    the following relation: there is a bijection 
-    \begin{align*}
-        i \colon \Ob(\fC) &\simeq \Ob(\fD)\\
-        M_{x,y} &= N_{i(x),i(y)}
-    \end{align*}
-\end{notation}
+Let $W,V$ be right (resp. left) framed flow modules, of degree $i$ (resp. $j$) over a framed flow category $\fC$.
+Note that $V \circ W$ is a right framed module of degree $i$ over the point flow category $*[j]*$ witch is the data of a single $i-j$ dimensional framed manifold, which we also call $V \circ W$. 
+On the other hand $W,V$ give rise to morphisms $K_W,K_V$ (see \cref{cor:ch_to_morph}) of coherent chain complexes such that the composition is a map of coherent chain complexes:
+\[
+    K_V \circ K_W : \bbS_i \to \bbS_j
+\]
+Using lemma \cref{lem:shift_map} we get that $K_V \circ K_W$ is equivalent to a map of spectra:
+\[
+    \bbS^{i-j} \to \bbS
+\]
+which, by Thom Pontryagin is a cobordism class in $\Omega^{\fr}_{i-j}$, our goal is to show that we actually obtained the cobordism class of $V \circ W$.
+
+Note: at the end $V \circ W$ constructed only from the subcategory $\fC_{i,j}$, so from this point we assume for simplicity that $\fC = \fC_{i,j}$.
+
+Let $W$ be a flow bimodule over a flow category $\fC$. We have the cone flow category $\cone(W)$, and its coherent chain complex $K_{\cone(W)}$.
+Note that:
+\[
+    (\cone(W))_{i,j} = \fC
+\]
+in sense of objects and index and mortphism manifolds\todo{more that into a defintion from itself?}.
+Realizing to get that:
+\[
+    (K_{\cone(W)})_{\geq i} \simeq (K_{\cone(W)})_{i,j} \simeq K_{(\cone(W))_{i,j}} \simeq K_{\fC}
+\]
+Also note that $\cone(W)_{i+1}$ consist of one object, hence 
+\[
+    (K_{\cone(W)})_{i+1} \simeq \bbS.
+\]
+Applying \cref{cor:ch_to_morph} to the chain complex $K_{\cone(W)}$ restricted to $[i,j]$ we get a morphism, of the form:
+\[
+    \bbS_i \to (K_{\cone(W)})_{i,j} \simeq K_{\fC}.
+\]
+which we think of as the "flattening" of the cone flow category.
+
+By abuse of notation we denote:
+\[
+    K_W := K_{\cone(W)}
+\]
+and also the morphism which obtain from this chain complex:
+\[
+  K_W : \bbS_i \to (K_{\cone(W)})_{i,j} \simeq K_{\fC}.  
+\]
+
+Similarly for a left framed flow module $V$ of degree $j$ over $\fC$ we get a freamed flow category $K_V$ and a morphism:
+\[
+    K_V : K_{\fC} \to \bbS_j.
+\]
+
+Note taht by the deinfiton of the cone flow category we have that the morphism manifolds of $\cone(W)$ are the manifolds $W_x$ and $M_{y,x}$, hence the chain comlex $K_W$ is obtained by the Thom Pontryagin bordism collapces maps of (a framed neat embbeding of ) $W_x$ and $M_{y,x}$.
+
+Using \cref{lem:diff_is_comp} we get the composition of $K_W,K_V$, as a map:
+\[
+    S^{i-j} \to \Hom_{\Sp^O}(\bbS,\bbS),
+\]
+is give by 
+
+
+
+
+Note that:
+\[
+    (\cone(W))_{i,j} = \fC
+\]
+in sense of objects and index and mortphism manifolds\todo{more that into a defintion from itself?}.
+Realizing to get that:
+\[
+    (K_{\cone(W)})_{\geq i} \simeq (K_{\cone(W)})_{i,j} \simeq K_{(\cone(W))_{i,j}} \simeq K_{\fC}
+\]
+Similarly we get a map
+\[
+    (K_{\cone(W)})_{i+1} \simeq K_{(\cone(W))_{i+1}} \simeq K_{*[i+1]} \simeq \bbS_{i+1}
+\]
+By using the adjoinction of the truncation from above, see \cref{eq:res_from_above}, we get an inclusion
+\[
+    K_{\fC} \simeq (K_{\cone(W)})_{\geq i} \hookrightarrow K_{\cone(W)}.
+\]
+Cofibers in functor categories are calculated pointwise, hence :
+\[
+    K_{\cone(W)}/K_{\fC} \simeq (K_{\cone(W)})_{i+1} = \bbS_{i+1}
+\]
+and a cofiber sequence
+\[
+    K_{\fC} \to K_{\cone(W)} \to \bbS_{i+1}
+\]
+which, by rolling, give a conenctive morphism:
+\[
+    \bbS_{i+1} \to \S K_{\fC}. 
+\]
+Using \cref{lem:shift_map} we get a map:
+\[
+    \bbS_{i} \to K_{\fC}.
+\]
+
+We start be intruducing the following abuse of notaitons: 
+We denote:
+\[
+    K_W \coloneq K_{\cone(W)}
+\]
+and also the induces morphims is denoted the same:
+\[
+    K_W : \bbS_{i} \to K_{\fC}.
+\]
+
+Similarly a left flow module $V$ of degree $j$ on $\fC$ is induces a map:
+\[
+    K_V : K_{\fC} \to \bbS_{j}.
+\]
+
+
+A short preliminariy to this section will be to define the realization of a flow module.
+
+PLACE HOLDER: DEF OF Cone flow category.\todo{replace}
 
 \begin{defn}
     Let $b,a \in \bbZ$. Let $\fC$ and $\fD$ be framed flow categories bounded by $[b+1,a]$ and $[b,a-1]$ respectively. We say that $\fC$ and $\fD$ are \textbf{composable} if
@@ -20,26 +121,23 @@
     Similarly two chain complexes $K,L$ (with same bounds) are composable if $K,L$ are composable as morphisms (see \cref{cor:ch_to_morph}).
 \end{defn}
 
-Note that the target of $K$ is $K_{[b,a]}$ and the source of $L$ is $L_{[b,a]}$ we deduce that for any composable categories $\fC,\fD$, $K_{\fC},K_{\fD}$ are composable chain complexes.
+Note that the target of $K$ is $K_{[b,a]}$ and the source of $L$ is $L_{[b,a]}$ we deduce that for any composable categories $\fC,\fD$, we get that $K_{\fC},K_{\fD}$ are composable chain complexes.
 
 Our goal is to define $\fD \circ \fC$ to be a flow category such that
 \begin{equation*}
     K_{\fD \circ \fC} \simeq K_{\fD} \circ K_{\fC}.
 \end{equation*}
-
-Denote by $M_{y,x}, N_{y,x}$ the morphism manifolds of $\fC,\fD$, the idea is to define $\fD \circ \fC$ to be a flow category with objects wit indices $b+1,a-1$ and one morphism manifold
-\begin{equation*}
-    \bigcup_{b \geq p\geq a} M_{b+1,p}\times N_{p,a-1}
-\end{equation*}
-We begin by justifying the structure of this union of manifolds.
+\todo{from here}
+Let $W,V$ be right and left flow bimodules over a flow category, $*[i] \xrightarrow{W} \fC \xrightarrow{V} *[j]$. Our goal is to define the flow module $W \circ V: \in [*[i],*[j]]$.
 
 \begin{claim}
-    Let $\fC, \fD$ be two composable flow categories indexed on $b+1,a$ and $b,a-1$. Denote by $M_{y,x}$ and $N_{y,x}$ their morphism manifolds, Then 
+    Let $W,V$ be two composable framed flow bimodules over a framed flow category $\fC$. Then 
     \begin{equation*}
-        \bigcup_{b \geq p\geq a} M_{b+1,p}\times N_{p,a-1}
+        \bigcup_{i \geq s \geq j} W_s\times V_s
     \end{equation*}
-    is a closed framed manifold with dimension $b-a+1$.
+    is a closed framed manifold with dimension $i-j$.
 \end{claim}
+
 The above claim will follow from the general following "flattening" argument.
 \begin{lem}\label{lem:colimIsMfld}
     Let $A$ be a finite set, $N \in \bbN$ and let 
@@ -132,43 +230,35 @@ We refer to such diagrams as "punctured cubes".
     % \end{equation*}
 \end{proof}
 
+
 \begin{exmp}
-    Take $b=2,a=1$ and take $\fC,\fD$ to be flow categories with tree objects. The data of $\fC$ amounts to two closed $0$-dimensional manifolds $M_{3,2}, M_{2,1}$ and a $1$-dimensional manifold $M_{3,1}$ with boundary
+    Take $\fC$ to be a frmaed flow category with two objects with indices $1,0$ and let $W,V$ be right and left bimodules over $\fC$ with degrees $1,0$ respectively. The data of $\fC$ is a manifold $M_{1,0}$, and $W,V$ amounts to a closed $0$-dimensional manifolds $W_1, V_0$ and frmaed $1$-dimensional manifolds $W_0, V_1$ with boundary
     \begin{equation*}
-        \partial M_{3,1} = M_{3,2} \times M_{2,1}
+        \partial W_0 \simeq W_1 \times M_{1,0}, \quad \partial V_1 \simeq M_{1,0} \times V_0.
     \end{equation*}
-    and similar for $\fD$ with manifolds $N_{2,1}, N_{1,0}$ and $N_{2,0}$, where $M_{2,1}=N_{2,1}$.
     The construction is given by gluing
     \begin{equation*}
-        M_{3,1}\times N_{1,0} \cup M_{3,2}\times N_{2,0}
+        W \circ V \simeq W_0 \times V_1 \cup V_0 \times W_1
     \end{equation*}
-    along $M_{3,2}\times M_{2,1} \times N_{1,0}$.
+    along $W_1\times M_{1,0} \times V_0$.
 \end{exmp}
-This example recovers the secondary structure on bordism rings, introduced by Alexander in \cite{alexander1972cobordism}. We can think of $\fD \circ \fC$ as the \emph{Toda brackets} or \emph{Massey product} of the $0$-dimensional manifolds of $\fC,\fD$.
+This example recovers the secondary structure on bordism rings, introduced by Alexander in \cite{alexander1972cobordism}. We can think of $W \circ V$ as the \emph{Toda brackets} or \emph{Massey product}\todo{verity in Alexander which one is the right} of the $0$-dimensional manifolds $W_1, M_{1,0}, V_0$.
 
 \begin{defn}\label{def:CompCat}
-    Let $\fC,\fD$ be two composable flow categories with flow manifolds $M_{-,-},N_{-,-}$. We define
+    Let $W,V$ be right (left) modules over a flow category $\fC$ with degree $i$ (resp $j$), with flow manifolds $W_{-},M_{-,-},V_{-}$. We define
     \begin{equation*}
-        D \colon \op^{\{b,\dots a\}} \setminus \const{0} \to \Top
+        D \colon \op^{\{i,\dots, j\}} \setminus \const{0} \to \Top
     \end{equation*}
-    in the following way: for each $B = \{i_k,\dots i_1\} \subseteq \{b,\dots a\}$
+    in the following way: for each $B = \{b_k,\dots b_1\} \subseteq \{i,\dots, j\}$
     \begin{equation*}
-        D(i_k,\dots i_1) = M_{b+1,i_k}M_{i_k,i_{k-1}} \times \dots M_{i_2,i_1} \times N_{i_1,a-1}.
+        D(b_k,\dots b_1) = W_{b_k} \times M_{b_k,b_{k-1}} \times \dots \times M_{b_2,b_1} \times V_{b_1}.
     \end{equation*}
     We write
-    \begin{equation*}
-        M_{b+1,a-1} \coloneqq \bigcup_{b \leq p \leq a} M_{b+1,p} \times N_{p,a-1} \coloneqq \colim D.
+    \begin{equation*}   
+        W \circ V \coloneqq \bigcup_{i \leq p \leq j} W_{p} \times V_{p} \coloneqq \colim D.
     \end{equation*}
-    The \textbf{composition} flow category $\fC \circ \fD$, is given by
-    \begin{equation*}
-        \ob(\fD \circ \fC) \coloneqq \{y,x\mid y \in \fC_{b+1}, x \in \fD_{a-1} \}, \quad \norm{y}_{\fD \circ \fC}=\norm{y}_{\fC}-1, \norm{x}_{\fD \circ \fC}=\norm{x}_{\fD}
-    \end{equation*}
-    and $M_{b+1,a-1}$ is the morphism manifold of this category.
 \end{defn}
-
-\begin{rem}
-    In our convention $M_{b+1,a-1}$ is the union of all the morphism manifolds of $\fC \circ \fD$. To get the morphism manifolds $M_{y,x}$ between two objects $y,x \in \fC \circ \fD$, one need to modify the colimit by replacing $M_{b+1,b_k}$ with $M_{y,b_k}$ and $M_{b_1,a-1}$ with $M_{b_1,x}$.
-\end{rem}
+Note that $W \circ V: *[i] \to *[j]$, hence consist of only one manifold, so this notation consistent with the flow modules notation of the paper.
 
 \begin{claim}\label{claim:compColim}
     Let $D$ be a punctured diagram as in \cref{lem:colimIsMfld}, then we have that
@@ -221,7 +311,7 @@ This example recovers the secondary structure on bordism rings, introduced by Al
         X = \colim_{\{1\to 0\}^{A} \setminus \const{0}} D \hookrightarrow
         \colim_{\{1\to 0\}^{A} \setminus \const{0}} \Hlf^{A} \times \bbR^{N(b-a+2)} \simeq \bbR^{\norm{A}-1} \times \bbR^{N(b-a+2)}.
     \end{equation*}
-    We get an open embedding of the normal 
+    We get an open embedding of the normal bundle
     \begin{equation*}
         e \colon \nu X \hookrightarrow \bbR^{\norm{A}-1} \times \bbR^{N(b-a+2)}
     \end{equation*}

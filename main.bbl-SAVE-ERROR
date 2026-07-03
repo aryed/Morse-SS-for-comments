@@ -159,6 +159,37 @@
       \field{pages}{106905}
       \range{pages}{1}
     \endentry
+    \entry{Boa99}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=e9e30becf2f919d65bda84084385195d}{%
+           family={Boardman},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi Michael},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Amer. Math. Soc., Providence, RI}%
+      }
+      \strng{namehash}{e9e30becf2f919d65bda84084385195d}
+      \strng{fullhash}{e9e30becf2f919d65bda84084385195d}
+      \strng{fullhashraw}{e9e30becf2f919d65bda84084385195d}
+      \strng{bibnamehash}{e9e30becf2f919d65bda84084385195d}
+      \strng{authorbibnamehash}{e9e30becf2f919d65bda84084385195d}
+      \strng{authornamehash}{e9e30becf2f919d65bda84084385195d}
+      \strng{authorfullhash}{e9e30becf2f919d65bda84084385195d}
+      \strng{authorfullhashraw}{e9e30becf2f919d65bda84084385195d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Homotopy invariant algebraic structures (Baltimore, MD, 1998)}
+      \field{series}{Contemp. Math.}
+      \field{title}{Conditionally convergent spectral sequences}
+      \field{volume}{239}
+      \field{year}{1999}
+      \field{pages}{49\bibrangedash 84}
+      \range{pages}{36}
+    \endentry
     \entry{Cohen19}{article}{}{}
       \name{author}{1}{}{%
         {{hash=741cb88f5a20e7b4119ccdd44b284c25}{%
@@ -316,78 +347,6 @@
       \field{pages}{207\bibrangedash 221}
       \range{pages}{15}
     \endentry
-    \entry{LLS20}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=05987d21c1fb35dab49ba1d788ffe601}{%
-           family={Lawson},
-           familyi={L\bibinitperiod},
-           given={Tyler},
-           giveni={T\bibinitperiod}}}%
-        {{hash=cbfded75827e4ba69a6528304d52223f}{%
-           family={Lipshitz},
-           familyi={L\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-        {{hash=ee9c5c89e4ff93b84aa7de001df9d7b9}{%
-           family={Sarkar},
-           familyi={S\bibinitperiod},
-           given={Sucharit},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Mathematical Sciences Publishers}%
-      }
-      \strng{namehash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{fullhash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{fullhashraw}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{bibnamehash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{authorbibnamehash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{authornamehash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{authorfullhash}{0b8b4460c3891b2d1822b68b8ce47483}
-      \strng{authorfullhashraw}{0b8b4460c3891b2d1822b68b8ce47483}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Geometry \& Topology}
-      \field{number}{2}
-      \field{title}{Khovanov homotopy type, Burnside category and products}
-      \field{volume}{24}
-      \field{year}{2020}
-      \field{pages}{623\bibrangedash 745}
-      \range{pages}{123}
-    \endentry
-    \entry{Leitch74}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=901aadd491ddbf99e6706f21df76417a}{%
-           family={Leitch},
-           familyi={L\bibinitperiod},
-           given={RD},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Oxford University Press}%
-      }
-      \strng{namehash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{fullhash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{fullhashraw}{901aadd491ddbf99e6706f21df76417a}
-      \strng{bibnamehash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{authorbibnamehash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{authornamehash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{authorfullhash}{901aadd491ddbf99e6706f21df76417a}
-      \strng{authorfullhashraw}{901aadd491ddbf99e6706f21df76417a}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the London Mathematical Society}
-      \field{number}{1}
-      \field{title}{The homotopy commutative cube}
-      \field{volume}{2}
-      \field{year}{1974}
-      \field{pages}{23\bibrangedash 29}
-      \range{pages}{7}
-    \endentry
     \entry{LS14}{article}{}{}
       \name{author}{2}{}{%
         {{hash=cbfded75827e4ba69a6528304d52223f}{%
@@ -540,31 +499,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Higher topos theory}
       \field{year}{2009}
-    \endentry
-    \entry{kerodon}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
-           family={Lurie},
-           familyi={L\bibinitperiod},
-           given={Jacob},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
-      \field{extraname}{3}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://kerodon.net}}
-      \field{title}{Kerodon}
-      \field{year}{2018}
     \endentry
     \entry{MMSS01}{article}{}{}
       \name{author}{4}{}{%

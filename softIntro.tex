@@ -209,7 +209,7 @@ The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\p
     \begin{equation*}
         \pg{E}{1}{n}{p} = \bigoplus_{\norm{z}=p} \Omega^{\cX}_{n-p}
     \end{equation*}
-    which converges to the homotopy groups of the realization:
+    which conditionally converges to the homotopy groups of the realization:\todo{resolve: by Lurie we ahve that the S.S convernce to the homotopy groups of the colim of the filtered object. We never justified why this colim is $\norm{\fC}$}
     \begin{equation*}
         \rnp{E} \implies \pi_n \norm{\fC}.
     \end{equation*}
@@ -217,7 +217,7 @@ The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\p
     \begin{equation*}
         W_p=\{W_z\}_{\norm{z}=p} \in \pg{E}{1}{n}{p}
     \end{equation*}
-    survives to $\pg{E}{r+1}{n}{p}$ if and only if the collection $W_p$ extends to a right flow module over $\fC_{[p,p-r]}$ (see \cref{def:ModuleSurvives}). The differential is represented geometrically by the Toda manifolds:
+    survives to $\pg{E}{r+1}{n}{p}$ if and only if the collection $W_p$ extends to a right flow module over $\fC_{[p,p-r]}$ (see \cref{def:ModuleSurvives}\todo{move this ref after the thm?}). The differential is represented geometrically by the Toda manifolds:
     \begin{equation*}
         d_{r+1}(W_p) = \bigcup_{y \in \fC_{p-(r+1)}} (\flowM_{-,y} \circ W) \in \bigoplus_{y \in \fC_{p-(r+1)}} \Omega^{\cX}_{n-p+r} = \pg{E}{r+1}{n-1}{p-(r+1)}
     \end{equation*}
@@ -226,11 +226,11 @@ The symbols $\pm$, $I$, etc., represent the flow manifolds themselves (where $\p
 A key tool used to prove \cref{SSofStrFFCat} is a description of the spectral sequence associated with a coherent chain complex expressed in terms of chain complex maps.
 
 \begin{restatable}{thmA}{ThB}\label{SSofCh}
-    Let $K \in \Ch(\Sp)$ be a coherent chain complex in Spectra\todo{READ carefully about what condistions we need to get convergences}. Then there is a spectral sequence:
+    Let $K \in \Ch(\Sp)$ be a coherent chain complex in Spectra. Then there is a spectral sequence:
     \begin{equation*}
         E_1^{n,p} = \pi_{n - p} K_p,
     \end{equation*}
-    which converges to
+    which conditionally converges to
     \begin{equation*}
         E_r^{n,p} \implies \pi_n \colim_p (\cI K)_p,
     \end{equation*}
@@ -253,7 +253,12 @@ A key tool used to prove \cref{SSofStrFFCat} is a description of the spectral se
     \end{equation*}
     The first map is precisely \cref{eq:x_ext} and the second is induced by the structure of the chain complex $K$.
 \end{restatable}
+
 We obtain this result by combining the description of the spectral sequence of a filtered object in Lurie \cite{Lur17} with the results of~\cite{Ari21}.
+
+\begin{rem}\label{rem:convergence}
+    If the flow category $\fC$ (or the chain complex $K$) is bounded from below, the conditional convergence in \cref{SSofStrFFCat} and \cref{SSofCh} upgrades to strong convergence (referred to simply as convergence in \cite[Prop.\ 1.2.2.14]{Lur17}). In general, the stable filtered object associated with a chain complex is complete, which allows us to use the Milnor exact sequence to satisfy Boardman's completeness criteria \cite[Def.\ 5.10]{Boa99} and guarantee conditional convergence even when unbounded (see \cref{sec:SSofCh} for details).
+\end{rem}
 
 \subsection*{Relation to other work}
 This paper contributes to the broader project of providing a geometric model for spectra (see \cite{abouzaid2024foundation}), building on the seminal work of Cohen, Jones, and Segal \cite{CJS95} who first realized Morse and Floer data as stable homotopy types.

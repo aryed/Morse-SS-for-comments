@@ -44,12 +44,12 @@
     We denote by $\mathbb{Z}$ the category of integers with the usual increasing order.
 \end{defn}
 
-\begin{defn}
-    Let $\cC$ be a stable $\infty$-category with sequential limits and colimits. We define the category of (increasing, complete) \emph{filtered objects in $\cC$} to be the full subcategory
+\begin{defn}\label{def:Filb}
+    Let $\cC$ be a stable $\infty$-category with sequential limits and colimits. We define the category of (increasing) complete \emph{filtered objects in $\cC$} to be the full subcategory
     \begin{equation*}
         \Fil(\cC) \subset \Fun(\mathbb{Z},\cC)
     \end{equation*}
-    spanned by functors $F$ such that $\lim_p F_p = \zr$; sometimes denoted by $\widehat{\Fil}(\cC)$. We define the \textbf{bounded below filtered objects} to be the full subcategory
+    spanned by functors $F$ such that $\lim_p F_p = \zr$. We define the \textbf{bounded below filtered objects} to be the full subcategory
     \begin{equation*}
         \Filb(\cC) \subset \Fil(\cC)
     \end{equation*}
@@ -58,7 +58,7 @@
 
 Note that the image of the stable Yoneda embedding
 \begin{equation*}
-    \yo_{(-)}: \bbZ^{\Op} \to \Fun(\bbZ, \Sp) = \Fil(\Sp).
+    \yo_{(-)}: \bbZ^{\Op} \to \Fun(\bbZ, \Sp).
 \end{equation*}
 is given by
 \begin{equation*}
@@ -128,8 +128,12 @@ In \cite{Ari21}, Ariotta define these functors and proves
 \end{thm}
 An immediate consequence is the representability of the evaluation:
 \begin{equation}\label{eq:F_p_is_rep}
-    \Map(\bbS^{-p}_p, \cA F) \simeq \Map(\cI \bbS^{-p}_p, F) \simeq \Map(\yo_p, F) \simeq F_p
+    \Map(\bbS^{-p}_p, \cA F) \simeq \Map(\cI \bbS^{-p}_p, F) \simeq \Map(\yo_p, F) \simeq F_p,
 \end{equation}
+which give us a formula for the $p$-th piece of $\cI K$:
+\[
+    (\cI K)_p \simeq \Map(\bbS^{-p}_p, K).
+\]
 
 \begin{defn}
     Let $\cC$ be a stable $\infty$-category and $p \in \bbZ$, we write $\iota_{[p-1,p]}: \{(p-1) \to p\} \to \mathbb{Z}$ for the inclusion functor and
@@ -159,7 +163,7 @@ A direct calculation shows that
     \S^{-p} \gr_q(\yo_p) = (\cA \yo_p)_q
 \end{equation*}
 and we deduce that
-\begin{cor}
+\begin{cor}\todo{FILLLL}
     \begin{equation*}
         (\cA -)_p \simeq \S^{-p} \gr_p (-)
     \end{equation*}

@@ -69,6 +69,7 @@
 
 % Specific Mathematical Symbols
 \newcommand{\op}{\{1 \to 0\}}
+%\newcommand{\op}{([1]^{\Op})}
 \newcommand{\Chn}{\Ch_{[n,0]}}
 \newcommand{\Sinf}{\S^{\infty}_+}
 
@@ -99,8 +100,9 @@
 
 % Chain and Filtration Operators
 \DeclareMathOperator{\Ch}{Ch}
-\DeclareMathOperator{\Fil}{Fil}
-\DeclareMathOperator{\Filb}{Fil_b}
+\DeclareMathOperator{\Fil}{\widehat{Fil}}
+\DeclareMathOperator{\Filb}{\Fil_b}
+\DeclareMathOperator{\nonFil}{Fil}
 \DeclareMathOperator{\gr}{gr}
 \DeclareMathOperator{\Mod}{Mod}
 
@@ -114,6 +116,7 @@
 \DeclareMathOperator{\Ob}{ob}
 \DeclareMathOperator{\cof}{cof}
 \DeclareMathOperator{\cofib}{cof}
+\DeclareMathOperator{\cone}{Cone}
 \DeclareMathOperator{\fib}{fib}
 \DeclareMathOperator{\Nr}{N}
 \DeclareMathOperator{\Cu}{Cu}
@@ -127,12 +130,14 @@
 \newcommand{\Sp}{\mathbf{Sp}}           % Spectra
 \newcommand{\SPO}{\mathbf{Sp}^O}           % Spectra
 \newcommand{\Top}{\mathbf{Top}}         % Topological spaces
+\newcommand{\sSet}{\mathbf{sSet}}         % Topological spaces
 \newcommand{\Spaces}{\mathbf{Spaces}}
 \newcommand{\Chb}{\Ch_b}                % Bounded chain complexes
 
 
 \newcommand{\FlowX}{\mathbf{Flow}^{\cX}}
 \newcommand{\FlowY}{\mathbf{Flow}^{\cY}}
+\newcommand{\Mfld}{\mathbf{Mfld}}
 
 % === Parameterized Functions ===
 \newcommand{\pg}[4]{#1_{#2}^{#3,#4}}    % General parameterized function
