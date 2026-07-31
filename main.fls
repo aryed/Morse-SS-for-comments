@@ -619,6 +619,18 @@ INPUT ./SSofCh.tex
 INPUT ./SSofCh.tex
 INPUT ./SSofCh.tex
 INPUT SSofCh.tex
+INPUT d:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT d:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT d:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
+INPUT d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
+INPUT d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
+INPUT ./CompInTop.tex
+INPUT ./CompInTop.tex
+INPUT CompInTop.tex
 INPUT ./Mfld w. corners & ffcat.tex
 INPUT ./Mfld w. corners & ffcat.tex
 INPUT Mfld w. corners & ffcat.tex
@@ -634,6 +646,7 @@ INPUT ./ChModels.tex
 INPUT ./ChModels.tex
 INPUT ChModels.tex
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT ./DiffOfFlowCat.tex
 INPUT ./DiffOfFlowCat.tex
@@ -647,6 +660,7 @@ INPUT ./StrFF-via spaces diagrams.tex
 INPUT StrFF-via spaces diagrams.tex
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0700.tfm
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -671,6 +685,8 @@ INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb
+INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
+INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

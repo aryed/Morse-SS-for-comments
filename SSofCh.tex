@@ -1,120 +1,121 @@
 We begin by defining the spectral sequence associated with a filtered object in $\cC$.
 
 \begin{defn}{\cite[Def.\ 1.2.2.9]{Lur17}}\label{def:SS_Fil}
-Let $F$ be a filtered object in $\cC$, i.e., a sequence of morphisms $\{ F_p \}_{p\in \mathbb{Z}}$ such that
-\begin{equation}
-\cdots \to F_{p-1} \to F_p \to F_{p+1} \to \cdots.
-\end{equation}
-For each $p \in \mathbb{Z}$, define the graded pieces by
-\begin{equation}
-\gr_p F = \cofib(F_{p-1} \to F_p).
-\end{equation}
-We define a spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ associated with $F$ by setting
-\begin{equation}\label{eq:Er_Fil}
-E_r^{n,p} = \Image\left( \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \to \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \right),
-\end{equation}
-where the map is induced by the compositions of the inclusion and projection:
-\begin{equation}\label{eq:factorization}
-    \nicefrac{F_p}{F_{p - r}} \to \nicefrac{F_p}{F_{p - 1}} \to \nicefrac{F_{p + r - 1}}{F_{p - 1}}.
-\end{equation}
+    Let $F$ be a filtered object in $\cC$, i.e., a sequence of morphisms $\{ F_p \}_{p\in \mathbb{Z}}$ such that
+    \begin{equation}
+        \cdots \to F_{p-1} \to F_p \to F_{p+1} \to \cdots.
+    \end{equation}
+    For each $p \in \mathbb{Z}$, define the graded pieces by
+    \begin{equation}
+        \gr_p F = \cofib(F_{p-1} \to F_p).
+    \end{equation}
+    We define a spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ associated with $F$ by setting
+    \begin{equation}\label{eq:Er_Fil}
+        E_r^{n,p} = \Image\left( \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \to \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \right),
+    \end{equation}
+    where the map is induced by the compositions of the inclusion and projection:
+    \begin{equation}\label{eq:factorization}
+        \nicefrac{F_p}{F_{p - r}} \to \nicefrac{F_p}{F_{p - 1}} \to \nicefrac{F_{p + r - 1}}{F_{p - 1}}.
+    \end{equation}
 
-The differentials $d_r^{n,p}\colon E_r^{n,p} \to E_r^{n-1, p - r}$ are determined by the connecting morphisms via the commutativity of the diagram:
-\begin{equation}\label{eq:diff_Fil}
-\xymatrix{
-\pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \ar[r]\ar[d]^{\delta_{p - r}} & E_r^{n,p} \ar[r]\ar[d]^{d_r^{n,p}} & \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \ar[d]^{\delta_{p - 1}}\\
-\pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \ar[r] & E_r^{n - 1, p - r} \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - 1}}{F_{p - r - 1}} \right),
-}
-\end{equation}
-where the vertical maps $\delta_{p - r}$ and $\delta_{p - 1}$ are the connecting homomorphisms from the long exact sequences of homotopy groups associated with the cofiber sequences:
-\begin{equation}
-F_{p - r} \to F_p \to \nicefrac{F_p}{F_{p - r}} \quad \text{and} \quad F_{p - 1} \to F_{p + r - 1} \to \nicefrac{F_{p + r - 1}}{F_{p - 1}}.
-\end{equation}
+    The differentials $d_r^{n,p}\colon E_r^{n,p} \to E_r^{n-1, p - r}$ are determined by the connecting morphisms via the commutativity of the diagram:
+    \begin{equation}\label{eq:diff_Fil}
+        \xymatrix{
+        \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \ar[r]\ar[d]^{\delta_{p - r}} & E_r^{n,p} \ar[r]\ar[d]^{d_r^{n,p}} & \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \ar[d]^{\delta_{p - 1}}\\
+        \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \ar[r] & E_r^{n - 1, p - r} \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - 1}}{F_{p - r - 1}} \right),
+        }
+    \end{equation}
+    where the vertical maps $\delta_{p - r}$ and $\delta_{p - 1}$ are the connecting homomorphisms from the long exact sequences of homotopy groups associated with the cofiber sequences:
+    \begin{equation}
+        F_{p - r} \to F_p \to \nicefrac{F_p}{F_{p - r}} \quad \text{and} \quad F_{p - 1} \to F_{p + r - 1} \to \nicefrac{F_{p + r - 1}}{F_{p - 1}}.
+    \end{equation}
 \end{defn}
 
 \begin{thm}{\cite[Prop.\ 1.2.2.14]{Lur17}}\label{th:converge}
-Let $\cC$ be a stable $\infty$-category equipped with a t-structure, that admits sequential colimits and that the t-
-structure is compatible with sequential colimits. Let $F$ be a bounded below filtered object in $\cC$ (see \cref{def:Filb}). Then the spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ (see \cref{def:SS_Fil}) converges to the homotopy groups of the colimit of $F$:
-\begin{equation*}
-E_r^{n,p} \Rightarrow \pi_n \colim_p F_p.
-\end{equation*}
+    Let $\cC$ be a stable $\infty$-category equipped with a t-structure, that admits sequential colimits and that the t-
+    structure is compatible with sequential colimits. Let $F$ be a bounded below filtered object in $\cC$ (see \cref{def:Filb}). Then the spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ (see \cref{def:SS_Fil}) converges to the homotopy groups of the colimit of $F$:
+    \begin{equation*}
+        E_r^{n,p} \Rightarrow \pi_n \colim_p F_p.
+    \end{equation*}
 \end{thm}
 
 \begin{exmp}\label{ex:CW_pages}
-Consider a CW complex $X$ with its skeletal filtration $\{ \sk_p X \}_{p \geq 0}$. Applying the suspension spectrum functor $\Sigma^\infty$, we obtain a filtered spectrum $F$ in $\Sp$, where $F_p = \Sigma^\infty \sk_p X$. Let $K = \cA F$ be the associated chain complex (as in \cref{ex:CW_skl}). The spectral sequence arising from this filtration has first page:
-\begin{equation*}
-E_1^{n,p} = \pi_n \gr_p F = \pi_n \left( \WedgeSp \mathbb{S}^p \right) = \pi_{n - p} K_p,
-\end{equation*}
-since each $\gr_p F$ is a wedge of spheres suspended $p$ times, and $K_p$ is the $p$-th term in the chain complex $K$.
+    Consider a CW complex $X$ with its skeletal filtration $\{ \sk_p X \}_{p \geq 0}$. Applying the suspension spectrum functor $\Sigma^\infty$, we obtain a filtered spectrum $F$ in $\Sp$, where $F_p = \Sigma^\infty \sk_p X$. Let $K = \cA F$ be the associated chain complex (as in \cref{ex:CW_skl}). The spectral sequence arising from this filtration has first page:
+    \begin{equation*}
+        E_1^{n,p} = \pi_n \gr_p F = \pi_n \left( \WedgeSp \mathbb{S}^p \right) = \pi_{n - p} K_p,
+    \end{equation*}
+    since each $\gr_p F$ is a wedge of spheres suspended $p$ times, and $K_p$ is the $p$-th term in the chain complex $K$.
 
-This spectral sequence converges to:
-\begin{equation*}
-\pi_n \Sigma^\infty X,
-\end{equation*}
-which are the stable homotopy groups of the space $X$.
+    This spectral sequence converges to:
+    \begin{equation*}
+        \pi_n \Sigma^\infty X,
+    \end{equation*}
+    which are the stable homotopy groups of the space $X$.
 
-More generally, for any spectrum $A$, we can consider the filtered spectrum $F_p \otimes A$, obtaining a spectral sequence converging to the generalized homology:
-\begin{equation*}
-A_n(X).
-\end{equation*}
-This spectral sequence is known as the \emph{Atiyah--Hirzebruch spectral sequence}.
+    More generally, for any spectrum $A$, we can consider the filtered spectrum $F_p \otimes A$, obtaining a spectral sequence converging to the generalized homology:
+    \begin{equation*}
+        A_n(X).
+    \end{equation*}
+    This spectral sequence is known as the \emph{Atiyah--Hirzebruch spectral sequence}.
 \end{exmp}
 
 \begin{defn}\label{def:survive}
-Let $F$ be a filtered object in stable $\infty$-category $\cC$ and let $\rnp{E}$ be it's spectral sequence. An element $x \in E_1^{n,p}$ is said to \textbf{survive to the $r$-th page} if it lies in the image of the map:
-\begin{equation*}
-x \in \Image \left( \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \to \pi_n\left( \nicefrac{F_p}{F_{p - 1}} \right) \right).
-\end{equation*}
-We denote the collection of such elements by $\mathcal{E}_r^{n,p}$. If $x' \in \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right)$ maps to $x$, we say that $x'$ \textbf{lifts} $x$.
+    Let $F$ be a filtered object in stable $\infty$-category $\cC$ and let $\rnp{E}$ be it's spectral sequence. An element $x \in E_1^{n,p}$ is said to \textbf{survive to the $r$-th page} if it lies in the image of the map:
+    \begin{equation*}
+        x \in \Image \left( \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \to \pi_n\left( \nicefrac{F_p}{F_{p - 1}} \right) \right).
+    \end{equation*}
+    We denote the collection of such elements by $\mathcal{E}_r^{n,p}$. If $x' \in \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right)$ maps to $x$, we say that $x'$ \textbf{lifts} $x$.
 \end{defn}
 
 Intuitively, an element survives to the $r$-th page if it is not killed by the differentials $d_k$ for $1 \leq k < r$.
 
 \begin{rem}\label{rem:FirstPageDesc}
-In the stable homotopy category $\Sp$, the homotopy groups $\pi_n$ are representable by spheres $\mathbb{S}^n$. Thus, elements in
-\begin{equation*}
-E_1^{n,p} = \pi_n \gr_p F = \pi_{n - p} K_p
-\end{equation*}
-are represented by maps $x\colon \mathbb{S}^{n - p} \to K_p$.
+    In the stable homotopy category $\Sp$, the homotopy groups $\pi_n$ are representable by spheres $\mathbb{S}^n$. Thus, elements in
+    \begin{equation*}
+        E_1^{n,p} = \pi_n \gr_p F = \pi_{n - p} K_p
+    \end{equation*}
+    are represented by maps $x\colon \mathbb{S}^{n - p} \to K_p$.
 \end{rem}
 
 We introduce a notation for subcategories of chain complexes.
 
 \begin{defn}\label{def:Ch_n}
-For integers $a \leq b$, let $\Ch_{[b,a]}$ denote the full subcategory of the poset category $\Ch$ spanned by the objects
-\begin{equation}
-\{ i \in \mathbb{Z} \mid b \geq i \geq a \} \cup \{ * \},
-\end{equation}
-where $*$ denotes the initial object. Given a pointed category $\cC$, we define
-\begin{equation}
-\Ch_{[b,a]}(\cC) = \Fun^*(\Ch_{[b,a]}, \cC) \subseteq \Fun(\Ch_{[b,a]}, \cC),
-\end{equation}
-the full subcategory of pointed functors from $\Ch_{[b,a]}$ to $\cC$.
+    For integers $a \leq b$, let $\Ch_{[b,a]}$ denote the full subcategory of the poset category $\Ch$ spanned by the objects
+    \begin{equation}
+        \{ i \in \mathbb{Z} \mid b \geq i \geq a \} \cup \{ * \},
+    \end{equation}
+    where $*$ denotes the initial object. Given a pointed category $\cC$, we define
+    \begin{equation}
+        \Ch_{[b,a]}(\cC) = \Fun^*(\Ch_{[b,a]}, \cC) \subseteq \Fun(\Ch_{[b,a]}, \cC),
+    \end{equation}
+    the full subcategory of pointed functors from $\Ch_{[b,a]}$ to $\cC$.
 \end{defn}
 
 Precomposition with the inclusion $\Ch_{[b,a]} \hookrightarrow \Ch$ induces restriction functors:
 \begin{equation*}
     i_{[b,a]}^* \colon \Ch(\cC) \to \Ch_{[b,a]}(\cC).
 \end{equation*}
-Given $K \in \Ch(\cC)$, its restriction to $\Ch_{[b,a]}$ is depicted as:
-\begin{equation*}
-K_b \to K_{b - 1} \to \dots \to K_a.
-\end{equation*}
 
-Restrictions from below admits the following right adjoint:
+Restrictions from below
+\begin{equation}\label{eq:res_from_below}
+    (i_{\geq a})^* \colon \Fun(\Ch, \cC) \to \Fun(\Ch_{\geq a}, \cC) \eqcolon \Ch_{\geq a}(\cC)
+\end{equation}
+
+admits the following right adjoint:
 \begin{equation*}
     (i_{\geq a})_* \colon \Ch_{\geq a}(\Sp) \to \Ch(\Sp)
 \end{equation*}
-which given by padding with zeros:
-\begin{equation}\label{eq:res_from_below}
+which given by right padding with zeros:
+\begin{equation}\label{eq:right_padding}
     (i_{\geq a})_* K(p) = \begin{cases}
-        K(p) & p \geq a \\
-        0 & \text{otherwise}
+        K(p) & p \geq a         \\
+        0    & \text{otherwise}
     \end{cases}
 \end{equation}
 On the other hand, restriction from above have padding as left adjoint:
 \begin{equation}\label{eq:res_from_above}
     (i_{\leq b})_! K(p) = \begin{cases}
-        0 & p > b \\
+        0    & p > b    \\
         K(p) & b \geq p
     \end{cases}
 \end{equation}
@@ -131,7 +132,7 @@ We can do the same for filtered object.
     \end{equation*}
 \end{defn}
 
-Note that the inclusion 
+Note that the inclusion
 \begin{equation*}
     i_{\leq n}: (-\infty,n] \to \bbZ
 \end{equation*}
@@ -146,7 +147,7 @@ and left adjoint
 which is given by
 \begin{equation*}
     (i_{\leq n})_! F (p) = \begin{cases}
-        F(p) & p \leq n \\
+        F(p) & p \leq n         \\
         F(n) & \text{otherwise}
     \end{cases}
 \end{equation*}
@@ -166,8 +167,8 @@ induces the restriction
 and it's right adjoint
 \begin{equation*}
     (i_{\geq n})_* F (p) = \begin{cases}
-        F(p) & n \leq p \\
-        0 &  \text{otherwise}
+        F(p) & n \leq p         \\
+        0    & \text{otherwise}
     \end{cases}
 \end{equation*}
 
@@ -175,25 +176,25 @@ and it's right adjoint
 
 On the other hand we can define the ''quotient truncation'' functor.
 \begin{defn}
-    Let $n \in \bbZ$ we define 
+    Let $n \in \bbZ$ we define
     \begin{equation*}
         q_n \colon \nonFil(\Sp) \to \nonFil_{\geq n}(\Sp)
     \end{equation*}
     by
     \begin{equation*}
         (q_n F)_p \coloneqq \begin{cases}
-            F_p/F_n & n+1 \leq p \\
-            0 & \text{otherwise}
+            F_p/F_n & n+1 \leq p       \\
+            0       & \text{otherwise}
         \end{cases}
     \end{equation*}
 \end{defn}
 This functor behave nicely with the equivalence to chain complexes:
 \begin{cor}
-Let $F \in \Fil(\Sp)$, we have that:
-\begin{equation*}
-    \cA q_n F \simeq i_{\geq n+1 }^* \cA F
-\end{equation*}    
-treated as objects in $\Ch_{[\infty,n+1]}(\Sp)$ or $\Ch(\Sp)$.
+    Let $F \in \Fil(\Sp)$, we have that:
+    \begin{equation*}
+        \cA q_n F \simeq i_{\geq n+1 }^* \cA F
+    \end{equation*}
+    treated as objects in $\Ch_{[\infty,n+1]}(\Sp)$ or $\Ch(\Sp)$.
 \end{cor}
 \begin{proof}
     A direct calculation shows that both are given by $(-)_p = \S^{-p} \gr_p F$.
@@ -212,24 +213,33 @@ treated as objects in $\Ch_{[\infty,n+1]}(\Sp)$ or $\Ch(\Sp)$.
     \end{equation*}
 \end{proof}
 
-Let $K$ be a chain complex, and let $F = \cI K$, then by passing Lurie's construction of spectral sequence of $F$ we get the following 
+Let $K$ be a chain complex, and let $F = \cI K$, then by passing Lurie's construction of spectral sequence of $F$ we get the following
 \begin{prop}\label{lem:ChSur}
-    Let $K \in \Ch(\Sp)$ be a chain complex in Spectra, let $F = \cI K$ the equivalent filtered spectrum and $\rnp{E}$ it's spectral sequence (see \cref{def:SS_Fil,th:converge}). By passing Lurie's construction we get that 
+    Let $K \in \Ch(\Sp)$ be a chain complex in Spectra, let $F = \cI K$ the equivalent filtered spectrum and $\rnp{E}$ it's spectral sequence (see \cref{def:SS_Fil,th:converge}). By passing Lurie's construction we get that
     \begin{equation*}
-    E_1^{n,p} = \pi_{n - p} K_p,
+        E_1^{n,p} = \pi_{n - p} K_p,
     \end{equation*}
     Moreover, let $x\colon \mathbb{S}^{n - p} \to K_p$ represent an element in $E_1^{n,p}$. Then $x$ survives to $E_r$ if and only if there are maps of chain complexes:
-    \begin{equation*}
+    \[
+        \bbS^{n-p}_p \to K_{[p,p-r+1]}
+    \]
+    such that the restriction
+    \[
+        \bbS^{n-p}_p \to K_{[p,p-r+1]} \to i_{\geq p}^* K_{[p,p-r+1]} = K_p
+    \]
+    is $x$.
+\end{prop}
+
+We depict such morphism as
+\begin{equation*}
     \xymatrix{
     \mathbb{S}^{n - p} \ar[d]_{x} \ar[r] & 0 \ar[r]\ar[d] & \dots \ar[r]\ar[d]& 0\ar[d]\\
-    K_p \ar[r]^{d_p}& K_{p - 1} \ar[r]^{d_{p - 1}}& \dots \ar[r]^{d_{p - r + 2} \quad}& K_{p - r + 1},
+    K_p \ar[r]^{d_p}& K_{p - 1} \ar[r]^{d_{p - 1}}& \dots \ar[r]^{d_{p - r + 2} \quad}& K_{p - r + 1}.
     }
-    \end{equation*}
-    where the top row is concentrated in degree $p$, and the bottom row is the truncated chain complex from degree $p$ to $p - r + 1$.
-\end{prop}
+\end{equation*}
 \begin{proof}
     The first page is given in \cref{rem:FirstPageDesc}.
-    Similar to $i_{\geq n}$, the inclusion 
+    Similar to $i_{\geq n}$, the inclusion
     \begin{equation*}
         j\coloneqq i_{\geq p-1, p-r} \colon (\infty, p-1] \to (\infty, p-r]
     \end{equation*}
@@ -252,9 +262,9 @@ Let $K$ be a chain complex, and let $F = \cI K$, then by passing Lurie's constru
     \end{equation}
     To get that visualization in the proposition, we first clarify that we use $\bbS^{n-p}_p$ for both the restricted and the usual versions of the chain that concentrated at $p$ and we can write:
     \begin{align*}
-        &\Map_{[p,p-r+1]}(\bbS^{n-p}_p, K_{[p,p-r+1]}) \\
-        = &\Map_{[p,p-r+1]}(\bbS^{n-p}_p, i_{\leq p}^* i_{\geq p-r+1}^* K) \simeq \Map_{(\infty,p-r+1]}((i_{\leq p})_! \bbS^{n-p}_p, i_{\geq p-r+1}^* K) \\
-        = &\Map_{(\infty,p-r+1]}(\bbS^{n-p}_p, i_{\geq p-r+1}^* K) \simeq \S^{n-p} F_p/F_{p-r}
+          & \Map_{[p,p-r+1]}(\bbS^{n-p}_p, K_{[p,p-r+1]})                                                                                                 \\
+        = & \Map_{[p,p-r+1]}(\bbS^{n-p}_p, i_{\leq p}^* i_{\geq p-r+1}^* K) \simeq \Map_{(\infty,p-r+1]}((i_{\leq p})_! \bbS^{n-p}_p, i_{\geq p-r+1}^* K) \\
+        = & \Map_{(\infty,p-r+1]}(\bbS^{n-p}_p, i_{\geq p-r+1}^* K) \simeq \S^{n-p} F_p/F_{p-r}
     \end{align*}
     where the qualities are notations and the last equivalence is \cref{lem:FpFn_is_rep}. We can do the same to the right hand side of \cref{eq:postJ} and get the map:
     \begin{equation}\label{eq:postJ_RHS}
@@ -289,26 +299,26 @@ Let $K$ be a chain complex, and let $F = \cI K$, then by passing Lurie's constru
 \end{proof}
 
 \begin{exmp}
-Returning to \cref{ex:CW_pages}, consider an element $x\colon \mathbb{S}^{n - p} \to K_p$ representing a class in $E_1^{n,p}$. The differential $d_1^{n,p}\colon E_1^{n,p} \to E_1^{n - 1, p - 1}$ is given by:
-\begin{equation}
-d_1^{n,p}(x) = d_p \circ x,
-\end{equation}
-where $d_p\colon K_p \to K_{p - 1}$ is the differential in the chain complex $K$.
+    Returning to \cref{ex:CW_pages}, consider an element $x\colon \mathbb{S}^{n - p} \to K_p$ representing a class in $E_1^{n,p}$. The differential $d_1^{n,p}\colon E_1^{n,p} \to E_1^{n - 1, p - 1}$ is given by:
+    \begin{equation}
+        d_1^{n,p}(x) = d_p \circ x,
+    \end{equation}
+    where $d_p\colon K_p \to K_{p - 1}$ is the differential in the chain complex $K$.
 
-By \cref{lem:ChSur}, $x$ survives to the second page if and only if $d_p \circ x$ is null-homotopic, i.e., $x$ is a cycle:
-\begin{equation}
-d_p \circ x = 0 \quad \text{in} \quad \pi_{n - p} K_{p - 1}.
-\end{equation}
-Similarly, $x$ survives to the $r$-th page if it extends to a map of chain complexes over $r$ steps, corresponding to being a cycle up to $r$-th order.
+    By \cref{lem:ChSur}, $x$ survives to the second page if and only if $d_p \circ x$ is null-homotopic, i.e., $x$ is a cycle:
+    \begin{equation}
+        d_p \circ x = 0 \quad \text{in} \quad \pi_{n - p} K_{p - 1}.
+    \end{equation}
+    Similarly, $x$ survives to the $r$-th page if it extends to a map of chain complexes over $r$ steps, corresponding to being a cycle up to $r$-th order.
 \end{exmp}
 
 Let $F$ be a filtered object in $\cC$. Recall from \cref{def:SS_Fil} that we have the spectral sequence $\{ E_r^{n,p}, d_r^{n,p} \}$ associated with $F$. To understand the differentials $d_r^{n,p}$, we consider the following commutative diagram arising from the connecting morphisms in the long exact sequences of homotopy groups:
 
 \begin{equation}\label{eq:diff_well_def}
-\xymatrix{
-\pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \ar[r]\ar[d]_{\delta_{p - r}} & \pi_n\left( \nicefrac{F_p}{F_{p - 1}} \right) \ar[r] & \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \ar[d]^{\delta_{p - 1}} \\
-\pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - r - 1}} \right) \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - 1}}{F_{p - r - 1}} \right),
-}
+    \xymatrix{
+    \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right) \ar[r]\ar[d]_{\delta_{p - r}} & \pi_n\left( \nicefrac{F_p}{F_{p - 1}} \right) \ar[r] & \pi_n\left( \nicefrac{F_{p + r - 1}}{F_{p - 1}} \right) \ar[d]^{\delta_{p - 1}} \\
+    \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - r - 1}} \right) \ar[r] & \pi_{n - 1}\left( \nicefrac{F_{p - 1}}{F_{p - r - 1}} \right),
+    }
 \end{equation}
 
 where the vertical maps $\delta_{p - r}$ and $\delta_{p - 1}$ are the connecting homomorphisms from the long exact sequences associated with the cofiber sequences in the filtration.
@@ -316,38 +326,38 @@ where the vertical maps $\delta_{p - r}$ and $\delta_{p - 1}$ are the connecting
 Let $x \in E_r^{n,p}$ be an element that survives to the $r$-th page, and let $x' \in \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right)$ be a lift of $x$. By the commutativity of Diagram~\Cref{eq:diff_well_def}, the image of $\delta_{p - r}(x')$ in $\pi_{n - 1}\left( \nicefrac{F_{p - 1}}{F_{p - r - 1}} \right)$ depends only on $x$ and not on the specific choice of the lift $x'$. This property allows us to define the differential $d_r^{n,p}$.
 
 \begin{defn}
-Let $F$ be a filtered spectrum with spectral sequence $\rnp{E}$ and let $x \in E_r^{n,p}$. Let $x' \in \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right)$ be a lift of $x$. We define the differential
-\begin{equation*}
-    d_r^{n,p}(x) \in E_r^{n - 1, p - r}    
-\end{equation*}
-to be the image of $\delta_{p - r}(x')$ in $E_r^{n - 1, p - r}$ under the natural map induced by the composition
-\begin{equation*}
-    \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \to  E_r^{n - 1, p - r}.    
-\end{equation*}
-Diagrammatically, this is represented as:
-\begin{equation}\label{eq:differential_diagram}
-\xymatrix{
-x' \ar[d]_{\delta_{p - r}} & \ar@{<-}[l] x \\
-\delta_{p - r}(x') \ar@{|->}[r] & d_r^{n,p}(x).
-}
-\end{equation}
+    Let $F$ be a filtered spectrum with spectral sequence $\rnp{E}$ and let $x \in E_r^{n,p}$. Let $x' \in \pi_n\left( \nicefrac{F_p}{F_{p - r}} \right)$ be a lift of $x$. We define the differential
+    \begin{equation*}
+        d_r^{n,p}(x) \in E_r^{n - 1, p - r}
+    \end{equation*}
+    to be the image of $\delta_{p - r}(x')$ in $E_r^{n - 1, p - r}$ under the natural map induced by the composition
+    \begin{equation*}
+        \pi_{n - 1}\left( \nicefrac{F_{p - r}}{F_{p - 2r}} \right) \to  E_r^{n - 1, p - r}.
+    \end{equation*}
+    Diagrammatically, this is represented as:
+    \begin{equation}\label{eq:differential_diagram}
+        \xymatrix{
+        x' \ar[d]_{\delta_{p - r}} & \ar@{<-}[l] x \\
+        \delta_{p - r}(x') \ar@{|->}[r] & d_r^{n,p}(x).
+        }
+    \end{equation}
 \end{defn}
 
 The definition ensures that $d_r^{n,p}(x)$ is well-defined, independent of the choice of lift $x'$.
 
 
-\subsubsection*{Chain-level description of the differential}
+\subsubsection*{Chain-like description of the differential}
 
 Similar to the description of the pages, as maps between chain complexes, we can unwind Lurie's description for filtered spectrum, to get a chain complex description of the differential.
 
 To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following definition and lemma.
 
 \begin{defn}
-    We denote the "shift to the left" functor by 
+    We denote the "shift to the left" functor by
     \begin{equation*}
         T \colon \Ch(\Sp) \to \Ch(\Sp)
     \end{equation*}
-    which is given by precomposing with 
+    which is given by precomposing with
     \begin{equation*}
         \operatorname{-1}: \bbZ \to \bbZ, \quad n \mapsto n-1
     \end{equation*}
@@ -357,7 +367,7 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     Let $L \in \Ch_{(\infty,n]}(\Sp)$ and $K \in \Ch_{[n,-\infty)}(\Sp)$ be two chain complexes. Then
     \begin{equation*}
         \Map(\S^{-1} T L,K) \simeq \Map(L, K)
-    \end{equation*}  
+    \end{equation*}
 \end{lem}
 \begin{proof}
     First, note that $\Fil(\Sp)$ is generated (under colimits) by $\yo_p$. Passing to $\Ch(\Sp)$, we get that $\Ch(\Sp)$ is generated by $\cI \yo_p = \bbS_p^{-p}$.
@@ -396,7 +406,7 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
         \xymatrix
         {   \mathbb{S}^{n-p} \ar[r]\ar[d]_x & \dots \ar[r]\ar[d] &  0 \ar[d]\\
             K_p \ar[r]\ar[d] & \dots \ar[r]\ar[d] &  K_{p-r+1} \ar[d] \\
-            0 \ar[r] & \dots \ar[r] & K_{p-r} 
+            0 \ar[r] & \dots \ar[r] & K_{p-r}
         }
     \end{equation*}
     viewed as a map $\bbS^{n-p} \to K_{p-r}$, where the first map is an extension of $x$ (see \cref{lem:ChSur}), and the second is induced by the structure of the chain complex $K$.
@@ -428,13 +438,13 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     \begin{equation*}
         c^* \colon \Map(\bbS^{-p}_p, K_{[p,p-r+1]}) \xrightarrow{c \ \circ } \Map(\bbS^{-p}_p, \S K_{[p-r,p-2r+1]}).
     \end{equation*}
-    Note that $\bbS^{-p}_p \in \Ch_{(\infty,p]}(\Sp)$ and the other two chains are elements in $\Ch_{[p,-\infty)}(\Sp)$. So we can use \cref{lem:shift_map} on $c$ and find that $c^*$ is equivalent to post-composition with 
+    Note that $\bbS^{-p}_p \in \Ch_{(\infty,p]}(\Sp)$ and the other two chains are elements in $\Ch_{[p,-\infty)}(\Sp)$. So we can use \cref{lem:shift_map} on $c$ and find that $c^*$ is equivalent to post-composition with
     \begin{equation*}
         K_{[p,p-r+1]} \to T^{-1} K_{[p-r,p-2r+1]}
     \end{equation*}
     which is the visualization in the proposition.
     Note that the diagram (which has $K_{p-r}$ as a target) is a visualization of $\partial_r(x) \in \pg{E}{1}{n-1}{p-r}$, and the "non-truncated" version (with target $K_{[p-r,p-2r+1]}$) is the evidence that we can lift $\partial_r(x)$ to $\pg{\cE}{r}{n-1}{p-r}$.
-    
+
     Let $K = \cA F$, we get a cofiber sequence of chain maps:
     \begin{equation*}
         \xymatrix
@@ -454,8 +464,8 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     \end{equation}
     We denote the restriction of chains:
     \begin{align*}
-        K_{[p,p-r+1]} &:= K_p \to \dots \to K_{p-r+1} \to \overbrace{0 \to \dots \to 0}^{r-1}  \\
-        K_{[p-r,p-2r+1]} &:= \overbrace{0 \to \dots \to 0}^{r-1} \to K_{p-r} \to \dots \to K_{p-2r+1}
+        K_{[p,p-r+1]}    & := K_p \to \dots \to K_{p-r+1} \to \overbrace{0 \to \dots \to 0}^{r-1}      \\
+        K_{[p-r,p-2r+1]} & := \overbrace{0 \to \dots \to 0}^{r-1} \to K_{p-r} \to \dots \to K_{p-2r+1}
     \end{align*}
     as objects in $\Ch_{[p,p-2r+2]}(\Sp)$.
     The diagram \cref{eq:diff_sus} is equivalent to the diagram:
@@ -487,10 +497,154 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
         \xymatrix
         {   \mathbb{S}^{n-p} \ar[r]\ar[d] & \dots \ar[r]\ar[d] &  0 \ar[d]\\
             K_p \ar[r]\ar[d] & \dots \ar[r]\ar[d] &  K_{p-r+1} \ar[d] \\
-            0 \ar[r] & \dots \ar[r] & K_{p-r} 
+            0 \ar[r] & \dots \ar[r] & K_{p-r}
         }
     \end{equation*}
     The last diagram is $\partial_r(x) \in \pg{E}{1}{n-1}{p-r}$, and the previous diagram \cref{eq:lift_of_dr} is the evidence that we can lift $\partial_r(x)$ to $\pg{\cE}{r}{n-1}{p-r}$.
 \end{proof}
 
 \ThB*
+
+\subsection{The differentail in the enriched model}
+until the end of this seciton, we will develope the tools to describe the differential, which is the the composition in \cref{lem:Ch_diff}, in the simplicall and topological enriched model.
+
+sketch:
+define the cube category which is the nerve
+\[
+    N 1^n = (\Delta^1)^n
+\]
+
+define a spine (and mention that there is "the" spine but all of them give the same result).
+define spine functors in a category C (modeled as quasi category).
+Remind that there is an adjunction Nerve and rigidification.
+Take D to be sSet enriched model for C, i.e. N D = C.
+we get:
+\[
+    \Fun^spine (cube_n, N D) = \Fun^spine (\CC cube_n, D)
+\]
+
+So spine functors from $\CC cube_n$ are the sSet-Cat model for chain complexes.
+
+Note that we acn also define the pointed category, by adding a object $*$ to $cube_n$ with unique morphisms
+\[
+    * \to x, \quad x \to *
+\]
+and for any $x \notin \Spine_n$ we invert (localize) the map $x \to *$.
+This give equivalence:
+\[
+    cube_n / \{x \to * \mid x \notin \Spine_n\} \simeq \Ch_n
+\]
+which given by
+\[
+    x \mapsto \begin{cases*}
+        *               & $x \notin \Spine_n$ \\
+        \lvert x \rvert & $x \in \Spine_n$
+    \end{cases*}
+\]
+
+Given two maps of n chain complexes in $\cC$, the form:
+\[
+    X_n \xrightarrow{f} K \xrightarrow{g} Y_0
+\]
+where the functors (chain complexes) $X_n, Y_n$ are zero except on $n$ and $0$, we can use the sSet model for functor categories to get two cubes in $\cC$
+\[
+    f,g \in \Fun(\Delta \times N 1^n, \cC)
+\]
+such that:
+\[
+    \partial_0 f = \partial_1 g = K.
+\]
+where $\partial_i$ is the restriction to $\partial_i \Delta^1$ in the first coordinate.
+We can glue to get the following horn in $\cC$
+\[
+    f\cup g : \Lambda^2_1 \times N 1^n \to \cC
+\]
+
+Having that $\cC$ is quasi-category, we get a horn filling:
+\[
+    \Delta^2 \times N 1^n \to \cC
+\]
+
+we denote the restriction
+\[
+    g \circ f : \partial_1 \Delta^2 \times N 1^n \to \cC
+\]
+
+Indeed, as a morphism:
+\[
+    g \circ f : X_n \to Y_0
+\]
+hence as a n+1 cube in $\cC$ we have:
+\[
+    g \circ f (A) = \begin{cases*}
+        X & $A = n+1$ \\
+        Y & $A = 0$   \\
+        0 & otherwise
+    \end{cases*}
+\]
+
+In the Cat-sSet model we get that $g \circ f$ is geiven by a map of Cat-sSet
+\[
+    \CC (\partial_1 \Delta^2 \times N 1^n) = \CC (N 1^{n+1}) \to D
+\]
+All the object except the initial and the terminal are maps to $0 \in D$ trivail, hence the only non tirival mapping sSet is:
+\[
+    \Hom_{\CC(\hN 1^{n+1})}(1_{n+1}, 0_{n+1}) \to \Hom(X,Y)
+\]
+
+\begin{defn}[Simplicial Mapping Spaces]
+    For a general poset $A$ and elements $a \le b$, the simplicial mapping space in the rigidified nerve $\mathfrak{C}[N(A)]$ is the nerve of the poset of strict inclusion chains:
+    \[ \operatorname{Hom}_{\mathfrak{C}[N(A)]}(a, b) = N(\mathcal{P}_{a,b}) \]
+    where $\mathcal{P}_{a,b}$ consists of chains $a = X_0 \subsetneq X_1 \subsetneq \dots \subsetneq X_m = b$ \todo{ADD REF??}. The higher $k$-simplices of this mapping space are given by sequences of chain inclusions $C_0 \subseteq C_1 \subseteq \dots \subseteq C_k$ \todo{ADD REF??}.
+\end{defn}
+
+\begin{defn}[The Permutohedron]
+    Let $A$ be a finite linearly ordered set, and let $Cu_A$ be the cube category modeled as the Boolean lattice of subsets of $A$. The mapping space from the initial object $\emptyset$ to the maximal object $A$ is called the simplicial permutohedron $P_A$ \todo{ADD REF??}:
+    \[ P_A := \operatorname{Hom}_{\mathfrak{C}[N(Cu_A)]}(\emptyset, A) = N(\mathcal{P}_{\emptyset, A}) \]
+\end{defn}
+
+\begin{defn}[Composition and Boundary]
+    For any proper intermediate subset $Q$ ($\emptyset \subsetneq Q \subsetneq A$), the composition of morphisms through $Q$ is defined by the union of chains \todo{ADD REF??}:
+    \[ \circ : \mathcal{P}_{Q,A} \times \mathcal{P}_{\emptyset,Q} \to \mathcal{P}_{\emptyset,A}, \quad (C_1, C_2) \mapsto C_1 \cup C_2 \]
+    We define the geometric boundary $\partial P_A$ (a subcomplex of dimension $\dim(P_A) - 1$) as the union over all proper intermediate subsets $Q$ of the images of these composition embeddings \todo{ADD REF??}:
+    \[ \partial P_A := \bigcup_{\emptyset \subsetneq Q \subsetneq A} P_{A \setminus Q} \times P_Q \]
+\end{defn}
+
+\begin{fact}[Cone Structure and Contractibility]
+    The poset of chains $\mathcal{P}_{\emptyset, A}$ contains a unique minimal element: the empty chain $C_{min} = (\emptyset \subsetneq A)$, which corresponds to the direct, unfactored jump from source to target \todo{ADD REF??}.
+
+    Because $\mathcal{P}_{\emptyset, A}$ has a unique minimum, its nerve $P_A$ is topologically a cone over the sub-poset of proper intermediate chains $P^\circ$ \todo{ADD REF??}. In simplicial terms, $P_A$ is the join of the 0-simplex (the cone point) and its boundary:
+    \[ P_A \cong Cone(N(P^\circ)) \cong \Delta^0 \star N(P^\circ) \]
+    Because $P_A$ is formed as a cone, it is trivially contractible \todo{ADD REF??}.
+\end{fact}
+
+
+To make things clean, we reindex the source of $f,g$ according to the horn:
+\[
+    \Lambda^2_1 \times N 1^n \to \cC
+\]
+we name
+\begin{gather*}
+    0 \coloneq (0,\varnothing) \\
+    1 \coloneq (1,\varnothing) \\
+    n+1 \coloneq (1, \n) \\
+    n+2 \coloneq (2,\n) 
+\end{gather*}
+note that under this "change of variables" we have that $K$ is located at ${1} \times N 1^n$ and  $1, n+1$ are the first and the last elements of $K$. By abuse of notation we will write:
+\[
+    K_{n+2} = X, \quad K_0 = Y
+\]
+
+Let $n+2 > i > 1$ we denote
+\[
+     f_i : \Hom_{\CC N 1^{n+1}}(n+2,i) \to \Hom(X,K_i)
+\]
+and for $n+1 > j > 0$ we denote
+\[
+    g_j: \Hom_{\CC N 1^{n+1}}(j,0) \to \Hom(K_j,Y)
+\]
+to be the maps that induced by modeling the functors $f,g$ in the Cat-sSet model.
+Similarly, by using the Cat-sSet model, for the functor $K$ we get maps
+\[
+    K_{i,j} : \Hom_{\CC N 1^n}(i,j) \to \Hom(K_i,K_j)
+\]

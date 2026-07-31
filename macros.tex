@@ -22,7 +22,9 @@
 % Calligraphic Letters (Categories and Collections)
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cI}{\mathcal{I}}
-\newcommand{\CC}{\mathrm{Path}}
+%\newcommand{\CC}{\mathrm{Path}}
+\newcommand{\CC}{\mathfrak{C}}
+\newcommand{\hN}{N}
 \newcommand{\cE}{\mathcal{E}}
 \newcommand{\cJ}{\mathcal{J}}
 \newcommand{\J}{\mathcal{J}}
@@ -68,7 +70,20 @@
 \newcommand{\RAN}{\bbR^N \times \Hlf^A}
 
 % Specific Mathematical Symbols
-\newcommand{\op}{\{1 \to 0\}}
+\makeatletter
+\DeclareRobustCommand{\cev}[1]{{\mathpalette\do@cev{#1}}}
+\newcommand{\do@cev}[2]{%
+  \vbox{\offinterlineskip
+    \sbox\z@{$\m@th#1 x$}%
+    \ialign{##\cr
+      \hidewidth\reflectbox{$\m@th#1\vec{}\mkern4mu$}\hidewidth\cr
+      \noalign{\kern-\ht\z@}
+      $\m@th#1#2$\cr
+    }%
+  }%
+}
+\makeatother
+\newcommand{\op}{[\cev{1}]}
 %\newcommand{\op}{([1]^{\Op})}
 \newcommand{\Chn}{\Ch_{[n,0]}}
 \newcommand{\Sinf}{\S^{\infty}_+}

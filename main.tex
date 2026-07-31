@@ -92,6 +92,7 @@
 \newtheorem{constr}[thm]{\protect\constructionname}
 \newtheorem{problem}{\protect\probname}
 \newtheorem{notation}[thm]{\protect\notationname}
+\newtheorem{fact}[thm]{\protect\factname}
 
 % Remark-like environments
 \theoremstyle{remark}
@@ -110,6 +111,7 @@
 \providecommand{\lemmaname}{Lemma}
 \providecommand{\probname}{Problem}
 \providecommand{\notationname}{Notation}
+\providecommand{\factname}{Fact}
 \providecommand{\notename}{Note}
 \providecommand{\propositionname}{Proposition}
 \providecommand{\remarkname}{Remark}
@@ -169,15 +171,15 @@
 \maketitle
 
 \begin{abstract}
-Framed flow categories and their stable homotopy types are central tools in modern Floer, contact, Khovanov, and knot homotopy theories. In this paper, given an $\cX$-structured flow category $\fC$ and a generalized homology theory $A$ equipped with a map $M\cX \to A$, we construct an Atiyah-Hirzebruch-type spectral sequence which converges to the homology of the realization $A_*(\norm{\fC})$. Moreover, if $A$ is a bordism theory - for example, if $\fC$ is framed and $A$ is stable homotopy - we provide a description of the higher pages and differentials in terms of gluing the flow manifolds in $\fC$ to a geometric analog of Toda brackets, an idea traced back to Floer\cite{floer1989witten}.
+    Framed flow categories and their stable homotopy types are central tools in modern Floer, contact, Khovanov, and knot homotopy theories. In this paper, given an $\cX$-structured flow category $\fC$ and a generalized homology theory $A$ equipped with a map $M\cX \to A$, we construct an Atiyah-Hirzebruch-type spectral sequence which converges to the homology of the realization $A_*(\norm{\fC})$. Moreover, if $A$ is a bordism theory - for example, if $\fC$ is framed and $A$ is stable homotopy - we provide a description of the higher pages and differentials in terms of gluing the flow manifolds in $\fC$ to a geometric analog of Toda brackets, an idea traced back to Floer\cite{floer1989witten}.
 
-This work provides a bordism-level perspective on spectral sequences, aligning with the approach of Abouzaid and Blumberg, who developed a bordism model for spectra. We demonstrate these spectral sequence techniques by calculating the unoriented and oriented bordism homology of real projective spaces using Morse flow data.
+    This work provides a bordism-level perspective on spectral sequences, aligning with the approach of Abouzaid and Blumberg, who developed a bordism model for spectra. We demonstrate these spectral sequence techniques by calculating the unoriented and oriented bordism homology of real projective spaces using Morse flow data.
 
-Independent of flow categories, we provide a description of the spectral sequence of a chain complex in a stable category in terms of morphisms between chain complexes.
+    Independent of flow categories, we provide a description of the spectral sequence of a chain complex in a stable category in terms of morphisms between chain complexes.
 \end{abstract}
 \newpage
 
-\tableofcontents 
+\tableofcontents
 \newpage
 
 \section{Introduction}\label{sec:intro}
@@ -198,7 +200,7 @@ In this section, let $\cC$ be a stable $\infty$-category with sequential limits 
 Following \cite{Ari21}, we will introduce the categories of chain complexes and filtered objects in $\infty$-category. We will show how to connect between them and the equivalence between the two categories.
 
 \begin{rem}
-    For being compatible with flow categories, our chain complexes will decrease and hence the filtered objects will increase, as oppose to \cite{Ari21}. 
+    For being compatible with flow categories, our chain complexes will decrease and hence the filtered objects will increase, as oppose to \cite{Ari21}.
 \end{rem}
 
 \input{Ch&Fil}
@@ -208,7 +210,13 @@ We will start with the construction of spectral sequence of a filtered object, f
 
 For our discussion, we assume that $\cC$ is a stable $\infty$ category equipped with a $t$-structure $(\cC^{\leq 0}, \cC^{\geq 0})$.
 \input{SSofCh}
-%%%----------------------------------------------------------------------------
+
+\section{Models for chain complexes}
+Befor we moving on to the geometric parts of the paper, we give another useful description for composition of chain complexes maps.
+The goal is to give a description for the diffrential, in a topologically enriched model for chain complexes.
+
+\input{CompInTop.tex}
+
 \section{Manifolds with Corners and Framed Flow Categories}
 This section lays the geometric and categorical groundwork for our main constructions. We begin by introducing a diagrammatic framework. The fundamental geometric objects in this setting are manifolds with corners, which generalize smooth manifolds (see \cite{LS14} for a relevant treatment). These concepts are then used to define flow categories \cite{CJS95}, where the morphism spaces are manifolds with corners and composition is given by embedding into the corner strata. The subsequent subsections develop the precise definitions required for this approach.
 \input{Mfld w. corners & ffcat}

@@ -21,8 +21,7 @@ where $PT$ is the Pontryagin-Thom construction and later we will justify that
     \Hom_{\Ch(\Sp)}(\bbS_b,\bbS_a) \simeq \Hom_{\Sp}(\S^{b-a}\bbS,\bbS)
 \]
 
-The section layout is: In ??? we define $K_V$, for a module $V$. To do so we need to "flatten" the module into the cone flow category (see \cref{def:ConeFlowCategory}), use Section \cref{sec:ChofFlow} to obtain a chain complex and then to "unflatten"\todo{re-wording?} the chain complex into a morphism between chain complexes. The main mechanism is given by modeling chain complexes using cubical diagrams.
-In ??? we spend some time by undersdtanding the composition 
+The section layout is: In ??? we define $K_V$, for a module $V$. To do so we need to "flatten" the module into the cone flow category (see \cref{def:ConeFlowCategory}), use Section \cref{sec:ChofFlow} to obtain a chain complex and then to "unflatten"\todo{re-wording?} the chain complex into a morphism between chain complexes. The main mechanism is given by modeling chain complexes using cubical diagrams. In ??? we spend some time by undersdtanding the composition 
 \[
     \Hom_{\Ch(\Sp)}(\bbS_b,K_\fC) \times \Hom_{\Ch(\Sp)}(K_\fC, \bbS_a) \to \Hom_{\Ch(\Sp)}(\bbS_b, \bbS_a)
 \]
@@ -36,10 +35,15 @@ and shows that the diagram commutes,
 
 \subsection{Flattening $n+1$ cubes}\label{sec:ChModels.Cub}
 
+First, we denote
+\[
+    \op \coloneqq \{1 \to 0\}
+\]
+
 \begin{defn}\label{def:A_cube}
 Let $A$ be a finite linearly ordered set, the \emph{$A$-cube} is the power set category:
 \[
-    \op^A \cong \mathcal{P}(A)^{\Op}
+    \op^A \simeq \mathcal{P}(A)^{\Op}
 \]
 Let $n \in \bbN$ (including $0$). For $A = \{1, \dots, n\}$ (or $\varnothing$ if $n=0$), we write $\op^n = \op^A$.
 \end{defn}
@@ -62,66 +66,66 @@ The spine of $A$ is the full subcategory of $[1]^A$ spanned by
 \begin{defn}\label{def:category_of_spine_cubes}
 Let $\cC$ be a pointed $\infty$-category and let $A$ be a finite linearly ordered set. We define the category of spine cubes (or cubical chain complexes)
 \[
-    \Cu_A(\cC) :=  \Fun^{\Spine}([1]^A,\cC) \coloneq \{ F \in \Fun([1]^A,\cC) \mid F(Q) \simeq * \text{ for all } Q \notin \Spine(A) \}
+    \Cu_A(\cC) \coloneq \Fun^{\Spine}([1]^A,\cC) \coloneq \{ F \in \Fun([1]^A,\cC) \mid F(Q) \simeq * \text{ for all } Q \notin \Spine(A) \}
 \]
 \end{defn}
 
-Let $A,B$ be finite linearly ordered sets, then
+Let $B, A$ be finite linearly ordered sets, then
 \[
-    [1]^{A \amalg B} \simeq [1]^A \times [1]^B,
+    \op^{B \amalg A} \simeq \op^B \times \op^A,
 \]
 hence
 \[
-    \Fun([1]^{A \amalg B},\cC) \simeq \Fun([1]^A \times [1]^B,\cC) \simeq \Fun([1]^A, \Fun([1]^B, \cC)).
+    \Fun(\op^{B \amalg A},\cC) \simeq \Fun(\op^B \times \op^A,\cC) \simeq \Fun(\op^B, \Fun(\op^A, \cC)).
 \]
 
-By taking $A=\{a\}$, we obtain
+By taking $B=\{a\}$, we obtain
 \[
-    \Fun([1]^{B \amalg \{a\}},\cC) \simeq \Fun([1]^B \times [1]^{\{a\}},\cC) \simeq \Fun([1], \Fun([1]^B, \cC)).
+    \Fun(\op^{\{a\} \amalg A},\cC) \simeq \Fun(\op^{\{a\}} \times \op^A,\cC) \simeq \Fun(\op, \Fun(\op^A, \cC)).
 \]
 
 We think of this equivalence as "flattening" the morphism of cubes (RHS) into a longer cube (the LHS).
 
 Passing to the spine cubes we need to be careful:
-Let $B=\{1, \dots, n\}$ be a linearly ordered set, and let $a = n+1$ be an element larger than all elements of $B$. We have that the spine of $B \amalg \{a\}$ inside $[1]^{B \amalg \{a\}} \simeq [1]^B \times [1]$ consists of the elements:
+Let $A=\{n, \dots, 1\}$ be a descending linearly ordered set, and let $a = n+1$ be an element larger than all elements of $A$. We have that the spine of $\{a\} \amalg A$ inside $\op^{\{a\} \amalg A} \simeq \op \times \op^A$ consists of the elements:
 \[
-    (0, \dots, 0, 0), \quad (1, 0, \dots, 0, 0), \quad \dots, \quad (1, \dots, 1, 0), \quad (1, \dots, 1, 1)
+    (1, 1, \dots, 1), \quad (0, 1, \dots, 1), \quad \dots, \quad (0, 0, \dots, 1), \quad (0, \dots, 0, 0)
 \]
 which can be written as:
 \[
-    \left( \Spine(B) \times \{0\} \right) \cup \{ (B, 1) \} \subset [1]^B \times [1].
+    \{ (1, (1, \dots, 1)) \} \cup \left( \{0\} \times \Spine(A) \right) \subset \op \times \op^A.
 \]
 We get that for the cubical chain complexes we have:
 \begin{equation}\label{eq:spine_equivalence}
 \begin{aligned}
-    \Cu_{B \amalg \{a\}}(\cC) &\simeq \Fun^{\Spine}([1]^{B \amalg \{a\}},\cC) \\
-    &\simeq \big\{f \colon [1] \to \Fun([1]^B, \cC) \mid
+    \Cu_{\{a\} \amalg A}(\cC) &\simeq \Fun^{\Spine}(\op^{\{a\} \amalg A},\cC) \simeq \Fun^{\Spine}(\op \times \op^{A},\cC) \\
+    &\simeq \big\{f \colon \op \to \Fun(\op^A, \cC) \mid
     \begin{aligned}
-        f_0(Q) &\simeq * \quad \text{for all } Q \notin \Spine(B), \\    
-        f_1(Q) &\simeq * \quad \text{for all } Q \neq B
+        f_1(Q) &\simeq * \quad \text{for all } Q \neq (1, \dots, 1), \\
+        f_0(Q) &\simeq * \quad \text{for all } Q \notin \Spine(A)
     \end{aligned}
      \big\}
 \end{aligned}
 \end{equation}
 
-where $f_0,f_1$ are the source and the target of the morphism $f$.
+where $f_1, f_0$ are the source and the target of the morphism $f$ (since the morphism in $\op$ is $1 \to 0$).
 
 Before we move on, let us compare the coherent chain complexes defined via $\Ch$ to the cubical model.
 
-Let $\cC$ be a pointed $\infty$-category. For $F \in \Fun_*([1]^A,\cC)$, the condition that $F$ is a spine cube is equivalent to saying that $F(Q) \simeq \ast$ for all $Q \notin \Spine(A)$.
-We can define a localized category $\Cu_A$ by starting with $[1]^A$, adding a zero object $\ast$, and formally adjoining morphisms $\ast \to Q$ for all $Q \notin \Spine(A)$. Inverting these morphisms yields:
+Let $\cC$ be a pointed $\infty$-category. For $F \in \Fun_*(\op^A,\cC)$, the condition that $F$ is a spine cube is equivalent to saying that $F(Q) \simeq \ast$ for all $Q \notin \Spine(A)$.
+We can define a localized category $\Cu_A$ by starting with $\op^A$, adding a zero object $\ast$, and formally adjoining morphisms $\ast \to Q$ for all $Q \notin \Spine(A)$. Inverting these morphisms yields:
 \[
-    \Cu_A \coloneq \left( [1]^A \amalg \{\ast\} \right) [\{\ast \to Q \mid Q \notin \Spine(A)\}^{-1}]
+    \Cu_A \coloneq \left( \op^A \amalg \{\ast\} \right) [\{\ast \to Q \mid Q \notin \Spine(A)\}^{-1}]
 \]
 This localization is constructed precisely so that for any pointed $\infty$-category $\cC$, we have an equivalence of functor categories:
 \[
-    \Fun_*^{\Spine}([1]^A,\cC) \simeq \Fun_*(\Cu_A, \cC).
+    \Fun_*^{\Spine}(\op^A,\cC) \simeq \Fun_*(\Cu_A, \cC).
 \]
 
 Under this equivalence, the map that sends "off-spine" elements to $\ast$ in the definition of $\Ch$ translates to the fact that $\Cu_A$ is equivalent to the corresponding subcategory of $\Ch$. We formalize this as follows:
 
 \begin{claim}
-For any integers $b \leq a$, let $A = \{b, \dots, a\}$. We have an equivalence of categories:
+For any integers $b \geq a$, let $A = \{b, \dots, a\}$. We have an equivalence of categories:
 \[
     \Cu_{[b,a]} \coloneqq \Cu_{\{b, \dots, a\}} \simeq \Ch_{[b,a]}
 \]
@@ -136,16 +140,186 @@ Note that the restriction functor defined in \cref{sec:Ch} is compatible with th
 This restriction allows us to cleanly phrase the relationship between an $(n+1)$-dimensional spine cube and a morphism of $n$-dimensional spine cubes:
 
 \begin{lem}\label{lem:morphism_to_cube}
-Let $A = \{1, \dots, n\}$ and let $B = A \amalg \{n+1\} = \{1, \dots, n+1\}$.
-By \cref{eq:spine_equivalence}, an object $K \in \Cu_B(\cC)$ (which is an $(n+1)$-dimensional cubical chain complex) corresponds precisely to a morphism $f \colon L \to M$ in $\Fun([1]^A, \cC)$ characterized by the following restrictions:
+Let $b \geq a$ be integers, let $A = \{b, \dots, a\}$, and let $B = \{b+1\} \amalg A = \{b+1, b, \dots, a\}$ (i.e., prepending an element at the beginning).
+By \cref{eq:spine_equivalence}, an object $K \in \Cu_B(\cC)$ corresponds precisely to a morphism $f \colon L \to M$ in $\Fun(\op^A, \cC)$ characterized by the following restrictions:
 \begin{enumerate}
-    \item The restriction of $K$ to the $0$-face of the $(n+1)$-th direction gives $L = f_0$, which is an $n$-dimensional cubical chain complex in $\Cu_A(\cC)$.
-    \item The restriction of $K$ to the $1$-face of the $(n+1)$-th direction gives $M = f_1$, which must be concentrated at the final object of $[1]^A$ (i.e., at $A$).
+    \item The restriction of $K$ to the $1$-face of the $(b+1)$-th direction gives $L = f_1$, which must be concentrated at the initial object of $\op^A$ (i.e., at $(1, \dots, 1)$).
+    \item The restriction of $K$ to the $0$-face of the $(b+1)$-th direction gives $M = f_0$, which is a general cubical chain complex in $\Cu_A(\cC)$.
 \end{enumerate}
 \end{lem}
 
-\begin{rem}\label{rem:morphism_to_cube_prepend}
-Symmetrically, if we instead consider an index set of the form $\{1\} \amalg B'$ where $B' = \{2, \dots, n+1\}$ (i.e., prepending an element), the spine equivalence identifies an $(n+1)$-dimensional cubical chain complex $K \in \Cu_{\{1\} \amalg B'}(\cC)$ with a morphism $f \colon L \to M$ in $\Fun([1]^{B'}, \cC)$. Under this identification, the source $L = f_0$ is concentrated at the initial object $\varnothing$, while the target $M = f_1$ is a general $n$-dimensional cubical chain complex in $\Cu_{B'}(\cC)$.
+\begin{rem}\label{rem:morphism_to_cube_append}
+Symmetrically, if we instead consider the index set $A \amalg \{a-1\}$ (i.e., appending an element at the end), the spine equivalence identifies a cubical chain complex $K \in \Cu_{A \amalg \{a-1\}}(\cC)$ with a morphism $f \colon L \to M$ in $\Fun(\op^{A}, \cC)$ characterized by the following restrictions:
+\begin{enumerate}
+    \item The source $L = f_1$ is a general cubical chain complex in $\Cu_{A}(\cC)$.
+    \item The target $M = f_0$ is concentrated at the final object $(0, \dots, 0)$.
+\end{enumerate}
+\end{rem}
+
+\begin{rem}
+Note that while the appended object resides at index $a-1$, the target $M$ of the morphism $f$ is an object in $\Cu_A$. Under the canonical identification of the cube face $\{0\} \times \op^A \cong \op^A$, the object at index $a-1$ corresponds to the final coordinate of the $A$-cube.
 \end{rem}
 
 Now we can "flatten" a flow module into a flow category, realize it into a cubical chain complex, and then "unflatten"
+
+To formalize the idea that the cone category still "contains" the original category, we define the following relation:
+\begin{notation}\label{FlowCatIso}
+    For two framed flow categories $\fC, \fD$ with flow manifolds $M_{-,-}, N_{-,-}$ we denote by
+    \begin{equation*}
+        \fC = \fD
+    \end{equation*}
+    the following relation: there is a bijection 
+    \begin{align*}
+        i \colon \Ob(\fC) &\simeq \Ob(\fD)\\
+        M_{x,y} &= N_{i(x),i(y)}
+    \end{align*}
+\end{notation}
+
+Note that the cubical chain complex of a flow subcategory \todo{DO WE NEED REF??} depends only on the flow subcategory (and not on the ambient flow category), so if $\fD \subseteq \fC$ and $\fD = \fC'$, then $K_{\fD} = K_{\fC'}$.
+
+\begin{defn}\label{def:module_morphisms}
+Let $b \geq a$ be two integers, and let $\fC$ be a $[b, a]$ bounded framed flow category. Let $W \colon *[b] \to \fC$ be a right framed flow module (resp. $V \colon \fC \to *[a]$ a left framed flow module). Let $C(W)$ (resp. $C(V)$) denote its cone flow category.
+
+By definition of the cone category of a flow module (\cref{def:ConeFlowCategory}), we have that $C(W)_{[b,a]} = \fC$ (resp. $C(V)_{[b,a]} = \fC$). Therefore, the restricted cubical chain complex is exactly the chain complex of $\fC$:
+\[
+    (K_{C(W)})_{[b,a]} = K_{\fC} \quad (\text{resp. } (K_{C(V)})_{[b,a]} = K_{\fC}).
+\]
+The full cubical chain complex of the cone adds a new object:
+\[
+    K_{C(W)} \in \Cu_{[b+1, a]}(\Sp) \quad (\text{resp. } K_{C(V)} \in \Cu_{[b, a-1]}(\Sp))
+\]
+where the new object is at index $b+1$ (resp. $a-1$) and evaluates to $\bbS$.
+
+Using the spine equivalences established in \cref{lem:morphism_to_cube} and \cref{rem:morphism_to_cube_append}, we define the \textbf{associated morphisms of $[b,a]$ cubical chain complexes}:
+\begin{equation*}
+    f_W \coloneq f_{K_{C(W)}} \colon \bbS_{b} \to K_{\fC}
+\end{equation*}
+for the right module $W$, and respectively
+\begin{equation*}
+    f_V \coloneq f_{K_{C(V)}} \colon K_{\fC} \to \bbS_{a}
+\end{equation*}
+for the left module $V$.
+
+Here, $f_W$ has its source concentrated at the initial coordinate $b$, and $f_V$ has its target concentrated at the final coordinate $a$ of the $[b,a]$-cube. (See \cref{def:lacunarCh} for $\bbS_{b}, \bbS_{a} \in \Cu_{[b,a]}(\Sp)$).
+\end{defn}
+
+\subsection{composition of chain complexes}
+
+This section uses models of $\infty$-categories and it's llying in the realm of the foundations for category theory. To give an non thecnical intuition, we start with a toy example of the main result of this section.
+
+Let $\fC$ be a flow category with only objects, with indices $2,1$ and let $V,W$ be left and right modules of degrees $2,1$ respectively.
+The data $\fC,V,W$ consists of 0 dimensional manifolds $W_2, M_{2,1}, V_1$ and 1 dimensional manifolds $W_1, V_2$.
+
+First we define the composition of $V,W$ by gluing along the common boundary
+\[
+    V \circ W \coloneq W_1 \times V_1 \cup_{W_2 \times M_{2,1} \times V_1} W_2 \times V_2.
+\]
+
+On the other hand, we can use the two cone flow categories: $C(V), C(W)$, which are ''length 3'' flow categories. such flow categories give rise to two (coherent) chain complexes $K_{C(V)}, K_{C(W)}$.
+here, we can model thuse chain complexes using the cubical model, meaning as a functors:
+\begin{equation}\label{eq:ToySpine}
+    [1]^2 \to \Sp, \quad \text{where one of the vertices maps to } 0 \in \Sp
+\end{equation}
+Note that  $[1]^2 = [1] \times [1]$ hence $K_{C(V)}, K_{C(W)}$ can be seen as morohisms of length 2 cubical chain complexes, denoted $f_V,f_W$ (in this toy example 2 cubical chain complexe is just a map $\bbS \to \bbS$ in the category $\Sp$).
+The fact that $V,W$ are both module on the same flow category, $\fC$ implies that the source of $f_V$ and the target of $f_W$ are both equal to $K_\fC$ - thecnically it means that both are given by the $PT$ map of $M_{2,1}$.
+This allow us to glue the two squares in $\Sp$, to a map from the horn
+\[
+    f_V \cup f_W : \Lambda^2_1 \times \Delta^1 \to \Sp.
+\]
+A composition of $f_V, f_W$ is givne by taking an horn filling
+\[
+    \sigma : \Delta^2 \times \Delta^1 \to \Sp,
+\]
+and restrict to $\partial_1 \Delta^2$. Now we are moving the the simplical set enriched model.
+Note that $\sigma$ have initial and terminal objects $(0,0)$ and $(2,1)$ respectively.
+We denote that 4 non trivial objects:
+\[
+    \sigma(0,0) = X_0, \quad \sigma(1,0) = X_1, \quad \sigma(1,1) = X_2, \quad \sigma(2,1) = X_3.
+\]
+Now we are going to restrict to $\partial_1 \Delta^2$ and $\sigma_1 :=  \partial_1 \sigma$.
+From a mapping setspoint of view the only non trivial data in $\partial_1 \sigma$ lying in the maps 
+\[
+    \Hom_{\partial_1 \Delta^2}((0,0),(2,1)) \to \Hom(X_0,X_3)
+\]
+We have that $\Hom((0,0),(2,1))$ is glued from two lines, one represent a factorization of the map $(0,0) \to (2,1)$ through $(0,1)$ and the other through $(2,0)$. Note that the criteria of \cref{eq:ToySpine} imply that both boundaries of $\sigma(0,1) = \sigma(2,0) = 0$, hence the boundaries of $\Hom((0,0),(2,1))$ maps to the $0$ morphism, hence we can factor
+\[
+    \Delta^1 = \Hom((0,0),(2,1)) \to \Hom(X_0,X_3)
+\]
+through 
+\[
+    S^1 = \Delta^1/\partial \Delta^1 \to \Hom(X_0,X_3)
+\]
+On the other hand we can use $f_V,f_W$ whoch are the the other two squares in $\partial \sigma$, similar to $\sigma_1$, we have that $\sigma_2$ give us a morphism set:
+\[
+    \Delta^1 = \Hom_{\partial_2 \Delta^2}( (0,0), (1,1) ) \to Hom(X_0,X_2)
+\]
+and note that the coordinate $(1,1)$ corresponding to the object of index $1$ in $\fC$.
+The simplicial sets:
+\[
+    \Delta^1 \times \Delta^0 = \Hom((0,0),(1,1)) \times \Hom((1,1),(2,1)) 
+\]
+and $\sigma$ give us a map
+\[
+    \Delta^1 \times \Delta^0 \to \Hom(X_0,X_2) \times \Hom(X_2,X_3) \to \Hom(X_0,X_3)
+\]
+Similiarly $\sigma_0$ give us a map:
+\[
+    \Delta^0 \times \Delta^1 \to \Hom(X_0,X_1) \times \Hom(X_1,X_3) \to \Hom(X_0,X_3).
+\]
+
+to connect between 
+
+
+
+In this section we assume that hcain complex are $[b,a]$ bounded chain complexes (for $b \leq a \in \bbZ$).
+Let $f:L \to M, g:M \to N$ be two morphisms of (boudned) chain complexes, we want to describe the composition $g \circ f$ in terms of the chain complex $K_f,K_g$.
+
+We start by the $\sSet$ model which is given by
+\[
+    Fun(N \Cu_{[b,a]},\cC)
+\]
+Note that the Nerve of a cube - is the cube as $\infty$-category.
+
+For simplicity we use $n$ instead of $[b,a]$ as the index set.
+For simplicity\todo{reword} we will fix the following indexing conventions for a composition of cubes, which is the \emph{half cube} indexing.
+Let $f: L \to M, g: M \to N$ be morphisms of cubical chain complexes modeled as  
+\[
+    f,g: \op \times \op^n \to \cC
+\]
+We will re-index $f,g$ to fit into a $n+2$ cubical digram by taking the embedding:
+\[
+    \Lambda^2_1 \hookrightarrow  [1]^2
+\]
+extending it to:
+\[
+    \Lambda^2_1 \times [1]^n \hookrightarrow [1]^{n+2}
+\]
+and taking $\Op$. We get that $2,1,0 \in \Lambda^2_1$ are maps to $(1,1),(1,0)$ and $(0,0)$ respectively, so $L,M,N$ are charcterized by the vertices of the forms:
+\[
+    (1,1, x_3 \dots , x_{n+2}) , \quad (1,0, x_3 \dots , x_{n+2}) , \quad (0,0, x_3 \dots , x_{n+2})
+\]
+respectively.
+
+Note that $f,g$ forn the horn $\Lambda^2_1 \otimes [1]^n$, by gluing along $M$,  and by defintion of quasicategories, we have a (non unique) horn filling
+\[
+    \Delta^2 \times [1]^n \to \cC
+\]
+and a composition is the boundary
+\[
+    \partial_1 \Delta^2 \times [1]^n \to \cC.
+\]
+
+By taking
+\[
+    L = \bbS_n, \quad N = \bbS_{0},
+\]
+we get that 
+
+\begin{comment}
+    The ideas goes like this: we want to understand Hoim(n+2,0) but in the n chain which is the "diagonal" of the (n+2) cube.
+    first to note that in general the boundary of hom space in cat_sSet model is given by composition (factoring) via other elements in the category.
+    We get that the only non trivial way to factors anything in the n+2 cube is via the objects of M.
+    so in the n+2 cube we have that the boundary of Hom(n+2,0) can be devided to 2 - the part of Hom_{n cube}(n+2,0) (the diagonal) and the res. the filling provide an homotopy between these two boundary parts. Note that in the second part (the rest) we have that the boundary is trivial for the non "factor through M" part, so we get that the interior (filling) is acutally homotopy between the Hom_{n cube}(n+2,0) part and the "factor through M". by writing explicitly, we get the result for the Cat_sSet model and hence the Cat_Top model (the pointed version, to be honest?).
+    Then we need to carefullt understand that in the Cat_{Top_*} model compostion is given by \wedge (smash). 
+    Then we need to move to the \J module model, write what is the composition, and then see what is the "source" of is from the flowc categoies.
+\end{comment}
