@@ -14,6 +14,7 @@ AI collaborators should first read [`AGENTS.md`](AGENTS.md).
 | Active rewrite | `ChModels.tex`, `DiffOfFlowCat.tex` | Reorganize the algebraic composition model and the comparison between composition and gluing. Remove duplication and make the proof architecture explicit. |
 | Later exposition pass | `softIntro.tex`, the abstract in `main.tex`, and prose throughout | Rewrite after the main proof and final example are stable. |
 | Archived draft | `research/archived-drafts/CompInTop.tex` | Incomplete duplicate formerly compiled before `ChModels.tex`. It contains no completed argument not already developed more fully in the active draft, but remains available for reference. |
+| Historical composition draft | `Ignore/ChModels_old.tex` | Fuller earlier account of the permutohedron/spine-cube route. Consult it for motivation and possible lemmas; do not maintain it as a parallel manuscript section. |
 | Exploratory notes | `Ignore/` and `NotebookLM/` | Research material, older drafts, and references. Consult when useful; do not treat these as manuscript sections. |
 
 This is a workflow classification, not a claim that every statement in a baseline file has received a final proofread.
@@ -27,6 +28,7 @@ Only mark an item complete after reviewing the result and performing the relevan
 Detailed plan: [`research/composition-rewrite-plan.md`](research/composition-rewrite-plan.md)
 
 - [x] Identify the duplicate model sections and choose `ChModels.tex` as the active source.
+- [x] Audit `Ignore/ChModels_old.tex` and record what is historically useful for the composition rewrite.
 - [x] Remove `CompInTop.tex` from the compiled manuscript and preserve it as an archived draft.
 - [ ] State precisely the composition/gluing comparison theorem needed by the differential argument.
 - [ ] Make a dependency map separating categorical composition, geometric gluing, and Pontryagin--Thom compatibility.
