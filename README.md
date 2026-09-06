@@ -39,9 +39,9 @@ Detailed plan: [`research/composition-rewrite-plan.md`](research/composition-rew
 
 Detailed plan: [`research/grassmannian-example-plan.md`](research/grassmannian-example-plan.md)
 
-- [ ] Record exactly which coefficient spectra are formally allowed by the current (M\mathcal X\to A) construction.
+- [ ] Record exactly which coefficient spectra are formally allowed by the current $M\mathcal X\to A$ construction.
 - [ ] Compare candidate Grassmannians together with their natural tangential structures.
-- [ ] Compare bordism theories, complex-oriented theories, (K)-theory, and sphere-spectrum truncations by both computability and geometric detectability.
+- [ ] Compare bordism theories, complex-oriented theories, $K$-theory, and sphere-spectrum truncations by both computability and geometric detectability.
 - [ ] Determine what additional justification is needed for coefficients whose classes are not represented directly by the chosen bordism theory.
 - [ ] Choose the smallest example that exhibits a nontrivial, computable differential.
 - [ ] Work out the Morse data, compactified flow manifolds, tangential structures, and class detection in a separate draft.
