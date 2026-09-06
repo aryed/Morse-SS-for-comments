@@ -8,12 +8,12 @@ The issue is not doubt about the result. The issue is that the current presentat
 
 ## Current source assessment
 
-- \`ChModels.tex\` is the primary algebraic draft. It contains the fuller development of spine cubes, cone categories, flattening, and composition.
-- \`DiffOfFlowCat.tex\` is the primary geometric draft. It contains the punctured-cube colimit, gluing construction, comparison statement, and the application to differentials, but also repeats material and contains unfinished passages.
-- \`archived-drafts/CompInTop.tex\` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
-- Relevant exploratory notes include [\`../Ignore/A note on models.md\`](../Ignore/A%20note%20on%20models.md), [\`../Ignore/Models - summary.md\`](../Ignore/Models%20-%20summary.md), and [\`../Ignore/why-move-to-longer-cubes.md\`](../Ignore/why-move-to-longer-cubes.md).
+- `ChModels.tex` is the primary algebraic draft. It contains the fuller development of spine cubes, cone categories, flattening, and composition.
+- `DiffOfFlowCat.tex` is the primary geometric draft. It contains the punctured-cube colimit, gluing construction, comparison statement, and the application to differentials, but also repeats material and contains unfinished passages.
+- `archived-drafts/CompInTop.tex` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
+- Relevant exploratory notes include [`../Ignore/A note on models.md`](../Ignore/A%20note%20on%20models.md), [`../Ignore/Models - summary.md`](../Ignore/Models%20-%20summary.md), and [`../Ignore/why-move-to-longer-cubes.md`](../Ignore/why-move-to-longer-cubes.md).
 
-## Historical audit of \`ChModels_old.tex\`
+## Historical audit of `ChModels_old.tex`
 
 The old file is not the active source, but it preserves the most explicit version of the original permutohedron/spine-cube argument. It should remain available because it records the motivation and several possible lemmas that may be useful in the rewrite.
 
@@ -26,9 +26,9 @@ Its main mathematical ingredients are:
 5. Contractibility of mapping spaces through off-spine objects explains why only the corner contributes nontrivially.
 6. A horn filling produces the comparison between the corner contribution (composition through the middle object) and the diagonal contribution (the desired composite).
 
-The old draft is not ready to use verbatim. It contains TODOs, inconsistent indexing and notation, informal claims about contractibility, and a long geometric route without a single sharply stated comparison theorem. The active \`ChModels.tex\` already reorganizes some of this material around flow modules and flattening.
+The old draft is not ready to use verbatim. It contains TODOs, inconsistent indexing and notation, informal claims about contractibility, and a long geometric route without a single sharply stated comparison theorem. The active `ChModels.tex` already reorganizes some of this material around flow modules and flattening.
 
-Use \`ChModels_old.tex\` for three purposes:
+Use `ChModels_old.tex` for three purposes:
 
 - recover a precise lemma if the active draft deleted an important explanation;
 - test whether the enriched/coend proposal genuinely captures the higher coherence encoded by the permutohedra;
@@ -37,9 +37,9 @@ Use \`ChModels_old.tex\` for three purposes:
 Do not maintain both versions as parallel manuscript sections. The default source hierarchy is:
 
 \[
-\text{\`ChModels.tex\'} \quad\longrightarrow\quad
-\text{\`Ignore/ChModels_old.tex\'} \quad\longrightarrow\quad
-\text{\`research/archived-drafts/CompInTop.tex\'}.
+\text{`ChModels.tex\'} \quad\longrightarrow\quad
+\text{`Ignore/ChModels_old.tex\'} \quad\longrightarrow\quad
+\text{`research/archived-drafts/CompInTop.tex\'}.
 \]
 
 The first is the active draft, the second is the historical detailed draft, and the third is an incomplete earlier fragment.
@@ -117,8 +117,8 @@ The older observation that strict enriched natural transformations may miss high
 
 A likely final organization is:
 
-- \`ChModels.tex\`: the categorical model, mapping spaces, cofibrancy, derived composition, and an abstract composition proposition.
-- \`DiffOfFlowCat.tex\`: the geometric gluing construction, Pontryagin--Thom compatibility, and the spectral-sequence differential theorem.
+- `ChModels.tex`: the categorical model, mapping spaces, cofibrancy, derived composition, and an abstract composition proposition.
+- `DiffOfFlowCat.tex`: the geometric gluing construction, Pontryagin--Thom compatibility, and the spectral-sequence differential theorem.
 
 Definitions should live once and be referenced, not restated.
 
@@ -131,5 +131,5 @@ The rewrite is complete when:
 - the geometric colimit is identified with the categorical composition;
 - choices of smoothing and embeddings are controlled;
 - duplicate prose and obsolete models are removed;
-- \`main.tex\` compiles and the relevant cross-references resolve;
+- `main.tex` compiles and the relevant cross-references resolve;
 - the result has been reviewed before the README checklist is updated.
