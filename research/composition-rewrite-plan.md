@@ -8,10 +8,10 @@ The issue is not doubt about the result. The issue is that the current presentat
 
 ## Current source assessment
 
-- `ChModels.tex` is the primary algebraic draft. It contains the fuller development of spine cubes, cone categories, flattening, and composition.
-- `DiffOfFlowCat.tex` is the primary geometric draft. It contains the punctured-cube colimit, gluing construction, comparison statement, and the application to differentials, but also repeats material and contains unfinished passages.
-- `archived-drafts/CompInTop.tex` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
-- Relevant exploratory notes include [`../Ignore/A note on models.md`](../Ignore/A%20note%20on%20models.md), [`../Ignore/Models - summary.md`](../Ignore/Models%20-%20summary.md), and [`../Ignore/why-move-to-longer-cubes.md`](../Ignore/why-move-to-longer-cubes.md).
+- \`ChModels.tex\` is the primary algebraic draft. It contains the fuller development of spine cubes, cone categories, flattening, and composition.
+- \`DiffOfFlowCat.tex\` is the primary geometric draft. It contains the punctured-cube colimit, gluing construction, comparison statement, and the application to differentials, but also repeats material and contains unfinished passages.
+- \`archived-drafts/CompInTop.tex\` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
+- Relevant exploratory notes include [\`../Ignore/A note on models.md\`](../Ignore/A%20note%20on%20models.md), [\`../Ignore/Models - summary.md\`](../Ignore/Models%20-%20summary.md), and [\`../Ignore/why-move-to-longer-cubes.md\`](../Ignore/why-move-to-longer-cubes.md).
 
 ## Exact deliverable to formulate first
 
@@ -31,18 +31,18 @@ This proposition should be no stronger than what the differential theorem requir
 
 ### A. Enriched model
 
-- Identify a topologically or simplicially enriched category presenting the relevant (infty)-category of coherent chain complexes.
+- Identify a topologically or simplicially enriched category presenting the relevant $\infty$-category of coherent chain complexes.
 - Describe its mapping objects explicitly.
 - Determine whether the chosen source/indexing objects are cofibrant (for example, as enriched representables, cellular objects, or a topological computad).
 - State the model-categorical result that allows these objects to calculate derived mapping spaces without an additional replacement.
 
 ### B. Composition as a coend
 
-For a right module (W) and a left module (V) over the relevant enriched indexing category, test whether composition is represented by an enriched tensor product
-[
-Wotimes_{mathcal J}V
-  = int^{jinmathcal J} W(j)otimes V(j).
-]
+For a right module $W$ and a left module $V$ over the relevant enriched indexing category, test whether composition is represented by an enriched tensor product
+\[
+W\otimes_{\mathcal J}V
+  = \int^{j\in\mathcal J} W(j)\otimes V(j).
+\]
 
 Then answer:
 
@@ -78,8 +78,8 @@ The older observation that strict enriched natural transformations may miss high
 
 A likely final organization is:
 
-- `ChModels.tex`: the categorical model, mapping spaces, cofibrancy, derived composition, and an abstract composition proposition.
-- `DiffOfFlowCat.tex`: the geometric gluing construction, Pontryagin--Thom compatibility, and the spectral-sequence differential theorem.
+- \`ChModels.tex\`: the categorical model, mapping spaces, cofibrancy, derived composition, and an abstract composition proposition.
+- \`DiffOfFlowCat.tex\`: the geometric gluing construction, Pontryagin--Thom compatibility, and the spectral-sequence differential theorem.
 
 Definitions should live once and be referenced, not restated.
 
@@ -92,5 +92,5 @@ The rewrite is complete when:
 - the geometric colimit is identified with the categorical composition;
 - choices of smoothing and embeddings are controlled;
 - duplicate prose and obsolete models are removed;
-- `main.tex` compiles and the relevant cross-references resolve;
+- \`main.tex\` compiles and the relevant cross-references resolve;
 - the result has been reviewed before the README checklist is updated.
