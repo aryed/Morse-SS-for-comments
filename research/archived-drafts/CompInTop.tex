@@ -1,0 +1,60 @@
+We remind that the diffrential is the composition 
+\[
+    \bbS_p^{n-p} \to K_{[p,p-r+1]} \to K_{p-r}
+\]
+
+So we start with $b \geq a \in \bbZ$ and three chain complexes
+\[
+    L,M,N \in \Fun(\Ch_{[b,a]},\cC)
+\]
+such that $L,N$ are concetrated:
+\begin{gather*}
+    L_p = 0 \text{ for } p \neq b \\
+    N_p = 0 \text{ for } p \neq a
+\end{gather*}
+
+and morphisms
+\[
+    L \xrightarrow{f} M \xrightarrow{g} N
+\]
+where are functors
+\[
+    \Fun(\Delta^1 \times N \Ch_{[b,a]}, \cC).
+\]
+
+Using the horn filling property we get and horn and a filling:
+\begin{gather*}
+    \Fun(\Lambda^2_1 \times N \Ch_{[b,a]}, \cC) \\
+    \Fun(\Delta^2 \times N \Ch_{[b,a]}, \cC).
+\end{gather*}
+We are interesting in the restricting along $\partial_1 \Delta^2 \hookrightarrow \Delta^2$:
+\[
+    \Fun(\partial_1 \Delta^2 \times N \Ch_{[b,a]}, \cC).
+\]
+
+We have the adjoint functors, the homotopy coherent nerve and the rigidification:
+\[
+    \sSet \ \underset{\underset{\hN}{\longleftarrow}}{\overset{\overset{\CC}{\longrightarrow}}{\perp}} \ \sSet\text{-}\Cat
+\]
+To treat the $\Cat_\sSet$ model for chain complxes we study the simplically enriched category
+\[
+    \CC (\Delta^2 \times N \Ch_{[b,a]})
+\]
+and the other relevant subcategories of it.
+
+It will be convinient to use the cubical model for chain complxes.
+
+we define the $n$ cubical simplical set
+\[
+    (\Delta^1)^n \coloneq N [1]^n 
+\]
+
+The spine 
+\[
+    \Spine_n = {} \subset (\Delta^1)^n
+\]
+
+and a spine cube in $\cC$
+\[
+    \Spine_n(\cC) \coloneq Fun^{\Spine}((\Delta^1)^n, \cC)
+\]
