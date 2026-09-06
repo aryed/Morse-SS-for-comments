@@ -13,6 +13,45 @@ The issue is not doubt about the result. The issue is that the current presentat
 - \`archived-drafts/CompInTop.tex\` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
 - Relevant exploratory notes include [\`../Ignore/A note on models.md\`](../Ignore/A%20note%20on%20models.md), [\`../Ignore/Models - summary.md\`](../Ignore/Models%20-%20summary.md), and [\`../Ignore/why-move-to-longer-cubes.md\`](../Ignore/why-move-to-longer-cubes.md).
 
+## Historical audit of \`ChModels_old.tex\`
+
+The old file is not the active source, but it preserves the most explicit version of the original permutohedron/spine-cube argument. It should remain available because it records the motivation and several possible lemmas that may be useful in the rewrite.
+
+Its main mathematical ingredients are:
+
+1. In the rigidified simplicial model of the cube, mapping simplicial sets are described by ordered partitions and geometrically realized by permutohedra.
+2. The boundary decomposition of a permutohedron into products of smaller permutohedra models composition through an intermediate object.
+3. Spine cubes are obtained by collapsing or localizing off-spine objects, giving a cubical presentation of coherent chain complexes.
+4. The half-cube, half-permutohedron, and diagonal isolate the pieces relevant to composing two maps.
+5. Contractibility of mapping spaces through off-spine objects explains why only the corner contributes nontrivially.
+6. A horn filling produces the comparison between the corner contribution (composition through the middle object) and the diagonal contribution (the desired composite).
+
+The old draft is not ready to use verbatim. It contains TODOs, inconsistent indexing and notation, informal claims about contractibility, and a long geometric route without a single sharply stated comparison theorem. The active \`ChModels.tex\` already reorganizes some of this material around flow modules and flattening.
+
+Use \`ChModels_old.tex\` for three purposes:
+
+- recover a precise lemma if the active draft deleted an important explanation;
+- test whether the enriched/coend proposal genuinely captures the higher coherence encoded by the permutohedra;
+- explain, if necessary, why a small spine-cube or permutohedron comparison lemma remains in the final proof.
+
+Do not maintain both versions as parallel manuscript sections. The default source hierarchy is:
+
+\[
+\text{\`ChModels.tex\'} \quad\longrightarrow\quad
+\text{\`Ignore/ChModels_old.tex\'} \quad\longrightarrow\quad
+\text{\`research/archived-drafts/CompInTop.tex\'}.
+\]
+
+The first is the active draft, the second is the historical detailed draft, and the third is an incomplete earlier fragment.
+
+### Specific questions for the rewrite
+
+- Can the mapping objects represented by the permutohedra be replaced by, or recognized as, cofibrant enriched mapping objects?
+- Does the coend or derived coend recover the permutohedron boundary decomposition?
+- Is the corner/diagonal homotopy simply the bar-construction comparison between composition and the composite?
+- If not, what exact coherence is lost by passing to a strict enriched model?
+- Which statements from the old file need independent proof or citation before they can be reused?
+
 ## Exact deliverable to formulate first
 
 Before choosing a model, write a self-contained target proposition specifying:
