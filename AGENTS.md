@@ -14,3 +14,9 @@ Current priorities:
 - Develop the Grassmannian example only after choosing the manifold, tangential structure, and coefficient spectrum together. Verify the map $M\mathcal X\to A$ and distinguish formal change of rings from geometric class detection.
 
 After a LaTeX edit, compile `main.tex` and review the result. Update the README checklist and the relevant plan only after the task has been checked. Use concise mathematical English and leave genuine unresolved points as explicit TODOs.
+
+## Mathematical writing
+
+For mathematical drafting, rewriting, proofreading, and critique, use the installed `mathematical-writing` skill when available. Otherwise read [the portable writing guidance](docs/mathematical-writing/SKILL.md) and only its relevant modules. Infer the task's scope; preserve mathematical meaning, claim status, and manuscript conventions. Keep grammar-only edits minimal and distinguish editorial revision from mathematical verification.
+
+[Project instructions](PROJECT_INSTRUCTIONS.md) provides an additive instruction for ChatGPT project settings. The bundled guidance is a portable snapshot; when updating these writing preferences, reconcile the installed skill and both mathematical repositories rather than letting copies diverge. Existing project-specific instructions remain in force.
