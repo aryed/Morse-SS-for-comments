@@ -1,8 +1,8 @@
-PWD d:/Latex/FlowCatSS/Morse-SS-for-comments
+PWD d:/PersonalGoogleDrive/Morse-SS-for-comments
 INPUT d:/texlive/2024/texmf.cnf
 INPUT d:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT d:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/Latex/FlowCatSS/Morse-SS-for-comments/main.tex
+INPUT d:/PersonalGoogleDrive/Morse-SS-for-comments/main.tex
 OUTPUT main.log
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -628,9 +628,6 @@ INPUT d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
 INPUT d:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
-INPUT ./CompInTop.tex
-INPUT ./CompInTop.tex
-INPUT CompInTop.tex
 INPUT ./Mfld w. corners & ffcat.tex
 INPUT ./Mfld w. corners & ffcat.tex
 INPUT Mfld w. corners & ffcat.tex
@@ -686,7 +683,6 @@ INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
-INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
