@@ -54,9 +54,9 @@ Detailed plan: [`research/grassmannian-example-plan.md`](research/grassmannian-e
 
 These are kept close to the Grassmannian plan because they use ordinary Morse flow categories and are intended as short geometric pilots:
 
-- **Hirzebruch surfaces** (F_n=P(mathcal Ooplusmathcal O(n))	omathbb{CP}^1): use the four-critical-point Morse model with indices (0,2,2,4). The relevant (M(4,2)cong S^1) flow manifolds have the same underlying circles, but the vertical clutching loop rotates their framing (n) times, giving (d_2=(nmod 2)eta) in the framed/sphere (or (ko)) theory; algebraically this is the dual of (Sq^2x=x^2=(nmod 2)ax). The first case (F_1congmathbb{CP}^2\#\overline{\mathbb{CP}}^{,2}) is the intended short example. All indices are even, so the (d_2) is direct; the (M(4,0)) compactification supplies a small additional gluing picture.
+- **Hirzebruch surfaces** \(F_n=\mathbb P(\mathcal O\oplus\mathcal O(n))\to\mathbb{CP}^1\): use the four-critical-point Morse model with indices \(0,2,2,4\). The relevant \(M(4,2)\cong S^1\) flow manifolds have the same underlying circles, but the vertical clutching loop rotates their framing \(n\) times, giving \(d_2=(n\bmod 2)\eta\) in the framed/sphere (or \(ko\)) theory; algebraically this is the dual of \(Sq^2x=x^2=(n\bmod 2)ax\). The first case \(F_1\cong\mathbb{CP}^2\#\overline{\mathbb{CP}}^{\,2}\) is the intended short example. All indices are even, so the \(d_2\) is direct; the \(M(4,0)\) compactification supplies a small additional gluing picture.
 
-- **(SU(3))**: use the nontrivial bundle (S^3=SU(2)	o SU(3)	o S^5), whose four-cell handle model has indices (0,3,5,8). The circle (M(5,3)) should carry the framed class (eta), matching (Sq^2:H^3(SU(3);\mathbb F_2)	o H^5(SU(3);\mathbb F_2)); this is a promising non-projective follow-up, pending an explicit handle-adapted Morse realization.
+- **\(SU(3)\)**: use the nontrivial bundle \(S^3=SU(2)\to SU(3)\to S^5\), whose four-cell handle model has indices \(0,3,5,8\). The circle \(M(5,3)\) should carry the framed class \(\eta\), matching \(Sq^2:H^3(SU(3);\mathbb F_2)\to H^5(SU(3);\mathbb F_2)\); this is a promising non-projective follow-up, pending an explicit handle-adapted Morse realization.
 
 
 ### 3. Exposition and final organization
