@@ -1,34 +1,174 @@
-Let $b \leq a$, to integers and let $\fC$ be an $[b,a]$ bounded framed flow category. 
-
-The goals of this section are the following:
-\begin{enumerate}
-    \item Given a right framed flow module $W: *[b] \to \fC$, to construct a morphism $K_W : K_{*[b]} \to K_\fC$ in $\Ch(\Sp)$.
-    \item Given a left framed flow module $V : \fC \to *[a]$, define thier composition $V \circ W: *[b] \to *[a]$, which is also a $b-a$ dimensional framed manifold, in such a way that the following diagram commutes:
-\end{enumerate}
-
-% https://q.uiver.app/#q=WzAsNCxbMCwwLCJSXFxNb2RfYihcXGZDKSBcXHRpbWVzIExcXE1vZF9hKFxcZkMpIl0sWzAsMSwiXFxNZmxkXlxcZnJfe2ItYX0iXSxbMSwxLCJcXEhvbV97XFxDaChcXFNwKX0oXFxiYlNfYixcXGJiU19hKSJdLFsxLDAsIlxcSG9tX3tcXENoKFxcU3ApfShcXGJiU19iLEtfXFxmQykgXFx0aW1lcyBcXEhvbV97XFxDaChcXFNwKX0oS19cXGZDLFxcYmJTX2EpIl0sWzMsMiwiXFxjaXJjIl0sWzEsMiwiUFQiLDJdLFswLDEsIlxcY2lyYyIsMl0sWzAsMywiPz8/Il1d
-\[\begin{tikzcd}
-	{R\Mod_b(\fC) \times L\Mod_a(\fC)} & {\Hom_{\Ch(\Sp)}(\bbS_b,K_\fC) \times \Hom_{\Ch(\Sp)}(K_\fC,\bbS_a)} \\
-	{\Mfld^{\fr}_{b-a}} & {\Hom_{\Ch(\Sp)}(\bbS_b,\bbS_a)}
-	\arrow["{K_- \times K_-}", from=1-1, to=1-2]
-	\arrow["\circ"', from=1-1, to=2-1]
-	\arrow["\circ", from=1-2, to=2-2]
-	\arrow["PT"', from=2-1, to=2-2]
-\end{tikzcd}\]
-
-where $PT$ is the Pontryagin-Thom construction and later we will justify that
+We model only composites
 \[
-    \Hom_{\Ch(\Sp)}(\bbS_b,\bbS_a) \simeq \Hom_{\Sp}(\S^{b-a}\bbS,\bbS)
+    X_b \xrightarrow{f} K \xrightarrow{g} Y_a,
+    \qquad a\leq b,
 \]
+where $K$ is supported in $[b,a]$ and $X_b,Y_a$ are concentrated in the indicated degrees. The endpoint spectra may be suspended spheres. This is the case needed for a right flow module followed by a left flow module.
 
-The section layout is: In ??? we define $K_V$, for a module $V$. To do so we need to "flatten" the module into the cone flow category (see \cref{def:ConeFlowCategory}), use Section \cref{sec:ChofFlow} to obtain a chain complex and then to "unflatten"\todo{re-wording?} the chain complex into a morphism between chain complexes. The main mechanism is given by modeling chain complexes using cubical diagrams. In ??? we spend some time by undersdtanding the composition 
-\[
-    \Hom_{\Ch(\Sp)}(\bbS_b,K_\fC) \times \Hom_{\Ch(\Sp)}(K_\fC, \bbS_a) \to \Hom_{\Ch(\Sp)}(\bbS_b, \bbS_a)
-\]
-where $\Ch(\Sp)$ is modeled via\todo{re-woring} $\Cat_\sSet$ and $\Cat_\Top$.
+\subsection{Endpoint models}\label{sec:ChModels.endpoints}
 
-In ??? we will define the Composition
+Write $\cA=\J_{[b,a]}$, using the category of \cref{sec:J}. We work with based enriched functors and omit the zero object from the notation. A based space acts on a spectrum by tensoring; we write this action as $\wedge$. Cotensor by a based space $T$ is denoted by $Y^T$.
+
+\begin{prop}\label{prop:ChModels.derived}
+    The category $\mathscr D=\Fun_+^{\mathrm{str}}(\cA,\SPO)$ has the projective stable model structure, with objectwise weak equivalences and fibrations. Its $\infty$-categorical localization is
+    \[
+        \mathscr D_\infty
+        =\mathscr D[W_{\mathrm{obj}}^{-1}]
+        \simeq\Ch_{[b,a]}(\Sp).
+    \]
+    The enriched mapping space from a projectively cofibrant diagram to an objectwise fibrant diagram computes the derived mapping space.
+\end{prop}
+\begin{proof}[Proof sketch]
+    Apply \cite[Theorem~7.2(1)]{SS03monoidal} to modules over the opposite of the spectral category $\Sigma^\infty\cA$. The usual enriched-diagram rectification theorem identifies the localization with coherent diagrams. One can apply \cite[Proposition~4.2.4.4]{Lur09} in a simplicial presentation and transport along the spectral model comparisons of \cite[Section~7]{SS03monoidal}. The augmentation $\J\to\Ch$ is a weak equivalence on mapping spaces by \cref{prop:J_equivalence}. The based formulation imposes preservation of zero.
+\end{proof}
+
+Here $\operatorname{Map}^h$ denotes a derived mapping \emph{space}, and $\operatorname{Nat}_{\cA}$ denotes the space of strict enriched natural transformations. Choose a cofibrant representative of $X$, a fibrant representative of $Y$, and an objectwise cofibrant and fibrant representative of $K$. These choices are always available: for $K$, first take a projective cofibrant replacement and then a projective trivial cofibration to a fibrant diagram. Since the mapping spaces of $\cA$ are cofibrant, projective cofibrations are objectwise cofibrations, so this last step preserves objectwise cofibrancy.
+
+Define the covariant and contravariant weights
 \[
-    R\Mod_b(\fC) \times L\Mod_a(\fC) \to \Mfld^{\fr}_{b-a}
+    P(i)=\J(b+1,i),\qquad B(i)=\J(i,a-1),
 \]
-and shows that the diagram commutes,
+and the diagrams
+\[
+    Q_X(i)=P(i)\wedge X,\qquad R_Y(i)=Y^{B(i)}.
+\]
+There are objectwise stable equivalences
+\begin{equation}\label{eq:ChModels.endpoint_equivalences}
+    Q_X\longrightarrow X_b,\qquad Y_a\longrightarrow R_Y.
+\end{equation}
+At $b$ and $a$, respectively, these maps are identities; at other objects the relevant orthant compactifications are based contractible.
+
+\begin{lem}\label{lem:ChModels.cells}
+    If $X$ is cofibrant, $Q_X$ is projectively cofibrant. The weight $B$ is built from finitely many free $\cA^{\mathrm{op}}$-cells. Consequently,
+    \[
+        T(K)=B\otimes_{\cA}K=\int^{i\in\cA}B(i)\wedge K(i)
+    \]
+    is cofibrant for objectwise cofibrant $K$, and $T$ preserves objectwise stable equivalences between such diagrams.
+\end{lem}
+\begin{proof}[Proof sketch]
+    Put $H_m=(\Hlf^m)_+$ and $D_m=(\partial\Hlf^m)_+$, with $H_0=S^0$ and $D_0=*$. For $m>0$ this is a based disk--boundary pair. If $F_i(E)(j)=\cA(i,j)\wedge E$, construct $Q_X$ in decreasing order $i=b,\ldots,a$ by attaching
+    \[
+        F_i(D_{b-i}\wedge X)\longrightarrow F_i(H_{b-i}\wedge X).
+    \]
+    The attaching subspace at $i$ is the union of the faces supplied by higher degrees. At a lower degree $k<i$, the new piece is the face $t_i=0$; its intersection with earlier pieces is exactly the indicated attaching subspace. Thus these attachments give $Q_X$.
+
+    Dually, build $B$ in increasing order $i=a,\ldots,b$ by attaching
+    \[
+        \cA(-,i)\wedge D_{i-a}\longrightarrow
+        \cA(-,i)\wedge H_{i-a}.
+    \]
+    Tensoring over $\cA$ with $K$ turns this into
+    $D_{i-a}\wedge K(i)\to H_{i-a}\wedge K(i)$ by enriched Yoneda. For objectwise cofibrant $K$ these are cofibrations between cofibrant spectra. The resulting finite pushouts are homotopy pushouts, proving both assertions about $T$.
+\end{proof}
+
+\begin{prop}[One-term sources and targets]\label{prop:ChModels.endpoint_maps}\label{cor:ch_to_morph}
+    With the replacements above, there are equivalences
+    \[
+        \operatorname{Nat}_{\cA}(Q_X,K)
+        \simeq\operatorname{Map}^h_{\Ch_{[b,a]}(\Sp)}(X_b,K),
+        \qquad
+        \operatorname{Nat}_{\cA}(K,R_Y)
+        \simeq\operatorname{Map}^h_{\Ch_{[b,a]}(\Sp)}(K,Y_a).
+    \]
+    The strict maps on the left are precisely the enriched extensions of $K$ to $\J_{[b+1,a]}$ with value $X$ at $b+1$. Those on the right are the extensions to $\J_{[b,a-1]}$ with value $Y$ at $a-1$. Explicitly, their extra structure maps are
+    \[
+        f_i:P(i)\wedge X\longrightarrow K(i),
+        \qquad
+        g_i:B(i)\wedge K(i)\longrightarrow Y,
+    \]
+    compatible with the $\cA$-actions.
+\end{prop}
+\begin{proof}[Proof sketch]
+    The source assertion follows from \cref{lem:ChModels.cells,eq:ChModels.endpoint_equivalences} and objectwise fibrancy of $K$. For the target assertion, take a projective cofibrant replacement $qK\to K$. Both diagrams are objectwise cofibrant, and the previous lemma gives a stable equivalence $T(qK)\to T(K)$ between cofibrant spectra. Since $Y$ is fibrant, adjunction gives
+    \[
+        \operatorname{Nat}_{\cA}(K,R_Y)
+        \cong\operatorname{Map}_{\SPO}(T(K),Y)
+        \simeq\operatorname{Map}_{\SPO}(T(qK),Y)
+        \cong\operatorname{Nat}_{\cA}(qK,R_Y).
+    \]
+    The last space computes the derived mapping space into $R_Y$, which is objectwise fibrant and equivalent to $Y_a$. The descriptions as endpoint extensions follow by writing out the enriched functor axioms.
+\end{proof}
+
+\subsection{The composition coend}\label{sec:ChModels.coend}
+
+\begin{lem}\label{lem:ChModels.boundary_coend}
+    Composition in $\J$ induces a homeomorphism
+    \[
+        B\otimes_{\cA}P
+        =\int^{i\in\cA}\J(i,a-1)\wedge\J(b+1,i)
+        \cong(\partial\Hlf^{\{a,\ldots,b\}})_+.
+    \]
+    This based space is homeomorphic to $S^{b-a}$.
+\end{lem}
+\begin{proof}[Proof sketch]
+    The $i$-summand is the compactified face $t_i=0$. For $j>i$, the coend relation on
+    \[
+        B(i)\wedge\cA(j,i)\wedge P(j)
+    \]
+    identifies the two copies of the intersection $t_i=t_j=0$. These generate all identifications among faces. The induced map is a continuous bijection from a compact quotient to the Hausdorff boundary compactification, hence a homeomorphism.
+
+    For $m=b-a+1$, the map
+    \[
+        t\longmapsto t-\frac{1}{m}\Bigl(\sum_i t_i\Bigr)(1,\ldots,1)
+    \]
+    identifies $\partial\Hlf^m$ with the hyperplane $\sum_i u_i=0$; its inverse subtracts the minimum coordinate. Fix an ordered linear identification of this hyperplane with $\bbR^{b-a}$ when identifying its compactification with a sphere.
+\end{proof}
+
+\begin{prop}[Composition through a bounded complex]\label{prop:ChModels.composition}
+    Let $a\leq b$ and let
+    \[
+        X_b\xrightarrow{f}K\xrightarrow{g}Y_a
+    \]
+    be morphisms in $\Ch_{[b,a]}(\Sp)$. Use the replacements and representatives $f_i,g_i$ of \cref{prop:ChModels.endpoint_maps}. Under the equivalence
+    \[
+        \operatorname{Map}^h_{\Ch_{[b,a]}(\Sp)}(X_b,Y_a)
+        \simeq\operatorname{Map}^h_{\Sp}(\Sigma^{b-a}X,Y),
+    \]
+    the composite is represented by
+    \begin{equation}\label{eq:ChModels.coend_composite}
+        (B\otimes_{\cA}P)\wedge X\longrightarrow Y
+    \end{equation}
+    whose restriction to the $i$-face is
+    \begin{equation}\label{eq:ChModels.face_composite}
+        B(i)\wedge P(i)\wedge X
+        \xrightarrow{1\wedge f_i}B(i)\wedge K(i)
+        \xrightarrow{g_i}Y.
+    \end{equation}
+\end{prop}
+\begin{proof}[Proof sketch]
+    The diagram $Q_X$ is projectively cofibrant and $R_Y$ is objectwise fibrant. Their enriched mapping space therefore computes the derived maps from $X_b$ to $Y_a$. Coend--cotensor adjunction identifies it with
+    \[
+        \operatorname{Map}_{\SPO}((B\otimes_{\cA}P)\wedge X,Y).
+    \]
+    Apply \cref{lem:ChModels.boundary_coend}. The composite is represented in the localization by
+    \[
+        X_b\xleftarrow{\sim}Q_X
+        \xrightarrow{\widetilde g\,\widetilde f}R_Y
+        \xleftarrow{\sim}Y_a.
+    \]
+    The adjoint of its middle map is \cref{eq:ChModels.coend_composite}, and naturality is precisely agreement on the face intersections.
+\end{proof}
+
+\begin{lem}[Compatibility with unreplaced representatives]\label{lem:ChModels.transport}
+    Let $X$ be cofibrant, let $K_0$ be objectwise cofibrant, and suppose strict endpoint data give maps
+    \[
+        Q_X\longrightarrow K_0\longrightarrow R_{Y_0}.
+    \]
+    Their ordinary coend composite represents the composite of the corresponding localized maps, even when $K_0$ and $Y_0$ are not fibrant.
+\end{lem}
+\begin{proof}[Proof sketch]
+    Choose a fibrant replacement $Y_0\to Y$ and a projective trivial cofibration $K_0\to K$ with $K$ fibrant. The induced map $K_0\to R_Y$ extends to $K\to R_Y$ by lifting, since $R_Y$ is projectively fibrant. Composing $Q_X\to K_0\to K$ with this extension gives exactly the original coend map followed by $Y_0\to Y$. Apply \cref{prop:ChModels.composition}. Objectwise cofibrancy of $K$ is preserved in this replacement.
+\end{proof}
+
+In the geometric application, finite-dimensional collapse maps should first be kept as maps between sufficiently suspended spheres. Applying the free orthogonal spectrum functor $F_{\bbR^N}$ to a common suspended based-space diagram gives cofibrant representatives: $F_{\bbR^N}S^{N+t}$ represents $\Sigma^t\bbS$ stably. Then \cref{lem:ChModels.transport} performs the fibrant replacements without changing the represented composite. Thus no assertion that the literal sphere-spectrum unit is fibrant is needed.
+
+For the differential, the specialization is
+\[
+    b=p,\quad a=p-r,\quad X=\Sigma^{n-p}\bbS,
+    \quad Y=K_{p-r-1}.
+\]
+The lower endpoint data come from $K_{[p,p-r-1]}$. The coend produces
+\[
+    \Sigma^{n-p+r}\bbS\longrightarrow K_{p-r-1},
+\]
+hence an element of $E_1^{n-1,p-r-1}$. Its class on $E_{r+1}$ is the differential described in \cref{lem:Ch_diff}. The geometric comparison, including the suspension convention for the boundary sphere, is treated in the next section.

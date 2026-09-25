@@ -389,33 +389,40 @@ where the vertical maps are the "Thom" maps; see \cref{eq:ThomMap}.
 \subsection{Flow Modules}\label{subsec:FlowModules}
 
 \begin{defn}\label{def:RightFlowModule}
-    Let $\fC$ be a flow category. A \textbf{right flow module} $W$ of \textbf{degree} $n$ over $\fC$ consists of a collection of manifolds with corners $\{W_x\}_{x \in \fC}$ together with compatible corner structure maps (embeddings of codimension 1 boundary faces):
-    \begin{equation*}
-        W_y \times M_{y,x} \hookrightarrow W_x
-    \end{equation*}
-    for all $y, x \in \fC$, such that:
-    \begin{equation*}
-        \dim W_x = n - \norm{x}.
-    \end{equation*}
+    Let $\fC$ be a flow category. A \textbf{right flow module of degree $n$} over $\fC$ consists of compact manifolds with faces $W_x$ of dimension $n-\norm{x}$, with $W_x=\varnothing$ if this dimension is negative, and specified face identifications
+    \[
+        \partial_i W_x
+        =\bigsqcup_{\substack{y\in\fC\\\norm{y}=i}}
+          W_y\times M_{y,x},
+        \qquad \norm{x}<i\leq n.
+    \]
+    These faces cover the whole boundary of $W_x$. Their iterated intersections are the products
+    \[
+        W_{y_k}\times M_{y_k,y_{k-1}}\times\cdots\times M_{y_1,x}
+    \]
+    for strictly decreasing grading chains
+    $\norm{y_k}>\cdots>\norm{y_1}>\norm{x}$, with the disjoint unions over objects of the specified grades understood. All ways of identifying an iterated face agree with flow composition and the module action, and there are no further boundary faces.
 \end{defn}
 
 \begin{defn}\label{def:LeftFlowModule}
-    Let $\fC$ be a flow category. A \textbf{left flow module} $V$ of \textbf{degree} $p$ over $\fC$ consists of a collection of manifolds with corners $\{V_x\}_{x \in \fC}$ together with compatible corner structure maps (embeddings):
-    \begin{equation*}
-        M_{y,x} \times V_x \hookrightarrow V_y
-    \end{equation*}
-    for all $y, x \in \fC$, such that:
-    \begin{equation*}
-        \dim V_x = \norm{x} - p.
-    \end{equation*}
+    Let $\fC$ be a flow category. A \textbf{left flow module of degree $q$} over $\fC$ consists of compact manifolds with faces $V_y$ of dimension $\norm{y}-q$, empty in negative dimension, and specified face identifications
+    \[
+        \partial_i V_y
+        =\bigsqcup_{\substack{x\in\fC\\\norm{x}=i}}
+          M_{y,x}\times V_x,
+        \qquad q\leq i<\norm{y}.
+    \]
+    These faces cover the whole boundary of $V_y$. Their higher intersections are exactly the iterated products of flow manifolds followed by a module manifold; the identifications agree with flow composition on every iterated face.
 \end{defn}
+
+\definitionchange{The right and left module definitions now require compact manifolds with faces and identify every boundary face with the stated products, including all higher intersections. The previous wording specified compatible boundary embeddings but did not explicitly exclude additional boundary faces. The framed definition below also makes compatibility of the embeddings explicit. These conditions are used to obtain a closed glued manifold; compare to the original definition. The intended dimensions and directions of the actions are unchanged.}
 
 \begin{defn}\label{def:FramedFlowModule}
     Let $\fC$ be a neatly embedded, normally framed flow category. A \textbf{neatly embedded, normally framed right flow module} $W$ of degree $n$ over $\fC$ consists of a right flow module structure together with a choice of integer $N$, neat embeddings of manifolds with corners:
     \begin{equation*}
         e_x: W_x \hookrightarrow \bbR^{N(n+1-\norm{x})} \times \Hlf^{J_{n+1,x}}
     \end{equation*}
-    and stable normal framings $\varphi_x$ on the normal bundles $\nu e_x$ that are compatible with the framing:
+    which restrict on every face $W_y\times M_{y,x}$ to the product of the module and flow embeddings, under the fixed ambient coordinate identifications. These restrictions agree on all higher faces. The module also has stable normal framings $\varphi_x$ on $\nu e_x$, compatible on every face with the product framing:
     \begin{equation*}
         \partial_y \varphi_x = \varphi_y \oplus \varphi_{y,x}
     \end{equation*}

@@ -161,3 +161,12 @@
 % Inline note for proposed additions to the manuscript, matching the homotopy-repo TODO style.
 \newcommand{\addtopaper}[1]{%
   \todo[inline,color=cyan!20]{\textbf{To add to the paper.} #1}}
+
+
+% Distinguish changes to mathematical definitions from proposed additions.
+\newcommand{\definitionchange}[1]{%
+  \todo[inline,color=violet!15]{\textbf{Definition change to review.} #1}}
+
+% A genuinely unresolved proof dependency, rather than an omitted routine proof.
+\newcommand{\verifyproof}[1]{%
+  \todo[inline,color=orange!20]{\textbf{Proof verification needed.} #1}}

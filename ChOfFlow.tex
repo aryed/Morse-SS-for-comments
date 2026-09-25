@@ -167,10 +167,13 @@ The equivalence follows by considering both $\Ch$ and $\J$ as models for the sam
 \end{proof}
 
 \begin{prop}\label{prop:FF_are_Ch}
-    In light of this equivalence, we can start with a framed flow category and obtain a coherent chain complex in spectra:
-    \begin{equation*}
-    \Fun_{\Top}(\J,\SPO) \simeq \Fun(N_{\Top}(\J),N_{\Top}(\SPO)) \simeq \Fun(N(\Ch),\Sp) \eqqcolon \Ch(Sp).
-\end{equation*}
+    For $a\leq b$, localization of strict based enriched diagrams at objectwise stable equivalences gives
+    \[
+        \Fun_+^{\mathrm{str}}(\J_{[b,a]},\SPO)
+        [W_{\mathrm{obj}}^{-1}]
+        \simeq\Ch_{[b,a]}(\Sp).
+    \]
+    Thus the collapse diagram of a bounded framed flow category determines a coherent chain complex. The model structure and the interpretation of mapping spaces are specified in \cref{prop:ChModels.derived}.
 \end{prop}
 
 By identifying $1$-categories with their nerves, we end this section by motivating the next. Let $\fC$ be a bounded, embedded, framed flow category and let $K \in \Fun(\Ch,\Sp)$ be its coherent chain complex. By \cref{sec:Ch}, we obtain a spectral sequence $(\rnp{E}, d_r)$ where 
