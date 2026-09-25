@@ -1,0 +1,120 @@
+\subsection{composition of chain complexes}
+
+This section uses models of $\infty$-categories and it's llying in the realm of the foundations for category theory. To give an non thecnical intuition, we start with a toy example of the main result of this section.
+
+Let $\fC$ be a flow category with only objects, with indices $2,1$ and let $V,W$ be left and right modules of degrees $2,1$ respectively.
+The data $\fC,V,W$ consists of 0 dimensional manifolds $W_2, M_{2,1}, V_1$ and 1 dimensional manifolds $W_1, V_2$.
+
+First we define the composition of $V,W$ by gluing along the common boundary
+\[
+    V \circ W \coloneq W_1 \times V_1 \cup_{W_2 \times M_{2,1} \times V_1} W_2 \times V_2.
+\]
+
+On the other hand, we can use the two cone flow categories: $C(V), C(W)$, which are ''length 3'' flow categories. such flow categories give rise to two (coherent) chain complexes $K_{C(V)}, K_{C(W)}$.
+here, we can model thuse chain complexes using the cubical model, meaning as a functors:
+\begin{equation}\label{eq:ToySpine}
+    [1]^2 \to \Sp, \quad \text{where one of the vertices maps to } 0 \in \Sp
+\end{equation}
+Note that  $[1]^2 = [1] \times [1]$ hence $K_{C(V)}, K_{C(W)}$ can be seen as morohisms of length 2 cubical chain complexes, denoted $f_V,f_W$ (in this toy example 2 cubical chain complexe is just a map $\bbS \to \bbS$ in the category $\Sp$).
+The fact that $V,W$ are both module on the same flow category, $\fC$ implies that the source of $f_V$ and the target of $f_W$ are both equal to $K_\fC$ - thecnically it means that both are given by the $PT$ map of $M_{2,1}$.
+This allow us to glue the two squares in $\Sp$, to a map from the horn
+\[
+    f_V \cup f_W : \Lambda^2_1 \times \Delta^1 \to \Sp.
+\]
+A composition of $f_V, f_W$ is givne by taking an horn filling
+\[
+    \sigma : \Delta^2 \times \Delta^1 \to \Sp,
+\]
+and restrict to $\partial_1 \Delta^2$. Now we are moving the the simplical set enriched model.
+Note that $\sigma$ have initial and terminal objects $(0,0)$ and $(2,1)$ respectively.
+We denote that 4 non trivial objects:
+\[
+    \sigma(0,0) = X_0, \quad \sigma(1,0) = X_1, \quad \sigma(1,1) = X_2, \quad \sigma(2,1) = X_3.
+\]
+Now we are going to restrict to $\partial_1 \Delta^2$ and $\sigma_1 :=  \partial_1 \sigma$.
+From a mapping setspoint of view the only non trivial data in $\partial_1 \sigma$ lying in the maps 
+\[
+    \Hom_{\partial_1 \Delta^2}((0,0),(2,1)) \to \Hom(X_0,X_3)
+\]
+We have that $\Hom((0,0),(2,1))$ is glued from two lines, one represent a factorization of the map $(0,0) \to (2,1)$ through $(0,1)$ and the other through $(2,0)$. Note that the criteria of \cref{eq:ToySpine} imply that both boundaries of $\sigma(0,1) = \sigma(2,0) = 0$, hence the boundaries of $\Hom((0,0),(2,1))$ maps to the $0$ morphism, hence we can factor
+\[
+    \Delta^1 = \Hom((0,0),(2,1)) \to \Hom(X_0,X_3)
+\]
+through 
+\[
+    S^1 = \Delta^1/\partial \Delta^1 \to \Hom(X_0,X_3)
+\]
+On the other hand we can use $f_V,f_W$ whoch are the the other two squares in $\partial \sigma$, similar to $\sigma_1$, we have that $\sigma_2$ give us a morphism set:
+\[
+    \Delta^1 = \Hom_{\partial_2 \Delta^2}( (0,0), (1,1) ) \to Hom(X_0,X_2)
+\]
+and note that the coordinate $(1,1)$ corresponding to the object of index $1$ in $\fC$.
+The simplicial sets:
+\[
+    \Delta^1 \times \Delta^0 = \Hom((0,0),(1,1)) \times \Hom((1,1),(2,1)) 
+\]
+and $\sigma$ give us a map
+\[
+    \Delta^1 \times \Delta^0 \to \Hom(X_0,X_2) \times \Hom(X_2,X_3) \to \Hom(X_0,X_3)
+\]
+Similiarly $\sigma_0$ give us a map:
+\[
+    \Delta^0 \times \Delta^1 \to \Hom(X_0,X_1) \times \Hom(X_1,X_3) \to \Hom(X_0,X_3).
+\]
+
+to connect between 
+
+
+
+In this section we assume that hcain complex are $[b,a]$ bounded chain complexes (for $b \leq a \in \bbZ$).
+Let $f:L \to M, g:M \to N$ be two morphisms of (boudned) chain complexes, we want to describe the composition $g \circ f$ in terms of the chain complex $K_f,K_g$.
+
+We start by the $\sSet$ model which is given by
+\[
+    Fun(N \Cu_{[b,a]},\cC)
+\]
+Note that the Nerve of a cube - is the cube as $\infty$-category.
+
+For simplicity we use $n$ instead of $[b,a]$ as the index set.
+For simplicity\todo{reword} we will fix the following indexing conventions for a composition of cubes, which is the \emph{half cube} indexing.
+Let $f: L \to M, g: M \to N$ be morphisms of cubical chain complexes modeled as  
+\[
+    f,g: \op \times \op^n \to \cC
+\]
+We will re-index $f,g$ to fit into a $n+2$ cubical digram by taking the embedding:
+\[
+    \Lambda^2_1 \hookrightarrow  [1]^2
+\]
+extending it to:
+\[
+    \Lambda^2_1 \times [1]^n \hookrightarrow [1]^{n+2}
+\]
+and taking $\Op$. We get that $2,1,0 \in \Lambda^2_1$ are maps to $(1,1),(1,0)$ and $(0,0)$ respectively, so $L,M,N$ are charcterized by the vertices of the forms:
+\[
+    (1,1, x_3 \dots , x_{n+2}) , \quad (1,0, x_3 \dots , x_{n+2}) , \quad (0,0, x_3 \dots , x_{n+2})
+\]
+respectively.
+
+Note that $f,g$ forn the horn $\Lambda^2_1 \otimes [1]^n$, by gluing along $M$,  and by defintion of quasicategories, we have a (non unique) horn filling
+\[
+    \Delta^2 \times [1]^n \to \cC
+\]
+and a composition is the boundary
+\[
+    \partial_1 \Delta^2 \times [1]^n \to \cC.
+\]
+
+By taking
+\[
+    L = \bbS_n, \quad N = \bbS_{0},
+\]
+we get that 
+
+\begin{comment}
+    The ideas goes like this: we want to understand Hoim(n+2,0) but in the n chain which is the "diagonal" of the (n+2) cube.
+    first to note that in general the boundary of hom space in cat_sSet model is given by composition (factoring) via other elements in the category.
+    We get that the only non trivial way to factors anything in the n+2 cube is via the objects of M.
+    so in the n+2 cube we have that the boundary of Hom(n+2,0) can be devided to 2 - the part of Hom_{n cube}(n+2,0) (the diagonal) and the res. the filling provide an homotopy between these two boundary parts. Note that in the second part (the rest) we have that the boundary is trivial for the non "factor through M" part, so we get that the interior (filling) is acutally homotopy between the Hom_{n cube}(n+2,0) part and the "factor through M". by writing explicitly, we get the result for the Cat_sSet model and hence the Cat_Top model (the pointed version, to be honest?).
+    Then we need to carefullt understand that in the Cat_{Top_*} model compostion is given by \wedge (smash). 
+    Then we need to move to the \J module model, write what is the composition, and then see what is the "source" of is from the flowc categoies.
+\end{comment}

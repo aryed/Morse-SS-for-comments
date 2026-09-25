@@ -1,0 +1,169 @@
+\subsection{Flattening $n+1$ cubes}\label{sec:ChModels.Cub}
+
+First, we denote
+\[
+    \op \coloneqq \{1 \to 0\}
+\]
+
+\begin{defn}\label{def:A_cube}
+Let $A$ be a finite linearly ordered set, the \emph{$A$-cube} is the power set category:
+\[
+    \op^A \simeq \mathcal{P}(A)^{\Op}
+\]
+Let $n \in \bbN$ (including $0$). For $A = \{1, \dots, n\}$ (or $\varnothing$ if $n=0$), we write $\op^n = \op^A$.
+\end{defn}
+
+\begin{note*}
+For brevity we will use $[1]$ along this section, and at the end we will "opposite" it so our cubes (and chains) will be decreasing and not increasing.
+\end{note*}
+
+\begin{defn}\label{def:spine_of_A}
+Let $A$ be a finite linearly ordered set, let $a \in A$, define $s_a \subseteq A$ to be the prefix subset
+\[
+    s_a \coloneq \{ b \in A \mid b \leq a \}.
+\]
+The spine of $A$ is the full subcategory of $[1]^A$ spanned by 
+\[
+     \Spine(A) \coloneq \{ \varnothing \} \cup \{ s_a \mid a \in A \}
+\]
+\end{defn}
+
+\begin{defn}\label{def:category_of_spine_cubes}
+Let $\cC$ be a pointed $\infty$-category and let $A$ be a finite linearly ordered set. We define the category of spine cubes (or cubical chain complexes)
+\[
+    \Cu_A(\cC) \coloneq \Fun^{\Spine}([1]^A,\cC) \coloneq \{ F \in \Fun([1]^A,\cC) \mid F(Q) \simeq * \text{ for all } Q \notin \Spine(A) \}
+\]
+\end{defn}
+
+Let $B, A$ be finite linearly ordered sets, then
+\[
+    \op^{B \amalg A} \simeq \op^B \times \op^A,
+\]
+hence
+\[
+    \Fun(\op^{B \amalg A},\cC) \simeq \Fun(\op^B \times \op^A,\cC) \simeq \Fun(\op^B, \Fun(\op^A, \cC)).
+\]
+
+By taking $B=\{a\}$, we obtain
+\[
+    \Fun(\op^{\{a\} \amalg A},\cC) \simeq \Fun(\op^{\{a\}} \times \op^A,\cC) \simeq \Fun(\op, \Fun(\op^A, \cC)).
+\]
+
+We think of this equivalence as "flattening" the morphism of cubes (RHS) into a longer cube (the LHS).
+
+Passing to the spine cubes we need to be careful:
+Let $A=\{n, \dots, 1\}$ be a descending linearly ordered set, and let $a = n+1$ be an element larger than all elements of $A$. We have that the spine of $\{a\} \amalg A$ inside $\op^{\{a\} \amalg A} \simeq \op \times \op^A$ consists of the elements:
+\[
+    (1, 1, \dots, 1), \quad (0, 1, \dots, 1), \quad \dots, \quad (0, 0, \dots, 1), \quad (0, \dots, 0, 0)
+\]
+which can be written as:
+\[
+    \{ (1, (1, \dots, 1)) \} \cup \left( \{0\} \times \Spine(A) \right) \subset \op \times \op^A.
+\]
+We get that for the cubical chain complexes we have:
+\begin{equation}\label{eq:spine_equivalence}
+\begin{aligned}
+    \Cu_{\{a\} \amalg A}(\cC) &\simeq \Fun^{\Spine}(\op^{\{a\} \amalg A},\cC) \simeq \Fun^{\Spine}(\op \times \op^{A},\cC) \\
+    &\simeq \big\{f \colon \op \to \Fun(\op^A, \cC) \mid
+    \begin{aligned}
+        f_1(Q) &\simeq * \quad \text{for all } Q \neq (1, \dots, 1), \\
+        f_0(Q) &\simeq * \quad \text{for all } Q \notin \Spine(A)
+    \end{aligned}
+     \big\}
+\end{aligned}
+\end{equation}
+
+where $f_1, f_0$ are the source and the target of the morphism $f$ (since the morphism in $\op$ is $1 \to 0$).
+
+Before we move on, let us compare the coherent chain complexes defined via $\Ch$ to the cubical model.
+
+Let $\cC$ be a pointed $\infty$-category. For $F \in \Fun_*(\op^A,\cC)$, the condition that $F$ is a spine cube is equivalent to saying that $F(Q) \simeq \ast$ for all $Q \notin \Spine(A)$.
+We can define a localized category $\Cu_A$ by starting with $\op^A$, adding a zero object $\ast$, and formally adjoining morphisms $\ast \to Q$ for all $Q \notin \Spine(A)$. Inverting these morphisms yields:
+\[
+    \Cu_A \coloneq \left( \op^A \amalg \{\ast\} \right) [\{\ast \to Q \mid Q \notin \Spine(A)\}^{-1}]
+\]
+This localization is constructed precisely so that for any pointed $\infty$-category $\cC$, we have an equivalence of functor categories:
+\[
+    \Fun_*^{\Spine}(\op^A,\cC) \simeq \Fun_*(\Cu_A, \cC).
+\]
+
+Under this equivalence, the map that sends "off-spine" elements to $\ast$ in the definition of $\Ch$ translates to the fact that $\Cu_A$ is equivalent to the corresponding subcategory of $\Ch$. We formalize this as follows:
+
+\begin{claim}
+For any integers $b \geq a$, let $A = \{b, \dots, a\}$. We have an equivalence of categories:
+\[
+    \Cu_{[b,a]} \coloneqq \Cu_{\{b, \dots, a\}} \simeq \Ch_{[b,a]}
+\]
+where $\Ch_{[b,a]}$ is the full subcategory of $\Ch$ spanned by the objects $\{b,\dots , a\} \cup \{\ast\}$.
+\end{claim}
+
+Note that the restriction functor defined in \cref{sec:Ch} is compatible with this equivalence: for any subset $A \subseteq \{1, \dots, n\}$, the restriction functor on chain complexes $\Ch_n(\cC) \to \Ch_A(\cC)$ corresponds to a restriction functor
+\begin{equation*}
+    \Cu_n(\cC) \to \Cu_A(\cC).
+\end{equation*}
+
+This restriction allows us to cleanly phrase the relationship between an $(n+1)$-dimensional spine cube and a morphism of $n$-dimensional spine cubes:
+
+\begin{lem}\label{lem:morphism_to_cube}
+Let $b \geq a$ be integers, let $A = \{b, \dots, a\}$, and let $B = \{b+1\} \amalg A = \{b+1, b, \dots, a\}$ (i.e., prepending an element at the beginning).
+By \cref{eq:spine_equivalence}, an object $K \in \Cu_B(\cC)$ corresponds precisely to a morphism $f \colon L \to M$ in $\Fun(\op^A, \cC)$ characterized by the following restrictions:
+\begin{enumerate}
+    \item The restriction of $K$ to the $1$-face of the $(b+1)$-th direction gives $L = f_1$, which must be concentrated at the initial object of $\op^A$ (i.e., at $(1, \dots, 1)$).
+    \item The restriction of $K$ to the $0$-face of the $(b+1)$-th direction gives $M = f_0$, which is a general cubical chain complex in $\Cu_A(\cC)$.
+\end{enumerate}
+\end{lem}
+
+\begin{rem}\label{rem:morphism_to_cube_append}
+Symmetrically, if we instead consider the index set $A \amalg \{a-1\}$ (i.e., appending an element at the end), the spine equivalence identifies a cubical chain complex $K \in \Cu_{A \amalg \{a-1\}}(\cC)$ with a morphism $f \colon L \to M$ in $\Fun(\op^{A}, \cC)$ characterized by the following restrictions:
+\begin{enumerate}
+    \item The source $L = f_1$ is a general cubical chain complex in $\Cu_{A}(\cC)$.
+    \item The target $M = f_0$ is concentrated at the final object $(0, \dots, 0)$.
+\end{enumerate}
+\end{rem}
+
+\begin{rem}
+Note that while the appended object resides at index $a-1$, the target $M$ of the morphism $f$ is an object in $\Cu_A$. Under the canonical identification of the cube face $\{0\} \times \op^A \cong \op^A$, the object at index $a-1$ corresponds to the final coordinate of the $A$-cube.
+\end{rem}
+
+Now we can "flatten" a flow module into a flow category, realize it into a cubical chain complex, and then "unflatten"
+
+To formalize the idea that the cone category still "contains" the original category, we define the following relation:
+\begin{notation}\label{FlowCatIso}
+    For two framed flow categories $\fC, \fD$ with flow manifolds $M_{-,-}, N_{-,-}$ we denote by
+    \begin{equation*}
+        \fC = \fD
+    \end{equation*}
+    the following relation: there is a bijection 
+    \begin{align*}
+        i \colon \Ob(\fC) &\simeq \Ob(\fD)\\
+        M_{x,y} &= N_{i(x),i(y)}
+    \end{align*}
+\end{notation}
+
+Note that the cubical chain complex of a flow subcategory \todo{DO WE NEED REF??} depends only on the flow subcategory (and not on the ambient flow category), so if $\fD \subseteq \fC$ and $\fD = \fC'$, then $K_{\fD} = K_{\fC'}$.
+
+\begin{defn}\label{def:module_morphisms}
+Let $b \geq a$ be two integers, and let $\fC$ be a $[b, a]$ bounded framed flow category. Let $W \colon *[b] \to \fC$ be a right framed flow module (resp. $V \colon \fC \to *[a]$ a left framed flow module). Let $C(W)$ (resp. $C(V)$) denote its cone flow category.
+
+By definition of the cone category of a flow module (\cref{def:ConeFlowCategory}), we have that $C(W)_{[b,a]} = \fC$ (resp. $C(V)_{[b,a]} = \fC$). Therefore, the restricted cubical chain complex is exactly the chain complex of $\fC$:
+\[
+    (K_{C(W)})_{[b,a]} = K_{\fC} \quad (\text{resp. } (K_{C(V)})_{[b,a]} = K_{\fC}).
+\]
+The full cubical chain complex of the cone adds a new object:
+\[
+    K_{C(W)} \in \Cu_{[b+1, a]}(\Sp) \quad (\text{resp. } K_{C(V)} \in \Cu_{[b, a-1]}(\Sp))
+\]
+where the new object is at index $b+1$ (resp. $a-1$) and evaluates to $\bbS$.
+
+Using the spine equivalences established in \cref{lem:morphism_to_cube} and \cref{rem:morphism_to_cube_append}, we define the \textbf{associated morphisms of $[b,a]$ cubical chain complexes}:
+\begin{equation*}
+    f_W \coloneq f_{K_{C(W)}} \colon \bbS_{b} \to K_{\fC}
+\end{equation*}
+for the right module $W$, and respectively
+\begin{equation*}
+    f_V \coloneq f_{K_{C(V)}} \colon K_{\fC} \to \bbS_{a}
+\end{equation*}
+for the left module $V$.
+
+Here, $f_W$ has its source concentrated at the initial coordinate $b$, and $f_V$ has its target concentrated at the final coordinate $a$ of the $[b,a]$-cube. (See \cref{def:lacunarCh} for $\bbS_{b}, \bbS_{a} \in \Cu_{[b,a]}(\Sp)$).
+\end{defn}

@@ -1,0 +1,241 @@
+% Old version (Sep 25, 2026), kept as a backup of the projective-space bordism homology draft.
+
+\subsection{Bordism homology of projective spaces}
+Let $A= MO$, the unoriented bordism spectrum. We remind that 
+\begin{equation*}
+    MO_* = \mathbb{Z}/2\left [x_i;\ i \neq 2^k-1 \right ]
+\end{equation*}
+
+Let $a\in \bbR^{n+1}$ be a weights vector such that $a_i < a_{i+1}$ and let $\bar{f}:\bbR^{n+1} \to \bbR$ be the weighted distance function:
+\begin{equation*}
+    \bar{f}(x)=\sum a_i x_i^2
+\end{equation*}
+Let $M=\bbRP^\ell$ ,notice that $\bar{f}(x)=\bar{f}(\lambda x)$, therefore $\bar{f}$ induce a function $f:M\to \bbR$.
+
+Notice that the critical points of $f$ are given by:
+\begin{equation*}
+    e_i \coloneqq [0: \dots :0:\underbrace{1}_i:0:\dots :0]
+\end{equation*}
+with index:
+\begin{equation*}
+    \norm{e_i} = i-1.
+\end{equation*}
+
+Denote by $\rnp{E}$ the spectral sequence of \cref{cor:SSofMorseStr} with coefficients in $MO$.
+We get that $E_1$ is given by:
+\begin{equation*}
+    \pg{E}{1}{n}{p} = \Omega^O_{n-p}
+\end{equation*}
+To calculate the flow manifolds, first notice that the stable manifolds are given by:
+\begin{equation}
+    W^s_p=[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_\ell]
+\end{equation}
+and the unstable manifolds are given by:
+\begin{equation}
+    W^u_p=[x_0:\dots :x_{p-1}:\underset{\neq 0}{x_p}:0:\dots :0]
+\end{equation}
+The intersection is:
+\begin{equation}
+    W^u_q \cap W^s_p =[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_{q-1}:\underset{\neq 0}{x_q}:0:\dots :0]
+\end{equation}
+By solving the flow equation we get that the action of the flow is given by:
+\begin{equation*}
+    \phi_t([x_i])=[e^it x_i]
+\end{equation*}
+So we get that the flow acts on $W^u_q \cap W^s_p$ by:
+\begin{align*}
+    &[0:\dots :0:\underset{\neq 0}{x_p}:x_{p+1}:\dots :x_{q-1}:\underset{\neq 0}{x_q}:0:\dots :0] \mapsto \\
+    &[0:\dots :0:\underset{\neq 0}{x_p}:e^t x_{p+1}:\dots :e^{(q-p-1)t} x_{q-1}:\underset{\neq 0}{e^{(q-p)t}x_q}:0:\dots :0]
+\end{align*}
+By using the scalar multiplication in $\bbRP^\ell$ we can assume that $x_p=1$. Moreover, by taking quotient by the flow $\phi_t$ we can assume that in the quotient:
+\begin{equation*}
+    W^u_q \cap W^s_p / \phi_t
+\end{equation*}
+the $q$ coordinate is $\pm 1$.
+We conclude that the (non compactified) flow manifolds are:
+\begin{equation*}
+    M_{q,p}' = \left \{
+    [0:\dots :0:1:x_{p+1}:\dots :x_{q-1}:\pm 1:0:\dots :0]
+    \right \}
+\end{equation*}
+And we get that after Compactification
+\begin{prop}
+    The flow manifold of $\bbRP^\ell$ with the Morse function $\bar{f}(x)=\sum a_i x_i^2$ are given by two cubes:
+    \begin{equation*}
+        M_{q,p} = S^0 \times I^{q-p-1} 
+    \end{equation*}
+\end{prop}
+
+We get that the first differentials are multiplication by 
+\begin{equation*}
+    M_{p,p-1}= I^{q-p-1} \sqcup I^{q-p-1} = S^0 \sim \varnothing \in \Omega^{O}_0.
+\end{equation*}
+So the first differential is zero, hence every element $X \in \Omega^O_{n-p}$ survives.
+We can also see this by \cref{cor:SSofMorseStr}, as we can always extend in the following way:
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxkb3RzIl0sWzMsMCwiXFxidWxsZXQiXSxbMCwxLCJYIl0sWzEsMywiU14wIl0sWzAsMywiXFx2YXJub3RoaW5nIiwyLHsiY3VydmUiOjN9XV0=
+    \begin{tikzcd}
+    	\bullet & \bullet & \bullet
+    	\arrow["X", from=1-1, to=1-2]
+    	\arrow["X\times I"', curve={height=18pt}, from=1-1, to=1-3]
+    	\arrow["{S^0}", from=1-2, to=1-3]
+    \end{tikzcd}
+\end{equation*}
+To calculate the second  differential we need to calculate the Toda brackets of the two flow categories:
+
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbNCwwLCJcXGJ1bGxldCJdLFs1LDAsIlxcYnVsbGV0Il0sWzYsMCwiXFxidWxsZXQiXSxbMCwxLCJYIl0sWzEsMiwiU14wIl0sWzAsMiwiWCBcXHRpbWVzIEkiLDIseyJjdXJ2ZSI6M31dLFszLDQsIlNeMCJdLFs0LDUsIlNeMCJdLFszLDUsIlNeMFxcdGltZXMgSSIsMix7ImN1cnZlIjozfV1d
+    \begin{tikzcd}
+        \bullet & \bullet & \bullet && \bullet & \bullet & \bullet
+        \arrow["X", from=1-1, to=1-2]
+        \arrow["{X \times I}"', curve={height=18pt}, from=1-1, to=1-3]
+        \arrow["{S^0}", from=1-2, to=1-3]
+        \arrow["{S^0}", from=1-5, to=1-6]
+        \arrow["{S^0\times I}"', curve={height=18pt}, from=1-5, to=1-7]
+        \arrow["{S^0}", from=1-6, to=1-7]
+        \end{tikzcd}
+\end{equation*}
+Which is given by the colimit of the diagram:
+\begin{equation*}
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJYXFx0aW1lcyBTXjBcXHRpbWVzIFNeMCJdLFswLDEsIlhcXHRpbWVzIEkgXFx0aW1lcyBTXjAiXSxbMiwxLCJYXFx0aW1lcyBTXjAgXFx0aW1lcyBJIl0sWzAsMV0sWzAsMl1d
+    \begin{tikzcd}
+    	& {X\times S^0\times S^0} \\
+    	{X\times I \times S^0} && {X\times S^0 \times I}
+    	\arrow[from=1-2, to=2-1]
+    	\arrow[from=1-2, to=2-3]
+    \end{tikzcd}
+\end{equation*}
+we get the topological space $X \times \partial I^2$, which after straightening the corners (\cref{lem:colimIsMfld}) is the manifold $X \times S^1$.
+
+\begin{prop}
+    Let $E$ be the spectral sequence of
+    Let $\bbRP^\ell$ with the morse function $\bar{f}(x)=\sum a_i x_i^2$ and let $MO$ be the trivial tangential structure and let  $\rnp{E}$ be the spectral sequence arising from \cref{SSofStrFFCat}. Then $\rnp{E}$ collapse at the first page and we have that 
+    \begin{equation*}
+        MO_i(\Sinf \bbRP^\ell) = \WedgeSp_{\ell-i \le j\le i} MO_j.
+    \end{equation*}
+\end{prop}
+\begin{proof}
+    We need to show that for any $r \in \bbN$ and for any $X \in E_1$, we have that $X$ survives to $E_r$.
+
+    Denote by $\fC$ the flow category of $f$. By \cref{cor:SSofMorseStr}, we need to extend $X$ to a right flow module $W$ of degree $n$ over $\fC_{[p,p-r]}$. We define the manifolds of $W$ to be:
+    \begin{equation*}
+        W_q = X \times I^{p-q}.
+    \end{equation*}
+    The equations
+    \begin{equation*}
+        \partial W_q = X \times \partial I^{p-q} 
+        = \bigcup X \times I^{p-q-1} \times S^0
+        = \bigcup_{q < q' \leq p} X \times I^{p-q'} \times S^0 \times I_{q'-q-1}
+        = \bigcup_{q < q' \leq p} W_{q'} \times M_{q', q}
+    \end{equation*}
+    justify that $W$ is indeed a right flow module over $\fC_{[p, p-r]}$.
+
+    Moreover, the differential is given by the Toda manifold $W \circ \flowM_{-, p-r-1}$, which is:
+    \begin{equation}\label{eq:unDiff}
+        d_{r+1}(X) = \bigcup_{p \geq q \geq p-r} W_q \times M_{q, p-r-1} = \bigcup_q X \times I^{p-q} \times S^0 \times I^{q-(p-r-1)-1} = 
+        \bigcup_q X \times I^r \times S^0 = X \times \partial I^{r+1} \simeq X \times S^r
+    \end{equation}
+\end{proof}
+
+Now we want to calculate $MSO(\Sinf\bbRP^\ell)$. Under the same settings we have
+\begin{prop}
+    Let $E$ be the spectral sequence of $\bbRP^\ell$ with the morse function $\bar{f}(x)=\sum a_i x_i^2$ and coefficient ring $MSO$. We get that
+    \begin{equation*}
+        \pg{E}{1}{n}{p} = \Omega^{SO}_{n-p}
+    \end{equation*}
+    The first differential is given by multiplication with
+    \begin{equation*}
+        d_2^{n,p}=\begin{cases}
+            +,+ & p\text{ is even} \\
+            +,- & p \text{ is odd}
+        \end{cases}.
+    \end{equation*}
+    Moreover every element $X \in E_2$ survives to $E_\infty$ and the reduce homology is:
+    \begin{equation*}
+        \Omega^{SO}_i(\bbRP^\ell) = \begin{cases}
+            \Omega^{SO}_{i-\ell}[2]\oplus  \Omega^{SO}_{i-\ell+1}/2 \oplus \Omega^{SO}_{i-\ell+2}[2] \dots
+            \oplus \Omega^{SO}_{i-1}/2 & \ell = 2k \\
+            \Omega^{SO}_{i-\ell} \oplus  \Omega^{SO}_{i-\ell+1}[2] \oplus \Omega^{SO}_{i-\ell+2}/2 \oplus \Omega^{SO}_{i-\ell+3}[2] \dots \oplus \Omega^{SO}_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{equation*}
+    where  $\Omega^{SO}_j[2]$ are the elements $X \in \Omega^{SO}_j$ such that $2X$ is null bordant.
+\end{prop}
+\begin{proof}
+    The existence of the spectral sequence following from \cref{cor:SSofMorseStr}.
+    The framing, hence orientation, of the zero dimensional manifolds $M_{p,p-1}$ is induces from the exact sequence:
+    \begin{equation*}
+        T(W_p^u \cap W_{p-1}^s) \to TW_p^u \to \nu(W^s_{p-1})
+    \end{equation*}
+    We denote the two components of the zero dimensional flow manifold
+    \begin{equation*}
+        M_{p,p-1}^+,M_{p,p-1}^- \in M_{p,p-1}=[0:\dots:0:1:\pm 1:0\dots:0]
+    \end{equation*}
+    and we compare the framing of $M_{p,p-1}^+$ to the framing of $M_{p,p-1}^-$ by composing:
+    \begin{equation*}
+        \varphi:T(W_p^u \cap W_{p-1}^s)_- \oplus \nu W^s_{p-1} \simeq TW_p^u \simeq T(W_p^u \cap W_{p-1}^s)_+ \oplus \nu W^s_{p-1}
+    \end{equation*}
+    Let $v_0,\dots, v_{p-2}$ be a basis for $\nu W^s_{p-1}$ (which is of size $p-1$), the maps
+    \begin{equation*}
+        \nu(W^s_{p-1}) \to  TW_p^u
+    \end{equation*}
+    are induces from the parallel transport
+    \begin{equation*}
+        \nu_{p-1} (W^s_{p-1}) \to  T_p W_p^u
+    \end{equation*}
+    (through the points $M_{p,p-1}^{\pm}$) hence $\varphi_{\mid_{\nu W^s_{p-1}}}$ is the holonomy along the curve 
+    \begin{equation*}
+        \gamma(t) = [0:\dots:0:\cos(t),\sin(t):0:\dots:0],\ t \in [0,\pi]
+    \end{equation*}
+    By lifting $\gamma$ to the sphere we get that:
+    \begin{equation*}
+        \varphi(v_0,\dots, v_{p-1}) = -v_0,\dots, -v_{p-2}.
+    \end{equation*}
+    Combine that, with the definition:
+    \begin{equation*}
+        M_{p,p-1} \coloneqq W^u_p \cap W^s_{p-1} / \nabla f
+    \end{equation*}
+    where the flow $\nabla f$ acts on $M_{p,p-1}^{\pm}$ in opposite directions, to conclude that for an element $X \in \pg{E}{1}{n}{p}$ we have that $d_1(X)$ is two copies of $X$ where the framing on one copy is given by inverting $p$ vectors comparing to the other copy. Hence
+    \begin{equation*}
+        d_1^{n,p}(X) = \begin{cases}
+            \bar{X} \sqcup X & \text{$p$ is odd} \\
+            X \sqcup X & \text{$p$ is even} 
+        \end{cases}
+    \end{equation*}
+
+    Let $X \in \pg{E}{1}{n}{p}$. For $p$ odd we have that $X$ extends to a right flow module $W$ over $\fC_{[p,p-1]}$ by setting: 
+    \begin{equation*}
+        W_{p-1} = X \times I.
+    \end{equation*}
+    As we defined the "forgetting" map $\mathbf{Flow}^{SO} \to \mathbf{Flow}^{O}$ induce that diagram:
+    \begin{equation*}
+        \xymatrix{
+            (\pg{\cE}{r}{n}{p})^{SO} \ar[r]^{d_{r+1}^{SO}} \ar[d]_{F}   & (\pg{\cE}{r}{n-1}{p-r-1})^{SO} \ar[d]^F\\
+            (\pg{\cE}{r}{n}{p})^O \ar[r]_{d_{r+1}^O}      & (\pg{\cE}{r}{n-1}{p-r-1})^O\\
+        }
+    \end{equation*}
+    where $F$ is the forgetting map $\Omega^{SO} \to \Omega^{O}$ and $\cE$ are the elements that survive to the $(r+1)$-th page in the (un)oriented spectral sequence.
+    The flow module above shows that $X \in \pg{E}{1}{n}{p}$ survives to $E_2$, inductively, we assume that $X$ survives to $E_{r+1}$ (i.e., extends to a right module over $\fC_{[p, p-r]}$). Using that diagram and \cref{eq:unDiff}, we get that
+    \begin{equation*}
+        F \circ d_{r+1}^{SO}(X) \simeq d_{r+1}^{O} \circ F(X) \simeq F(X) \times S^r.
+    \end{equation*}
+    Both orientations of the circle are null-bordant, hence the underlying manifold of $d_{r+1}^{SO}(X)$ is null-bordant and $X$ survives to $E_{r+2}$ (i.e., the module extends over $\fC_{[p, p-r-1]}$).
+    
+    For $p$ even, we get that $d_1(X) = X \sqcup X$, hence $X$ survives to $E_2 \iff$ $X$ is 2-torsion. Under this assumption, we can use the fact that $d^{SO}$ lifts $d^O$ to get that $X$ survives to $E_{r+1}$.
+
+    We conclude that the spectral sequence collapse at the second page and
+    \begin{equation*}
+        \Omega^{SO}_i(\bbRP^\ell) = \begin{cases}
+            \Omega^{SO}_{i-\ell}[2]\oplus  \Omega^{SO}_{i-\ell+1}/2 \oplus \Omega^{SO}_{i-\ell+2}[2] \dots
+            \oplus \Omega^{SO}_{i-1}/2 & \ell = 2k \\
+            \Omega^{SO}_{i-\ell} \oplus  \Omega^{SO}_{i-\ell+1}[2] \oplus \Omega^{SO}_{i-\ell+2}/2 \oplus \Omega^{SO}_{i-\ell+3}[2] \dots \oplus \Omega^{SO}_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{equation*}
+\begin{comment}
+        \begin{multline*}
+        MSO_i(\bbRP^\ell) = \\ \begin{cases}
+            MSO_{i-\ell}[2]\oplus  MSO_{i-\ell+1}/2 \oplus MSO_{i-\ell+2}[2] \dots MSO_{i-1}/2 & \ell = 2k \\
+            MSO_{i-\ell} \oplus  MSO_{i-\ell+1}[2] \oplus MSO_{i-\ell+2}/2 \oplus MSO_{i-\ell+3}[2] \dots MSO_{i-1}/2 & \ell=2k+1
+        \end{cases}
+    \end{multline*}
+\end{comment}
+\end{proof}
