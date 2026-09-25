@@ -78,3 +78,6 @@ _minted*
 .DS_Store
 Thumbs.db
 main.out
+main.pdf
+main.xwm
+main.fls

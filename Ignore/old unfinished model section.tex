@@ -1,0 +1,143 @@
+\subsection{The differentail in the enriched model}
+until the end of this seciton, we will develope the tools to describe the differential, which is the the composition in \cref{lem:Ch_diff}, in the simplicall and topological enriched model.
+
+sketch:
+define the cube category which is the nerve
+\[
+    N 1^n = (\Delta^1)^n
+\]
+
+define a spine (and mention that there is "the" spine but all of them give the same result).
+define spine functors in a category C (modeled as quasi category).
+Remind that there is an adjunction Nerve and rigidification.
+Take D to be sSet enriched model for C, i.e. N D = C.
+we get:
+\[
+    \Fun^{\Spine} (cube_n, N D) = \Fun^{\Spine} (\CC cube_n, D)
+\]
+
+So spine functors from $\CC cube_n$ are the sSet-Cat model for chain complexes.
+
+Note that we acn also define the pointed category, by adding a object $*$ to $cube_n$ with unique morphisms
+\[
+    * \to x, \quad x \to *
+\]
+and for any $x \notin \Spine_n$ we invert (localize) the map $x \to *$.
+This give equivalence:
+\[
+    cube_n / \{x \to * \mid x \notin \Spine_n\} \simeq \Ch_n
+\]
+which given by
+\[
+    x \mapsto \begin{cases*}
+        *               & $x \notin \Spine_n$ \\
+        \lvert x \rvert & $x \in \Spine_n$
+    \end{cases*}
+\]
+
+Given two maps of n chain complexes in $\cC$, the form:
+\[
+    X_n \xrightarrow{f} K \xrightarrow{g} Y_0
+\]
+where the functors (chain complexes) $X_n, Y_n$ are zero except on $n$ and $0$, we can use the sSet model for functor categories to get two cubes in $\cC$
+\[
+    f,g \in \Fun(\Delta \times N 1^n, \cC)
+\]
+such that:
+\[
+    \partial_0 f = \partial_1 g = K.
+\]
+where $\partial_i$ is the restriction to $\partial_i \Delta^1$ in the first coordinate.
+We can glue to get the following horn in $\cC$
+\[
+    f\cup g : \Lambda^2_1 \times N 1^n \to \cC
+\]
+
+Having that $\cC$ is quasi-category, we get a horn filling:
+\[
+    \Delta^2 \times N 1^n \to \cC
+\]
+
+we denote the restriction
+\[
+    g \circ f : \partial_1 \Delta^2 \times N 1^n \to \cC
+\]
+
+Indeed, as a morphism:
+\[
+    g \circ f : X_n \to Y_0
+\]
+hence as a n+1 cube in $\cC$ we have:
+\[
+    g \circ f (A) = \begin{cases*}
+        X & $A = n+1$ \\
+        Y & $A = 0$   \\
+        0 & otherwise
+    \end{cases*}
+\]
+
+In the Cat-sSet model we get that $g \circ f$ is geiven by a map of Cat-sSet
+\[
+    \CC (\partial_1 \Delta^2 \times N 1^n) = \CC (N 1^{n+1}) \to D
+\]
+All the object except the initial and the terminal are maps to $0 \in D$ trivail, hence the only non tirival mapping sSet is:
+\[
+    \Hom_{\CC(\hN 1^{n+1})}(1_{n+1}, 0_{n+1}) \to \Hom(X,Y)
+\]
+
+\begin{defn}[Simplicial Mapping Spaces]
+    For a general poset $A$ and elements $a \le b$, the simplicial mapping space in the rigidified nerve $\mathfrak{C}[N(A)]$ is the nerve of the poset of strict inclusion chains:
+    \[ \operatorname{Hom}_{\mathfrak{C}[N(A)]}(a, b) = N(\mathcal{P}_{a,b}) \]
+    where $\mathcal{P}_{a,b}$ consists of chains $a = X_0 \subsetneq X_1 \subsetneq \dots \subsetneq X_m = b$ \todo{ADD REF??}. The higher $k$-simplices of this mapping space are given by sequences of chain inclusions $C_0 \subseteq C_1 \subseteq \dots \subseteq C_k$ \todo{ADD REF??}.
+\end{defn}
+
+\begin{defn}[The Permutohedron]
+    Let $A$ be a finite linearly ordered set, and let $Cu_A$ be the cube category modeled as the Boolean lattice of subsets of $A$. The mapping space from the initial object $\emptyset$ to the maximal object $A$ is called the simplicial permutohedron $P_A$ \todo{ADD REF??}:
+    \[ P_A := \operatorname{Hom}_{\mathfrak{C}[N(Cu_A)]}(\emptyset, A) = N(\mathcal{P}_{\emptyset, A}) \]
+\end{defn}
+
+\begin{defn}[Composition and Boundary]
+    For any proper intermediate subset $Q$ ($\emptyset \subsetneq Q \subsetneq A$), the composition of morphisms through $Q$ is defined by the union of chains \todo{ADD REF??}:
+    \[ \circ : \mathcal{P}_{Q,A} \times \mathcal{P}_{\emptyset,Q} \to \mathcal{P}_{\emptyset,A}, \quad (C_1, C_2) \mapsto C_1 \cup C_2 \]
+    We define the geometric boundary $\partial P_A$ (a subcomplex of dimension $\dim(P_A) - 1$) as the union over all proper intermediate subsets $Q$ of the images of these composition embeddings \todo{ADD REF??}:
+    \[ \partial P_A := \bigcup_{\emptyset \subsetneq Q \subsetneq A} P_{A \setminus Q} \times P_Q \]
+\end{defn}
+
+\begin{fact}[Cone Structure and Contractibility]
+    The poset of chains $\mathcal{P}_{\emptyset, A}$ contains a unique minimal element: the empty chain $C_{min} = (\emptyset \subsetneq A)$, which corresponds to the direct, unfactored jump from source to target \todo{ADD REF??}.
+
+    Because $\mathcal{P}_{\emptyset, A}$ has a unique minimum, its nerve $P_A$ is topologically a cone over the sub-poset of proper intermediate chains $P^\circ$ \todo{ADD REF??}. In simplicial terms, $P_A$ is the join of the 0-simplex (the cone point) and its boundary:
+    \[ P_A \cong Cone(N(P^\circ)) \cong \Delta^0 \star N(P^\circ) \]
+    Because $P_A$ is formed as a cone, it is trivially contractible \todo{ADD REF??}.
+\end{fact}
+
+
+To make things clean, we reindex the source of $f,g$ according to the horn:
+\[
+    \Lambda^2_1 \times N 1^n \to \cC
+\]
+we name
+\begin{gather*}
+    0 \coloneq (0,\varnothing) \\
+    1 \coloneq (1,\varnothing) \\
+    n+1 \coloneq (1, \n) \\
+    n+2 \coloneq (2,\n) 
+\end{gather*}
+note that under this "change of variables" we have that $K$ is located at ${1} \times N 1^n$ and  $1, n+1$ are the first and the last elements of $K$. By abuse of notation we will write:
+\[
+    K_{n+2} = X, \quad K_0 = Y
+\]
+
+Let $n+2 > i > 1$ we denote
+\[
+     f_i : \Hom_{\CC N 1^{n+1}}(n+2,i) \to \Hom(X,K_i)
+\]
+and for $n+1 > j > 0$ we denote
+\[
+    g_j: \Hom_{\CC N 1^{n+1}}(j,0) \to \Hom(K_j,Y)
+\]
+to be the maps that induced by modeling the functors $f,g$ in the Cat-sSet model.
+Similarly, by using the Cat-sSet model, for the functor $K$ we get maps
+\[
+    K_{i,j} : \Hom_{\CC N 1^n}(i,j) \to \Hom(K_i,K_j)
+\]
