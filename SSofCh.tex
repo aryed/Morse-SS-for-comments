@@ -504,3 +504,71 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
 \end{proof}
 
 \ThB*
+
+\begin{lem}\label{lem:zero_dr_extension}
+    Let $K \in \Ch(\Sp)$, let $F=\cI K$, and let $r\geq 1$. Suppose that
+    $x\colon \bbS^{n-p}\to K_p$ represents an element of
+    $\cE_r^{n,p}\subseteq E_1^{n,p}$, and write $[x]_r\in E_r^{n,p}$ for
+    its class. For an extension
+    $\widetilde x\colon \bbS^{n-p}_p\to K_{[p,p-r+1]}$, write
+    $\partial_r(\widetilde x)\in\cE_r^{n-1,p-r}\subseteq E_1^{n-1,p-r}$
+    for the representative of $d_r^{n,p}([x]_r)$ given by
+    \cref{lem:Ch_diff}. The following
+    conditions are equivalent:
+    \begin{enumerate}
+        \item $d_r^{n,p}([x]_r)=0$ in $E_r^{n-1,p-r}$;
+        \item there is an extension $\widetilde x$ of $x$ for which
+              $\partial_r(\widetilde x)=0$ in $E_1^{n-1,p-r}$;
+        \item $x$ extends to a map of coherent chain complexes
+              $\bbS^{n-p}_p\to K_{[p,p-r]}$.
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    By \cref{lem:FpFn_is_rep,lem:ChSur}, an extension $\widetilde x$
+    corresponds to a lift $\alpha\in\pi_n(F_p/F_{p-r})$ of $x$. Its
+    obstruction $u=\partial_r(\widetilde x)$ is the image of $\alpha$
+    under the connecting homomorphism of the cofiber sequence
+    \[
+        F_{p-r}/F_{p-r-1}\longrightarrow F_p/F_{p-r-1}
+        \longrightarrow F_p/F_{p-r}.
+    \]
+    Thus $u\in\pi_{n-1}(F_{p-r}/F_{p-r-1})=E_1^{n-1,p-r}$.
+    By \cref{def:SS_Fil,lem:Ch_diff}, the image of $u$ in
+    $\pi_{n-1}(F_{p-1}/F_{p-r-1})$ is $d_r^{n,p}([x]_r)$, viewed in
+    this group via the inclusion in \cref{eq:Er_Fil}.
+
+    Suppose this image vanishes. Exactness for the cofiber sequence
+    \[
+        F_{p-r}/F_{p-r-1}\longrightarrow F_{p-1}/F_{p-r-1}
+        \longrightarrow F_{p-1}/F_{p-r}
+    \]
+    identifies the target boundary subgroup, in the usual notation, as
+    \[
+        \begin{aligned}
+            B_r^{n-1,p-r}
+            &=\operatorname{im}\bigl(\pi_n(F_{p-1}/F_{p-r})
+              \xrightarrow{\partial} E_1^{n-1,p-r}\bigr)\\
+            &=\ker\bigl(E_1^{n-1,p-r}\to
+              \pi_{n-1}(F_{p-1}/F_{p-r-1})\bigr).
+        \end{aligned}
+    \]
+    It therefore gives $\beta\in\pi_n(F_{p-1}/F_{p-r})$ whose
+    boundary is $u$.
+    Let $j$ be the map from $\pi_n(F_{p-1}/F_{p-r})$ to
+    $\pi_n(F_p/F_{p-r})$ induced by $F_{p-1}\to F_p$, and set
+    $\alpha'=\alpha-j(\beta)$. The image of
+    $\alpha'$ in $\pi_n(F_p/F_{p-1})$ is still $x$. By naturality of
+    the connecting homomorphisms, its obstruction is
+    $u-\partial(j(\beta))=u-u=0$. Hence $\alpha'$ gives the
+    extension in (2). Conversely, (2) immediately implies (1).
+
+    Exactness for the first cofiber sequence shows that an extension
+    has zero obstruction precisely when its class $\alpha'$ lifts to
+    $\pi_n(F_p/F_{p-r-1})$. By \cref{lem:ChSur}, this is precisely an
+    extension of $x$ to $K_{[p,p-r]}$, proving (2)$\Leftrightarrow$(3).
+    In the same notation, $\cE_r$ is $Z_r$. Exactness of
+    $F_{p-1}/F_{p-r}\to F_p/F_{p-r}\to F_p/F_{p-1}$ shows that any
+    two extensions of $x$ differ by some $j(\beta)$. Thus varying
+    the extension changes its raw obstruction by exactly the subgroup
+    $B_r$ displayed above.
+\end{proof}
