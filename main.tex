@@ -184,6 +184,7 @@
 
 \section{Introduction}\label{sec:intro}
 
+\rewriteNote{In the first section after the introduction, motivate the Toda-manifold construction before its full definition. A small $d_2$ example should compare the two algebraic nullhomotopies with the two manifold pieces glued along their common flow boundary, so the reader sees why this particular gluing represents the differential.}
 \todo{We change the intro to use "flow bimod", now we need to shcange the rest of the paper}
 \input{softIntro}
 \subsection*{Acknowledgments}
@@ -220,12 +221,13 @@ This section lays the geometric and categorical groundwork for our main construc
 \input{Mfld w. corners & ffcat}
 
 \section{Chain complex of Flow Category}\label{sec:J}
+\rewriteNote{Explain how the topologically enriched $\J$ presents the relevant $\infty$-category of coherent chains: identify its morphism spaces, the passage from strict enriched functors to coherent diagrams, and the meaning of morphisms in this model. Coordinate this explanation with the endpoint and composition results in \cref{sec:compOfFlow}.}
 In this section, we establish a connection between chain complexes and framed flow categories by introducing a topologically enriched category $\J$, which serves as a replacement for the category of chain complexes $\Ch$. This idea originates from the work of Cohen, Jones, and Segal \cite{CJS95}, and is further developed in the revised version \cite{Cohen19}.
 
 \input{ChOfFlow}
 
 \section{Composition through a Bounded Chain Complex}\label{sec:compOfFlow}
-
+\rewriteNote{Explain how endpoint morphisms are represented in the $\J$ model, how their composite is computed by the coend, and why this agrees with composition in the $\infty$-category. Decide whether the technical model-category and replacement arguments can be stated precisely here and proved in an appendix, with clear references back to that proof. Move them only if this gives a usable black box; otherwise retain enough detail here for the reader to follow the composition argument. The appropriate level of detail may be concise.}
 
 \input{ChModels}
 
