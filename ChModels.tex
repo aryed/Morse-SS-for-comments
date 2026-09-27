@@ -3,11 +3,11 @@ We model only composites
     X_b \xrightarrow{f} K \xrightarrow{g} Y_a,
     \qquad a\leq b,
 \]
-where $K$ is supported in $[b,a]$ and $X_b,Y_a$ are concentrated in the indicated degrees. The endpoint spectra may be suspended spheres. This is the case needed for a right flow module followed by a left flow module.
+where $K$ is supported in $[b,a]$ and $X_b,Y_a$ are concentrated in the indicated degrees. The endpoint spectra may be suspended spheres. This is the case needed for a right flow module followed by a left flow module. Intrinsically, the calculation is composition paired with a derived coend. The purpose of the model below is to compute this pairing by the ordinary union of the faces of an orthant. The cellular calculation in \cref{lem:ChModels.cells} is what permits the ordinary coend; no cofibrancy assertion about arbitrary flow diagrams is needed.
 
 \subsection{Endpoint models}\label{sec:ChModels.endpoints}
 
-Write $\cA=\J_{[b,a]}$, using the category of \cref{sec:J}. We work with based enriched functors and omit the zero object from the notation. A based space acts on a spectrum by tensoring; we write this action as $\wedge$. Cotensor by a based space $T$ is denoted by $Y^T$.
+Write $\cA=\J_{[b,a]}$, using the category of \cref{sec:J}. We work with based enriched functors and omit the zero object from the notation. Use compactly generated based spaces and the ordinary stable model structure on orthogonal spectra, not its positive variant; see \cite[Theorem~9.2]{MMSS01}. A based space acts on a spectrum by tensoring; we write this action as $\wedge$. Cotensor by a based space $T$ is denoted by $Y^T$.
 
 \begin{prop}\label{prop:ChModels.derived}
     The category $\mathscr D=\Fun_+^{\mathrm{str}}(\cA,\SPO)$ has the projective stable model structure, with objectwise weak equivalences and fibrations. Its $\infty$-categorical localization is
@@ -19,10 +19,14 @@ Write $\cA=\J_{[b,a]}$, using the category of \cref{sec:J}. We work with based e
     The enriched mapping space from a projectively cofibrant diagram to an objectwise fibrant diagram computes the derived mapping space.
 \end{prop}
 \begin{proof}[Proof sketch]
-    Apply \cite[Theorem~7.2(1)]{SS03monoidal} to modules over the opposite of the spectral category $\Sigma^\infty\cA$. The usual enriched-diagram rectification theorem identifies the localization with coherent diagrams. One can apply \cite[Proposition~4.2.4.4]{Lur09} in a simplicial presentation and transport along the spectral model comparisons of \cite[Section~7]{SS03monoidal}. The augmentation $\J\to\Ch$ is a weak equivalence on mapping spaces by \cref{prop:J_equivalence}. The based formulation imposes preservation of zero.
+    Apply \cite[Theorem~7.2(1)]{SS03monoidal} to modules over the opposite of the spectral category $\Sigma^\infty\cA$. Its mapping spectra are cofibrant: the mapping spaces of $\cA$ are based CW spaces, and suspension spectra are cofibrant in the chosen model structure. The projective structure is topological, so enriched maps between cofibrant and fibrant diagrams compute derived mapping spaces.
+
+    For the localization statement, pass to simplicial enrichment and a simplicial model of spectra. The change-of-enrichment and module comparisons are provided by \cite[Sections~6--7]{SS03monoidal}; enriched-diagram rectification is \cite[Proposition~4.2.4.4]{Lur09}. Apply it to the coherent nerve of the singular simplicial category of $\J_{[b,a]}$, then use \cref{prop:J_equivalence}. The pointed version restricts to diagrams sending the distinguished zero object to zero. Strict reduction models this restriction: replace the value at the zero object by zero using the objectwise homotopy cofiber of the corresponding constant diagram. When that value is contractible, reduction is an objectwise equivalence.
 \end{proof}
 
 Here $\operatorname{Map}^h$ denotes a derived mapping \emph{space}, and $\operatorname{Nat}_{\cA}$ denotes the space of strict enriched natural transformations. Choose a cofibrant representative of $X$, a fibrant representative of $Y$, and an objectwise cofibrant and fibrant representative of $K$. These choices are always available: for $K$, first take a projective cofibrant replacement and then a projective trivial cofibration to a fibrant diagram. Since the mapping spaces of $\cA$ are cofibrant, projective cofibrations are objectwise cofibrations, so this last step preserves objectwise cofibrancy.
+
+These replacements change representatives, not the morphisms in the localized category. We only use their universal comparison maps; no contractibility claim about the set of point-set replacements is required.
 
 Define the covariant and contravariant weights
 \[
@@ -160,7 +164,16 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
     Choose a fibrant replacement $Y_0\to Y$ and a projective trivial cofibration $K_0\to K$ with $K$ fibrant. The induced map $K_0\to R_Y$ extends to $K\to R_Y$ by lifting, since $R_Y$ is projectively fibrant. Composing $Q_X\to K_0\to K$ with this extension gives exactly the original coend map followed by $Y_0\to Y$. Apply \cref{prop:ChModels.composition}. Objectwise cofibrancy of $K$ is preserved in this replacement.
 \end{proof}
 
-In the geometric application, finite-dimensional collapse maps should first be kept as maps between sufficiently suspended spheres. Applying the free orthogonal spectrum functor $F_{\bbR^N}$ to a common suspended based-space diagram gives cofibrant representatives: $F_{\bbR^N}S^{N+t}$ represents $\Sigma^t\bbS$ stably. Then \cref{lem:ChModels.transport} performs the fibrant replacements without changing the represented composite. Thus no assertion that the literal sphere-spectrum unit is fibrant is needed.
+In the geometric application, retain the finite-dimensional collapse maps of \cref{con:topChOfCat} before making replacements. Applying the free orthogonal spectrum functor $F_{\bbR^N}$ to a common suspended based-space diagram gives objectwise cofibrant representatives: $F_{\bbR^N}S^{N+t}$ represents $\Sigma^t\bbS$ stably. Lemma~\ref{lem:ChModels.transport} then applies. The free functors and their stable comparison with suspension spectra are part of the orthogonal-spectrum model of \cite[Section~2]{MMSS01}.
+
+\begin{lem}[Finite-dimensional endpoint representatives]\label{lem:ChModels.finite_representatives}
+    Suppose $K_0$ comes from a finite based-space $\cA$-diagram of finite wedges of spheres, by applying $F_{\bbR^N}$. An endpoint morphism from a suspended sphere to $K_0$ admits, after further suspension, simultaneous based-space representatives of its maps $f_i$. One may prescribe representatives on an initial segment of the cellular construction of $Q_X$, provided their stable class is the restriction of the given morphism. Homotopies admit the same relative construction.
+\end{lem}
+\begin{proof}[Proof sketch]
+    Use the finite free-cell filtration of $Q_X$ in \cref{lem:ChModels.cells}. Mapping out of an attaching pushout gives a homotopy pullback; at each free cell, enriched Yoneda reduces the calculation to maps from a finite based CW space to an individual spectrum. Such stable maps and homotopies are represented after finite suspension. Filtered colimits of spaces commute with finite homotopy limits \cite[Proposition~5.3.3.3]{Lur09}, so the finite sequence of these calculations can be performed at one suspension level.
+
+    For the relative assertion, use the homotopy fiber over the prescribed partial map in the same calculation. Equality of stable classes is witnessed by a homotopy after another finite suspension. The attaching pairs are cofibrations, so the homotopy extension property replaces agreement up to homotopy by exact agreement on the prescribed subdiagram. There are only finitely many cells, hence one stabilization suffices for the whole construction. This assertion concerns representatives of a given class; the space of all extensions need not be contractible.
+\end{proof}
 
 For the differential, the specialization is
 \[

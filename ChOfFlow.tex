@@ -1,4 +1,4 @@
-We begin by defining the pointed topologically enriched category $\J$, which serves as the indexing category for chain complexes in the topologically enriched setting.
+The category $\J$ records differentials and their coherent nullhomotopies by compactified orthants. We use the version of the Cohen--Jones--Segal construction described in \cite{Cohen08,cote2023equivariant}. Its nerve presents the indexing category of coherent chains; the passage to derived morphisms is treated in \cref{prop:ChModels.derived}.
 
 \begin{defn}
 We define the pointed topologically enriched category $\J$ as follows:
@@ -9,12 +9,12 @@ We define the pointed topologically enriched category $\J$ as follows:
     \end{equation*}
     \item The morphism spaces $\Hom_{\J}(j, i)$ are defined for $i, j \in \mathbb{Z} \cup \{ \infty \}$ by:
     \begin{equation*}
-        \Hom_{\J}(j, i) = 
+        \Hom_{\J}(j, i) =
         \begin{cases}
-            \{ \id, \infty \} & \text{if } i = j, \\
-            \{ d_i, \infty \} & \text{if } j = i + 1, \\
-            (\Hlf^{J_{j,i}})_+ & \text{if } j > i + 1, \\
-            \{ \infty \} & \text{if } i = \infty \text{ or } j = \infty,
+            \{ \id, \infty \} & \text{if } i = j\in\bbZ, \\
+            \{ d_i, \infty \} & \text{if } i,j\in\bbZ,\ j = i + 1, \\
+            (\Hlf^{J_{j,i}})_+ & \text{if } i,j\in\bbZ,\ j > i + 1, \\
+            \{ \infty \} & \text{otherwise},
         \end{cases}
     \end{equation*}
     where $X_+$ denotes the one-point compactification of a space $X$, and $\Hlf$ is the half-line $[0, \infty)$. The set $J_{j,i}$ is defined by:
@@ -26,7 +26,7 @@ We define the pointed topologically enriched category $\J$ as follows:
     \begin{equation*}
         J_{k,j}\sqcup J_{j,i} \hookrightarrow J_{k,i}
     \end{equation*}
-    induce a map
+    induce, by inserting zero in coordinate $j$, a map
     \begin{equation*}
         \Hlf^{J_{k,j}}\times \Hlf^{J_{j,i}} \hookrightarrow \Hlf^{J_{k,i}}.
     \end{equation*}
@@ -39,64 +39,23 @@ We define the pointed topologically enriched category $\J$ as follows:
 
 \begin{rem}
 Intuitively, the morphisms in $\J$ correspond to the differentials and higher compositions in a chain complex. The space $\Hlf^{J_{j,i}}$ models the higher nullhomotopies between compositions of differentials.
-\end{rem}\
+\end{rem}
 
 \begin{defn}
-    Let $C$ be a pointed topologically enriched category. 
+    Let $C$ be a pointed topologically enriched category.
     We define (topological, coherent) chain complexes in $C$ as strict functors $\Fun_+(\J,C)$.
 \end{defn}
 
-Let $Sp^O$ be the category of orthogonal spectra. This is a topologically enriched model category for the stable homotopy category, as developed in \cite{MMSS01}. It is equipped with a symmetric monoidal smash product $\otimes$ that gives a Quillen equivalent model to the $\infty$-category of spectra.
-In this model, the suspension spectrum functor 
-\begin{equation*}
-    \Sigma^{\infty}: (Top_{+}, \wedge, S^{0}) \to (Sp^{O}, \otimes, \mathbb{S})
-\end{equation*}
-is strongly symmetric monoidal and preserves coproducts.
-
-\begin{constr}
-    Let $\fC$ be a flow category with neat embedding $e$ and normal framing $\varphi$. We define $K_\fC \in \Fun_+(\J,\Sp^O)$ by
-    \[
-        K_\fC(i) = \WedgeSp_{\norm{x}=i} \bbS
-    \]
-    To define the morphisms it's suffice to we will construct maps
-    \[
-        \Hom_\J(j,i) \to \Hom_{\Top_+}(S^{N(j-i)}, S^{N(j-i)})
-    \]
-    and then by taking $\Sinf$ and desuspending we get a map
-    \[
-        \Hom_\J(j,i) \to \Hom_{\Sp^O}(\bbS, \bbS)
-    \]
-     we use the $(\smashSpaces, \Hom)$ adjunction. It suffices to provide maps:
-    \[
-        g_{y,x}:\Hom_\J(j,i)\smashSp \bbS \to \bbS
-    \]
-    for each pair $y,x \in \fC$ with indices $j,i$.
-    Let $y$ and $x$ be as above; we define the maps
-    \[
-        S^{N(\norm{y}-\norm{x})}\smashSp (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to S^{N(\norm{y}-\norm{x})},
-    \]
-    where the first map is the collapse map of $e_{y,x}$ and the second is (the compactification of) the projection of $\varphi_{y,x}$ (see \cref{eq:ThomMap}). By taking $\Sinf$ and desuspending this map, we obtain:
-    \[
-        g_{y,x}: \bbS \smashSp (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to \bbS.    
-    \]
-    Functoriality of $K_\fC$ amounts to the equation 
-    \[
-        \partial_y g_{z,x} = g_{y,x} \circ g_{z,y},
-    \]
-    which holds due to the compatibility of the neat embedding and the framing (see \cref{eq:ThomFunctoriality}).
-\end{constr}
-
-
-We call a functor $\Fun_+(\J,\Top_+)$ a \textbf{topological chain complex}. Our next goal is to start with an embedded framed flow category and produce such a topological chain complex. The idea is to use the Pontryagin-Thom collapse map (\cref{eq:ThomMap}) in a compatible way to "collapse" the flow category and then use $\J$ to encode the maps between spheres and their higher homotopies.
+Let $\SPO$ denote orthogonal spectra with the ordinary stable model structure \cite{MMSS01}. Its localization is $\Sp$; based suspension spectra give a symmetric monoidal left Quillen functor. We first construct the collapse diagram in based spaces on a bounded grading window. This keeps the finite-dimensional collapse maps and their face identities visible before any spectral replacement.
 
 \begin{constr}\label{con:topChOfCat}
     Let $\fC$ be a flow category with a neat embedding $e$ and normal framing $\varphi$.
-    Assume\todo{why we need this? how CK of CJS do this construction?} that $\fC$ has bounded index 
+    Assume that $\fC$ has finitely many objects and bounded index
 \begin{equation*}
     b \geq \norm{-} \geq a.
 \end{equation*}
-Without loss of generality, we take $a=0$. We define a pointed topologically enriched functor $K_{\fC} \in \Fun_+(\J,\Top_+)$ as follows.
-    
+After translating degrees, take $a=0$. Choose one Euclidean block $\bbR^N$ for each adjacent pair of grades. The collapse for $M_{y,x}$ acts on the blocks between $\norm{x}$ and $\norm{y}$; on the remaining blocks it is the identity. This is the meaning of suspension in the following formulas. We define a pointed topologically enriched functor $K_{\fC} \in \Fun_+(\J,\Top_+)$ as follows.
+
     First, we set
     \begin{equation*}
         K_{\fC}(i) = \WedgeSpaces_{\norm{x}=i} S^{Nb}.
@@ -105,31 +64,33 @@ Without loss of generality, we take $a=0$. We define a pointed topologically enr
     \begin{equation*}
         g_{y,x}:\Hom_{\J}(j,i)\smashSpaces S^{Nb} \to S^{Nb}
     \end{equation*}
-    for each pair $y,x \in \fC$ with indices $j,i$.
+    for each pair $y,x \in \fC$ with indices $j,i$. For fixed $y$ and target degree, choose the tubular images for the different $x$ disjoint, after stabilization; their simultaneous collapse is then a map to the wedge of target spheres.
     Let $y$ and $x$ be as above; we define the maps
     \begin{equation*}
         S^{N(\norm{y}-\norm{x})}\smashSpaces (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to S^{N(\norm{y}-\norm{x})},
     \end{equation*}
     where the first map is the collapse map of $e_{y,x}$ and the second is (the compactification of) the projection of $\varphi_{y,x}$ (see \cref{eq:ThomMap}). By suspending this map, we obtain:
     \begin{equation*}
-        g_{y,x}: S^{Nb}\smashSpaces (\Hlf^{J_{y,x}})_+ \to  Th(e_{y,x}) \to S^{Nb}.    
+        g_{y,x}: S^{Nb}\smashSpaces (\Hlf^{J_{y,x}})_+
+        \longrightarrow S^{N(b-\norm{y}+\norm{x})}\wedge\Th(\nu e_{y,x})
+        \longrightarrow S^{Nb}.
     \end{equation*}
-    Functoriality of $K_{\fC}$ amounts to the equation 
+    Functoriality of $K_{\fC}$ amounts to the equation
     \begin{equation*}
         \partial_y g_{z,x} = g_{y,x} \circ g_{z,y},
     \end{equation*}
-    which holds due to the compatibility of the neat embedding and the framing (see \cref{eq:ThomFunctoriality}).
+    which holds by \cref{eq:ThomFunctoriality}: on a broken face the two collapses act on consecutive, disjoint Euclidean blocks. Choose tubular neighborhoods compatible with these products. This is the naturality check in \cite[Proposition~2.24]{cote2023equivariant}, specialized to normally framed categories with discrete object spaces.
 \end{constr}
 
 For a flow category $\fC$, we define $\fC^{[b,a]}$ to be the full subcategory generated by objects $x \in \fC$ satisfying the index condition
 \begin{equation*}
     b \geq \norm{x} \geq a.
 \end{equation*}
-We denote by $K_{[b,a]}$ the topological chain complex of $\fC^{[b,a]}$. Note that there is a natural transformation 
+We denote by $K_{[b,a]}$ the topological chain complex of $\fC^{[b,a]}$. Note that there is a natural transformation
 \begin{equation*}
     \beta_{b+1}:K_{[b,a]} \to K_{[b+1,a]}
 \end{equation*}
-induced by suspending further to $N(b+1)$; if $i=b+1$, we take $\beta_{b+1}(i)$ to be the zero map. Similarly, we have maps 
+induced by suspending further to $N(b+1)$; if $i=b+1$, we take $\beta_{b+1}(i)$ to be the zero map. Similarly, we have maps
 \begin{equation*}
     \alpha_{a-1}:K_{[b,a-1]} \to K_{[b,a]}.
 \end{equation*}
@@ -143,15 +104,15 @@ induced by suspending further to $N(b+1)$; if $i=b+1$, we take $\beta_{b+1}(i)$ 
 \end{defn}
 
 \begin{constr}\label{con:SpChOfCat}
-    Let $\fC$ be an embedded framed flow category bounded by $b$ and $0$. Using \cref{con:topChOfCat} and post-composition with $\Sinf$, we construct a functor $K_{\fC}' \in \Fun(J,\SPO)$ with 
+    Let $\fC$ be an embedded framed flow category bounded by $b$ and $0$. Using \cref{con:topChOfCat} and the based suspension spectrum functor $\Sigma^\infty$, we construct a functor $K_{\fC}' \in \Fun_+(\J,\SPO)$ with
     \begin{equation*}
         K_{\fC}'(i) = \WedgeSp_{\norm{x}=i} \bbS^{Nb}.
     \end{equation*}
-    Using post-composition with $\Sigma^{-Nb}: \Sp \to \Sp$, we define the chain complex of $\fC$ to be 
+    In $\Sp$, define the chain complex of $\fC$ to be
     \begin{equation*}
         K_{\fC} \coloneqq \Sigma^{-Nb} K_{\fC}'
     \end{equation*}
-    which has $\bbS$ in each level.
+    which has one copy of $\bbS$ for each object in the corresponding degree. A strict orthogonal-spectrum representative is obtained instead by applying $F_{\bbR^{Nb}}$ to the based-space diagram; this avoids treating desuspension as a literal inverse to suspension in the point-set category.
 \end{constr}
 
 \begin{prop}\label{prop:J_equivalence}
@@ -159,11 +120,7 @@ There is an equivalence of pointed $\infty$-categories $N(\Ch) \simeq N_{\Top}(\
 \end{prop}
 
 \begin{proof}
-The morphism spaces $\Hom_{\J}(j,i)$ are contractible when $j > i + 1$ (since $(\Hlf^{J_{j,i}})_+$ is contractible). Furthermore, we have the following identifications:
-\begin{equation*}
-    \{ \id, \infty \} \simeq S^0 \text{ for } i = j, \quad \text{and} \quad \{ d_i, \infty \} \simeq S^0 \text{ for } j = i + 1.
-\end{equation*}
-The equivalence follows by considering both $\Ch$ and $\J$ as models for the same $\infty$-category.
+The augmentation $\J\to\Ch$ is the identity on integer objects, sends $\infty$ to the zero object, and collapses each positive-dimensional compactified orthant to the zero morphism. Composition is preserved because every composite through a strictly intermediate integer lies on such an orthant; identities and zero morphisms are preserved as well. This functor is a weak homotopy equivalence on every mapping space: for adjacent or equal integer objects it is the identity on $S^0$, and the other mapping spaces are contractible. It is also essentially surjective. Apply the coherent nerve to the singular simplicial categories, whose mapping spaces are Kan complexes. The resulting equivalence is the enriched-category/nerve comparison of \cite[Theorem~2.2.5.1]{Lur09}. The same argument applies to each bounded restriction, retaining the zero object.
 \end{proof}
 
 \begin{prop}\label{prop:FF_are_Ch}
@@ -176,7 +133,7 @@ The equivalence follows by considering both $\Ch$ and $\J$ as models for the sam
     Thus the collapse diagram of a bounded framed flow category determines a coherent chain complex. The model structure and the interpretation of mapping spaces are specified in \cref{prop:ChModels.derived}.
 \end{prop}
 
-By identifying $1$-categories with their nerves, we end this section by motivating the next. Let $\fC$ be a bounded, embedded, framed flow category and let $K \in \Fun(\Ch,\Sp)$ be its coherent chain complex. By \cref{sec:Ch}, we obtain a spectral sequence $(\rnp{E}, d_r)$ where 
+By identifying $1$-categories with their nerves, we end this section by motivating the next. Let $\fC$ be a bounded, embedded, framed flow category and let $K \in \Fun(\Ch,\Sp)$ be its coherent chain complex. By \cref{sec:Ch}, we obtain a spectral sequence $(\rnp{E}, d_r)$ where
 \begin{equation*}
     \pg{E}{1}{n}{p} = \pi_{n-p} K_p = \bigoplus_{\norm{x}=p} \pi_{n-p}\bbS.
 \end{equation*}
@@ -184,7 +141,7 @@ Identifying stable homotopy groups with framed bordism via the isomorphism
 \begin{equation*}
     \pi_{n-p} \bbS \simeq \Omega^{\fr}_{n-p},
 \end{equation*}
-we observe that for $y,x \in \fC$ with $\norm{y}=p$ and $\norm{x}=p-1$, the first differential 
+we observe that for $y,x \in \fC$ with $\norm{y}=p$ and $\norm{x}=p-1$, the first differential
 \begin{equation*}
     d_1\colon \Omega^{\fr}_{n-p}\<{y} \to \Omega^{\fr}_{n-p}\<{x}
 \end{equation*}
@@ -192,7 +149,7 @@ is given by the formula
 \begin{equation*}
     d_1(N) = N \times M_{y,x},
 \end{equation*}
-where $M_{y,x}$ is the morphism manifold in $\fC$ and $N$ is a representative for its bordism class. Survival to the second page corresponds to the existence of a flow category with objects $s,y,x$ and morphism manifolds 
+where $M_{y,x}$ is the morphism manifold in $\fC$ and $N$ is a representative for its bordism class. Survival to the second page corresponds to the existence of a flow category with objects $s,y,x$ and morphism manifolds
 \begin{equation*}
     M_{y,x}, \quad N=M_{s,y}, \quad \text{and} \quad W=M_{s,x}
 \end{equation*}
