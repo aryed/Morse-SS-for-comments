@@ -8,10 +8,37 @@ The issue is not doubt about the result. The issue is that the current presentat
 
 ## Current source assessment
 
-- `ChModels.tex` is the primary algebraic draft. It contains the fuller development of spine cubes, cone categories, flattening, and composition.
-- `DiffOfFlowCat.tex` is the primary geometric draft. It contains the punctured-cube colimit, gluing construction, comparison statement, and the application to differentials, but also repeats material and contains unfinished passages.
+- `ChModels.tex` is the active endpoint/coend proof, with the finite-cell weights and relative finite-dimensional representative lemma. `ChOfFlow.tex` supplies the indexing category and bounded collapse model.
+- `DiffOfFlowCat.tex` is the active geometric proof: rounding, collapse/composition, relative realization, corner restoration, and the differential theorem. A sign-convention comparison remains explicitly marked.
 - `archived-drafts/CompInTop.tex` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
 - Relevant exploratory notes include [`../Ignore/A note on models.md`](../Ignore/A%20note%20on%20models.md), [`../Ignore/Models - summary.md`](../Ignore/Models%20-%20summary.md), and [`../Ignore/why-move-to-longer-cubes.md`](../Ignore/why-move-to-longer-cubes.md).
+
+## Source review and revision — 27 September 2026
+
+The bounded endpoint/coend route is retained. Spine cubes are unnecessary for this particular composite; no claim about a general category of flow bimodules is needed. Keep the short model checks in the body for now. The finite-representative lemma is the natural item to move if an appendix later becomes useful.
+
+Dependency chain: `prop:J_equivalence` → `prop:ChModels.derived` → cellular endpoint weights → `prop:ChModels.composition`; geometrically, rounding → collapse comparison, while `lem:ChModels.finite_representatives` → relative transversality → flow-module realization. Corner restoration then supplies the next extension.
+
+| Former task | Assessment and revision |
+| --- | --- |
+| G1 | The collar thickening rounds the stated face colimit. Compare its double-overlap coordinate exchange with the fixed normal trivializations; use a family for bordism independence. |
+| G2 | Relative embeddings and product tubular charts supply the collapse diagram. Rounding preserves its normal coordinate, hence its collapse map. **Still check the sign against the suspension/connecting-map conventions in `SSofCh.tex`.** |
+| G3 | Added the finite free-cell argument: stable maps and relative homotopies descend to one suspension level. Relative transversality and homotopy extension then realize the specified morphism while retaining its top representative. This is an argument supplied here, not a theorem attributed wholesale to Genauer. |
+| G4 | Attach the retained rounding collar to a framed null-bordism, reverse the attaching normal, then embed relative to the prescribed faces. |
+
+Auxiliary choices need only produce the same framed bordism class. Stable relative embedding spaces admit parameter extensions; compatible collars are unique up to isotopy. Neither the space of framings nor the space of algebraic extensions is asserted to be contractible.
+
+Sources checked at the relevant passages:
+
+- [Genauer](https://arxiv.org/pdf/0810.0581), Proposition 2.8, Theorem 3.17, and §9: relative neat embeddings and corner Pontryagin–Thom/transversality. Interpret embedding uniqueness stably, allowing the ambient dimension to grow with the parameter family.
+- [Porcelli–Smith, v3](https://arxiv.org/pdf/2401.11766v3), Lemmas 3.19, 4.9, 4.41–4.43: relative collars and the framed gluing construction. Their overlap calculation is relevant, not merely their confident use of gluing.
+- [Côté–Kartal](https://arxiv.org/pdf/2309.15089), Proposition 2.24 and Appendix A: collapse naturality and compatible embeddings. Their Remark 2.15 does **not** establish the localization of J-modules used here; that comparison uses Schwede–Shipley and Lurie.
+- [Blakey](https://arxiv.org/pdf/2410.11478), §4.1, Proposition 4.9, and Remark 4.10: a useful exposition model, citing the foundational flow-category theory and sketching the changed comparison. Contractible **operator-gluing** choices are not a citation for contractibility of our geometric choices.
+- Schwede–Shipley, Theorem 7.2 and §§6–7; Lurie, *Higher Topos Theory*, Theorem 2.2.5.1 and Propositions 4.2.4.4, 5.3.3.3; Mandell–May–Schwede–Shipley: projective enriched diagrams, model comparisons, and finite stabilization.
+
+The edits also specify the ordered Euclidean blocks in the bounded collapse construction, remove its duplicate point-set desuspension argument, and fill the missing zero-morphism cases in the definition of J. The older proposed **unbounded** space-level limit/colimit remains outside this proof and retains its TODO.
+
+Verification: source and dimension checks, diff review, label/citation checks; no compilation, as requested. Do not regard the full rewrite as complete before the remaining sign check and a later build review.
 
 ## Historical audit of `ChModels_old.tex`
 
