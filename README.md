@@ -37,7 +37,7 @@ Detailed plan: [`research/composition-rewrite-plan.md`](research/composition-rew
 - [ ] Rewrite `ChModels.tex` and remove overlap with `DiffOfFlowCat.tex`.
 - [ ] Compile and review the complete rewritten argument.
 
-Source review (27 September 2026): the endpoint/coend and G1–G4 sketches have been revised, including a relative finite-dimensional representative argument. The remaining connecting-map sign check is marked in `DiffOfFlowCat.tex`; the unbounded construction remains outside this bounded proof. See the [review record](research/composition-rewrite-plan.md#source-review-and-revision--27-september-2026). Source checks only; compilation was explicitly deferred.
+Proof review (27 September 2026): checked the bounded enriched model, endpoint/coend calculation, and geometric constructions, then replaced the sketches by proofs. The realization proof now preserves product boundary collapses during stabilization and relative transversality. **The remaining G2 task is a coherent connecting-map comparison, including its sign, not just an orientation check.** Related sources and the absence of an exact reference are recorded in the manuscript TODO. See the [review record](research/composition-rewrite-plan.md#proof-review-follow-up--27-september-2026). No compilation was performed, as requested; the completion checklist remains open.
 
 ### 2. Grassmannian example and coefficients
 

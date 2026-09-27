@@ -18,10 +18,12 @@ Write $\cA=\J_{[b,a]}$, using the category of \cref{sec:J}. We work with based e
     \]
     The enriched mapping space from a projectively cofibrant diagram to an objectwise fibrant diagram computes the derived mapping space.
 \end{prop}
-\begin{proof}[Proof sketch]
+\begin{proof}
     Apply \cite[Theorem~7.2(1)]{SS03monoidal} to modules over the opposite of the spectral category $\Sigma^\infty\cA$. Its mapping spectra are cofibrant: the mapping spaces of $\cA$ are based CW spaces, and suspension spectra are cofibrant in the chosen model structure. The projective structure is topological, so enriched maps between cofibrant and fibrant diagrams compute derived mapping spaces.
 
-    For the localization statement, pass to simplicial enrichment and a simplicial model of spectra. The change-of-enrichment and module comparisons are provided by \cite[Sections~6--7]{SS03monoidal}; enriched-diagram rectification is \cite[Proposition~4.2.4.4]{Lur09}. Apply it to the coherent nerve of the singular simplicial category of $\J_{[b,a]}$, then use \cref{prop:J_equivalence}. The pointed version restricts to diagrams sending the distinguished zero object to zero. Strict reduction models this restriction: replace the value at the zero object by zero using the objectwise homotopy cofiber of the corresponding constant diagram. When that value is contractible, reduction is an objectwise equivalence.
+    For the localization statement, use the monoidal comparisons of \cite[Sections~6--7]{SS03monoidal} to pass to symmetric spectra in simplicial sets. This is a combinatorial simplicial model category. The singular simplicial category $\operatorname{Sing}\cA$ has Kan mapping spaces, so the counit from the rigidification of its coherent nerve is a Dwyer--Kan equivalence. Thus \cite[Proposition~4.2.4.4]{Lur09} identifies the localization of enriched diagrams with the functor $\infty$-category out of that nerve. Now apply \cref{prop:J_equivalence}.
+
+    To pass to pointed diagrams, temporarily retain the zero object $*$. For an unrestricted diagram $D$, the zero morphisms give a natural map $\const{D(*)}\to D$. On a projectively cofibrant diagram its inclusion is a cofibration: on a free cell this is the inclusion of the zero morphism in each mapping space, and the assertion follows by cell induction. Its quotient is strictly zero at $*$ and sends every zero morphism to zero. This quotient computes the objectwise homotopy cofiber. Hence reduction is an objectwise equivalence whenever $D(*)$ is contractible. Conversely, on strictly reduced diagrams the derived reduction is the identity. Reduction and inclusion therefore identify the localization of based diagrams with the full subcategory of functors taking $*$ to zero.
 \end{proof}
 
 Here $\operatorname{Map}^h$ denotes a derived mapping \emph{space}, and $\operatorname{Nat}_{\cA}$ denotes the space of strict enriched natural transformations. Choose a cofibrant representative of $X$, a fibrant representative of $Y$, and an objectwise cofibrant and fibrant representative of $K$. These choices are always available: for $K$, first take a projective cofibrant replacement and then a projective trivial cofibration to a fibrant diagram. Since the mapping spaces of $\cA$ are cofibrant, projective cofibrations are objectwise cofibrations, so this last step preserves objectwise cofibrancy.
@@ -49,8 +51,8 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
     \]
     is cofibrant for objectwise cofibrant $K$, and $T$ preserves objectwise stable equivalences between such diagrams.
 \end{lem}
-\begin{proof}[Proof sketch]
-    Put $H_m=(\Hlf^m)_+$ and $D_m=(\partial\Hlf^m)_+$, with $H_0=S^0$ and $D_0=*$. For $m>0$ this is a based disk--boundary pair. If $F_i(E)(j)=\cA(i,j)\wedge E$, construct $Q_X$ in decreasing order $i=b,\ldots,a$ by attaching
+\begin{proof}
+    Put $H_m=(\Hlf^m)_+$ and $D_m=(\partial\Hlf^m)_+$, with $H_0=S^0$ and $D_0=*$. For $m>0$ this is a based disk--boundary pair, with the compactification point lying on the boundary. If $F_i(E)(j)=\cA(i,j)\wedge E$, construct $Q_X$ in decreasing order $i=b,\ldots,a$ by attaching
     \[
         F_i(D_{b-i}\wedge X)\longrightarrow F_i(H_{b-i}\wedge X).
     \]
@@ -82,7 +84,7 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
     \]
     compatible with the $\cA$-actions.
 \end{prop}
-\begin{proof}[Proof sketch]
+\begin{proof}
     The source assertion follows from \cref{lem:ChModels.cells,eq:ChModels.endpoint_equivalences} and objectwise fibrancy of $K$. For the target assertion, take a projective cofibrant replacement $qK\to K$. Both diagrams are objectwise cofibrant, and the previous lemma gives a stable equivalence $T(qK)\to T(K)$ between cofibrant spectra. Since $Y$ is fibrant, adjunction gives
     \[
         \operatorname{Nat}_{\cA}(K,R_Y)
@@ -104,12 +106,12 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
     \]
     This based space is homeomorphic to $S^{b-a}$.
 \end{lem}
-\begin{proof}[Proof sketch]
+\begin{proof}
     The $i$-summand is the compactified face $t_i=0$. For $j>i$, the coend relation on
     \[
         B(i)\wedge\cA(j,i)\wedge P(j)
     \]
-    identifies the two copies of the intersection $t_i=t_j=0$. These generate all identifications among faces. The induced map is a continuous bijection from a compact quotient to the Hausdorff boundary compactification, hence a homeomorphism.
+    identifies the two copies of the intersection $t_i=t_j=0$. An intersection of more than two faces is indexed by their union of labels; the pairwise identifications agree there by associativity. For $a=b$ there is just one summand $S^0$ and no nontrivial relation. The induced map is a continuous bijection from a compact quotient to the Hausdorff boundary compactification, hence a homeomorphism.
 
     For $m=b-a+1$, the map
     \[
@@ -139,7 +141,7 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
         \xrightarrow{g_i}Y.
     \end{equation}
 \end{prop}
-\begin{proof}[Proof sketch]
+\begin{proof}
     The diagram $Q_X$ is projectively cofibrant and $R_Y$ is objectwise fibrant. Their enriched mapping space therefore computes the derived maps from $X_b$ to $Y_a$. Coend--cotensor adjunction identifies it with
     \[
         \operatorname{Map}_{\SPO}((B\otimes_{\cA}P)\wedge X,Y).
@@ -160,7 +162,7 @@ At $b$ and $a$, respectively, these maps are identities; at other objects the re
     \]
     Their ordinary coend composite represents the composite of the corresponding localized maps, even when $K_0$ and $Y_0$ are not fibrant.
 \end{lem}
-\begin{proof}[Proof sketch]
+\begin{proof}
     Choose a fibrant replacement $Y_0\to Y$ and a projective trivial cofibration $K_0\to K$ with $K$ fibrant. The induced map $K_0\to R_Y$ extends to $K\to R_Y$ by lifting, since $R_Y$ is projectively fibrant. Composing $Q_X\to K_0\to K$ with this extension gives exactly the original coend map followed by $Y_0\to Y$. Apply \cref{prop:ChModels.composition}. Objectwise cofibrancy of $K$ is preserved in this replacement.
 \end{proof}
 
@@ -169,10 +171,12 @@ In the geometric application, retain the finite-dimensional collapse maps of \cr
 \begin{lem}[Finite-dimensional endpoint representatives]\label{lem:ChModels.finite_representatives}
     Suppose $K_0$ comes from a finite based-space $\cA$-diagram of finite wedges of spheres, by applying $F_{\bbR^N}$. An endpoint morphism from a suspended sphere to $K_0$ admits, after further suspension, simultaneous based-space representatives of its maps $f_i$. One may prescribe representatives on an initial segment of the cellular construction of $Q_X$, provided their stable class is the restriction of the given morphism. Homotopies admit the same relative construction.
 \end{lem}
-\begin{proof}[Proof sketch]
-    Use the finite free-cell filtration of $Q_X$ in \cref{lem:ChModels.cells}. Mapping out of an attaching pushout gives a homotopy pullback; at each free cell, enriched Yoneda reduces the calculation to maps from a finite based CW space to an individual spectrum. Such stable maps and homotopies are represented after finite suspension. Filtered colimits of spaces commute with finite homotopy limits \cite[Proposition~5.3.3.3]{Lur09}, so the finite sequence of these calculations can be performed at one suspension level.
+\begin{proof}
+    Write $X=\Sigma^d\bbS$ and $K_0=F_{\bbR^N}Z$. At suspension level $q$, use the source $P\wedge S^{N+q+d}$ and target diagram $\Sigma^q Z$. Mapping out of the finite free-cell filtration of $P$ expresses the space of endpoint maps as a finite iterated homotopy pullback. Indeed, at each stage the restriction map is a fibration of mapping spaces, since the attaching pair is a cofibration; enriched Yoneda identifies the other terms with ordinary based mapping spaces into $\Sigma^q Z(i)$.
 
-    For the relative assertion, use the homotopy fiber over the prescribed partial map in the same calculation. Equality of stable classes is witnessed by a homotopy after another finite suspension. The attaching pairs are cofibrations, so the homotopy extension property replaces agreement up to homotopy by exact agreement on the prescribed subdiagram. There are only finitely many cells, hence one stabilization suffices for the whole construction. This assertion concerns representatives of a given class; the space of all extensions need not be contractible.
+    After stabilization, these terms compute the mapping spaces into $\Sigma^{-N}\Sigma^\infty Z(i)$, which represents $K_0(i)$. Filtered colimits of spaces commute with finite homotopy limits \cite[Proposition~5.3.3.3]{Lur09}. Consequently the same finite pullback computes the derived endpoint mapping space after taking the colimit in $q$. Every component, and every homotopy between components, is therefore represented at a finite level.
+
+    For prescribed data on an initial segment, take the homotopy fiber of restriction over those data. A chosen stable extension, together with a homotopy identifying its restriction with the prescribed map, gives a point of this fiber. The same finite-limit argument supplies it at a finite suspension level. The homotopy extension property then makes the restriction exact. This proves the relative assertion as well as its version for homotopies. It does not assert that the space of extensions is contractible.
 \end{proof}
 
 For the differential, the specialization is
@@ -184,4 +188,4 @@ The lower endpoint data come from $K_{[p,p-r-1]}$. The coend produces
 \[
     \Sigma^{n-p+r}\bbS\longrightarrow K_{p-r-1},
 \]
-hence an element of $E_1^{n-1,p-r-1}$. Its class on $E_{r+1}$ is the differential described in \cref{lem:Ch_diff}. The geometric comparison, including the suspension convention for the boundary sphere, is treated in the next section.
+hence an element of $E_1^{n-1,p-r-1}$. Identifying its class on $E_{r+1}$ with the differential requires the connecting-map comparison in \cref{lem:Ch_diff}; the outstanding G2 check is recorded after \cref{prop:flow_PT_composition}. The next section proves the geometric comparison with this coend map.
