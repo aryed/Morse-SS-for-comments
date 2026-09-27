@@ -210,6 +210,7 @@ By taking the contravariant $\Map$ functor to \cref{req:RepFibSeq} we get the fo
         \S^{-(p-1)} (-)_p \to (\cI -)_{p-1} \to (\cI -)_p
     \end{equation}
 \end{lem}
+\rewriteNote{Check the suspension in \cref{lem:calc_cI}: since $K_p\simeq\Sigma^{-p}(F_p/F_{p-1})$, rotating $F_{p-1}\to F_p\to F_p/F_{p-1}$ gives $\Sigma^{p-1}K_p\to F_{p-1}\to F_p$. The displayed $\Sigma^{-(p-1)}K_p$ has the wrong shift; reconcile this with the representing sequence above.}
 A simple corollary is
 \begin{cor}
     Let $K \in \Ch_b(\Sp)$ bounded below by $N$. Then for $p \le N$ we have
@@ -217,6 +218,7 @@ A simple corollary is
         (\cI K)_p = 0
     \end{equation*}
 \end{cor}
+\rewriteNote{Correct the endpoint of this bounded-below claim: if $K_i=0$ for $i<N$, then $(\cI K)_p=0$ for $p<N$, while $(\cI K)_N\simeq\Sigma^N K_N$ in general. Thus the displayed assertion with $p\leq N$ is too strong.}
 which obtained by inductively applying \cref{lem:calc_cI}.
 
 
