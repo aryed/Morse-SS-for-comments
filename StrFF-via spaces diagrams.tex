@@ -15,6 +15,7 @@ To start with, we will generalize the definition of normal framing.
 
 \begin{defn}
     Let $M \hookrightarrow \Hlf^k \times \bbR^N$ be an embedded $m$ dimensional $\k$ manifold. A \textbf{normal $\cX$ structure on $M$} is a choice of a lift
+    \notationtodo{The upper vertex is $\cX(N)$, while the normal bundle below has rank $N+k-m$; later the same family is written $X(d)$ instead of $\cX(d)$. Align the rank and typography after fixing the tangential-structure convention. Also replace ``$A\subseteq\op^k$'' below by subsets of the $k$-element indexing set.}
     \begin{equation}
         \xymatrix
         {
@@ -93,6 +94,7 @@ Given a multiplicative structure we can define an $\cX$ structured flow category
 \rewriteNote{Provide enough multiplicative structure on $M\cX$ to define the module-valued realization below. An $E_\infty$-ring structure is a safe sufficient framework; investigate whether a weaker structure, in the sense suggested by Lurie's term ``multiplicative cohomology theory'' (\emph{Chromatic Homotopy Theory}, Lecture~1, \cite{Lur10Chromatic}), suffices. The multiplicative structure enters at the definition stage: it supplies $\Mod_{M\cX}$ and the coherent composition used in the realization. Cohen assumes that $E$ is represented by a commutative ring spectrum (explicitly meaning an $E_\infty$-ring) for the corresponding Floer $E$-theory construction; see \cite[Sec.~1, p.~2]{Cohen08}. Check that the current maps $\cX(n)\times\cX(m)\to\cX(n+m)$ provide the required coherences.}
 
 Similarly to \cref{con:topChOfCat}, using Pontryagin Thom we get a coherent chain complex in $\Mod_{M\cX}$ where $M\cX$ is the Thom spectrum of $\cX$.
+\notationtodo{The coefficient category is $\Mod_{M\cX}$ here, but $\Mod_{\cX}$ in the introduction and $\Mod-\cX$ below. Use a single notation for modules over the Thom spectrum $M\cX$; reserve $\cX$ for the tangential structure itself.}
 \begin{con}
     Let $\fC$ be a bounded $\cX$ flow category.
     For each $x,y \in \fC$ we define a map
@@ -151,6 +153,7 @@ Similarly, we define when two $\cX$ flow categories are composable. To define th
 \begin{equation*}
     D \colon \op^{\{b,\dots a\}} \setminus \const{0} \to \Top
 \end{equation*}
+\conventiontodo{Relate the removed all-$0$ vertex to $\varnothing$ in \cref{def:CompCat} and the introduction. Here $a\leq b$, so the following union and its corollary should range over $a\leq p\leq b$, not $b\leq p\leq a$. Check the subset order $\{b,\ldots,a\}$ and the degree order in $M_{b+1,p}$ and $N_{p,a-1}$ against the earlier $M_{i,j}$ convention.}
 such that $D(\{a\})$ are $\cX$ manifolds with $\<{A\setminus\{a\}}$ corner structure.
 he lifts of the structure map $\nu D(B)$ assemble into a lift of the structure map $\nu \colim D$ hence induces a $\cX$ structure on the colimit. We get that
 \begin{cor}

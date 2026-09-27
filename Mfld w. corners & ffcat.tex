@@ -3,6 +3,7 @@ Let A be a set and $\cC$ a category. An $\A$ diagram in $\cC$ is a functor:
 \begin{equation*}
     F \colon \op^A \to \sC.
 \end{equation*}
+\conventiontodo{Define the $0/1$--subset correspondence here: $\op=[1]^{\mathrm{op}}$, a subset $B\subseteq A$ records the coordinates equal to $1$, and arrows go $T\to S$ for $S\subseteq T$. Thus $A$ is the initial vertex (all faces), $\varnothing$ the terminal vertex (the whole manifold), and puncturing at the latter removes the all-$0$ vertex. The introduction uses $P(A)\setminus\{\varnothing\}$, whereas the last section uses $\op^A\setminus\{\mathrm{const}(0)\}$; make the equivalence explicit before switching descriptions.}
 
 In the case where $C \in \cC$ have a name (e.g. space, manifold, group), we call such functor an $\A$ space, etc.
 
@@ -150,6 +151,7 @@ Let $\Hlf$ denote the half-line:
 \begin{equation*}
     \Hlf := [0,\infty).
 \end{equation*}
+\notationtodo{The macro $\Hlf$ prints $\bbR_{0\leq}$, an uncommon notation for this half-line. Consider $\bbR_{\geq0}$ (or keep $[0,\infty)$) and use the chosen notation uniformly for the orthants.}
 
 \begin{defn}
 An $n$-dimensional \textbf{manifold with corners} is a topological space $M$ toghter with an atlas, modeled on open subsets of $\Hlf^n$ with smooth transition functions.
@@ -307,6 +309,7 @@ for all $i \in J_{z,x}$. The composition is given by the inclusion of the bounda
         M_{i,j} \coloneqq \bigsqcup_{\substack{ y \in \fC, \norm{y}=j \\ x \in \fC, \norm{x}=i}} M_{y,x}
     \end{equation*}
 \end{notation}
+\notationtodo{This $M_{i,j}$ places the target degree $i$ first and the source degree $j$ second, although $M_{y,x}$ places the source object first. Check the degree-indexed occurrences in the last section, where $M_{b+1,p}$ appears to reverse this convention.}
 
 \begin{exmp}
 Consider a framed flow category $\fC$ with object set $\{ z, y, x, w \}$ and grading $\norm{z} = 4, \dots \norm{w} = 1$. The morphism spaces are:
