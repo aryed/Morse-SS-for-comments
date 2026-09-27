@@ -2,6 +2,8 @@ We describe the differential by composing a right flow module with the fixed flo
 
 The geometric input is relative Pontryagin--Thom on finite diagrams of faces. We give the rounding and collapse comparison first, then realize algebraic extensions by relative transversality. Only framed bordism classes are needed; we do not assert a classification of flow bimodules or contractibility of the space of framings.
 
+\verifyproof{Status of the differential theorem. The geometric realization, rounding, and corner-restoration arguments below have been checked and written out. The identification with the spectral-sequence differential still depends on the G2 comparison recorded after \cref{prop:flow_PT_composition}. The concluding argument records that dependency; it is not a claim that G2 has been resolved.}
+
 \begin{thm}\label{cor:SSofFFCat}
     Let $\fC$ be a flow category with finitely many objects in each degree and compact morphism manifolds, equipped with compatible neat embeddings and stable normal framings. Let $K_{\fC}$ be its associated coherent chain complex and let $(E_r^{n,p},d_r)$ be the spectral sequence of $\cI K_{\fC}$. Then
     \[
@@ -55,7 +57,7 @@ The constructions use only bounded grading windows, which are finite under the s
 \begin{lem}[The manifold and its framing]\label{lem:colimIsMfld}
     For the modules of \cref{def:CompCat}, $|D(W,V)|$ admits a rounding to a closed smooth manifold of dimension $n-a$. The compatible normal framings determine a stable framing of this rounding. Its framed bordism class is independent of the compatible collars and rounding choices.
 \end{lem}
-\begin{proof}[Proof sketch]
+\begin{proof}
     Put $d=n-a$. The stratum $D_S$ has dimension $d+1-|S|$. Boundary exhaustion and associativity give, near its interior, the model
     \[
         \bbR^{d+1-|S|}\times\partial\Hlf^{|S|}.
@@ -64,7 +66,7 @@ The constructions use only bounded grading windows, which are finite under the s
 
     Choose product collars, compatibly from the deepest strata outwards. Relative collars and framed composition are supplied by \cite[Lemmas~3.19, 4.9, and 4.41--4.43]{porcelli2024bordism} (arXiv version~3). In that construction the pieces $W_x\times V_x$ acquire an extra collar direction. On a double overlap the two collar coordinates are exchanged; their zero faces are precisely the identifications in $D(W,V)$. Associativity gives the same description on higher overlaps. A nearby regular hypersurface therefore rounds this particular colimit.
 
-    For our normal-framing convention, stabilize the compatible product embeddings into the coordinate faces of a common orthant. On an overlap both normal trivializations restrict to the same ordered product trivialization on $D_S$. The exchanged collar coordinates are tangent to the thickened ambient orthant, not additional normal-framing factors. Rounding these coordinates in both the ambient space and the submanifold preserves that normal trivialization. Restricting to the rounded ambient boundary gives the asserted framed manifold. Applying the construction to a family gives a framed bordism between choices. The framing data are held fixed throughout.
+    For our normal-framing convention, stabilize the compatible product embeddings into the coordinate faces of a common orthant. On an overlap both normal trivializations restrict to the same ordered product trivialization on $D_S$. The exchanged collar coordinates are tangent to the thickened ambient orthant, not additional normal-framing factors. Rounding these coordinates in both the ambient space and the submanifold preserves that normal trivialization. Restricting to the rounded ambient boundary gives the asserted framed manifold. For independence, join two compatible systems of collars by the relative isotopy of \cite[Lemmas~3.19 and 4.9]{porcelli2024bordism}. Extend the stabilized embeddings over this one-parameter family, relative to its ends, using \cite[Proposition~2.8]{Genauer12}. Product tubular neighborhoods extend after shrinking their radii. Rounding the resulting family gives a framed bordism between the two choices, as in \cite[Lemmas~4.42--4.43]{porcelli2024bordism}. Only auxiliary choices vary; the framing data are fixed.
 \end{proof}
 
 \begin{prop}[Collapse and composition]\label{prop:flow_PT_composition}
@@ -80,7 +82,7 @@ The constructions use only bounded grading windows, which are finite under the s
         \Sigma^{n-a}\bbS\longrightarrow\bbS.
     \]
 \end{prop}
-\begin{proof}[Proof sketch]
+\begin{proof}
     Choose product collars and tubular neighborhoods by induction over faces, retaining the choices already made on their intersections. Extend a product metric from a smaller boundary collar and use a normal exponential neighborhood; compactness permits a common smaller radius. Relative neat embeddings exist after stabilization \cite[Proposition~2.8]{Genauer12}; compare \cite[Appendix~A]{cote2023equivariant}. There are finitely many pieces, so these choices give compatible finite-dimensional collapse maps. The module boundary identities are the enriched endpoint identities of \cref{prop:ChModels.endpoint_maps}. Keep these maps in their suspended form, apply a free orthogonal spectrum functor, and use \cref{lem:ChModels.transport} to pass to the fibrant representatives used for derived mapping spaces.
 
     Here is the local comparison before replacement. For nonempty $S\subseteq I$, embed $D_S$ in
@@ -91,7 +93,7 @@ The constructions use only bounded grading windows, which are finite under the s
     \[
         E_S^+\longrightarrow\Th(\nu_S).
     \]
-    The inclusions of unions of boundary faces are cofibrations, so the finite face colimits compute homotopy colimits. The ambient colimit is
+    Order the face diagram from deepest intersections to the top faces. Each latching inclusion is an inclusion of a union of boundary faces, hence a cofibration by the product collars. The same holds for the disk and sphere bundles of the normal bundles. Thus the ordinary face colimits of the compactified ambient spaces and Thom spaces compute their homotopy colimits. The ambient colimit is
     $\bbR^N\times\partial\Hlf^I$, whose compactification is $S^{N+|I|-1}$.
     On each collar the embedding and tubular neighborhood are products, so the transition maps of the normal bundles restrict to the same maps on every intersection. They assemble to a bundle $\nu$ over $|D(W,V)|$, and
     \[
@@ -102,9 +104,11 @@ The constructions use only bounded grading windows, which are finite under the s
 
     In a product tubular chart, rounding changes only the base collar coordinates and leaves the normal coordinate unchanged. Outside these charts every collapse sends the complement of the tubular neighborhood to the basepoint. Consequently these local identifications give a homotopy from the assembled collapse to the collapse of the rounded embedding, relative to the unchanged regions. After using the framing to map the Thom space to $S^c$, its restriction to the $i$-face is the product collapse for $\bigsqcup_{\norm{x}=i}W_x\times V_x$. These are exactly the face maps in \cref{eq:ChModels.face_composite}; the coend relations identify their common restrictions. Thus the assembled map is the categorical composite.
 \end{proof}
-\verifyproof{Convention check remaining from G2: the normal-framed gluing and coend maps agree with the same ordered boundary-sphere identification. Check its sign against the independently chosen suspension/connecting-morphism identifications in \cref{lem:Ch_diff}. The one-degree case must give $[L\times M]$ with the product framing. This is a sign comparison, not a remaining existence problem for collars or collapse maps.}
+\verifyproof{G2 --- unresolved comparison, with related references. The proposition proves equality between the geometric collapse and the coend composite, using the same ordered boundary sphere. To identify this with the differential defined from the filtration, one must still compare that sphere identification with the connecting map used in \cref{lem:Ch_diff}. Lurie \cite[Construction~1.2.2.6 and Definition~1.2.2.9]{Lur17} supplies the filtered differential, and C\^ot\'e--Kartal \cite[Proposition~2.24]{cote2023equivariant} supplies collapse naturality; neither states this comparison for our endpoint model. The proof of \cref{lem:Ch_diff} also passes from a suspended lower chain to an index-shifted chain without identifying the resulting coherent map. Thus the outstanding task is to compare the maps, including the suspension sign, not merely to choose an orientation. The one-degree case gives the product framing, but does not settle all grading windows. No exact reference for this remaining identification has been located.}
 
 \subsection{Realizing extensions and restoring corner faces}
+
+Here realization means representing an endpoint morphism by a right flow module whose Pontryagin--Thom collapse gives that morphism.
 
 \begin{lem}[Realization with a fixed top representative]\label{lem:flow_relative_realization}
     Let $\fC$ be a finite neatly embedded, normally framed flow category supported in $[p,a]$, let $n\geq p$, and let
@@ -113,19 +117,26 @@ The constructions use only bounded grading windows, which are finite under the s
     \]
     be a morphism of coherent chain complexes. Suppose its component in degree $p$ is represented by the Pontryagin--Thom maps of closed framed manifolds $(L_x)_{\norm{x}=p}$. After stabilization, $f$ is represented by a compact neatly embedded, normally framed right flow module $W$ of degree $n$ with $W_x=L_x$ in degree $p$.
 \end{lem}
-\begin{proof}[Proof sketch]
-    Use the finite based-space collapse diagram of \cref{con:topChOfCat}, retaining its fixed flow structure maps. By \cref{lem:ChModels.finite_representatives}, $f$ has simultaneous unstable endpoint representatives after suspension. The relative assertion of that lemma lets us keep the prescribed top collapse maps of $L$, rather than merely their stable classes.
+\begin{proof}
+    Put $d=n-p$. We construct the pieces in decreasing degree, maintaining a homotopy between their endpoint collapse data and the corresponding restriction of $f$. At degree $p$, the prescribed Pontryagin--Thom representatives $L_x$ and the hypothesis provide this homotopy. Homotopy extension along the cells of $Q_{\Sigma^d\bbS}$ transports the remaining endpoint data when a partial representative is changed.
 
-    Proceed downwards in degree. Suppose the module pieces above $i$ have been constructed. Their products with $M_{y,x}$, for $\norm{x}=i$, prescribe the collapse on all boundary faces of the next orthant. These prescriptions agree on intersections by the module identities already constructed. The attaching pair is
+    Suppose that the pieces above $i$ have been constructed. For $\norm{x}=i$, their products $W_y\times M_{y,x}$ prescribe the boundary of the next piece, with all intersections fixed. Use ordered Euclidean blocks as in \cref{con:topChOfCat}. After stabilization, write their boundary collapse as a map
     \[
-       (\partial\Hlf^{p-i})_+\wedge S^{N+n-p}
-       \ \subseteq\
-       (\Hlf^{p-i})_+\wedge S^{N+n-p}.
+        (\partial\Hlf^{p-i})_+\wedge S^{c_i+d}
+        \longrightarrow \bigvee_{\norm{x}=i}S^{c_i},
     \]
-    Its inclusion is a cofibration. Replace the boundary restriction of the chosen representative by the prescribed product collapse using a relative homotopy, and extend that homotopy over the attaching cell. Make the map a product near the boundary. Smooth it near the preimages of chosen non-basepoints in the finitely many target spheres, and perturb it to be transverse there, keeping the boundary collars fixed. The corner transversality and inverse-image construction are those of \cite[Section~9 and Theorem~3.17]{Genauer12}, applied relative to the already transverse collar.
+    where $c_i$ is the normal rank in the active coordinates. For a face indexed by $y$, the normal coordinates are the ordered sum of those for $W_y$ and $M_{y,x}$. In particular, the inverse image of a chosen non-basepoint in the $x$-sphere is the actual product $W_y\times M_{y,x}$, with its product framing.
 
-    The inverse image in the $x$-sphere defines $W_x$. Its dimension is
-    $(N+n-p)+(p-i)-N=n-i$; its boundary faces are exactly $W_y\times M_{y,x}$. The differential of the map identifies its normal bundle with the fixed tangent space of the target sphere, giving the required normal framing. The relative Pontryagin--Thom homotopy replaces the map by the collapse of this inverse image without changing it on the boundary collars. Extend this homotopy over the remaining cells of $Q_X$ before proceeding to degree $i-1$. Thus each step preserves the entire endpoint morphism $f$, not just its top component. Finally choose the embeddings in the ordered product coordinates of \cref{def:FramedFlowModule}, inductively relative to the prescribed boundary collars. Stabilized relative embedding and its parametric version identify these with the embeddings just constructed, carrying their normal framings. Unused face coordinates above $p$ can be held strictly positive. The finite induction constructs $W$ with $W_x=L_x$ in top degree.
+    The endpoint morphism $f$, transported along the partial homotopy, supplies a stable extension of this boundary map over
+    $(\Hlf^{p-i})_+\wedge S^{c_i+d}$, including its relative homotopy class. The relative finite-cell argument of \cref{lem:ChModels.finite_representatives} realizes this extension after a finite suspension. Here any additional suspension is placed in extra module coordinates, leaving the flow coordinates fixed. Thus it suspends all previously constructed module collapses by an identity and preserves the prescribed product boundary. Homotopy extension makes the boundary restriction exact, and the compatible collars make the extension a product near every face.
+
+    Smooth the map near the inverse images of the chosen non-basepoints and make it transverse, keeping a smaller boundary collar fixed. The perturbation is supported away from that collar; there the domain has no boundary, so ordinary relative transversality applies. Compactness of the inverse images follows from the based map on the compactified domain. The inverse image defining $W_x$ has dimension
+    \[
+        (c_i+d)+(p-i)-c_i=n-i.
+    \]
+    The derivative gives its normal framing, agreeing on the collar with the prescribed framing. The relative Pontryagin--Thom homotopy identifies its collapse with the chosen extension while fixing that collar. This is the inverse-image argument of \cite[Theorem~3.17 and Section~9]{Genauer12}, with the perturbation and homotopy performed relative to a region already in product form. Extending this homotopy over the remaining cells preserves the class of the entire morphism $f$.
+
+    The construction uses only finitely many pieces and suspensions. Increase the Euclidean blocks to a common size and extend embeddings relative to the boundary using \cite[Proposition~2.8]{Genauer12}. The unused face coordinates above $p$ are placed at positive constants; their extra normal directions carry the trivial framing. This gives the embeddings of \cref{def:FramedFlowModule}, retaining the original $L_x$ in degree $p$.
 \end{proof}
 
 \begin{lem}[Restoring the faces of a null-bordism]\label{lem:flow_restore_corners}
@@ -137,7 +148,7 @@ The constructions use only bounded grading windows, which are finite under the s
     \]
     and with the higher intersections prescribed by flow composition and the module action. Performing this construction for all $z$ of degree $a-1$ extends $W$ over $\fC_{[p,a-1]}$.
 \end{lem}
-\begin{proof}[Proof sketch]
+\begin{proof}
     Let $B_z$ be a framed null-bordism together with its framed boundary identification $\partial B_z\cong T_z(W)$. Retain the collar region between the original cornered union and its rounding in \cref{lem:colimIsMfld}. Attach its rounded end to a boundary collar of $B_z$. The other end has precisely the prescribed faces and their original intersections; no choices of new face identifications are involved.
 
     Use the outward-normal-first boundary convention. The two collars being attached have opposite outward normals, so the attaching map reverses that line and identifies the remaining framed directions by the given framed boundary identification. Extend over a product collar. This transports the stable framing of $B_z$ to the manifold with restored corners and agrees with every prescribed product framing. Choose a neat embedding relative to this entire boundary collar after stabilization \cite[Proposition~2.8]{Genauer12}. Its stable normal framing is the complement of the transported stable tangent framing; a further stabilization realizes the prescribed boundary homotopy of normal trivializations on a collar. Distinct objects in degree $a-1$ impose no additional identities on one another.
@@ -145,7 +156,7 @@ The constructions use only bounded grading windows, which are finite under the s
 
 \subsection{Proof of the differential theorem}
 
-\begin{proof}[Proof sketch of \cref{cor:SSofFFCat}]
+\begin{proof}[Proof of \cref{cor:SSofFFCat}, subject to the G2 comparison]
     The degree-$p$ spectrum is a wedge of sphere spectra, giving the stated first page by Pontryagin--Thom.
 
     If $L$ extends to $W$ over $\fC_{[p,p-r]}$, its collapse data give

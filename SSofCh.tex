@@ -197,9 +197,8 @@ This functor behave nicely with the equivalence to chain complexes:
     treated as objects in $\Ch_{[\infty,n+1]}(\Sp)$ or $\Ch(\Sp)$.
 \end{cor}
 \begin{proof}
-    A direct calculation shows that both are given by $(-)_p = \S^{-p} \gr_p F$.
+    Both constructions preserve colimits, so we compare them on the filtered Yoneda generators $\yo_j$ and their transition maps. If $j\leq n$, then $q_n\yo_j=0$, and restriction also kills $\cA\yo_j=\bbS^{-j}_j$. If $j>n$, quotient truncation leaves $\yo_j$ unchanged, while restriction leaves $\bbS^{-j}_j$ unchanged. These identifications preserve the transition maps between retained generators; every transition with a discarded target becomes the unique map to zero. Thus they agree on the generator diagram, including its compositions, and extend by colimits to a natural equivalence of coherent chain complexes.
 \end{proof}
-\rewriteNote{The proof checks the terms of the two coherent chains but does not yet compare their structure maps and higher coherences. Show that quotient truncation corresponds naturally to restriction under the filtered-object/coherent-chain equivalence, or give an argument at the level of the full diagrams.}
 
 \begin{lem}\label{lem:FpFn_is_rep}
     Let $K \in \Ch(\Sp)$ and $F = \cI K$ its equivalent filtered spectrum, then
@@ -414,6 +413,8 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
     \end{equation*}
     viewed as a map $\bbS^{n-p} \to K_{p-r}$, where the first map is an extension of $x$ (see \cref{lem:ChSur}), and the second is induced by the structure of the chain complex $K$.
 \end{prop}
+\verifyproof{G2 --- gap in the identification asserted above. The coend of \cref{prop:ChModels.composition} gives an explicit map $\Sigma^{n-p+r-1}\bbS\to K_{p-r}$, whereas the filtered definition uses a connecting morphism. Compare these as coherent maps under the filtered-object/chain equivalence, with the chosen suspension convention. Lurie \cite[Construction~1.2.2.6 and Definition~1.2.2.9]{Lur17} gives the filtered construction, but does not identify this particular endpoint coend with it. The related collapse comparison in \cite[Proposition~2.24]{cote2023equivariant} does not supply that identification either. No exact reference for the remaining comparison has been located; the geometric differential theorem depends on it.}
+
 
 \begin{proof}
     We begin with Lurie's description, \cref{eq:diff_Fil}. The differential is given by the map:
@@ -479,6 +480,7 @@ To facilitate the proof of \cref{lem:Ch_diff}, we first introduce the following 
             0 \ar[r]                    & \Sigma K_{[p-r,p-2r+1]}
         }
     \end{equation*}
+\verifyproof{G2 --- the following inference is not justified by stability alone. A map $A\to\Sigma B$ is a map $\Sigma^{-1}A\to B$, not a map $A\to B$. The displayed diagram below instead shifts the index of the lower chain. Specify the natural equivalence using \cref{lem:shift_map}, and check that it takes this connecting morphism to the endpoint map supplied by the structure maps of $K$, including higher coherences and the boundary-sphere sign. Agreement of the objects, or the one-degree calculation alone, does not prove this.}
     Using the stability of $\Sp$, we get that $\Ch_{[p,p-2r+2]}(\Sp)$ is stable, and the last diagram is equivalent to the map of chains: $K_{[p,p-r+1]} \to K_{[p-r,p-2r+1]}$ which can be drawn as:
     \begin{equation*}
         \xymatrix

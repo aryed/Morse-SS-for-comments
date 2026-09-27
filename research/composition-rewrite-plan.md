@@ -9,7 +9,7 @@ The issue is not doubt about the result. The issue is that the current presentat
 ## Current source assessment
 
 - `ChModels.tex` is the active endpoint/coend proof, with the finite-cell weights and relative finite-dimensional representative lemma. `ChOfFlow.tex` supplies the indexing category and bounded collapse model.
-- `DiffOfFlowCat.tex` is the active geometric proof: rounding, collapse/composition, relative realization, corner restoration, and the differential theorem. A sign-convention comparison remains explicitly marked.
+- `DiffOfFlowCat.tex` is the active geometric proof: rounding, collapse/composition, relative realization, corner restoration, and the differential theorem. The coherent connecting-map comparison, including its sign, remains explicitly marked (see the follow-up review below).
 - `archived-drafts/CompInTop.tex` is an incomplete earlier start. It introduces horn filling and rigidification and then stops during the definition of a spine cube. No completed result in it currently needs to be restored.
 - Relevant exploratory notes include [`../Ignore/A note on models.md`](../Ignore/A%20note%20on%20models.md), [`../Ignore/Models - summary.md`](../Ignore/Models%20-%20summary.md), and [`../Ignore/why-move-to-longer-cubes.md`](../Ignore/why-move-to-longer-cubes.md).
 
@@ -39,6 +39,25 @@ Sources checked at the relevant passages:
 The edits also specify the ordered Euclidean blocks in the bounded collapse construction, remove its duplicate point-set desuspension argument, and fill the missing zero-morphism cases in the definition of J. The older proposed **unbounded** space-level limit/colimit remains outside this proof and retains its TODO.
 
 Verification: source and dimension checks, diff review, label/citation checks; no compilation, as requested. Do not regard the full rewrite as complete before the remaining sign check and a later build review.
+
+## Proof-review follow-up — 27 September 2026
+
+This review supersedes the earlier assessment that only a sign check remained. The sketches were checked at the level of their omitted constructions before the verified arguments were written as manuscript proofs. No compilation was performed, as requested.
+
+- **Enriched localization:** checked the actual hypotheses of Schwede–Shipley Theorem 7.2 and Lurie HTT Proposition 4.2.4.4. Added the passage to a combinatorial simplicial spectrum model and the cellular reduction at the zero object.
+- **Endpoint/coend calculation:** checked both weight filtrations, their attaching faces, the use of objectwise cofibrancy, cotensor fibrancy, and transport through replacements. Checked the single-degree case as well as all multiple-face intersections. The ordinary coend computes the required derived pairing for these weights.
+- **Quotient truncation used by survival:** replaced the termwise calculation in `SSofCh.tex` by a comparison on filtered Yoneda generators and their transition maps, closing the existing coherence TODO on this dependency.
+- **Finite representatives:** wrote the finite mapping-space pullback argument, including the homotopy fiber needed for prescribed partial data. This is an adaptation supplied in the manuscript, not a theorem attributed to the references.
+- **G1 and geometric G2:** checked the local boundary-orthant model, the constant normal rank, the common ordered normal framing, and the product tubular collapse. Explained the cofibration condition behind the face homotopy colimits. Porcelli–Smith v3 Lemmas 3.19, 4.9, and 4.41–4.43 support the collar, framing, and bordism arguments; Côté–Kartal Proposition 2.24 supports the collapse naturality. The equality proved is between the geometric collapse and the coend composite.
+- **G3:** replaced the unrestricted inverse-image argument with a descending relative construction. The previously realized products prescribe the actual boundary collapse. Its stable extension is realized after suspension in extra module coordinates, leaving the fixed flow blocks untouched. Relative transversality fixes those collars; homotopy extension retains the entire endpoint morphism. This addresses the missing product-boundary justification in the previous sketch. Genauer Theorem 3.17 and §9 provide the inverse-image construction; the relative adaptation is explained here, rather than quoted as an existing module-realization theorem.
+- **G4:** checked that retaining the rounding collar restores precisely the specified face intersections. Framed boundary identification and relative stabilized embedding extend the prescribed normal framing. No contractibility of framing choices is needed.
+- **Remaining G2 dependency:** the coend sphere must be compared with the coherent connecting morphism in `lem:Ch_diff`. That proof's passage from suspension to index shift does not identify the resulting coherent map; checking the one-degree product does not resolve this in every window. Lurie HA Construction 1.2.2.6 and Definition 1.2.2.9 (read in the supplied extract) define the filtered differential, but do not supply this model-specific comparison. No exact reference was found in the sources checked. The TODO distinguishes those related results from the missing identification, and the theorem's proof explicitly retains the dependency.
+
+Blakey §4.2, Proposition 4.9 and Remark 4.10 were checked for the intended level of exposition. They do not give the missing endpoint comparison; operator-gluing contractibility is not used for our choices. Genauer's embedding argument is used after stabilization, allowing the ambient dimension to increase for a parameter family, not as a claim of weak contractibility in a fixed finite dimension.
+
+The unbounded construction in `ChOfFlow.tex` remains outside this bounded argument. Existing unrelated suspension-typo and convergence TODOs are not certified by this review. No new hypotheses or strengthened claims were added; the substantive change is the relative proof of realization and the more accurate status of the algebraic comparison.
+
+Verification: mathematical dependency review, source locators, dimensions and boundary cases, LaTeX environment/label/citation checks, and diff review. Compilation deliberately omitted. No completion boxes checked.
 
 ## Historical audit of `ChModels_old.tex`
 
