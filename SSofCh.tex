@@ -199,6 +199,7 @@ This functor behave nicely with the equivalence to chain complexes:
 \begin{proof}
     A direct calculation shows that both are given by $(-)_p = \S^{-p} \gr_p F$.
 \end{proof}
+\rewriteNote{The proof checks the terms of the two coherent chains but does not yet compare their structure maps and higher coherences. Show that quotient truncation corresponds naturally to restriction under the filtered-object/coherent-chain equivalence, or give an argument at the level of the full diagrams.}
 
 \begin{lem}\label{lem:FpFn_is_rep}
     Let $K \in \Ch(\Sp)$ and $F = \cI K$ its equivalent filtered spectrum, then
@@ -266,6 +267,7 @@ We depict such morphism as
         = & \Map_{[p,p-r+1]}(\bbS^{n-p}_p, i_{\leq p}^* i_{\geq p-r+1}^* K) \simeq \Map_{(\infty,p-r+1]}((i_{\leq p})_! \bbS^{n-p}_p, i_{\geq p-r+1}^* K) \\
         = & \Map_{(\infty,p-r+1]}(\bbS^{n-p}_p, i_{\geq p-r+1}^* K) \simeq \S^{n-p} F_p/F_{p-r}
     \end{align*}
+\rewriteNote{Check the final suspension in the preceding display: the mapping spectrum out of $\bbS^{n-p}_p$ should be $\Sigma^{-n}(F_p/F_{p-r})$, as in \cref{eq:postJ_RHS}, rather than the displayed $\Sigma^{n-p}(F_p/F_{p-r})$.}
     where the qualities are notations and the last equivalence is \cref{lem:FpFn_is_rep}. We can do the same to the right hand side of \cref{eq:postJ} and get the map:
     \begin{equation}\label{eq:postJ_RHS}
         \S^{-n} F_p/F_{p-r} \simeq \Map(\bbS^{n-p}_p, K_{[p,p-r+1]}) \xrightarrow{j^*\circ }
@@ -297,6 +299,7 @@ We depict such morphism as
     For the first statement, since $F$ is complete ($\lim_p F_p \simeq \zr$), the Milnor exact sequence applied to the sequential limit of $F_p$ implies that the $\lim^1$ term also vanishes. This satisfies the precise criteria for conditional convergence \cite[Def.\ 5.10]{Boa99}.
     For the second statement, if $K$ is bounded below, then $F$ is a bounded below filtered object. By \cref{th:converge}, this bounded below condition promotes conditional convergence to strong convergence.
 \end{proof}
+\rewriteNote{Check the unbounded conditional-convergence assertion and the use of Boardman's completeness criteria against Lurie's spectral-sequence discussion \cite{Lur17}. In particular, verify the exact hypotheses and conclusion before giving this claim the same prominence as the bounded-below case.}
 
 \begin{exmp}
     Returning to \cref{ex:CW_pages}, consider an element $x\colon \mathbb{S}^{n - p} \to K_p$ representing a class in $E_1^{n,p}$. The differential $d_1^{n,p}\colon E_1^{n,p} \to E_1^{n - 1, p - 1}$ is given by:
