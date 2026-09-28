@@ -121,6 +121,7 @@ This idea goes back to Floer, who pointed out in \cite{floer1989witten} that: If
 We denote by $\Top$ the $1$-category of topological spaces, by $\Spaces$ the category of homotopy types (or $\infty$-groupoids), and $\Sp$ is the category of spectra. The stabilization functor is denoted $\Sinf: \Spaces \to \Sp$, and $\Ch(\Sp)$ and $\Fil(\Sp)$ denote the categories of coherent chain complexes in Spectra and (complete) filtered Spectra, respectively.
 
 For a topological space $Y$, we denote by $Y_+$ its one-point compactification (if $Y$ is compact, then $Y_+ = Y \cup \{*\}$).
+\conventiontodo{Separate one-point compactification of a noncompact locally compact space from adjoining a disjoint basepoint: both are written $Y_+$ here, whereas $\Sigma^\infty_+$ usually uses the latter. Fix the space and suspension-spectrum conventions before applying them to the orthants and Thom collapse maps.}
 For a CW complex $Y$, we denote by $\sk_n Y$ its $n$-th skeleton.
 
 For a stable tangential structure $\xi: \cX \to BO$, we denote by $\Omega^{\cX}_*$ the graded $\cX$-bordism ring and by $M\cX$ the Thom spectrum associated with the $\cX$-structure (see \cref{sec:tangStr} for definitions).
@@ -132,6 +133,7 @@ Let $\fC$ be a flow category. For $q,p \in \bbZ$ we denote by $\fC_{[q,p]}$ the 
     M_{p,q}\coloneqq \bigsqcup_{y \in \fC_q, x \in \fC_p} M_{y,x}.
 \end{equation*}
 for the union of the flow manifolds, and for a right / left module over $\fC$ we write
+\notationtodo{With this definition $M_{p,q}$ has target degree $p$ first and source degree $q$ second, opposite to $M_{y,x}$ (source first). The same convention is repeated in \cref{not:unionFlowMfld}, but the formula $M_{b+1,p}$ in the tangential-structure section appears to use source degree first. Choose an order and audit every degree-indexed $M_{i,j}$. Also decide whether the paper uses $M_{y,x}$ or $\flowM_{y,x}$ for flow-category morphisms.}
 \begin{equation*}
     W_p \coloneqq \bigsqcup_{x \in \fC_p} W_x, \quad V_p \coloneqq \bigsqcup_{x \in \fC_p} V_x.
 \end{equation*}

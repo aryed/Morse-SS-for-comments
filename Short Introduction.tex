@@ -18,6 +18,7 @@ Let $x_j,x_i$ be two critical points of $f$ with $j > i$. We denote by $\flowM(x
 Let $W_p$ be a representative of a bordism class in $\pg{E}{1}{n}{p} = \Omega^{\fr}_{n-p}$.
 In our framework, we view $W_p$ as a right flow module of degree $n$ over the trivial subcategory containing only the critical point $x_p$.
 The main theorem states that $W_p$ survives to the $(r+1)$-th page (also denoted by $W_p \in Z_{r+1}$) if and only if it **extends to a right flow module** $W$ of degree $n$ over the truncated flow category $\fC_{[p, p-r]}$.
+\notationtodo{The survivor subgroup is called $Z_{r+1}$ here, but $\mathcal E_{r+1}^{n,p}\subseteq E_1^{n,p}$ in \cref{def:survive}; the later proof also calls it $Z_r$. Define one notation and retain the bidegrees where ambiguity is possible.}
 Concretely, this means providing a family of framed manifolds $\{W_s\}$ for $s \in \{p, \dots, p-r\}$ of dimension $n-s$ such that the corner structure maps
 \begin{equation*}
     W_t \times \flowM(x_t,x_s) \hookrightarrow W_s
@@ -35,6 +36,7 @@ Because all boundary components of $W_s \times \flowM(x_s,x_{p-(r+1)})$ are of t
     W \circ \flowM(-,x_{p-(r+1)}) \coloneqq \bigcup_{s \in \{p,\dots, p-r\}} W_s \times \flowM(x_s,x_{p-(r+1)}).
 \end{equation*}
 This gluing operation is a geometric realization of the composition of modules (sometimes called a geometric tensor product).
+\notationtodo{The order $W\circ\flowM(-,z)$ here is reversed in the later convention $V\circ W$ for a left module $V$ and a right module $W$ (\cref{def:CompCat}), and in the main introduction's $\flowM_{-,z}\circ W$. Choose one order throughout; the gluing pieces are $W_x\times M_{x,z}$.}
 
 To verify that this manifold represents a class in the correct group for the differential, we compute its dimension. For each $s$, the pieces being glued have dimension: 
 \begin{equation*}
