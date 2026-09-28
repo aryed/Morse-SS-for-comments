@@ -45,7 +45,7 @@ which is a map of $\<{A_1 \sqcup A_2}$ diagrams.
 
 Taking $\cC =\Top$ and let $A$ be a finite set, here are few useful constructions that we will use later.
 We remind the reader that the one point compactification is a monoidal functor from locally compact Hausdorff spaces with proper maps with disjoint union (resp. Cartesian product) to pointed spaces with wedge sum (resp. smash product). Moreover it is a contravariant functor from the category of topological spaces with open inclusions, also known as the Pontrjagin-Thom collapse map.
-Explicitly, given $f:X \to Y$ and map continuous map between topological spaces the collapse map is the map $Y_+ \to X_+$
+Explicitly, given a continuous map between topological spaces $f:X \to Y$, the collapse map is the map $Y_+ \to X_+$
 \begin{equation*}
     y \mapsto \begin{cases}
         x & y=f(x) \\
@@ -152,6 +152,7 @@ Let $\Hlf$ denote the half-line:
     \Hlf := [0,\infty).
 \end{equation*}
 \notationtodo{The macro $\Hlf$ prints $\bbR_{0\leq}$, an uncommon notation for this half-line. Consider $\bbR_{\geq0}$ (or keep $[0,\infty)$) and use the chosen notation uniformly for the orthants.}
+\Arye{OK, OK, change the macro so it will be named $\Hlf$ be will output $\bbR_{\geq 0}$.}
 
 \begin{defn}
 An $n$-dimensional \textbf{manifold with corners} is a topological space $M$ toghter with an atlas, modeled on open subsets of $\Hlf^n$ with smooth transition functions.
@@ -306,7 +307,7 @@ for all $i \in J_{z,x}$. The composition is given by the inclusion of the bounda
 \begin{notation}\label{not:unionFlowMfld}
     Let $\fC$ be a flow category and $j,i \in \bbZ$ we denote
     \begin{equation*}
-        M_{i,j} \coloneqq \bigsqcup_{\substack{ y \in \fC, \norm{y}=j \\ x \in \fC, \norm{x}=i}} M_{y,x}
+        M_{jij} \coloneqq \bigsqcup_{\substack{ y \in \fC, \norm{y}=j \\ x \in \fC, \norm{x}=i}} M_{y,x}
     \end{equation*}
 \end{notation}
 \notationtodo{This $M_{i,j}$ places the target degree $i$ first and the source degree $j$ second, although $M_{y,x}$ places the source object first. Check the degree-indexed occurrences in the last section, where $M_{b+1,p}$ appears to reverse this convention.}
